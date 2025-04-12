@@ -7,16 +7,16 @@
       "bundleIdentifier": "Ostin-Matus.SDA-Hymnal",
       "developerName": "Ostin Matus",
       "subtitle": "An awesome app",
-      "version": "1.0",
-      "build": "2",
-      "size": 1266217384,
+      "version": "1.0.1",
+      "build": "1",
+      "size": 1266217316,
       "downloadURL": "https://drive.usercontent.google.com/download?id=1ewXD6BMPM3m6AQgTeRHwl3FxP9gWLJN3&export=download&authuser=0&confirm=t&uuid=1c8abf3d-7f29-49ff-9e67-ff3ccf38ddaf&at=AIrpjvPgWh6A5lcIUggTfnaycD40%3A1739648845120",
       "localizedDescription": "This is my SDA Hymnal app.",
       "iconURL": "https://ormt03.github.io/SDA-HYMNAL/Icons/SDA-Hymnal-512.png",
       "beta": false,
       "minimumOSVersion": "15.8",
-      "releaseNotes": "Bug fixes (Lyrics typos fixed)",
-      "versionDate": "2025-04-11T17:00:00Z"
+      "releaseNotes": "Bug fixes",
+      "versionDate": "2025-04-12T17:15:00Z"
     }
   ]
 }

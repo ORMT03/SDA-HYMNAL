@@ -1,4 +1,4 @@
-const MAJOR_VERSION = '10';  // Change this for major version updates
+const MAJOR_VERSION = '11';  // Change this for major version updates
 const MINOR_VERSION = '0';  // Change this for minor version updates
 
 const MAJOR_CACHE = `pwa-cache-major-v${MAJOR_VERSION}`;

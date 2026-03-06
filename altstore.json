@@ -7,7 +7,7 @@
       "bundleIdentifier": "Ostin-Matus.SDA-Hymnal",
       "developerName": "Ostin Matus",
       "subtitle": "An awesome app",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "build": "1",
       "size": 1272211815,
       "downloadURL": "https://drive.usercontent.google.com/download?id=1ewXD6BMPM3m6AQgTeRHwl3FxP9gWLJN3&export=download&authuser=7&confirm=t&uuid=5879535c-3f4a-4747-b97a-15ea215f6ecd&at=AGN2oQ2P5FnrRdb_6h1maEKd1qpe:1772763106542",
@@ -16,7 +16,7 @@
       "beta": false,
       "minimumOSVersion": "15.8",
       "releaseNotes": "Bug fixes",
-      "versionDate": "2026-03-5T02:10:00Z"
+      "versionDate": "2026-03-6T02:10:00Z"
     }
   ]
 }

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#183e35"><meta name="description" content="English and Spanish SDA hymns, with MusicXML sheet music, original images and lyrics.">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="SDA Hymnal Beta">
+<link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icons/icon-180.png">
+<title>SDA Hymnal · Beta</title>
+<link rel="stylesheet" href="styles.css">
+<script defer src="vendor/opensheetmusicdisplay.min.js"></script><script defer src="app.js"></script><script defer src="offline-config.js"></script><script defer src="offline.js"></script>
+</head>
+<body>
+<header><a class="brand" href="./">SDA Hymnal <span>Beta</span></a><a href="../">Original hymnal ↗</a></header>
+<main>
+<section class="intro"><p class="eyebrow">A HYMN FOR EVERY MOMENT</p><h1>The hymnal, a little clearer.</h1><p>Find a familiar hymn. Open its score. Sing together.</p></section>
+<section class="offline-panel" aria-labelledby="offline-title">
+<div><h2 id="offline-title">Take your hymnal with you</h2><p>Save every available MusicXML score and all English & Spanish lyrics. No sheet images.</p>
+<details><summary>Use on your iPhone</summary><p>In Safari, tap Share → Add to Home Screen. Open the new Home Screen app while online, then download here. Keep the app open until it says Ready offline. Try Airplane Mode before you need it.</p><p>New scores can be saved with Update offline download. If iPhone storage is cleared, download again.</p></details></div>
+<div class="offline-actions"><button id="save-offline" type="button" disabled>Download for offline use</button><progress id="offline-progress" aria-label="Offline download progress" max="1" value="0" hidden></progress><p id="offline-status" role="status">Preparing offline support…</p></div>
+</section>
+<div class="workspace">
+<aside aria-label="Find a hymn">
+<label for="search">Search hymns</label><input id="search" type="search" placeholder="Number or title" autocomplete="off">
+<div class="filters"><label>Language<select id="language"><option value="english">English</option><option value="spanish">Spanish</option><option value="both">English & Spanish</option></select></label><label>Show<select id="availability"><option value="all">All hymns</option><option value="xml">With MusicXML</option></select></label></div>
+<p id="count" class="muted" role="status">Loading hymns…</p><ul id="songs" aria-label="Hymns"></ul>
+</aside>
+<section class="reader" aria-label="Hymn viewer">
+<div id="empty"><span class="music-mark" aria-hidden="true">♫</span><h2>Open a hymn</h2><p>Choose a hymn from the list to begin.</p><p class="muted">MusicXML opens first where available.<br>You can always return to the original image.</p></div>
+<div id="hymn" hidden>
+<div class="hymn-heading"><p id="hymn-meta" class="eyebrow"></p><h2 id="hymn-title" tabindex="-1"></h2></div>
+<div class="toolbar" aria-label="Hymn display"><button id="xml" type="button">MusicXML</button><button id="image" type="button">Load image</button><button id="lyrics" type="button">Lyrics only</button><a id="download" download>Download score ↓</a></div>
+<p id="status" role="status"></p>
+<div id="score-tools" hidden><label for="zoom">Score size</label><input id="zoom" type="range" min="60" max="150" value="90" step="10"><output id="zoom-value" for="zoom">90%</output></div>
+<div id="viewer" aria-busy="false"></div>
+</div>
+</section>
+</div>
+<footer>MusicXML collection in progress. Original sheet images and lyrics remain available. <span id="coverage"></span></footer>
+</main>
+</body></html>

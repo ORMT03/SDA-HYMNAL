@@ -116,7 +116,7 @@ self.addEventListener('activate', (event) => {
           }
 
           // Detect and delete older cache strategies
-          if (!cacheName.startsWith('pwa-cache-major') && !cacheName.startsWith('pwa-cache-minor')) {
+          if (!cacheName.startsWith('pwa-cache-major') && !cacheName.startsWith('pwa-cache-minor') && !cacheName.startsWith('sda-hymnal-beta-')) {
             console.log(`Deleting older cache: ${cacheName}`);
             return caches.delete(cacheName);
           }

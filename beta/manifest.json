@@ -1,12 +1,12 @@
 {
   "id": "./",
-  "name": "SDA Hymnal Beta",
+  "name": "SDA Hymnal 15.0 beta 1.1",
   "short_name": "Hymnal Beta",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#f4f3ec",
-  "theme_color": "#183e35",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "icons": [
     {
       "src": "icons/icon-192.png",

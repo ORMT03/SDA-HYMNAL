@@ -1,24 +1,24 @@
 {
   "schema": 1,
-  "id": "15.0-beta-2-1c1f552371cced97",
-  "version": "15.0 beta 2",
+  "id": "15.0-beta-3-339e25a4e865b114",
+  "version": "15.0 beta 3",
   "files": [
     {
       "path": "index.html",
-      "sha256": "d41feb628ec6ad2bed79132ccecf4b8b6c0d4280d47608b0046ff7e19c841632",
-      "bytes": 3219,
+      "sha256": "43f77ed1f4a0299be5a160d4d4aa286cde4169348343f44fac1826c814010e47",
+      "bytes": 5646,
       "type": "text/html"
     },
     {
       "path": "styles.css",
-      "sha256": "f5b8fcedc48eb969fbfbcc81c838c17632e792dd2bf1d523fbf024ee8ff3e0e3",
-      "bytes": 7916,
+      "sha256": "29275c88be9b8fdeccc05f3c94c37c2e5784094e60e27c60da28c08eb826ba92",
+      "bytes": 10057,
       "type": "text/css"
     },
     {
       "path": "app.js",
-      "sha256": "1c0dad8fa9d6ab1bfd9ebfa6529a3ce9c78a22bcc978c0d42f9fff2b3500f9d7",
-      "bytes": 11306,
+      "sha256": "416a5dc635c3945b16163ee49147c433d7a374c43e4a3ea490b8b26fcb473c4b",
+      "bytes": 27319,
       "type": "text/javascript"
     },
     {
@@ -29,20 +29,20 @@
     },
     {
       "path": "offline-config.js",
-      "sha256": "5c5270dbfbbdb3a1aba3d6524755b105eaf80f2412255dc6cc8f721941f3a5bb",
+      "sha256": "9db87f0cacde961fd39f7b3442f5643ea9012ab5acf5b1627f8cd788708d9b3f",
       "bytes": 497,
       "type": "text/javascript"
     },
     {
       "path": "manifest.json",
-      "sha256": "85a635c7b53b78bd4be53fdbba1f94d289a4bda80ae3993ca6628a696642f0ea",
+      "sha256": "75fb86f04627af25259d860ff2d856af7e0d9b849af1508e3c722b48cb4975a2",
       "bytes": 427,
       "type": "application/json"
     },
     {
       "path": "vendor/opensheetmusicdisplay.min.js",
-      "sha256": "54d8e763a75559f78308d09b7bf36cd33f538a280c3c816b34355240335d6630",
-      "bytes": 1174840,
+      "sha256": "fe6342ad5108808bb0184f488c8089d9891413fb8c29df489fb7b64e417025b6",
+      "bytes": 1893619,
       "type": "text/javascript"
     },
     {
@@ -4265,15 +4265,21 @@
     }
   ],
   "full": {
-    "url": "releases/15.0-beta-2-1c1f552371cced97-full.zip",
-    "sha256": "b68006aa0b4fb1ce63f2e0ea1231307289665b394d6a1ced1f4f79552c7ea187",
-    "bytes": 4230664
+    "url": "releases/15.0-beta-3-339e25a4e865b114-full.zip",
+    "sha256": "c9381bf84b5b638db36ef548bcbad1726663225d5400c814966d478370499797",
+    "bytes": 4437217
   },
   "deltas": [
     {
-      "url": "releases/legacy-15.0-beta-1.1-2185981ac774--15.0-beta-2-1c1f552371cced97-delta.zip",
-      "sha256": "685cf23b551c170fc1bfdd9b95733ec70b0077b675398e3bfa5f29b4a51acc55",
-      "bytes": 22456,
+      "url": "releases/15.0-beta-2-1c1f552371cced97--15.0-beta-3-339e25a4e865b114-delta.zip",
+      "sha256": "743644442eea27ec0e838ed595e8ec89e450d4650cbcb8777d54dc3e4d69fe9e",
+      "bytes": 522921,
+      "from": "15.0-beta-2-1c1f552371cced97"
+    },
+    {
+      "url": "releases/legacy-15.0-beta-1.1-2185981ac774--15.0-beta-3-339e25a4e865b114-delta.zip",
+      "sha256": "3eeb425cdda9923c60eafc1954b8dd229853c41cfcbfa8f1cba7b1a4bbf4add6",
+      "bytes": 540300,
       "from": "legacy-15.0-beta-1.1-2185981ac774"
     }
   ]

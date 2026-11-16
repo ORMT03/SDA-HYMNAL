@@ -234,3 +234,20 @@ a:hover {
 .toolbar #lyrics{font-size:16px;line-height:normal}
 
 #update-notice{position:fixed;bottom:0;left:0;right:0;z-index:2000;background:#f0f0f0;border-top:1px solid #ccc;padding:12px 16px;box-sizing:border-box;text-align:center;font-family:Arial,sans-serif;box-shadow:0 -2px 8px #0001}#update-notice p{margin:0 0 8px;font-size:14px;line-height:1.4}#install-update{padding:8px 15px;cursor:pointer}body:has(#catalog:not([hidden]) #update-notice:not([hidden])){padding-bottom:140px}
+
+/* Beta 3 controls keep the original list and menus. */
+#search-options{font-size:14px;margin:0 12px 14px;text-align:center}
+.settings-button{margin-top:12px}
+#transposition{display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;margin:12px;font-size:14px}
+#transposition button,#transposition select,#pdf-ready button{padding:8px 10px;font:inherit;border:1px solid #ccc;background:#f0f0f0;border-radius:5px;color:inherit}
+#musical-key{max-width:180px}#pdf-ready{margin:12px;display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap;font-size:14px}
+#pdf-ready a{position:static}#viewer pre{font-size:var(--lyrics-size,18px);line-height:1.6}
+#settings-dialog{width:min(500px,calc(100% - 40px));max-height:85vh;box-sizing:border-box;overflow:auto;font:16px Arial,sans-serif;text-align:left;border:1px solid #aaa;border-radius:8px;padding:20px;color:#111;background:white}
+#settings-dialog::backdrop{background:#0007}#settings-dialog h2{margin-top:15px}.close-settings{float:right;padding:6px 12px}
+#settings-dialog fieldset{margin:18px 0;padding:12px;border:1px solid #ccc}#settings-dialog fieldset>label{display:block;margin:10px 0}
+#settings-dialog select{display:block;margin:10px 0;padding:8px;max-width:100%}#settings-dialog input[type=range]{width:100%}#font-presets{display:flex;gap:5px;flex-wrap:wrap;margin-top:10px}#font-presets button{padding:7px}#settings-dialog p{font-size:13px;line-height:1.5}
+.theme-dark{background:#171717;color:#eee}.theme-dark #song-list li{border-color:#555}.theme-dark #song-list li:hover{background:#333}.theme-dark .song{color:#eee}
+.theme-dark input,.theme-dark select,.theme-dark button{background:#292929!important;color:#eee!important;border-color:#666!important}.theme-dark a{color:#8bc0ff}
+.theme-dark #viewer pre,.theme-dark #settings-dialog,.theme-dark #update-notice{background:#242424;color:#eee;border-color:#666}.theme-dark #status,.theme-dark #offline-status,.theme-dark #version{color:#bbb}
+.dark-scores .score-page,.dark-scores #viewer img{filter:invert(1)}
+.pdf-staging{filter:none!important;color:black!important;background:white!important}

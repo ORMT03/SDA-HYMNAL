@@ -11,7 +11,10 @@ function allowed(url) {
 }
 self.addEventListener('install', event => event.waitUntil((async () => {
  const cache = await caches.open(config.cache);
- await cache.addAll(config.shell.map(absolute));
+ // A worker update may check for new code but must not download a new app shell.
+ // The user's explicit download verifies and commits the replacement release.
+ const installed=await (await caches.open(config.stateCache)).match(stateURL);
+ if(!installed && !await cache.match(absolute('index.html')))await cache.addAll(config.shell.map(absolute));
  await self.skipWaiting();
 })()));
 self.addEventListener('activate', event => event.waitUntil(self.clients.claim()));

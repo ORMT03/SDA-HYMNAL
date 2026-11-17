@@ -5,7 +5,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="SDA Hymnal"><meta name="theme-color" content="#ffffff">
 <link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icons/icon-180.png">
-<title>SDA Hymnal - 15.0 beta 5</title><link rel="stylesheet" href="styles.css">
+<title>SDA Hymnal - 15.0 beta 6</title><link rel="stylesheet" href="styles.css">
 <script defer src="vendor/opensheetmusicdisplay.min.js"></script><script defer src="app.js"></script>
 <script defer src="vendor/fflate.min.js"></script><script defer src="offline-config.js"></script><script defer src="offline.js"></script>
 </head>
@@ -19,11 +19,12 @@
 <div id="search-options"><label><input id="smart-search" type="checkbox"> Smart search (titles &amp; lyrics)</label></div>
 <p id="count" role="status">Loading hymns…</p><ul id="song-list"></ul>
 <div id="offline-area"><button id="save-offline" type="button" disabled>Save Hymnal for Offline Use</button>
+<button id="check-updates" type="button" hidden>Check for updates</button>
 <progress id="offline-progress" aria-label="Offline download progress" max="1" value="0" hidden></progress>
 <p id="offline-status" role="status">Preparing offline support…</p>
 </div>
 <button id="open-settings" class="settings-button" type="button">Settings</button>
-<div id="version">Version 15.0 beta 5</div>
+<div id="version">Version 15.0 beta 6</div>
 <details id="offline-help"><summary>Offline use on iPhone</summary><p>In Safari, tap Share → Add to Home Screen. Open the Home Screen app while online, then tap Save Hymnal for Offline Use. Keep it open until Ready offline appears.</p><p>Saves all available MusicXML scores, English and Spanish lyrics, and the app. Sheet images are online-only. Test in Airplane Mode before you need it. The app checks for updates each time it opens. A notice at the bottom offers new or changed files only. Offline or failed checks leave the saved hymnal working. If iPhone storage is cleared, download again.</p></details>
 <div id="update-notice" hidden role="status"><p id="update-text"></p><button id="install-update" type="button">Download update</button></div>
 <span id="coverage"></span>
@@ -39,7 +40,7 @@
 <button id="view-toggle" type="button" role="menuitem">View Lyrics<span aria-hidden="true">♫</span></button>
 <button id="score-settings" type="button" role="menuitem">Settings<span aria-hidden="true">⚙</span></button>
 </div>
-<div id="transposition" class="hymn-popover" role="menu" aria-label="Transpose key" hidden><select id="musical-key" aria-label="Choose musical key" hidden></select><div id="key-options" role="group" aria-label="Musical keys"></div><div class="key-menu-actions"><button id="transpose-down" role="menuitem" type="button">Down one semitone<span aria-hidden="true">−</span></button><button id="transpose-up" role="menuitem" type="button">Up one semitone<span aria-hidden="true">+</span></button><button id="transpose-reset" role="menuitem" type="button">Original key<span aria-hidden="true">↺</span></button></div><output id="transpose-offset" class="visually-hidden" aria-live="polite">Original key</output></div>
+<div id="transposition" class="hymn-popover" role="menu" aria-label="Transpose key" hidden><select id="musical-key" aria-label="Choose musical key" hidden></select><div id="key-options" role="group" aria-label="Musical keys"></div><output id="transpose-offset" class="visually-hidden" aria-live="polite">Original key</output></div>
 </nav>
 <p id="status" role="status"></p><div id="score-tools" hidden><label for="zoom">Score size</label><input id="zoom" type="range" min="60" max="150" value="90" step="10"><output id="zoom-value" for="zoom">90%</output></div><div id="viewer" aria-busy="false"></div>
 <dialog id="pdf-ready" aria-labelledby="pdf-title"><form method="dialog"><button class="close-settings" aria-label="Close PDF sharing">Close</button></form><h2 id="pdf-title">Score PDF ready</h2><p>Share this score or save a copy.</p><div class="pdf-actions"><button id="share-pdf" type="button">Share PDF</button><a id="download-pdf" download>Download PDF</a></div><p id="pdf-description"></p></dialog>

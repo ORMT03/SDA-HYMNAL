@@ -5,6 +5,7 @@
  const stateURL = absolute('__offline__/installed');
  const blobURL = hash => absolute(`__offline__/files/${hash}`);
  const button = document.getElementById('save-offline');
+ const checkButton = document.getElementById('check-updates');
  const status = document.getElementById('offline-status');
  const progress = document.getElementById('offline-progress');
  const notice = document.getElementById('update-notice');
@@ -69,12 +70,14 @@
  }
  async function summary() {
   installed = await readInstalled();
+  button.hidden=!!installed;checkButton.hidden=!installed;
+  button.textContent='Save Hymnal for Offline Use';
   if (!installed) { message('Save all available MusicXML and English & Spanish lyrics for offline use. Sheet images are excluded.'); return; }
   const missing = await missingFiles(installed);
-  if (missing.length) { message('Some offline files are missing. Tap to repair the download.'); button.textContent = 'Repair offline download'; return; }
+  if (missing.length) { message('Some offline files are missing. Use Download update to repair them.'); notice.hidden=false;updateText.textContent='Your offline download needs repair. Tap Download update to save the missing files.'; return; }
   const scores = installed.files.filter(file => file.path.startsWith('musicxml/')).length;
   message(`Ready offline · ${installed.version} · ${scores} scores and English & Spanish lyrics saved. Images are online-only.`);
-  button.textContent = 'Check for updates';
+  checkButton.textContent = 'Check for updates';
  }
  function showUpdate(release) {
   if (installed?.id === release.id || (!installed && release.version === config.version)) return;
@@ -88,7 +91,7 @@
   try {
    const next = await fetchRelease(); remote = next;
    if (installed?.id !== next.id) showUpdate(next);
-   else if (installed && force) message(`You’re up to date · ${installed.version}. Your hymnal is ready offline.`);
+   else if (installed && force) { if((await missingFiles(installed)).length)await summary();else message(`You’re up to date · ${installed.version}. Your hymnal is ready offline.`); }
   } catch (error) {
    // Background checks never replace the installed release or disturb the reader/offline-ready message.
    if (!background && force && !installed) message('Unable to reach the update server. Reconnect and try again; existing saved files are kept.');
@@ -172,8 +175,8 @@
    location.reload();
   } catch (error) {
    console.error(error);
-   message(installed ? 'Update interrupted. Your previous offline hymnal is still available. Tap Retry download when connected.' : 'Download interrupted. Saved files are kept; tap Retry download when connected.');
-   button.textContent = 'Retry download';
+   message(installed ? 'Update interrupted. Your previous offline hymnal is still available. Tap Download update when connected.' : 'Download interrupted. Saved files are kept; tap Retry download when connected.');
+   if(installed){notice.hidden=false;updateText.textContent='Update interrupted. Tap Download update to retry; your saved hymnal is still available.';}else button.textContent = 'Retry offline download';
   } finally {
    busy = false; button.disabled = false; updateButton.disabled = false;
    if (wakeLock) try { await wakeLock.release(); } catch {}
@@ -208,11 +211,13 @@
    if (!installed) message('Offline setup is unavailable right now. Connect and tap to retry.');
   }
  }
+ // The check action has no path to the downloader, regardless of button labels,
+ // cached state, a known update, a previous failure, or a missing offline file.
+ checkButton.addEventListener('click',() => checkForUpdates(true));
  button.addEventListener('click',async () => {
-  // Checking remains a check even after a newer release has been found.
-  // Only the separate Download update button installs an available update.
-  if (installed && button.textContent === 'Check for updates') { await checkForUpdates(true); return; }
-  await downloadRelease();
+  installed=await readInstalled();
+  if(installed){await checkForUpdates(true);return;}
+  await downloadRelease(); // Explicit first-time Save Hymnal for Offline Use only.
  });
  updateButton.addEventListener('click',downloadRelease);
  window.addEventListener('online',() => { lastCheck=0; void checkForUpdates(true,true); });

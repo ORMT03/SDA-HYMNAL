@@ -76,13 +76,48 @@ self.HymnalPDF = {
    }
    return new File([pdf.output('blob')],`${song.number}-${song.title.replace(/[^\p{L}\p{N} -]/gu,'').trim()}${offset?`-transpose-${offset}`:''}.pdf`,{type:'application/pdf'});
   } finally { if(engine)engine.clear();staging.remove(); }
+ },
+ async createImages({song,image}) {
+  if(!self.jspdf?.jsPDF)throw new Error('PDF export is unavailable.');
+  const names=scoreImageNames(song),images=[];
+  // Load every original page before creating the PDF; never share a partial hymn.
+  for(const name of names) {
+   if(names.length===1&&image?.complete&&image.naturalWidth){images.push(image);continue;}
+   images.push(await new Promise((resolve,reject)=>{const page=new Image();page.onload=()=>resolve(page);page.onerror=()=>reject(new Error('Score image unavailable: '+name));page.src=scoreImageURL(name);}));
+  }
+  const pdf=new jspdf.jsPDF({unit:'pt',format:'letter',orientation:'portrait',compress:true});
+  pdf.setProperties({title:`${song.number} - ${song.title}`,subject:'SDA Hymnal original sheet music',creator:'SDA Hymnal'});
+  for(let index=0;index<images.length;index++) {
+   if(index)pdf.addPage('letter','portrait');
+   const page=images[index],canvas=document.createElement('canvas');
+   const rasterScale=Math.min(1,3000/Math.max(page.naturalWidth,page.naturalHeight));
+   canvas.width=Math.round(page.naturalWidth*rasterScale);canvas.height=Math.round(page.naturalHeight*rasterScale);
+   try {
+    const context=canvas.getContext('2d');if(!context)throw new Error('Image conversion unavailable');
+    context.fillStyle='#fff';context.fillRect(0,0,canvas.width,canvas.height);
+    // drawImage reads the original pixels, independent of on-screen dark filters.
+    context.drawImage(page,0,0,canvas.width,canvas.height);
+    const scale=Math.min(540/canvas.width,720/canvas.height),width=canvas.width*scale,height=canvas.height*scale;
+    pdf.setFillColor(255,255,255);pdf.rect(0,0,612,792,'F');
+    pdf.addImage(canvas.toDataURL('image/jpeg',0.95),'JPEG',(612-width)/2,(792-height)/2,width,height);
+   } finally {canvas.width=0;canvas.height=0;}
+  }
+  return new File([pdf.output('blob')],`${song.number}-original-score.pdf`,{type:'application/pdf'});
  }
 };
+function scoreImageURL(name){return `../src/Hymnal.XF/Resources/Assets/MusicSheets/${encodeURIComponent(name)}`;}
+function scoreImageNames(song){
+ const count=Math.max(1,Number(song.pages)||1);
+ if(count===1)return [song.image];
+ const base=song.image.replace(/\.[^.]+$/,'').replace(/_Full/gi,'');
+ return Array.from({length:count},(_,index)=>base+(index?'_'+index:'')+'.png');
+}
 
 'use strict';
 const $ = id => document.getElementById(({songs:'song-list',language:'language-dropdown'})[id] || id);
 const normalize = text => String(text).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^\w\s]/g, '').trim();
 const pref = { get(key, fallback) { try { return localStorage.getItem(`beta-${key}`) || fallback; } catch { return fallback; } }, set(key, value) { try { localStorage.setItem(`beta-${key}`, value); } catch {} } };
+let scoreImage = null;
 let scorePage = null, scoreContent = null, scoreMetadata = null, transposeOffset = 0, originalFifths = null, originalMinor = false, scoreBusy = false, pdfFile = null, pdfURL = null;
 const settings = { appearance:pref.get('appearance','light-scores'), fontSize:Number(pref.get('lyrics-font-size','18')), smart:pref.get('smart-search','false')==='true' };
 const scoreFields = [['chords','Show chords'],['credits','Show credits / lyricists'],['lyrics','Show lyrics'],['heading','Show title & hymn number'],['copyright','Show copyright footer']];
@@ -171,7 +206,7 @@ function makeScorePage(content, song) {
 }
 function cleanRenderer() {
  if (renderer) { renderer.setOptions({autoResize:false}); renderer.clear(); renderer = null; }
- scorePage = null; scoreContent=null; $('viewer').style.height = ''; $('transposition').hidden=true; $('key-toggle').disabled=true; $('key-toggle').textContent='Key: —'; $('export-pdf').disabled=true;
+ scoreImage=null;originalFifths=null;scorePage = null; scoreContent=null; $('viewer').style.height = ''; $('transposition').hidden=true; $('key-toggle').disabled=true; $('key-toggle').textContent='Key: —'; $('export-pdf').disabled=true;
 }
 async function showView(requested) {
  if (!selected) return;
@@ -216,8 +251,9 @@ function showImage(song, ticket) {
   $('status').textContent = 'Images are online-only. Showing saved lyrics instead.'; applyAppearance();
   const text = document.createElement('pre'); text.textContent = formattedLyrics(song.content) || 'Lyrics are not available for this hymn.'; $('viewer').append(text); return;
  }
- const image = new Image(); image.alt = `${song.number} — ${song.title}, original sheet music`;
- image.src = `../src/Hymnal.XF/Resources/Assets/MusicSheets/${encodeURIComponent(song.image)}`;
+ const image = new Image(); scoreImage=image;image.alt = `${song.number} — ${song.title}, original sheet music`;
+ image.onload=()=>{if(ticket===revision)$('export-pdf').disabled=false;};
+ image.src = scoreImageURL(song.image);
  image.onerror = () => { if (ticket === revision) $('status').textContent = 'The original image could not be loaded. Please try again or open Lyrics only.'; };
  $('viewer').append(image);
 }
@@ -286,8 +322,6 @@ function updateKeys() {
  $('key-toggle').disabled=scoreBusy||!renderer; $('key-toggle').textContent=`Key: ${keyNameAt(transposeOffset)}`;
  const choices=$('key-options');choices.replaceChildren();
  for(const option of picker.options){const button=document.createElement('button');button.type='button';button.setAttribute('role','menuitemradio');button.setAttribute('aria-checked',String(option.selected));button.disabled=scoreBusy;button.textContent=option.textContent.replace(' (original)',' (Default)');button.addEventListener('click',()=>{closeHymnMenus('key-toggle');void transposeScore(option.value);});choices.append(button);}
- $('transpose-down').disabled=scoreBusy||transposeOffset<=-12;$('transpose-up').disabled=scoreBusy||transposeOffset>=12;
- $('transpose-reset').disabled=scoreBusy||transposeOffset===0;
  $('transpose-offset').textContent=transposeOffset===0?'Original key':`${transposeOffset>0?'+':''}${transposeOffset} ${Math.abs(transposeOffset)===1?'semitone':'semitones'}`;
 }
 async function transposeScore(value) {
@@ -326,7 +360,6 @@ function initializeSettings() {
  $('smart-search').addEventListener('change',()=>{settings.smart=$('smart-search').checked;pref.set('smart-search',String(settings.smart));renderList();});
  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',applyAppearance);
  $('musical-key').addEventListener('change',()=>transposeScore($('musical-key').value));
- $('transpose-down').addEventListener('click',()=>transposeScore(transposeOffset-1));$('transpose-up').addEventListener('click',()=>transposeScore(transposeOffset+1));$('transpose-reset').addEventListener('click',()=>transposeScore(0));
  applyAppearance();
 }
 $('share-lyrics').addEventListener('click',async()=>{
@@ -342,21 +375,21 @@ $('share-lyrics').addEventListener('click',async()=>{
  } catch(error){if(error.name!=='AbortError')$('status').textContent='Unable to share lyrics. Please try again.';}
 });
 $('export-pdf').addEventListener('click',async()=>{
- if(!scoreContent||scoreBusy)return;
+ if(scoreBusy||(!scoreContent&&!scoreImage?.naturalWidth))return;
  closeHymnMenus('options-toggle');
  if(pdfFile){await shareScorePDF();return;}
- const ticket=revision,song=selected,content=scoreContent,options=scoreOptions('share'),metadata=scoreMetadata,offset=transposeOffset;
+ const ticket=revision,song=selected,content=scoreContent,image=scoreImage,options=scoreOptions('share'),metadata=scoreMetadata,offset=transposeOffset;
  scoreBusy=true;updateKeys();$('export-pdf').disabled=true;$('status').textContent='Preparing letter-size score PDF…';
  try {
-  const file=await HymnalPDF.create({content,song,offset,options,metadata});
+  const file=content?await HymnalPDF.create({content,song,offset,options,metadata}):await HymnalPDF.createImages({song,image});
   if(ticket!==revision)return;
   if(JSON.stringify(options)!==JSON.stringify(scoreOptions('share'))){$('status').textContent='Sharing settings changed. Prepare the PDF again.';return;}
   clearPDF();pdfFile=file;pdfURL=URL.createObjectURL(file);$('download-pdf').href=pdfURL;$('download-pdf').download=file.name;
   $('share-pdf').hidden=!(navigator.canShare&&navigator.canShare({files:[file]}));
-  $('pdf-description').textContent='8.5 × 11 in · '+(offset===0?'original key':keyNameAt(offset));
+  $('pdf-description').textContent='8.5 × 11 in · '+(!content?'original sheet images':offset===0?'original key':keyNameAt(offset));
   $('status').textContent='';await shareScorePDF();
- } catch(error){console.error(error);if(ticket===revision)$('status').textContent='Unable to create the PDF. Please retry or update the offline download.';}
- finally{scoreBusy=false;updateKeys();$('export-pdf').disabled=!renderer;}
+ } catch(error){console.error(error);if(ticket===revision)$('status').textContent=content?'Unable to create the PDF. Please retry or update the offline download.':'Unable to load every score image for the PDF. Reconnect and try again.';}
+ finally{scoreBusy=false;updateKeys();$('export-pdf').disabled=!renderer&&!scoreImage?.naturalWidth;}
 });
 async function shareScorePDF() {
  if(!pdfFile)return;
@@ -382,7 +415,7 @@ function updateHymnMenu() {
  const lyrics=mode==='lyrics';
  $('share-lyrics').hidden=!lyrics;$('export-pdf').hidden=lyrics;
  $('view-toggle').firstChild.textContent=lyrics?'View Music Score':'View Lyrics';
- $('key-toggle').hidden=lyrics;
+ $('key-toggle').hidden=lyrics||mode==='image';
 }
 function initializeHymnMenus() {
  for(const [toggle,panel]of [['options-toggle','hymn-options'],['key-toggle','transposition']]) {
@@ -398,6 +431,5 @@ function initializeHymnMenus() {
  }
  document.addEventListener('click',event=>{if(!event.target.closest('#hymn-navigation'))closeHymnMenus();});
  document.addEventListener('keydown',event=>{if(event.key==='Escape')closeHymnMenus();});
- for(const id of ['transpose-down','transpose-up','transpose-reset'])$(id).addEventListener('click',()=>closeHymnMenus('key-toggle'));
 }
 initializeSettings();

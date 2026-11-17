@@ -252,6 +252,7 @@ function applyAppearance() {
  document.documentElement.style.setProperty('--lyrics-size',`${settings.fontSize}px`);
  document.querySelector('meta[name="theme-color"]').content=dark?'#171717':'#ffffff';
  $('lyrics-size').value=settings.fontSize;$('lyrics-size-value').textContent=`${settings.fontSize} pt`;
+ for(const button of document.querySelectorAll('[data-size]'))button.setAttribute('aria-pressed',String(Number(button.dataset.size)===settings.fontSize));
 }
 function applyViewingOptions() {
  if(!renderer||!scorePage)return;

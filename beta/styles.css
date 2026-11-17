@@ -247,7 +247,69 @@ a:hover {
 #settings-dialog fieldset{margin:18px 0;padding:12px;border:1px solid #ccc}#settings-dialog fieldset>label{display:block;margin:10px 0}
 #settings-dialog select{display:block;margin:10px 0;padding:8px;max-width:100%}#settings-dialog input[type=range]{width:100%}#font-presets{display:flex;gap:5px;flex-wrap:wrap;margin-top:10px}#font-presets button{padding:7px}#settings-dialog p{font-size:13px;line-height:1.5}
 .theme-dark{background:#171717;color:#eee}.theme-dark #song-list li{border-color:#555}.theme-dark #song-list li:hover{background:#333}.theme-dark .song{color:#eee}
-.theme-dark input,.theme-dark select,.theme-dark button{background:#292929!important;color:#eee!important;border-color:#666!important}.theme-dark a{color:#8bc0ff}
+.theme-dark a{color:#8bc0ff}
 .theme-dark #viewer pre,.theme-dark #settings-dialog,.theme-dark #update-notice{background:#242424;color:#eee;border-color:#666}.theme-dark #status,.theme-dark #offline-status,.theme-dark #version{color:#bbb}
 .dark-scores .score-page,.dark-scores #viewer img{filter:invert(1)}
 .pdf-staging{filter:none!important;color:black!important;background:white!important}
+
+/* Shared control palette: selected, enabled and disabled states stay distinct in both themes. */
+:root{--ui-bg:#fff;--ui-text:#17212d;--ui-muted:#5a6878;--ui-surface:#f5f7fa;--ui-raised:#fff;--ui-border:#ced6e0;--ui-control:#f2f5f9;--ui-hover:#e8eef7;--ui-accent:#1262ba;--ui-selected:#e1eeff;--ui-selected-text:#124b87;--ui-focus:#2e83e6;--ui-shadow:0 1px 2px #11243a0d}
+body.theme-dark{--ui-bg:#11171e;--ui-text:#e8eef6;--ui-muted:#a5b3c4;--ui-surface:#19232e;--ui-raised:#202c39;--ui-border:#37495d;--ui-control:#202d3b;--ui-hover:#2a3c50;--ui-accent:#8abfff;--ui-selected:#163e67;--ui-selected-text:#e2f0ff;--ui-focus:#8abfff;--ui-shadow:0 1px 3px #0004;color-scheme:dark}
+body{background:var(--ui-bg);color:var(--ui-text)}
+button:not(.song),#back-button,#transposition button,#pdf-ready button,.toolbar #lyrics{font:500 14px/1.3 Arial,sans-serif;-webkit-appearance:none;appearance:none;box-sizing:border-box;min-height:42px;padding:10px 14px;border:1px solid var(--ui-border);border-radius:10px;background:var(--ui-control);color:var(--ui-text);box-shadow:var(--ui-shadow);cursor:pointer;transition:background .12s,border-color .12s,box-shadow .12s}
+button:not(.song):hover:not(:disabled){background:var(--ui-hover);border-color:var(--ui-focus)}
+button:not(.song):active:not(:disabled){box-shadow:none;transform:translateY(1px)}
+button:not(.song):disabled{opacity:.45;cursor:default;box-shadow:none;transform:none}
+.toolbar button[aria-pressed=true]{background:var(--ui-selected);border-color:var(--ui-focus);color:var(--ui-selected-text);font-weight:700;box-shadow:inset 0 0 0 1px var(--ui-focus)}
+#save-offline,#install-update,#share-pdf{background:#1262ba;color:#fff;border-color:#1262ba}
+#save-offline:hover:not(:disabled),#install-update:hover:not(:disabled),#share-pdf:hover:not(:disabled){background:#0c519c;color:#fff}
+.theme-dark #save-offline,.theme-dark #install-update,.theme-dark #share-pdf{background:#235e98;border-color:#518bc3;color:#f4f9ff}
+.theme-dark #save-offline:hover:not(:disabled),.theme-dark #install-update:hover:not(:disabled),.theme-dark #share-pdf:hover:not(:disabled){background:#2d70b2}
+select,#transposition select{font:14px/1.3 Arial,sans-serif;min-height:42px;background:var(--ui-control);color:var(--ui-text);border:1px solid var(--ui-border);border-radius:10px;padding:9px 30px 9px 11px;box-shadow:var(--ui-shadow)}
+#search{font:16px/1.4 Arial,sans-serif;color:var(--ui-text);background:var(--ui-raised);border-color:var(--ui-border)}
+#search::placeholder{color:var(--ui-muted)}
+input[type=checkbox],input[type=range]{accent-color:var(--ui-focus)}
+input[type=checkbox]{width:18px;height:18px;vertical-align:middle;margin-right:5px}
+:focus-visible{outline:2px solid var(--ui-focus);outline-offset:3px}
+.toolbar{gap:8px;margin:12px auto;max-width:780px;padding:0 10px}
+.toolbar a,#pdf-ready a{font-size:14px;color:var(--ui-accent);padding:10px 5px}
+#transposition{gap:8px;max-width:780px;margin:14px auto;padding:0 12px}
+#transpose-down,#transpose-up{font-size:20px;min-width:42px;padding:6px 10px}
+#transpose-offset{color:var(--ui-muted);min-width:100px}
+#settings-dialog{background:var(--ui-surface);color:var(--ui-text);border-color:var(--ui-border);border-radius:16px;box-shadow:0 18px 70px #0005;padding:22px}
+#settings-dialog h2{font-size:22px;color:var(--ui-text);margin-bottom:24px}
+#settings-dialog fieldset{background:var(--ui-raised);border-color:var(--ui-border);border-radius:12px;padding:14px;margin:18px 0}
+#settings-dialog legend{font-size:14px;font-weight:700;padding:0 5px}
+#settings-dialog fieldset>label{font-size:14px;line-height:1.5;display:flex;align-items:center;gap:5px;margin:12px 0}
+#settings-dialog p{color:var(--ui-muted)}
+#settings-dialog select{width:100%;max-width:100%}
+#font-presets{gap:7px}#font-presets button{min-width:42px}
+#font-presets button[aria-pressed=true]{background:var(--ui-selected);color:var(--ui-selected-text);border-color:var(--ui-focus)}
+#reset-preferences{color:var(--ui-muted);background:transparent}
+#update-notice{background:var(--ui-surface);color:var(--ui-text);border-color:var(--ui-border)}
+#status,#offline-status,#version,#count,.theme-dark #status,.theme-dark #offline-status,.theme-dark #version{color:var(--ui-muted)}
+.theme-dark #song-list li{border-color:var(--ui-border);background:var(--ui-surface)}
+.theme-dark #song-list li:hover{background:var(--ui-hover)}
+.theme-dark #viewer pre{background:var(--ui-surface);border-color:var(--ui-border);color:var(--ui-text)}
+@media(max-width:420px){.toolbar button{flex:0 1 auto}#settings-dialog{width:calc(100% - 24px);padding:18px}.toolbar{gap:7px}}
+
+#language-dropdown,#dropdown-menu{background:var(--ui-control);color:var(--ui-text);border-color:var(--ui-border);border-radius:10px;box-shadow:var(--ui-shadow)}
+.theme-dark #settings-dialog,.theme-dark #update-notice{background:var(--ui-surface);color:var(--ui-text);border-color:var(--ui-border)}
+body.theme-dark{background:var(--ui-bg);color:var(--ui-text)}
+#search{box-sizing:border-box;width:calc(100% - 32px);max-width:522px;margin:20px 16px}
+@media(max-width:420px){
+ #language-dropdown{max-width:44%}#dropdown-menu{max-width:52%}
+ #transposition{display:grid;grid-template-columns:auto minmax(100px,1fr) 42px 42px;box-sizing:border-box;max-width:400px}
+ #transposition>label{grid-column:1;grid-row:1}
+ #musical-key{grid-column:2;grid-row:1;width:100%;max-width:none}
+ #transpose-down{grid-column:3;grid-row:1}#transpose-up{grid-column:4;grid-row:1}
+ #transpose-offset{grid-column:1 / 3;grid-row:2;text-align:left;padding-left:5px}
+ #transpose-reset{grid-column:3 / 5;grid-row:2;min-width:0;padding:8px 5px}
+}
+@media(max-width:420px){#transposition #transpose-reset{padding:8px 6px;font-size:13px;white-space:nowrap;min-height:42px}}
+
+/* Engraved pages are opaque paper, independent of the surrounding app theme. */
+#viewer .score-page,#viewer .score-notation{background:#fff;color:#000;color-scheme:light}
+#viewer:has(.score-page),#viewer:has(>img){background:#fff;color-scheme:light}
+#viewer img{background:#fff;color-scheme:light}
+body.dark-scores #viewer:has(.score-page),body.dark-scores #viewer:has(>img){background:#000;color-scheme:dark}

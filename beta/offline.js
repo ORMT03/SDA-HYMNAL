@@ -209,8 +209,9 @@
   }
  }
  button.addEventListener('click',async () => {
-  if (installed && !remote && button.textContent === 'Check for updates') { await checkForUpdates(true); return; }
-  if (installed && remote?.id === installed.id && !(await missingFiles(installed)).length) { await checkForUpdates(true); return; }
+  // Checking remains a check even after a newer release has been found.
+  // Only the separate Download update button installs an available update.
+  if (installed && button.textContent === 'Check for updates') { await checkForUpdates(true); return; }
   await downloadRelease();
  });
  updateButton.addEventListener('click',downloadRelease);

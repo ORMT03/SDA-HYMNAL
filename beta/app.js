@@ -27,7 +27,7 @@ self.HymnalPDF = {
  async create({content,song,offset,options,metadata}) {
   if (!self.jspdf?.jsPDF) throw new Error('PDF export is unavailable. Update the offline download.');
   const staging=document.createElement('div');
-  staging.className='pdf-staging';staging.style.cssText='position:absolute;left:-20000px;top:0;width:1600px;background:white;color:black;';
+  staging.className='pdf-staging';staging.style.cssText='position:absolute;left:-20000px;top:0;width:1600px;background:white;color:black;color-scheme:light;filter:none;';
   document.body.append(staging);let engine;
   try {
    engine=new opensheetmusicdisplay.OpenSheetMusicDisplay(staging,{
@@ -47,7 +47,10 @@ self.HymnalPDF = {
    for(let index=0;index<pages.length;index++) {
     if(index)pdf.addPage('letter','portrait');
     const svg=pages[index];const width=parseFloat(svg.getAttribute('width')),height=parseFloat(svg.getAttribute('height'));
+    // Export always uses light paper, even when the reader uses dark scores.
+    svg.style.colorScheme='light';svg.style.color='#000';svg.style.background='#fff';svg.style.filter='none';
     svg.setAttribute('viewBox',`0 0 ${width} ${height}`);
+    pdf.setFillColor(255,255,255);pdf.rect(0,0,612,792,'F');
     // OSMD paginates at Letter proportions with header/footer space reserved above.
     await pdf.svg(svg,{x:0,y:0,width:612,height:792});
     pdf.setTextColor(0,0,0);pdf.setFont('times','bold');
@@ -116,8 +119,7 @@ function renderList() {
 function openSong(song, updateURL = true) {
  selected = song; mode = 'xml'; transposeOffset=0; clearPDF(); $('catalog').hidden = true; $('hymn').hidden = false; applyAppearance(); window.scrollTo(0,0);
  $('hymn-title').textContent = `${song.number} - ${song.title}`; $('hymn-meta').textContent = `${song.language === 'english' ? 'English' : 'Spanish'} hymnal / ${song.number}`;
- $('xml').disabled = !scorePath(song); $('download').hidden = !scorePath(song);
- if (scorePath(song)) $('download').href = scorePath(song);
+ closeHymnMenus();
  if (updateURL) history.pushState(null, '', `#${song.language}/${encodeURIComponent(song.number)}`);
  renderList(); showView($('dropdown-menu').value === 'lyrics' ? 'lyrics' : 'xml');
 }
@@ -125,7 +127,7 @@ function openSong(song, updateURL = true) {
 const SHEET_WIDTH = 1100;
 function fitScorePage() {
  if (!scorePage) return;
- const available = $('viewer').clientWidth - 20;
+ const available = $('viewer').clientWidth - 28;
  const scale = Math.min(1, Math.max(0.1, available / SHEET_WIDTH));
  scorePage.style.transform = `scale(${scale})`;
  $('viewer').style.height = `${Math.ceil(scorePage.offsetHeight * scale)}px`;
@@ -169,18 +171,18 @@ function makeScorePage(content, song) {
 }
 function cleanRenderer() {
  if (renderer) { renderer.setOptions({autoResize:false}); renderer.clear(); renderer = null; }
- scorePage = null; scoreContent=null; $('viewer').style.height = ''; $('transposition').hidden=true; $('export-pdf').disabled=true;
+ scorePage = null; scoreContent=null; $('viewer').style.height = ''; $('transposition').hidden=true; $('key-toggle').disabled=true; $('key-toggle').textContent='Key: —'; $('export-pdf').disabled=true;
 }
 async function showView(requested) {
  if (!selected) return;
  clearPDF();
  const song = selected, ticket = ++revision, xml = scorePath(song);
- mode = requested; applyAppearance(); cleanRenderer(); $('viewer').replaceChildren(); $('viewer').setAttribute('aria-busy', 'false');
+ mode = requested; closeHymnMenus(); applyAppearance(); cleanRenderer(); $('viewer').replaceChildren(); $('viewer').setAttribute('aria-busy', 'false');
  $('score-tools').hidden = true;
- for (const id of ['xml','image','lyrics']) $(id).setAttribute('aria-pressed', String(id === requested));
- if (requested === 'lyrics') { $('status').textContent = 'Hymn lyrics'; const text = document.createElement('pre'); text.textContent = song.content || 'Lyrics are not available for this hymn.'; $('viewer').append(text); return; }
+ updateHymnMenu();
+ if (requested === 'lyrics') { $('status').textContent = ''; const heading=document.createElement('h2'); heading.className='lyrics-heading'; heading.textContent=`${song.number} - ${song.title}`; const text = document.createElement('pre'); text.textContent = formattedLyrics(song.content) || 'Lyrics are not available for this hymn.'; $('viewer').append(heading,text); return; }
  if (requested === 'image' || !xml) {
-  mode = 'image'; $('image').setAttribute('aria-pressed','true'); $('xml').setAttribute('aria-pressed','false');
+  mode = 'image'; updateHymnMenu();
   $('status').textContent = requested === 'image' ? 'Original sheet image' : 'MusicXML is not available for this hymn yet. Showing the original sheet image.';
   showImage(song, ticket); return;
  }
@@ -198,28 +200,28 @@ async function showView(requested) {
   instance.TransposeCalculator=new opensheetmusicdisplay.IntervalTransposeCalculator();
   renderer = instance; await instance.load(content);
   if (ticket !== revision) return;
-  instance.Zoom = 0.7; instance.Sheet.Transpose=transposeOffset; applyViewingOptions(); updateKeys(); $('export-pdf').disabled=false; $('transposition').hidden=originalFifths===null;
-  $('score-tools').hidden = true; $('status').textContent = 'MusicXML score · Use “Load image” to see the original sheet.';
+  instance.Zoom = 0.7; instance.Sheet.Transpose=transposeOffset; applyViewingOptions(); updateKeys(); $('export-pdf').disabled=false; $('key-toggle').disabled=originalFifths===null;
+  $('score-tools').hidden = true; $('status').textContent = '';
  } catch (error) {
   if (ticket !== revision) return;
   console.error(error); cleanRenderer(); $('viewer').replaceChildren(); mode = 'image';
-  $('xml').setAttribute('aria-pressed','false'); $('image').setAttribute('aria-pressed','true');
-  $('status').textContent = 'The MusicXML score could not be displayed. Showing the original image. You can retry with the MusicXML button.';
+  updateHymnMenu();
+  $('status').textContent = 'The MusicXML score could not be displayed. Showing the original image. You can switch to lyrics from the menu.';
   showImage(song, ticket);
  } finally { if (ticket === revision) $('viewer').setAttribute('aria-busy','false'); }
 }
 function showImage(song, ticket) {
  if (!navigator.onLine) {
-  mode = 'lyrics'; $('image').setAttribute('aria-pressed','false'); $('xml').setAttribute('aria-pressed','false'); $('lyrics').setAttribute('aria-pressed','true');
+  mode = 'lyrics'; updateHymnMenu();
   $('status').textContent = 'Images are online-only. Showing saved lyrics instead.'; applyAppearance();
-  const text = document.createElement('pre'); text.textContent = song.content || 'Lyrics are not available for this hymn.'; $('viewer').append(text); return;
+  const text = document.createElement('pre'); text.textContent = formattedLyrics(song.content) || 'Lyrics are not available for this hymn.'; $('viewer').append(text); return;
  }
  const image = new Image(); image.alt = `${song.number} — ${song.title}, original sheet music`;
  image.src = `../src/Hymnal.XF/Resources/Assets/MusicSheets/${encodeURIComponent(song.image)}`;
  image.onerror = () => { if (ticket === revision) $('status').textContent = 'The original image could not be loaded. Please try again or open Lyrics only.'; };
  $('viewer').append(image);
 }
-function fromHash() { const [language, number] = location.hash.slice(1).split('/'); const song = songs.find(s => s.language === language && s.number === (number || '')); if (song) openSong(song, false); else { ++revision; cleanRenderer(); selected = null; $('hymn').hidden = true; $('catalog').hidden = false; applyAppearance(); renderList(); } }
+function fromHash() { const [language, number] = location.hash.slice(1).split('/'); const song = songs.find(s => s.language === language && s.number === (number || '')); if (song) openSong(song, false); else { ++revision; closeHymnMenus(); cleanRenderer(); selected = null; $('hymn').hidden = true; $('catalog').hidden = false; applyAppearance(); renderList(); } }
 $('language').value = pref.get('language','english');
 if (!['english','spanish','both'].includes($('language').value)) $('language').value = 'english';
 $('search').addEventListener('input', renderList);
@@ -227,7 +229,8 @@ $('language').addEventListener('change', () => { pref.set('language',$('language
 $('dropdown-menu').value = pref.get('display','music-score');
 $('dropdown-menu').addEventListener('change', () => pref.set('display',$('dropdown-menu').value));
 $('back-button').addEventListener('click', () => { history.pushState(null,'',location.pathname); fromHash(); });
-for (const id of ['xml','image','lyrics']) $(id).addEventListener('click', () => showView(id));
+$('view-toggle').addEventListener('click',()=>showView(mode==='lyrics'?'xml':'lyrics'));
+initializeHymnMenus();
 let resizeTimer; window.addEventListener('resize', () => { clearTimeout(resizeTimer); resizeTimer = setTimeout(fitScorePage, 100); });
 window.addEventListener('popstate',fromHash);
 (async () => {
@@ -241,7 +244,7 @@ window.addEventListener('popstate',fromHash);
 
 function clearPDF() {
  if(pdfURL)URL.revokeObjectURL(pdfURL);
- pdfURL=null;pdfFile=null;$('pdf-ready').hidden=true;
+ pdfURL=null;pdfFile=null;if($('pdf-ready').open)$('pdf-ready').close();
 }
 function applyAppearance() {
  const darkSystem=window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -272,7 +275,7 @@ function keyNameAt(value) {
 }
 function updateKeys() {
  const picker=$('musical-key');picker.replaceChildren();
- if(originalFifths===null)return;
+ if(originalFifths===null){$('key-toggle').disabled=true;return;}
  const mod=value=>((value%12)+12)%12,tonic=mod(originalFifths*7+(originalMinor?9:0));
  for(let note=0;note<12;note++) {
   const offsets=[];for(let value=-12;value<=12;value++)if(mod(tonic+value)===note)offsets.push(value);
@@ -280,6 +283,9 @@ function updateKeys() {
   const value=offsets[0];picker.add(new Option(keyNameAt(value)+(value===0?' (original)':''),String(value),false,value===transposeOffset));
  }
  picker.disabled=scoreBusy;
+ $('key-toggle').disabled=scoreBusy||!renderer; $('key-toggle').textContent=`Key: ${keyNameAt(transposeOffset)}`;
+ const choices=$('key-options');choices.replaceChildren();
+ for(const option of picker.options){const button=document.createElement('button');button.type='button';button.setAttribute('role','menuitemradio');button.setAttribute('aria-checked',String(option.selected));button.disabled=scoreBusy;button.textContent=option.textContent.replace(' (original)',' (Default)');button.addEventListener('click',()=>{closeHymnMenus('key-toggle');void transposeScore(option.value);});choices.append(button);}
  $('transpose-down').disabled=scoreBusy||transposeOffset<=-12;$('transpose-up').disabled=scoreBusy||transposeOffset>=12;
  $('transpose-reset').disabled=scoreBusy||transposeOffset===0;
  $('transpose-offset').textContent=transposeOffset===0?'Original key':`${transposeOffset>0?'+':''}${transposeOffset} ${Math.abs(transposeOffset)===1?'semitone':'semitones'}`;
@@ -289,7 +295,7 @@ async function transposeScore(value) {
  const previous=transposeOffset;scoreBusy=true;updateKeys();
  try {
   renderer.Sheet.Transpose=value;renderer.updateGraphic();renderScore();transposeOffset=value;clearPDF();
-  $('status').textContent=`MusicXML score · Key: ${keyNameAt(value)}`;
+  $('status').textContent='';
  } catch(error) {
   console.error(error);renderer.Sheet.Transpose=previous;renderer.updateGraphic();renderScore();
   $('status').textContent='Unable to transpose. The previous key has been kept.';
@@ -307,7 +313,7 @@ function initializeSettings() {
   label.append(input,document.createTextNode(' '+title));$(scope==='view'?'view-preferences':'share-preferences').append(label);
   input.addEventListener('change',()=>{pref.set(`score-${scope}-${field}`,String(input.checked));if(scope==='view')applyViewingOptions();else clearPDF();});
  }
- const openSettings=()=>{$('settings-dialog').showModal();};
+ const openSettings=()=>{closeHymnMenus();$('settings-dialog').showModal();};
  $('open-settings').addEventListener('click',openSettings);$('score-settings').addEventListener('click',openSettings);
  $('appearance').addEventListener('change',()=>{settings.appearance=$('appearance').value;pref.set('appearance',settings.appearance);applyAppearance();});
  $('lyrics-size').addEventListener('input',()=>setLyricsSize($('lyrics-size').value));
@@ -325,7 +331,8 @@ function initializeSettings() {
 }
 $('share-lyrics').addEventListener('click',async()=>{
  if(!selected)return;
- const text=`${selected.number} - ${selected.title}\n\n${selected.content||''}`;
+ closeHymnMenus('options-toggle');
+ const text=lyricsShareText(selected);
  try {
   if(navigator.share)await navigator.share({title:`${selected.number} - ${selected.title}`,text});
   else {
@@ -336,22 +343,61 @@ $('share-lyrics').addEventListener('click',async()=>{
 });
 $('export-pdf').addEventListener('click',async()=>{
  if(!scoreContent||scoreBusy)return;
+ closeHymnMenus('options-toggle');
+ if(pdfFile){await shareScorePDF();return;}
  const ticket=revision,song=selected,content=scoreContent,options=scoreOptions('share'),metadata=scoreMetadata,offset=transposeOffset;
  scoreBusy=true;updateKeys();$('export-pdf').disabled=true;$('status').textContent='Preparing letter-size score PDF…';
  try {
   const file=await HymnalPDF.create({content,song,offset,options,metadata});
   if(ticket!==revision)return;
   if(JSON.stringify(options)!==JSON.stringify(scoreOptions('share'))){$('status').textContent='Sharing settings changed. Prepare the PDF again.';return;}
-  clearPDF();pdfFile=file;pdfURL=URL.createObjectURL(file);$('download-pdf').href=pdfURL;$('download-pdf').download=file.name;$('pdf-ready').hidden=false;
+  clearPDF();pdfFile=file;pdfURL=URL.createObjectURL(file);$('download-pdf').href=pdfURL;$('download-pdf').download=file.name;
   $('share-pdf').hidden=!(navigator.canShare&&navigator.canShare({files:[file]}));
   $('pdf-description').textContent='8.5 × 11 in · '+(offset===0?'original key':keyNameAt(offset));
-  $('status').textContent='PDF ready. Tap Share PDF or Download PDF.';
+  $('status').textContent='';await shareScorePDF();
  } catch(error){console.error(error);if(ticket===revision)$('status').textContent='Unable to create the PDF. Please retry or update the offline download.';}
  finally{scoreBusy=false;updateKeys();$('export-pdf').disabled=!renderer;}
 });
-$('share-pdf').addEventListener('click',async()=>{
+async function shareScorePDF() {
  if(!pdfFile)return;
- try{await navigator.share({files:[pdfFile],title:`${selected.number} - ${selected.title}`});}
- catch(error){if(error.name!=='AbortError')$('status').textContent='Unable to share the PDF. Use Download PDF instead.';}
-});
+ if(navigator.canShare?.({files:[pdfFile]})&&navigator.share) {
+  try {await navigator.share({files:[pdfFile],title:`${selected.number} - ${selected.title}`});if($('pdf-ready').open)$('pdf-ready').close();return;}
+  catch(error){if(error.name==='AbortError')return;}
+ }
+ // Safari may require a second tap after the asynchronous PDF preparation.
+ if(!$('pdf-ready').open)$('pdf-ready').showModal();
+}
+$('share-pdf').addEventListener('click',shareScorePDF);
+function formattedLyrics(content) {
+ let text=content||'';
+ for(let verse=1;verse<=10;verse++)text=text.split(`${verse}.`).join(`Verse ${verse}`);
+ return text.replace(/CHORUS:/gi,'Chorus');
+}
+function lyricsShareText(song){return `${song.number} - ${song.title}\n\n${formattedLyrics(song.content)}`;}
+function closeHymnMenus(focusId) {
+ for(const [toggle,panel]of [['options-toggle','hymn-options'],['key-toggle','transposition']]){$(panel).hidden=true;$(toggle).setAttribute('aria-expanded','false');}
+ if(focusId)$(focusId).focus();
+}
+function updateHymnMenu() {
+ const lyrics=mode==='lyrics';
+ $('share-lyrics').hidden=!lyrics;$('export-pdf').hidden=lyrics;
+ $('view-toggle').firstChild.textContent=lyrics?'View Music Score':'View Lyrics';
+ $('key-toggle').hidden=lyrics;
+}
+function initializeHymnMenus() {
+ for(const [toggle,panel]of [['options-toggle','hymn-options'],['key-toggle','transposition']]) {
+  $(toggle).addEventListener('click',()=>{const open=$(panel).hidden;closeHymnMenus();if(open){$(panel).hidden=false;$(toggle).setAttribute('aria-expanded','true');}});
+  $(toggle).addEventListener('keydown',event=>{if(event.key==='ArrowDown'){event.preventDefault();closeHymnMenus();$(panel).hidden=false;$(toggle).setAttribute('aria-expanded','true');$(panel).querySelector('button:not(:disabled)')?.focus();}});
+  $(panel).addEventListener('keydown',event=>{
+   if(event.key==='Escape'){event.preventDefault();closeHymnMenus(toggle);return;}
+   const buttons=[...$(panel).querySelectorAll('button:not(:disabled):not([hidden])')],index=buttons.indexOf(document.activeElement);
+   let next;if(event.key==='ArrowDown')next=(index+1)%buttons.length;else if(event.key==='ArrowUp')next=(index-1+buttons.length)%buttons.length;else if(event.key==='Home')next=0;else if(event.key==='End')next=buttons.length-1;
+   if(next!==undefined){event.preventDefault();buttons[next]?.focus();}
+   if(event.key==='Tab')closeHymnMenus();
+  });
+ }
+ document.addEventListener('click',event=>{if(!event.target.closest('#hymn-navigation'))closeHymnMenus();});
+ document.addEventListener('keydown',event=>{if(event.key==='Escape')closeHymnMenus();});
+ for(const id of ['transpose-down','transpose-up','transpose-reset'])$(id).addEventListener('click',()=>closeHymnMenus('key-toggle'));
+}
 initializeSettings();

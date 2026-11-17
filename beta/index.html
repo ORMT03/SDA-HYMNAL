@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="SDA Hymnal"><meta name="theme-color" content="#ffffff">
 <link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icons/icon-180.png">
-<title>SDA Hymnal - 15.0 beta 4</title><link rel="stylesheet" href="styles.css">
+<title>SDA Hymnal - 15.0 beta 5</title><link rel="stylesheet" href="styles.css">
 <script defer src="vendor/opensheetmusicdisplay.min.js"></script><script defer src="app.js"></script>
 <script defer src="vendor/fflate.min.js"></script><script defer src="offline-config.js"></script><script defer src="offline.js"></script>
 </head>
@@ -23,17 +23,26 @@
 <p id="offline-status" role="status">Preparing offline support…</p>
 </div>
 <button id="open-settings" class="settings-button" type="button">Settings</button>
-<div id="version">Version 15.0 beta 4</div>
+<div id="version">Version 15.0 beta 5</div>
 <details id="offline-help"><summary>Offline use on iPhone</summary><p>In Safari, tap Share → Add to Home Screen. Open the Home Screen app while online, then tap Save Hymnal for Offline Use. Keep it open until Ready offline appears.</p><p>Saves all available MusicXML scores, English and Spanish lyrics, and the app. Sheet images are online-only. Test in Airplane Mode before you need it. The app checks for updates each time it opens. A notice at the bottom offers new or changed files only. Offline or failed checks leave the saved hymnal working. If iPhone storage is cleared, download again.</p></details>
 <div id="update-notice" hidden role="status"><p id="update-text"></p><button id="install-update" type="button">Download update</button></div>
 <span id="coverage"></span>
 </div>
 <section id="hymn" hidden aria-label="Hymn viewer">
-<button id="back-button" type="button">Back</button><h1 id="hymn-title"></h1><p id="hymn-meta"></p>
-<div class="toolbar"><button id="xml" type="button">MusicXML</button><button id="image" type="button">Load image</button><button id="lyrics" type="button">Lyrics Only</button><a id="download" download>Download score</a><button id="share-lyrics" type="button">Share lyrics</button><button id="export-pdf" type="button" disabled>Prepare score PDF</button><button id="score-settings" type="button">Settings</button></div>
-<div id="transposition" hidden aria-label="Transpose score"><label for="musical-key">Key</label><select id="musical-key" aria-label="Choose musical key"></select><button id="transpose-down" type="button" aria-label="Down one semitone">−</button><output id="transpose-offset" aria-live="polite">Original key</output><button id="transpose-up" type="button" aria-label="Up one semitone">+</button><button id="transpose-reset" type="button">Original key</button></div>
-<div id="pdf-ready" hidden><button id="share-pdf" type="button">Share PDF</button><a id="download-pdf" download>Download PDF</a><span id="pdf-description"></span></div>
+<nav id="hymn-navigation" aria-label="Hymn navigation">
+<button id="back-button" type="button" aria-label="Back to hymns"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5-7 7 7 7"/></svg></button>
+<h1 id="hymn-title"></h1><p id="hymn-meta" hidden></p>
+<div id="hymn-actions"><button id="key-toggle" type="button" aria-expanded="false" aria-controls="transposition" aria-haspopup="menu" disabled>Key: —</button><button id="options-toggle" type="button" aria-label="Hymn options" aria-expanded="false" aria-controls="hymn-options" aria-haspopup="menu"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle class="dot" cx="8" cy="12" r=".9"/><circle class="dot" cx="12" cy="12" r=".9"/><circle class="dot" cx="16" cy="12" r=".9"/></svg></button></div>
+<div id="hymn-options" class="hymn-popover" role="menu" aria-label="Hymn options" hidden>
+<button id="export-pdf" type="button" role="menuitem" disabled>Share score PDF<span aria-hidden="true">↥</span></button>
+<button id="share-lyrics" type="button" role="menuitem" hidden>Share Lyrics<span aria-hidden="true">↥</span></button>
+<button id="view-toggle" type="button" role="menuitem">View Lyrics<span aria-hidden="true">♫</span></button>
+<button id="score-settings" type="button" role="menuitem">Settings<span aria-hidden="true">⚙</span></button>
+</div>
+<div id="transposition" class="hymn-popover" role="menu" aria-label="Transpose key" hidden><select id="musical-key" aria-label="Choose musical key" hidden></select><div id="key-options" role="group" aria-label="Musical keys"></div><div class="key-menu-actions"><button id="transpose-down" role="menuitem" type="button">Down one semitone<span aria-hidden="true">−</span></button><button id="transpose-up" role="menuitem" type="button">Up one semitone<span aria-hidden="true">+</span></button><button id="transpose-reset" role="menuitem" type="button">Original key<span aria-hidden="true">↺</span></button></div><output id="transpose-offset" class="visually-hidden" aria-live="polite">Original key</output></div>
+</nav>
 <p id="status" role="status"></p><div id="score-tools" hidden><label for="zoom">Score size</label><input id="zoom" type="range" min="60" max="150" value="90" step="10"><output id="zoom-value" for="zoom">90%</output></div><div id="viewer" aria-busy="false"></div>
+<dialog id="pdf-ready" aria-labelledby="pdf-title"><form method="dialog"><button class="close-settings" aria-label="Close PDF sharing">Close</button></form><h2 id="pdf-title">Score PDF ready</h2><p>Share this score or save a copy.</p><div class="pdf-actions"><button id="share-pdf" type="button">Share PDF</button><a id="download-pdf" download>Download PDF</a></div><p id="pdf-description"></p></dialog>
 </section>
 <dialog id="settings-dialog" aria-labelledby="settings-title"><form method="dialog"><button class="close-settings" aria-label="Close settings">Close</button></form><h2 id="settings-title">Settings</h2>
 <label for="appearance">Appearance</label><select id="appearance"><option value="light-scores">Follow system, keep scores light</option><option value="system">Follow system</option><option value="light">Always light</option><option value="dark">Always dark</option></select>

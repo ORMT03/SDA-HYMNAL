@@ -250,7 +250,7 @@ a:hover {
 .theme-dark a{color:#8bc0ff}
 .theme-dark #viewer pre,.theme-dark #settings-dialog,.theme-dark #update-notice{background:#242424;color:#eee;border-color:#666}.theme-dark #status,.theme-dark #offline-status,.theme-dark #version{color:#bbb}
 .dark-scores .score-page,.dark-scores #viewer img{filter:invert(1)}
-.pdf-staging{filter:none!important;color:black!important;background:white!important}
+.pdf-staging{filter:none!important;color:black!important;background:white!important;color-scheme:light!important}
 
 /* Shared control palette: selected, enabled and disabled states stay distinct in both themes. */
 :root{--ui-bg:#fff;--ui-text:#17212d;--ui-muted:#5a6878;--ui-surface:#f5f7fa;--ui-raised:#fff;--ui-border:#ced6e0;--ui-control:#f2f5f9;--ui-hover:#e8eef7;--ui-accent:#1262ba;--ui-selected:#e1eeff;--ui-selected-text:#124b87;--ui-focus:#2e83e6;--ui-shadow:0 1px 2px #11243a0d}
@@ -313,3 +313,41 @@ body.theme-dark{background:var(--ui-bg);color:var(--ui-text)}
 #viewer:has(.score-page),#viewer:has(>img){background:#fff;color-scheme:light}
 #viewer img{background:#fff;color-scheme:light}
 body.dark-scores #viewer:has(.score-page),body.dark-scores #viewer:has(>img){background:#000;color-scheme:dark}
+
+/* Compact hymn navigation follows the iPhone app. */
+#hymn{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100dvh;text-align:left}
+#hymn-navigation{position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:9px;box-sizing:border-box;width:100%;padding:calc(env(safe-area-inset-top,0px) + 10px) max(14px,env(safe-area-inset-right,0px)) 10px max(14px,env(safe-area-inset-left,0px));background:var(--ui-bg)}
+#hymn #back-button{position:static;flex:0 0 36px;display:grid;place-items:center;width:36px;height:36px;min-height:36px;padding:7px;border-radius:50%;border:1px solid #0000000a;background:#fafafa;box-shadow:0 1px 5px #00000008;color:var(--ui-text);z-index:auto}
+#back-button svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+#hymn #hymn-title{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin:0;font:600 15px/1.3 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+#hymn-actions{display:flex;align-items:center;flex:none;gap:0;border-radius:24px;padding:2px;background:#fafafa;border:1px solid #0000000b;box-shadow:0 1px 6px #00000008}
+#hymn-actions button{background:transparent;border:0;box-shadow:none;border-radius:22px;min-height:34px;padding:7px 10px;font:500 15px/1.2 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;white-space:nowrap}
+#hymn-actions #options-toggle{width:35px;padding:6px;display:grid;place-items:center}
+#options-toggle svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6}#options-toggle svg .dot{fill:currentColor;stroke:none}
+#hymn-actions button:hover:not(:disabled),#hymn #back-button:hover{background:var(--ui-hover);border-color:transparent}
+#hymn-actions button[aria-expanded=true]{background:var(--ui-hover)}
+#hymn #viewer{max-width:1100px;padding:0 14px;margin:20px auto 0;min-height:0}
+#hymn #status{margin:0;padding:0 18px;font:14px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;text-align:center}
+#hymn #status:empty{display:none}
+#hymn #status:not(:empty){margin:12px auto}
+#hymn #score-tools{display:none}
+#hymn .hymn-popover{position:absolute;right:max(14px,env(safe-area-inset-right,0px));top:calc(100% + 2px);width:min(270px,calc(100vw - 28px));max-width:none;box-sizing:border-box;max-height:min(560px,calc(100dvh - 110px - env(safe-area-inset-top,0px)));overflow-y:auto;overscroll-behavior:contain;display:block;margin:0;padding:6px 0;border:1px solid #0000000b;border-radius:22px;background:color-mix(in srgb,var(--ui-bg) 94%,transparent);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);color:var(--ui-text);box-shadow:0 8px 35px #0002;z-index:120;text-align:left;scrollbar-width:thin}
+#hymn .hymn-popover button{position:relative;display:flex;align-items:center;justify-content:space-between;width:100%;min-height:44px;padding:11px 18px;border:0;border-radius:0;background:transparent;box-shadow:none;color:inherit;font:400 16px/1.35 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;text-align:left}
+#hymn .hymn-popover button:hover:not(:disabled),#hymn .hymn-popover button:focus-visible{background:var(--ui-hover);outline-offset:-3px}
+#hymn .hymn-popover button>span{font-size:21px;margin-left:16px;line-height:1}
+#hymn #transposition{width:min(250px,calc(100vw - 28px))}
+#key-options button{padding-left:42px!important}
+#key-options button[aria-checked=true]::before{position:absolute;left:18px;content:'✓';font-size:16px}
+#hymn .key-menu-actions{border-top:1px solid var(--ui-border);margin-top:5px;padding-top:5px}
+#hymn #transpose-down,#hymn #transpose-up,#hymn #transpose-reset{font-size:15px;white-space:normal}
+#hymn-options #score-settings{border-top:1px solid var(--ui-border);margin-top:4px}
+#hymn .lyrics-heading{font:400 26px/1.25 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;text-align:center;margin:4px 4px 26px}
+#hymn #viewer pre{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:transparent;color:var(--ui-text);border:0;box-shadow:none;padding:0 8px 30px;max-width:100%;margin:0;text-align:center;font-size:var(--lyrics-size,18px);line-height:1.5}
+body.theme-dark #hymn-actions,body.theme-dark #hymn #back-button{background:#222;border-color:#ffffff14;color:var(--ui-text)}
+body.theme-dark #hymn .hymn-popover{border-color:#ffffff14;box-shadow:0 8px 35px #0007}
+#pdf-ready:not([open]){display:none}
+#pdf-ready[open]{display:block;width:min(430px,calc(100% - 32px));box-sizing:border-box;background:var(--ui-surface);color:var(--ui-text);border:1px solid var(--ui-border);border-radius:22px;padding:22px;box-shadow:0 18px 70px #0005;text-align:left;font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+#pdf-ready::backdrop{background:#0005}#pdf-ready h2{font-size:21px;margin:42px 0 12px}#pdf-ready p{font-size:14px;color:var(--ui-muted)}
+#pdf-ready .pdf-actions{display:flex;align-items:center;gap:16px}#pdf-ready a{position:static;color:var(--ui-accent)}
+.visually-hidden{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(min-width:700px){#hymn-navigation{padding-left:24px;padding-right:24px}#hymn #hymn-title{font-size:17px}#hymn-actions button{font-size:16px}}

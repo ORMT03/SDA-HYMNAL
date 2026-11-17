@@ -332,3 +332,7 @@ ASALocalRun/
 
 # MacOS cache
 .DS_Store
+
+# Include the website offline release ZIPs and manifests.
+!/beta/releases/
+!/beta/releases/**

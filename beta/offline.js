@@ -12,8 +12,9 @@
  const updateButton = document.getElementById('install-update');
  const updateText = document.getElementById('update-text');
  let registration, installed, remote, busy = false, checking = false;
- let lastCheck = 0;
- const message = text => { status.textContent = text; };
+ let lastCheck = 0,downloadPending=false;
+ const ui=id=>document.getElementById(id);
+ const message = text => { status.textContent = text;if(ui('storage-status'))ui('storage-status').textContent=text; };
  const hex = bytes => [...new Uint8Array(bytes)].map(b => b.toString(16).padStart(2,'0')).join('');
  const digest = async bytes => hex(await crypto.subtle.digest('SHA-256', bytes));
  async function readInstalled() {
@@ -53,6 +54,78 @@
    return bytes;
   } finally { clearTimeout(timer); }
  }
+ function selection() {
+  try{return {language:['english','spanish','both'].includes(localStorage.getItem('beta-offline-language'))?localStorage.getItem('beta-offline-language'):'both',scores:localStorage.getItem('beta-offline-content')!=='lyrics'};}catch{return {language:'both',scores:true};}
+ }
+ function selectedRelease(release,choice) {
+  return {...release,selection:choice,files:release.files.filter(file=>{
+   if(file.path==='../songs.json')return choice.language!=='spanish';
+   if(file.path==='../songs_es.json')return choice.language!=='english';
+   if(file.path.startsWith('musicxml/'))return choice.scores&&(choice.language==='both'||file.path.startsWith(`musicxml/${choice.language==='english'?'English':'Spanish'}/`));
+   return true;
+  })};
+ }
+ const defaultSelection={language:'both',scores:true};
+ const sameSelection=(a,b)=>a.language===b.language&&a.scores===b.scores;
+ const selectionLabel=choice=>(choice.language==='both'?'English & Spanish':choice.language==='english'?'English':'Spanish')+' · '+(choice.scores?'scores & lyrics':'lyrics only');
+ const writeLock=fn=>navigator.locks?.request?navigator.locks.request('sda-hymnal-beta-storage',fn):fn();
+ const ownExtraCache=name=>name===config.cache||name.startsWith('sda-hymnal-beta-offline-');
+ async function storageSnapshot() {
+  const current=await readInstalled(),sizes=new Map((current?.files||[]).map(file=>[file.sha256,file.bytes]));
+  const needed=new Set((current?.files||[]).map(file=>file.sha256));let active=0,unused=0,files=0;
+  for(const name of await caches.keys()) {
+   if(name!==config.contentCache&&!ownExtraCache(name))continue;
+   const cache=await caches.open(name);
+   for(const request of await cache.keys()) {
+    const response=await cache.match(request);if(!response)continue;
+    const hash=String(request.url||request).split('/').pop();
+    const bytes=Number(response.headers.get('X-Hymnal-Bytes'))||sizes.get(hash)||(await response.arrayBuffer()).byteLength;
+    if(name===config.contentCache&&needed.has(hash)){active+=bytes;files++;}else unused+=bytes;
+   }
+  }
+  return {active,unused,files,current};
+ }
+ const size=bytes=>`${(bytes/1048576).toFixed(1)} MB`;
+ async function refreshStorage() {
+  if(!ui('storage-usage'))return;
+  try{const state=await storageSnapshot();ui('storage-usage').textContent=state.current?`Saved: ${selectionLabel(state.current.selection||defaultSelection)}\nHymnal storage: ${size(state.active)}\nUnused files: ${size(state.unused)}`:`No offline hymnal saved.\nStored app files: ${size(state.unused)}`;ui('clean-storage').disabled=busy||!state.current;}
+  catch{ui('storage-usage').textContent='Storage details are unavailable right now.';}
+ }
+ async function cleanupUnused(allowBusy=false) {
+  if(!allowBusy&&(busy||downloadPending))return 0;
+  const current=await readInstalled();
+  // Never delete anything until a complete installed snapshot has been verified.
+  if(!current||(await missingFiles(current)).length)return 0;
+  const keep=new Set(current.files.map(file=>blobURL(file.sha256))),cache=await caches.open(config.contentCache);
+  const cutoff=Date.parse(current.savedAt||'')||0;let removed=0;
+  const unchanged=async()=>{if(!allowBusy&&(busy||downloadPending))return false;const next=await readInstalled();return next?.id===current.id&&next?.savedAt===current.savedAt;};
+  for(const request of await cache.keys()) {
+   const url=request.url||String(request);if(keep.has(url))continue;
+   const response=await cache.match(request),staged=Number(response?.headers.get('X-Hymnal-Saved-At'))||0;
+   // Preserve files staged by another pending/resumable download after this commit.
+   if(staged&&(!cutoff||staged>=cutoff))continue;
+   if(!await unchanged())return removed;
+   if(await cache.delete(request))removed++;
+  }
+  for(const name of await caches.keys())if(ownExtraCache(name)){
+   if(!await unchanged())return removed;
+   await caches.delete(name);
+  }
+  return removed;
+ }
+ async function cleanStorage(){
+  if(busy||downloadPending)return;
+  try{await writeLock(()=>cleanupUnused());message('Storage cleaned. Files needed by your saved hymnal were kept.');await refreshStorage();}
+  catch{message('Cleanup could not finish. Your saved hymnal was kept.');}
+ }
+ self.HymnalOffline={refreshStorage,cleanStorage};
+ for(const [id,key,fallback]of [['offline-language','beta-offline-language','both'],['offline-content','beta-offline-content','scores']]){
+  const field=ui(id);if(!field)continue;try{field.value=localStorage.getItem(key)||fallback;}catch{field.value=fallback;}
+  if(![...field.options].some(option=>option.value===field.value))field.value=fallback;
+  field.addEventListener('change',()=>{try{localStorage.setItem(key,field.value);}catch{}if(ui('storage-status'))ui('storage-status').textContent='Selection saved. Tap Save offline selection to apply it.';});
+ }
+ ui('clean-storage')?.addEventListener('click',cleanStorage);
+ ui('save-offline-selection')?.addEventListener('click',()=>void downloadRelease());
  async function fetchRelease() { return validateRelease(JSON.parse(new TextDecoder().decode(await fresh('release.json')))); }
  async function missingFiles(release) {
   const cache = await caches.open(config.contentCache), missing = [];
@@ -62,36 +135,31 @@
   }
   return missing;
  }
- function differences(release) {
-  const old = new Map((installed?.files || []).map(file => [file.path,file.sha256]));
-  const current = new Set(release.files.map(file => file.path));
-  return {changed:release.files.filter(file => old.get(file.path) !== file.sha256).length,
-   removed:(installed?.files || []).filter(file => !current.has(file.path)).length};
- }
  async function summary() {
   installed = await readInstalled();
   button.hidden=!!installed;checkButton.hidden=!installed;
   button.textContent='Save Hymnal for Offline Use';
-  if (!installed) { message('Save all available MusicXML and English & Spanish lyrics for offline use. Sheet images are excluded.'); return; }
+  if (!installed) { message('Choose languages and content in Settings, then save the hymnal for offline use. Images stay online-only.'); return; }
   const missing = await missingFiles(installed);
   if (missing.length) { message('Some offline files are missing. Use Download update to repair them.'); notice.hidden=false;updateText.textContent='Your offline download needs repair. Tap Download update to save the missing files.'; return; }
   const scores = installed.files.filter(file => file.path.startsWith('musicxml/')).length;
-  message(`Ready offline · ${installed.version} · ${scores} scores and English & Spanish lyrics saved. Images are online-only.`);
+  message(`Ready offline · ${installed.version} · ${selectionLabel(installed.selection||defaultSelection)}${scores?' · '+scores+' scores':''}. Images are online-only.`);
   checkButton.textContent = 'Check for updates';
  }
  function showUpdate(release) {
   if (installed?.id === release.id || (!installed && release.version === config.version)) return;
-  const diff = differences(release);
   notice.hidden = false;
-  updateText.textContent = installed ? `Update available: ${release.version}. ${diff.changed} new or changed ${diff.changed === 1 ? 'file' : 'files'}${diff.removed ? `; ${diff.removed} removed` : ''}. Your saved hymnal is ready to use.` : `Update available: ${release.version}. Tap to save it for offline use.`;
+  updateText.textContent = `Update available: ${release.version}.`;
  }
  async function checkForUpdates(force = false, background = false) {
-  if (busy || checking || navigator.onLine === false || (!force && Date.now()-lastCheck < 60000)) return;
+  if(busy||checking)return;
+  if(navigator.onLine===false){if(!background)message('You’re offline. Connect to check for updates.');return;}
+  if(!force&&Date.now()-lastCheck<60000)return;
   checking = true; lastCheck = Date.now();
   try {
    const next = await fetchRelease(); remote = next;
-   if (installed?.id !== next.id) showUpdate(next);
-   else if (installed && force) { if((await missingFiles(installed)).length)await summary();else message(`You’re up to date · ${installed.version}. Your hymnal is ready offline.`); }
+   if (installed?.id !== next.id) {if(!installed&&next.version===config.version)notice.hidden=true;else showUpdate(next);}
+   else if (installed && force) { notice.hidden=true; if((await missingFiles(installed)).length)await summary();else message(`You’re up to date · ${installed.version}. Your hymnal is ready offline.`); }
   } catch (error) {
    // Background checks never replace the installed release or disturb the reader/offline-ready message.
    if (!background && force && !installed) message('Unable to reach the update server. Reconnect and try again; existing saved files are kept.');
@@ -100,7 +168,7 @@
  }
  async function saveFile(cache, file, bytes) {
   if (bytes.byteLength !== file.bytes || await digest(bytes) !== file.sha256) throw new Error(`Verification failed: ${file.path}`);
-  await cache.put(blobURL(file.sha256),new Response(bytes, {headers:{'Content-Type':file.type || 'application/octet-stream','X-Hymnal-SHA256':file.sha256}}));
+  await cache.put(blobURL(file.sha256),new Response(bytes, {headers:{'Content-Type':file.type || 'application/octet-stream','X-Hymnal-SHA256':file.sha256,'X-Hymnal-Bytes':String(file.bytes),'X-Hymnal-Saved-At':String(Date.now())}}));
  }
  async function migrateFiles(release, cache) {
   const names = (await caches.keys()).filter(name => name === config.cache || name.startsWith('sda-hymnal-beta-offline-'));
@@ -124,21 +192,30 @@
    self.fflate.unzip(bytes,{filter:entry => needed.has(entry.name)},(error,files) => error ? reject(error) : resolve(files));
   });
  }
- async function downloadRelease() {
+ async function downloadRelease(){
+  if(busy||downloadPending)return;downloadPending=true;
+  try{await writeLock(performDownload);}finally{downloadPending=false;}
+ }
+ async function performDownload() {
   if (busy) return;
   if (!registration?.active) { await setup(); if (!registration?.active) return; }
   busy = true; button.disabled = true; updateButton.disabled = true;
   progress.hidden = false; progress.max = 100; progress.value = 0;
+  for(const id of ['offline-language','offline-content','clean-storage','save-offline-selection'])if(ui(id))ui(id).disabled=true;
   let wakeLock;
   try {
    if (navigator.wakeLock) try { wakeLock = await navigator.wakeLock.request('screen'); } catch {}
    if (navigator.storage?.persist) try { await navigator.storage.persist(); } catch {}
-   const release = await fetchRelease(); remote = release;
+   const published = await fetchRelease(); remote = published;
+   const choice=selection(),release=selectedRelease(published,choice);
    const cache = await caches.open(config.contentCache);
    message('Checking saved files…'); await migrateFiles(release,cache);
    let missing = await missingFiles(release);
-   const delta = (release.deltas || []).find(pack => pack.from === installed?.id);
-   const pack = validArchive(delta) ? delta : (!installed || missing.length > release.files.length/2) && validArchive(release.full) ? release.full : null;
+   const collection=(published.collections||[]).find(item=>sameSelection(item.selection,choice));
+   const packs=collection||(sameSelection(choice,defaultSelection)?published:{});
+   const selectionChanged=installed&&!sameSelection(installed.selection||defaultSelection,choice);
+   const delta = !selectionChanged&&(packs.deltas||[]).find(pack=>pack.from===installed?.id);
+   const pack=validArchive(delta)?delta:(!installed||selectionChanged||missing.length>release.files.length/2)&&validArchive(packs.full)?packs.full:null;
    // For small repairs/resumes, individual verified files avoid downloading an already-installed ZIP again.
    if (missing.length && pack && (pack.bytes < missing.reduce((total,file) => total+file.bytes,0))) {
     const mb = (pack.bytes/1048576).toFixed(1);
@@ -170,6 +247,8 @@
    // One atomic pointer switch: old files stay available while the replacement is prepared.
    await (await caches.open(config.stateCache)).put(stateURL,new Response(JSON.stringify({...release,savedAt:new Date().toISOString()}),{headers:{'Content-Type':'application/json'}}));
    progress.value = 100; installed = release; notice.hidden = true; await summary();
+   // Cleanup is post-commit only. A cleanup failure cannot undo a verified update.
+   try{await cleanupUnused(true);}catch(error){console.warn('Unused files were retained.',error);}
    // Reload only after a user-requested download succeeds so app code, catalog and scores agree.
    message(`Ready offline · ${release.version}. All files verified. Opening the updated hymnal…`);
    location.reload();
@@ -179,7 +258,9 @@
    if(installed){notice.hidden=false;updateText.textContent='Update interrupted. Tap Download update to retry; your saved hymnal is still available.';}else button.textContent = 'Retry offline download';
   } finally {
    busy = false; button.disabled = false; updateButton.disabled = false;
+   for(const id of ['offline-language','offline-content','clean-storage','save-offline-selection'])if(ui(id))ui(id).disabled=false;
    if (wakeLock) try { await wakeLock.release(); } catch {}
+   void refreshStorage();
   }
  }
  async function setup() {
@@ -203,6 +284,8 @@
     worker.addEventListener('statechange',check); check();
    });
    button.disabled = false; await summary();
+   // Also clean an update committed by an older client, after the new app has opened.
+   if(installed)void writeLock(()=>cleanupUnused()).then(refreshStorage).catch(()=>{});
    // Every launch checks in the background; checks do not participate in catalog loading.
    void checkForUpdates(true,true);
   } catch (error) {

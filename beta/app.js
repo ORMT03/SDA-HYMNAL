@@ -119,9 +119,11 @@ const normalize = text => String(text).normalize('NFD').replace(/[\u0300-\u036f]
 const pref = { get(key, fallback) { try { return localStorage.getItem(`beta-${key}`) || fallback; } catch { return fallback; } }, set(key, value) { try { localStorage.setItem(`beta-${key}`, value); } catch {} } };
 let scoreImage = null;
 let scorePage = null, scoreContent = null, scoreMetadata = null, transposeOffset = 0, originalFifths = null, originalMinor = false, scoreBusy = false, pdfFile = null, pdfURL = null;
-const settings = { appearance:pref.get('appearance','light-scores'), fontSize:Number(pref.get('lyrics-font-size','18')), smart:pref.get('smart-search','false')==='true' };
+const settings = { appearance:pref.get('appearance','light-scores'), fontSize:Number(pref.get('lyrics-font-size','18')), smart:pref.get('smart-search','false')==='true', defaultLanguage:pref.get('default-language','last'),defaultView:pref.get('default-view','last'),listBehavior:pref.get('list-behavior','top'),keepAwake:pref.get('keep-awake','false')==='true' };
 const scoreFields = [['chords','Show chords'],['credits','Show credits / lyricists'],['lyrics','Show lyrics'],['heading','Show title & hymn number'],['copyright','Show copyright footer']];
-const scoreOptions = scope => Object.fromEntries(scoreFields.map(([field])=>[field,pref.get(`score-${scope}-${field}`,'true')==='true']));
+const scoreOptions = scope => Object.fromEntries(scoreFields.map(([field])=>[field,pref.get(`score-${scope}-${field}`,field==='chords'?'false':'true')==='true']));
+if('scrollRestoration' in history)history.scrollRestoration='manual';
+let catalogPosition=0, hymnWakeLock=null, wakeRequest=null;
 let songs = [], mapping = [], manifest = {}, selected, revision = 0, renderer, mode = 'xml';
 const key = song => `${song.language}:${song.number}`;
 const scorePath = song => manifest[key(song)];
@@ -149,14 +151,15 @@ function renderList() {
  }
  $('count').hidden = found.size > 0;
  $('count').textContent = `${found.size} ${found.size === 1 ? 'hymn' : 'hymns'}${query ? ' found' : ''}`;
- if (!found.size) { const li = document.createElement('li'); li.textContent = 'No hymns found. Try another number, title or filter.'; li.className = 'muted'; $('songs').append(li); }
+ if (!found.size) { const li = document.createElement('li'); li.textContent = !navigator.onLine&&!available.length?'This language is not saved offline. Connect or change your offline selection in Settings.':'No hymns found. Try another number, title or filter.'; li.className = 'muted'; $('songs').append(li); }
 }
 function openSong(song, updateURL = true) {
+ if($('hymn').hidden)catalogPosition=window.scrollY;
  selected = song; mode = 'xml'; transposeOffset=0; clearPDF(); $('catalog').hidden = true; $('hymn').hidden = false; applyAppearance(); window.scrollTo(0,0);
  $('hymn-title').textContent = `${song.number} - ${song.title}`; $('hymn-meta').textContent = `${song.language === 'english' ? 'English' : 'Spanish'} hymnal / ${song.number}`;
  closeHymnMenus();
  if (updateURL) history.pushState(null, '', `#${song.language}/${encodeURIComponent(song.number)}`);
- renderList(); showView($('dropdown-menu').value === 'lyrics' ? 'lyrics' : 'xml');
+ renderList(); showView($('dropdown-menu').value === 'lyrics' ? 'lyrics' : 'xml');void updateHymnWakeLock();
 }
 // Engrave at a stable sheet width. Only the completed sheet scales on narrow screens.
 const SHEET_WIDTH = 1100;
@@ -212,6 +215,7 @@ async function showView(requested) {
  if (!selected) return;
  clearPDF();
  const song = selected, ticket = ++revision, xml = scorePath(song);
+ pref.set('last-view',requested==='lyrics'?'lyrics':'music-score');
  mode = requested; closeHymnMenus(); applyAppearance(); cleanRenderer(); $('viewer').replaceChildren(); $('viewer').setAttribute('aria-busy', 'false');
  $('score-tools').hidden = true;
  updateHymnMenu();
@@ -254,16 +258,22 @@ function showImage(song, ticket) {
  const image = new Image(); scoreImage=image;image.alt = `${song.number} — ${song.title}, original sheet music`;
  image.onload=()=>{if(ticket===revision)$('export-pdf').disabled=false;};
  image.src = scoreImageURL(song.image);
- image.onerror = () => { if (ticket === revision) $('status').textContent = 'The original image could not be loaded. Please try again or open Lyrics only.'; };
+ image.onerror = () => {
+  if(ticket!==revision)return;
+  scoreImage=null;mode='lyrics';updateHymnMenu();applyAppearance();$('export-pdf').disabled=true;
+  $('status').textContent='The original image is unavailable. Showing saved lyrics instead.';
+  const text=document.createElement('pre');text.textContent=formattedLyrics(song.content)||'Lyrics are not available for this hymn.';$('viewer').replaceChildren(text);
+ };
  $('viewer').append(image);
 }
-function fromHash() { const [language, number] = location.hash.slice(1).split('/'); const song = songs.find(s => s.language === language && s.number === (number || '')); if (song) openSong(song, false); else { ++revision; closeHymnMenus(); cleanRenderer(); selected = null; $('hymn').hidden = true; $('catalog').hidden = false; applyAppearance(); renderList(); } }
-$('language').value = pref.get('language','english');
+function fromHash() { const [language, number] = location.hash.slice(1).split('/'); const song = songs.find(s => s.language === language && s.number === (number || '')); if (song) openSong(song, false); else { ++revision; closeHymnMenus(); cleanRenderer(); selected = null; $('hymn').hidden = true; $('catalog').hidden = false; applyAppearance(); renderList();void updateHymnWakeLock();requestAnimationFrame(()=>window.scrollTo(0,settings.listBehavior==='remember'?catalogPosition:0)); } }
+$('language').value = settings.defaultLanguage==='last'?pref.get('language','english'):settings.defaultLanguage;
 if (!['english','spanish','both'].includes($('language').value)) $('language').value = 'english';
 $('search').addEventListener('input', renderList);
 $('language').addEventListener('change', () => { pref.set('language',$('language').value); renderList(); });
-$('dropdown-menu').value = pref.get('display','music-score');
-$('dropdown-menu').addEventListener('change', () => pref.set('display',$('dropdown-menu').value));
+$('dropdown-menu').value = settings.defaultView==='last'?pref.get('last-view',pref.get('display','music-score')):settings.defaultView;
+if(!['music-score','lyrics'].includes($('dropdown-menu').value))$('dropdown-menu').value='music-score';
+$('dropdown-menu').addEventListener('change', () => {pref.set('display',$('dropdown-menu').value);pref.set('last-view',$('dropdown-menu').value);});
 $('back-button').addEventListener('click', () => { history.pushState(null,'',location.pathname); fromHash(); });
 $('view-toggle').addEventListener('click',()=>showView(mode==='lyrics'?'xml':'lyrics'));
 initializeHymnMenus();
@@ -271,7 +281,7 @@ let resizeTimer; window.addEventListener('resize', () => { clearTimeout(resizeTi
 window.addEventListener('popstate',fromHash);
 (async () => {
  try {
-  const [english, spanish, pairs, scores] = await Promise.all([json('../songs.json'),json('../songs_es.json'),json('../song_mapping.json').catch(() => []),json('scores.json')]);
+  const [english, spanish, pairs, scores] = await Promise.all([json('../songs.json').catch(()=>[]),json('../songs_es.json').catch(()=>[]),json('../song_mapping.json').catch(() => []),json('scores.json')]);
   songs = [...english.map(s => HymnalSearch.prepare({...s,language:'english'})),...spanish.map(s => HymnalSearch.prepare({...s,language:'spanish'}))]; mapping = pairs; manifest = scores;
   $('coverage').textContent = `${Object.keys(manifest).length} hymn entries currently have MusicXML.`;
   renderList(); if (location.hash) fromHash();
@@ -289,7 +299,7 @@ function applyAppearance() {
  document.body.classList.toggle('theme-dark',dark);
  document.body.classList.toggle('dark-scores',dark&&!lightScore);
  document.documentElement.style.setProperty('--lyrics-size',`${settings.fontSize}px`);
- document.querySelector('meta[name="theme-color"]').content=dark?'#171717':'#ffffff';
+ document.querySelector('meta[name="theme-color"]').content=dark?'#000000':'#ffffff';
  $('lyrics-size').value=settings.fontSize;$('lyrics-size-value').textContent=`${settings.fontSize} pt`;
  for(const button of document.querySelectorAll('[data-size]'))button.setAttribute('aria-pressed',String(Number(button.dataset.size)===settings.fontSize));
 }
@@ -341,23 +351,26 @@ function setLyricsSize(value) {
 function initializeSettings() {
  if(!['system','light','dark','light-scores'].includes(settings.appearance))settings.appearance='light-scores';
  if(!Number.isFinite(settings.fontSize)||settings.fontSize<12||settings.fontSize>40)settings.fontSize=18;
- $('appearance').value=settings.appearance;$('smart-search').checked=settings.smart;
+ $('appearance').value=settings.appearance;updateSmartSearch();
+ initializeReaderSettings();
  for(const scope of ['view','share'])for(const [field,title]of scoreFields) {
   const label=document.createElement('label'),input=document.createElement('input');input.type='checkbox';input.checked=scoreOptions(scope)[field];input.id=`score-${scope}-${field}`;
   label.append(input,document.createTextNode(' '+title));$(scope==='view'?'view-preferences':'share-preferences').append(label);
   input.addEventListener('change',()=>{pref.set(`score-${scope}-${field}`,String(input.checked));if(scope==='view')applyViewingOptions();else clearPDF();});
  }
- const openSettings=()=>{closeHymnMenus();$('settings-dialog').showModal();};
+ const openSettings=()=>{closeHymnMenus();$('settings-dialog').showModal();void self.HymnalOffline?.refreshStorage();};
  $('open-settings').addEventListener('click',openSettings);$('score-settings').addEventListener('click',openSettings);
  $('appearance').addEventListener('change',()=>{settings.appearance=$('appearance').value;pref.set('appearance',settings.appearance);applyAppearance();});
  $('lyrics-size').addEventListener('input',()=>setLyricsSize($('lyrics-size').value));
  for(const button of document.querySelectorAll('[data-size]'))button.addEventListener('click',()=>setLyricsSize(button.dataset.size));
  $('reset-preferences').addEventListener('click',()=>{
   settings.appearance='light-scores';pref.set('appearance',settings.appearance);$('appearance').value=settings.appearance;setLyricsSize(18);
-  for(const scope of ['view','share'])for(const [field]of scoreFields){pref.set(`score-${scope}-${field}`,'true');$(`score-${scope}-${field}`).checked=true;}
+  for(const scope of ['view','share'])for(const [field]of scoreFields){pref.set(`score-${scope}-${field}`,String(field!=='chords'));$(`score-${scope}-${field}`).checked=field!=='chords';}
+  settings.defaultLanguage='last';settings.defaultView='last';settings.listBehavior='top';settings.keepAwake=false;
+  for(const [field,key]of [['defaultLanguage','default-language'],['defaultView','default-view'],['listBehavior','list-behavior']]){pref.set(key,settings[field]);$(key).value=settings[field];}pref.set('keep-awake','false');$('keep-awake').checked=false;applyListBehavior();void updateHymnWakeLock();
   clearPDF();applyViewingOptions();applyAppearance();
  });
- $('smart-search').addEventListener('change',()=>{settings.smart=$('smart-search').checked;pref.set('smart-search',String(settings.smart));renderList();});
+ $('smart-search').addEventListener('click',()=>{settings.smart=!settings.smart;updateSmartSearch();pref.set('smart-search',String(settings.smart));renderList();});
  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change',applyAppearance);
  $('musical-key').addEventListener('change',()=>transposeScore($('musical-key').value));
  applyAppearance();
@@ -433,3 +446,34 @@ function initializeHymnMenus() {
  document.addEventListener('keydown',event=>{if(event.key==='Escape')closeHymnMenus();});
 }
 initializeSettings();
+
+function updateSmartSearch(){
+ $('smart-search').setAttribute('aria-pressed',String(settings.smart));
+ $('search').placeholder=settings.smart?'Search titles & lyrics':'Search by number or title';
+ $('search').setAttribute('aria-label',$('search').placeholder);
+}
+function updateSearchEdge(){
+ const row=$('search-row'),top=parseFloat(getComputedStyle(row).top)||0;
+ document.body.classList.toggle('search-pinned',settings.listBehavior==='sticky'&&$('hymn').hidden&&row.getBoundingClientRect().top<=top+0.5);
+}
+window.addEventListener('scroll',updateSearchEdge,{passive:true});
+function applyListBehavior(){document.body.classList.toggle('sticky-search',settings.listBehavior==='sticky');updateSearchEdge();}
+function initializeReaderSettings(){
+ for(const [field,id,values,fallback]of [['defaultLanguage','default-language',['last','english','spanish','both'],'last'],['defaultView','default-view',['last','music-score','lyrics'],'last'],['listBehavior','list-behavior',['top','remember','sticky'],'top']]){
+  if(!values.includes(settings[field]))settings[field]=fallback;$(id).value=settings[field];
+  $(id).addEventListener('change',()=>{settings[field]=$(id).value;pref.set(id,settings[field]);applyListBehavior();});
+ }
+ $('keep-awake').checked=settings.keepAwake;
+ if(!navigator.wakeLock){$('keep-awake').disabled=true;$('wake-status').textContent='Keeping the screen awake is not supported in this browser.';}
+ $('keep-awake').addEventListener('change',()=>{settings.keepAwake=$('keep-awake').checked;pref.set('keep-awake',String(settings.keepAwake));void updateHymnWakeLock();});
+ document.addEventListener('visibilitychange',()=>void updateHymnWakeLock());applyListBehavior();
+}
+async function updateHymnWakeLock(){
+ const wanted=()=>settings.keepAwake&&!$('hymn').hidden&&document.visibilityState==='visible';
+ if(!wanted()){if(navigator.wakeLock)$('wake-status').textContent=settings.keepAwake?'Enabled while a hymn is open.':'Off by default. Works while a hymn is open, when supported by your browser.';if(hymnWakeLock){const lock=hymnWakeLock;hymnWakeLock=null;try{await lock.release();}catch{}}return;}
+ if(!navigator.wakeLock||hymnWakeLock||wakeRequest)return;
+ wakeRequest=navigator.wakeLock.request('screen');
+ try{const lock=await wakeRequest;if(!wanted()){await lock.release();return;}hymnWakeLock=lock;lock.addEventListener('release',()=>{if(hymnWakeLock===lock)hymnWakeLock=null;});$('wake-status').textContent='Keeping the screen awake while this hymn is open.';}
+ catch{$('wake-status').textContent='The browser could not keep the screen awake. Your hymn still works normally.';}
+ finally{wakeRequest=null;}
+}

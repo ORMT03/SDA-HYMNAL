@@ -355,3 +355,18 @@ body.theme-dark #hymn .hymn-popover{border-color:#ffffff14;box-shadow:0 8px 35px
 /* Twelve keys fit on a typical iPhone screen; no extra key actions below them. */
 #hymn #transposition{max-height:calc(100dvh - 86px - env(safe-area-inset-top,0px));padding:6px 0}
 #hymn #key-options button{min-height:40px;padding-top:9px;padding-bottom:9px;font-size:15px}
+
+/* Neutral black appearance and a compact, labeled Smart Search control. */
+body.theme-dark{--ui-bg:#000;--ui-text:#f4f4f4;--ui-muted:#aaa;--ui-surface:#101010;--ui-raised:#161616;--ui-border:#383838;--ui-control:#1c1c1c;--ui-hover:#292929;--ui-accent:#c7dbf5;--ui-selected:#333;--ui-selected-text:#fff;--ui-focus:#aaa;--ui-shadow:0 1px 3px #0004}
+.theme-dark #save-offline,.theme-dark #install-update,.theme-dark #share-pdf{background:#292929;border-color:#555;color:#fff}
+.theme-dark #save-offline:hover:not(:disabled),.theme-dark #install-update:hover:not(:disabled),.theme-dark #share-pdf:hover:not(:disabled){background:#383838}
+#search-row{display:flex;align-items:stretch;gap:8px;box-sizing:border-box;width:calc(100% - 32px);max-width:522px;margin:20px 16px 14px;padding:0;background:var(--ui-bg);z-index:50}
+#search-row #search{flex:1;min-width:0;width:0;max-width:none;margin:0;padding:10px 12px;border-radius:10px;min-height:48px}
+#search-row #smart-search{flex:0 0 76px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:0;font:500 13px/1.15 -apple-system,BlinkMacSystemFont,sans-serif;padding:7px 10px;border-radius:10px}
+#smart-search[aria-pressed=true]{background:var(--ui-selected);color:var(--ui-selected-text);border-color:var(--ui-focus);box-shadow:inset 0 0 0 1px var(--ui-focus)}
+body.sticky-search #search-row{position:sticky;top:env(safe-area-inset-top,0px);box-shadow:0 0 0 8px var(--ui-bg);padding-top:8px;padding-bottom:8px}
+#offline-settings button{margin:4px 0}#storage-usage,#storage-status{white-space:pre-line;overflow-wrap:anywhere}#offline-settings>p{line-height:1.5}
+
+#settings-dialog>form{position:sticky;top:0;z-index:2;display:flow-root;background:var(--ui-surface);padding-bottom:8px}
+
+body.sticky-search.search-pinned #search-row{width:100%;max-width:none;margin-left:0;margin-right:0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}

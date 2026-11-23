@@ -1,0 +1,17 @@
+-- Off-screen only: no Device, input drivers, framework changes, or reader UI.
+require('setupkoenv')
+local cre = require('libs/libkoreader-cre')
+local bb = require('ffi/blitbuffer')
+cre.initCache('/tmp/sda-hymnal-cre-cache', 1024*1024, true, 1)
+for _,name in ipairs({'NotoSerif-Regular.ttf','NotoSerif-Bold.ttf','NotoSerif-Italic.ttf','NotoSerif-BoldItalic.ttf','NotoSans-Regular.ttf','NotoSans-Bold.ttf','NotoSans-Italic.ttf'}) do
+    pcall(cre.registerFont, './fonts/noto/'..name)
+end
+local app=assert(arg[0]:match('^(.*)/'))
+assert(pcall(cre.registerFont,app..'/fonts/Bravura.otf'))
+assert(pcall(cre.registerFont,app..'/fonts/Leipzig.ttf'))
+for _,name in ipairs({'FreeSerif.ttf','FreeSans.ttf'})do pcall(cre.registerFont,'./fonts/freefont/'..name)end
+local f=assert(io.open(arg[1],'rb'));local data=f:read('*a');f:close()
+local pixels,w,h=cre.renderImageData(data,#data,tonumber(arg[3]),tonumber(arg[4]))
+assert(pixels,'Unable to rasterize score')
+local image=bb.new(w,h,bb.TYPE_BBRGB32,pixels)
+image:writePNG(arg[2]);image:free()

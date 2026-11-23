@@ -1,0 +1,1739 @@
+/* SDA Hymnal: small native K5 interface; workers never load a reader UI. */
+#define _POSIX_C_SOURCE 200809L
+#include <ctype.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <linux/fb.h>
+#include <linux/input.h>
+#include <signal.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/ioctl.h>
+#include <sys/mman.h>
+#include <sys/stat.h>
+#include <sys/wait.h>
+#include <time.h>
+#include <unistd.h>
+#ifndef ABS_MT_SLOT
+#define ABS_MT_SLOT 0x2f
+#endif
+#ifndef SYN_DROPPED
+#define SYN_DROPPED 3
+#endif
+#define LIMIT (4 * 1024 * 1024)
+#include "gestures.h"
+#include "json.h"
+#include "power_events.h"
+#include "unicode_display.h"
+
+enum {
+    HOME,
+    LYRICS,
+    SCORE,
+    MENU,
+    SETTINGS,
+    KEYS,
+    SEARCH,
+    QR,
+    OPTIONS,
+    STORAGE,
+    DOWNLOADS,
+    UPDATE,
+    LANGUAGE
+};
+enum {
+    J_STATUS = 1,
+    J_SEARCH,
+    J_HYMN,
+    J_RENDER,
+    J_DISPLAY,
+    J_SETTINGS,
+    J_QR,
+    J_STORAGE,
+    J_CLEAN,
+    J_CHECK,
+    J_DOWNLOAD,
+    J_EXPORT
+};
+enum {
+    A_BACK = 1,
+    A_SHARE,
+    A_VIEW,
+    A_SETTINGS,
+    A_KEYS,
+    A_ZOOM,
+    A_EXPORTPDF,
+    A_EXPORTTEXT,
+    A_OPTIONS,
+    A_SHAREOPTIONS,
+    A_STORAGE,
+    A_DOWNLOADS,
+    A_UPDATES,
+    A_CHECK,
+    A_DOWNLOAD,
+    A_CLEAN,
+    A_FONT,
+    A_LANGUAGE,
+    A_DLANG,
+    A_DVIEW,
+    A_LIST,
+    A_AWAKE,
+    A_EXPORT,
+    A_SMART,
+    A_OFFLANG,
+    A_OFFSCORES,
+    A_CHORDS,
+    A_LYRICS,
+    A_CREDITS,
+    A_HEADING,
+    A_COPYRIGHT,
+    A_LANG_EN = 100,
+    A_LANG_ES,
+    A_LANG_BOTH,
+    A_LANG_LAST
+};
+typedef struct {
+    char *body;
+    JSON j;
+} Doc;
+typedef struct {
+    pid_t pid;
+    int action;
+    char request[1024], response[1024];
+    time_t started;
+} Job;
+static char app_version[60] = "15.0 beta 8";
+static char root[700], app[900], fbink[700], python[700] = "/mnt/us/python3/bin/python3.9";
+static char listlanguage[20] = "english", language[20] = "english", number[8] = "001",
+            view[20] = "score", title[500], key[40], query[300], message[900], update_message[300];
+static char lines[1500][180], images[25][1100], viewport[1100], qrimage[1100];
+static int linecount, lyricpage, imagecount, imagepage,
+    zoom = 100, panx, pany, maxx, maxy, listpage, menupage, screen = HOME, previous = HOME,
+    scope_share, available, initial = 1;
+static int actions[64], actioncount;
+static char language_field[30] = "language";
+static int language_return = HOME;
+static int list_visible[11], list_y[11], list_visible_count, list_page_count = 1;
+static char labels[64][180];
+static Doc catalog = {0}, hymn = {0}, settings = {0}, keys = {0}, storage = {0};
+static Job job = {0}, background = {0};
+static volatile sig_atomic_t alive = 1;
+static int restart;
+static void draw(void);
+static void menu_build(void);
+static void command(int action, const char *json);
+static void show_hymn(void);
+static void stop_signal(int s) {
+    (void)s;
+    alive = 0;
+}
+static void clear_doc(Doc *d) {
+    if (d->body)
+        free(d->body);
+    if (d->j.t)
+        free(d->j.t);
+    memset(d, 0, sizeof(*d));
+}
+static int set_doc(Doc *d, const char *body) {
+    clear_doc(d);
+    d->body = strdup(body);
+    return d->body ? jparse(&d->j, d->body, strlen(d->body)) : -1;
+}
+static void copy_token(Doc *d, JSON *j, int n) {
+    if (n < 0)
+        return;
+    int len = j->t[n].end - j->t[n].start;
+    char *s = malloc((size_t)len + 1);
+    if (!s)
+        return;
+    memcpy(s, j->s + j->t[n].start, (size_t)len);
+    s[len] = 0;
+    set_doc(d, s);
+    free(s);
+}
+static int field(JSON *j, int n, const char *keyname) {
+    return j && j->t && n >= 0 && n < j->used ? jget(j, n, keyname) : -1;
+}
+static int integer(JSON *j, int n) { return n < 0 ? 0 : atoi(j->s + j->t[n].start); }
+static void getstr(JSON *j, int n, const char *name, char *out, size_t cap) {
+    jtext(j, field(j, n, name), out, cap);
+}
+static int setting_bool(const char *name) {
+    return settings.body && jtrue(&settings.j, field(&settings.j, 0, name));
+}
+static int setting_int(const char *name) {
+    return settings.body ? integer(&settings.j, field(&settings.j, 0, name)) : 0;
+}
+static void setting_string(const char *name, char *out, size_t cap) {
+    if (settings.body)
+        getstr(&settings.j, 0, name, out, cap);
+    else if (cap)
+        *out = 0;
+}
+static int run(char *const argv[]) {
+    pid_t p = fork();
+    if (!p) {
+        execv(argv[0], argv);
+        _exit(127);
+    }
+    int status = 0;
+    if (p < 0)
+        return -1;
+    while (waitpid(p, &status, 0) < 0 && errno == EINTR) {
+    }
+    return WIFEXITED(status) ? WEXITSTATUS(status) : -1;
+}
+static int text_scale = 2, text_column = 1, text_offset = 0;
+static void text(const char *s, int row, int clear, int batch) {
+    char r[16], scale[8], column[8], offset_text[8];
+    snprintf(column, sizeof(column), "%d", text_column);
+    snprintf(offset_text, sizeof(offset_text), "%d", text_offset);
+    snprintf(scale, sizeof(scale), "%d", text_scale);
+    snprintf(r, sizeof(r), "%d", row);
+    char *argv[22];
+    int n = 0;
+    argv[n++] = fbink;
+    argv[n++] = "-q";
+    if (clear)
+        argv[n++] = "-c";
+    if (batch)
+        argv[n++] = "-b";
+    argv[n++] = "-F";
+    argv[n++] = "UNSCII";
+    argv[n++] = "-S";
+    argv[n++] = scale;
+    argv[n++] = "-x";
+    argv[n++] = column;
+    argv[n++] = "-Y";
+    argv[n++] = offset_text;
+    argv[n++] = "-y";
+    argv[n++] = r;
+    argv[n++] = "--";
+    argv[n++] = (char *)(*s ? s : " ");
+    argv[n] = NULL;
+    run(argv);
+}
+static int framebuffer_layout(int fd, struct fb_fix_screeninfo *fixed,
+                              struct fb_var_screeninfo *variable) {
+    return ioctl(fd, FBIOGET_FSCREENINFO, fixed) == 0 &&
+           ioctl(fd, FBIOGET_VSCREENINFO, variable) == 0 && variable->bits_per_pixel == 8 &&
+           variable->xres >= 600 && variable->yres >= 800;
+}
+static void image(const char *path, int y, int w, int h, int clear) {
+    if (clear)
+        text(" ", 0, 1, 1);
+    int input = open(path, O_RDONLY), fb = open("/dev/fb0", O_RDWR);
+    struct fb_fix_screeninfo fixed;
+    struct fb_var_screeninfo variable;
+    if (input < 0 || fb < 0 || !framebuffer_layout(fb, &fixed, &variable)) {
+        fprintf(stderr, "Unable to open native score framebuffer\n");
+    } else {
+        unsigned char row[600];
+        for (int i = 0; i < h && i + y < 800; i++) {
+            if (read(input, row, (size_t)w) != w)
+                break;
+            off_t offset = (off_t)(i + y + variable.yoffset) * fixed.line_length + variable.xoffset;
+            if (pwrite(fb, row, (size_t)w, offset) != w)
+                break;
+        }
+    }
+    if (input >= 0)
+        close(input);
+    if (fb >= 0)
+        close(fb);
+}
+static void refresh(void) {
+    char *argv[] = {fbink, "-q", "-W", "GC16", "-s", NULL};
+    run(argv);
+}
+static void cleanline(char *out, size_t cap, const char *s, int cols) {
+    display_copy(out, cap, s, (size_t)cols);
+    for (char *p = out; *p; p++)
+        if (*p == '\n' || *p == '\r' || *p == '\t')
+            *p = ' ';
+}
+static void append(char *out, size_t cap, int row, const char *s) {
+    int current = 0;
+    for (char *p = out; *p; p++)
+        if (*p == '\n')
+            current++;
+    while (current < row && strlen(out) + 1 < cap) {
+        strcat(out, "\n");
+        current++;
+    }
+    strncat(out, s, cap - strlen(out) - 1);
+}
+static void add(int action, const char *label) {
+    if (actioncount >= 64)
+        return;
+    actions[actioncount] = action;
+    snprintf(labels[actioncount++], 180, "%s", label);
+}
+static void tagged(int action, const char *name, const char *value) {
+    char s[180];
+    snprintf(s, sizeof(s), "%s: %s", name, value);
+    add(action, s);
+}
+static void boolean(int action, const char *label, const char *name) {
+    tagged(action, label, setting_bool(name) ? "On" : "Off");
+}
+static const char *language_name(const char *value) {
+    return !strcmp(value, "english")   ? "English"
+           : !strcmp(value, "spanish") ? "Spanish"
+           : !strcmp(value, "both")    ? "English & Spanish"
+           : !strcmp(value, "last")    ? "Last used"
+                                       : value;
+}
+static void choose_language(const char *fieldname) {
+    snprintf(language_field, sizeof(language_field), "%s", fieldname);
+    language_return = screen;
+    screen = LANGUAGE;
+    menupage = 0;
+    draw();
+}
+static void menu_build(void) {
+    actioncount = 0;
+    char value[100];
+    if (screen == MENU) {
+        add(A_SHARE, "Share with QR code");
+        add(A_VIEW, !strcmp(view, "score") ? "View lyrics" : "View music score");
+        add(A_KEYS, "Change key");
+        add(A_ZOOM, "Score zoom");
+        add(A_SETTINGS, "Settings");
+        if (setting_bool("allow_exports")) {
+            add(A_EXPORTPDF, "Export score PDF");
+            add(A_EXPORTTEXT, "Export lyrics text");
+        }
+    }
+    if (screen == SETTINGS) {
+        setting_string("language", value, sizeof(value));
+        tagged(A_LANGUAGE, "Language", language_name(value));
+        setting_string("default_language", value, sizeof(value));
+        tagged(A_DLANG, "Default language", language_name(value));
+        setting_string("default_view", value, sizeof(value));
+        tagged(A_DVIEW, "Default view", value);
+        snprintf(value, sizeof(value), "%d", setting_int("font_size"));
+        tagged(A_FONT, "Lyrics size", value);
+        setting_string("list_behavior", value, sizeof(value));
+        tagged(A_LIST, "Hymn list", value);
+        boolean(A_SMART, "Smart search", "smart");
+        boolean(A_AWAKE, "Keep screen awake", "keep_awake");
+        add(A_OPTIONS, "Score viewing options");
+        add(A_SHAREOPTIONS, "Score export options");
+        boolean(A_EXPORT, "File exports", "allow_exports");
+        add(A_DOWNLOADS, "Offline downloads");
+        add(A_STORAGE, "Storage management");
+        add(A_UPDATES, "Updates");
+    }
+    if (screen == OPTIONS) {
+        const char *names[] = {"chords", "lyrics", "credits", "heading", "copyright"};
+        const char *names2[] = {"Chords", "Lyrics", "Credits", "Title / hymn number",
+                                "Copyright footer"};
+        int obj = field(&settings.j, 0, scope_share ? "share_options" : "view_options");
+        for (int k = 0; k < 5; k++)
+            tagged(A_CHORDS + k, names2[k],
+                   jtrue(&settings.j, field(&settings.j, obj, names[k])) ? "On" : "Off");
+    }
+    if (screen == DOWNLOADS) {
+        setting_string("offline_language", value, sizeof(value));
+        tagged(A_OFFLANG, "Language", language_name(value));
+        tagged(A_OFFSCORES, "Contents",
+               setting_bool("offline_scores") ? "Scores and lyrics" : "Lyrics only");
+        add(A_DOWNLOAD, "Save selected hymnal offline");
+    }
+    if (screen == STORAGE) {
+        add(A_CLEAN, "Remove unused offline files");
+        if (storage.body) {
+            const char *names[] = {"saved_bytes", "unused_bytes", "rendered_bytes"};
+            const char *titles[] = {"Saved hymnal", "Unused files", "Rendered scores"};
+            for (int i = 0; i < 3; i++) {
+                snprintf(value, sizeof(value), "%.1f MB",
+                         integer(&storage.j, field(&storage.j, 0, names[i])) / 1048576.);
+                tagged(0, titles[i], value);
+            }
+        }
+    }
+    if (screen == LANGUAGE) {
+        char selected[40], label[100];
+        setting_string(language_field, selected, sizeof(selected));
+        const char *values[] = {"english", "spanish", "both", "last"};
+        for (int i = 0; i < (!strcmp(language_field, "default_language") ? 4 : 3); i++) {
+            snprintf(label, sizeof(label), "%s%s", language_name(values[i]),
+                     !strcmp(selected, values[i]) ? " (current)" : "");
+            add(A_LANG_EN + i, label);
+        }
+    }
+    if (screen == UPDATE) {
+        tagged(0, "Installed", app_version);
+        add(A_CHECK, "Check for updates");
+        if (available)
+            add(A_DOWNLOAD, "Download update");
+    }
+}
+static int song_count(void) {
+    return catalog.body ? integer(&catalog.j, field(&catalog.j, 0, "count")) : 0;
+}
+static int array_at(JSON *j, int a, int index) {
+    if (!j || !j->t || a < 0 || a >= j->used || j->t[a].type != '[')
+        return -1;
+    int n = a + 1;
+    for (int i = 0; i < index && n < j->t[a].next; i++)
+        n = j->t[n].next;
+    return n < j->t[a].next ? n : -1;
+}
+static void prepare_list_layout(void) {
+    int tokens[1500], starts[1500], count = 0;
+    int array = field(&catalog.j, 0, "songs");
+    if (array >= 0)
+        for (int n = array + 1; n < catalog.j.t[array].next && count < 1500;
+             n = catalog.j.t[n].next) {
+            tokens[count] = n;
+            starts[count++] = jtrue(&catalog.j, field(&catalog.j, n, "group_start"));
+        }
+    int grouped = jtrue(&catalog.j, field(&catalog.j, 0, "grouped")), page = 0, y = 160;
+    list_visible_count = 0;
+    for (int i = 0; i < count;) {
+        int end = i + 1;
+        if (grouped)
+            while (end < count && !starts[end])
+                end++;
+        int height = (end - i) * 48, gap = grouped && y > 160 ? 16 : 0;
+        if (y + gap + height > 688 && height <= 528 && y > 160) {
+            page++;
+            y = 160;
+            gap = 0;
+        }
+        y += gap;
+        for (int row = i; row < end; row++) {
+            if (y + 48 > 688) {
+                page++;
+                y = 160;
+            }
+            if (page == listpage && list_visible_count < 11) {
+                list_visible[list_visible_count] = tokens[row];
+                list_y[list_visible_count++] = y;
+            }
+            y += 48;
+        }
+        i = end;
+    }
+    list_page_count = page + 1;
+    if (listpage >= list_page_count) {
+        listpage = list_page_count - 1;
+        prepare_list_layout();
+    }
+}
+/* Draw button surfaces in the framebuffer; no image decoder or Python startup. */
+static int rounded_inside(int px, int py, int x, int y, int w, int h, int radius) {
+    if (px < x || py < y || px >= x + w || py >= y + h)
+        return 0;
+    int cx = px < x + radius ? x + radius : px >= x + w - radius ? x + w - radius - 1 : px;
+    int cy = py < y + radius ? y + radius : py >= y + h - radius ? y + h - radius - 1 : py;
+    int dx = px - cx, dy = py - cy;
+    return dx * dx + dy * dy <= radius * radius;
+}
+static void control_box(unsigned char *pixels, const struct fb_fix_screeninfo *fixed,
+                        const struct fb_var_screeninfo *variable, int x, int y, int w, int h,
+                        int disabled, int selected) {
+    for (int py = y; py < y + h && py < 800; py++)
+        for (int px = x; px < x + w && px < 600; px++) {
+            if (px < 0 || py < 0 || !rounded_inside(px, py, x, y, w, h, 8))
+                continue;
+            size_t offset =
+                (size_t)(py + variable->yoffset) * fixed->line_length + px + variable->xoffset;
+            int outline = !rounded_inside(px, py, x + 2, y + 2, w - 4, h - 4, 6);
+            if (outline)
+                pixels[offset] = disabled ? 190 : 65;
+            else if (disabled && pixels[offset] < 210)
+                pixels[offset] = 155;
+            else if (pixels[offset] > 235)
+                pixels[offset] = selected ? 226 : disabled ? 250 : 244;
+        }
+}
+static void decorate(void) {
+    extern int offset;
+    int fd = open("/dev/fb0", O_RDWR);
+    struct fb_fix_screeninfo fixed;
+    struct fb_var_screeninfo variable;
+    if (fd < 0)
+        return;
+    if (!framebuffer_layout(fd, &fixed, &variable)) {
+        close(fd);
+        return;
+    }
+    size_t size = (size_t)fixed.line_length * (variable.yres + variable.yoffset);
+    unsigned char *mapped = mmap(NULL, size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+    if (mapped == MAP_FAILED) {
+        close(fd);
+        return;
+    }
+    unsigned char *pixels = malloc(size);
+    if (!pixels) {
+        munmap(mapped, size);
+        close(fd);
+        return;
+    }
+    memcpy(pixels, mapped, size);
+#define BOX(x, y, w, h, disabled, selected)                                                        \
+    control_box(pixels, &fixed, &variable, x, y, w, h, disabled, selected)
+    if (screen == HOME) {
+        BOX(370, 4, 170, 44, 0, 0);
+        BOX(548, 4, 44, 44, 0, 0);
+        BOX(8, 56, 412, 48, 0, 0);
+        BOX(432, 56, 160, 48, 0, setting_bool("smart"));
+        BOX(8, 108, 336, 40, 0, 0);
+        for (int i = 0; i < list_visible_count; i++)
+            BOX(8, list_y[i] - 4, 584, 42, 0, 0);
+        BOX(8, 688, 200, 48, listpage == 0, 0);
+        BOX(392, 688, 200, 48, listpage + 1 >= list_page_count, 0);
+        if (available)
+            BOX(8, 740, 584, 44, 0, 1);
+    } else {
+        BOX(8, 4, 48, 44, 0, 0);
+        if (screen == SCORE || screen == LYRICS) {
+            BOX(336, 4, 144, 44, 0, 0);
+            BOX(512, 4, 80, 44, 0, 0);
+            int per = setting_int("font_size") >= 30   ? 19
+                      : setting_int("font_size") >= 24 ? 26
+                                                       : 36;
+            BOX(8, 736, 200, 44, screen == SCORE ? imagepage == 0 : lyricpage == 0, 0);
+            BOX(392, 736, 200, 44,
+                screen == SCORE ? imagepage + 1 >= imagecount : (lyricpage + 1) * per >= linecount,
+                0);
+        } else if (screen == KEYS) {
+            int a = keys.body ? field(&keys.j, 0, "keys") : -1;
+            for (int i = 0; i < 12; i++) {
+                int n = array_at(&keys.j, a, i);
+                if (n < 0)
+                    break;
+                BOX(8, 80 + i * 48, 584, 42, 0,
+                    integer(&keys.j, field(&keys.j, n, "offset")) == offset);
+            }
+        } else if (screen == SEARCH) {
+            BOX(8, 68, 584, 56, 0, 0);
+            BOX(8, 248, 264, 48, 0, 0);
+            BOX(288, 248, 304, 48, 0, 0);
+            const int counts[] = {10, 10, 9, 7};
+            for (int row = 0; row < 4; row++)
+                for (int col = 0; col < counts[row]; col++)
+                    BOX(col * 60 + 4, 384 + row * 64, 52, 56, 0, 0);
+            BOX(8, 664, 368, 56, 0, 0);
+            BOX(392, 664, 200, 56, 0, 1);
+        } else if (screen != QR) {
+            for (int i = 0; i < 10 && menupage * 10 + i < actioncount; i++)
+                if (actions[menupage * 10 + i])
+                    BOX(8, 96 + i * 48, 584, 42, 0, 0);
+            if (actioncount > 10) {
+                BOX(8, 680, 200, 48, menupage == 0, 0);
+                BOX(392, 680, 200, 48, (menupage + 1) * 10 >= actioncount, 0);
+            }
+        }
+    }
+#undef BOX
+    memcpy(mapped, pixels, size);
+    free(pixels);
+    munmap(mapped, size);
+    close(fd);
+}
+
+static void mark_screen(void) {
+    char trace[1000];
+    snprintf(trace, sizeof(trace), "%s/state/native-screen.json", root);
+    FILE *tracefile = fopen(trace, "w");
+    if (tracefile) {
+        fprintf(tracefile, "{\"screen\":%d,\"busy\":%d,\"ready\":%s,\"pid\":%ld}\n", screen,
+                job.pid != 0, catalog.body ? "true" : "false", (long)getpid());
+        fclose(tracefile);
+    }
+}
+static void draw(void) {
+    if (screen_sleeping)
+        return;
+    char all[14000] = "", s[500], shorttitle[180];
+    cleanline(shorttitle, sizeof(shorttitle), title, 22);
+    if (screen == SCORE && *viewport) {
+        image(viewport, 64, 600, 672, 1);
+        snprintf(s, sizeof(s), "< %-17.17s  Key %-3.3s    ...", shorttitle, key);
+        text(s, 1, 0, 1);
+        snprintf(s, sizeof(s), "Previous   %d/%d %d%%   Next", imagepage + 1, imagecount, zoom);
+        text(s, 47, 0, 1);
+        if (*message)
+            text(message, 3, 0, 1);
+        decorate();
+        refresh();
+        mark_screen();
+        return;
+    }
+    if (screen == SCORE) {
+        snprintf(s, sizeof(s), "< %-17.17s  Key %-3.3s    ...", shorttitle, key);
+        text(s, 1, 1, 1);
+        text("Preparing score...", 10, 0, 1);
+        text("First opens can take a moment.", 13, 0, 1);
+        decorate();
+        refresh();
+        mark_screen();
+        return;
+    }
+    if (screen == QR && *qrimage) {
+        image(qrimage, 150, 600, 500, 1);
+        text("<        Share hymn", 1, 0, 1);
+        snprintf(s, sizeof(s), "Scan to open the %s", view);
+        text(s, 5, 0, 1);
+        text("on your phone.", 7, 0, 1);
+        text("Internet needed on the phone.", 45, 0, 1);
+        decorate();
+        refresh();
+        mark_screen();
+        return;
+    }
+    if (screen == HOME) {
+        prepare_list_layout();
+        append(all, sizeof(all), 1, "SDA Hymnal             Settings   X");
+        char search_label[100];
+        snprintf(search_label, sizeof(search_label), "Search: %.16s",
+                 *query ? query : "Tap to search");
+        append(all, sizeof(all), 4, search_label);
+        char language_label[40];
+        snprintf(language_label, sizeof(language_label), "%s v", language_name(language));
+        language_label[0] = (char)toupper((unsigned char)language_label[0]);
+        snprintf(s, sizeof(s), "%-22s %d hymns", language_label, song_count());
+        append(all, sizeof(all), 7, s);
+        for (int i = 0; i < list_visible_count; i++) {
+            int n = list_visible[i];
+            if (n < 0)
+                break;
+            char num[12], songtitle[200], lang[20], label[180];
+            getstr(&catalog.j, n, "number", num, sizeof(num));
+            getstr(&catalog.j, n, "title", songtitle, sizeof(songtitle));
+            getstr(&catalog.j, n, "language", lang, sizeof(lang));
+            cleanline(label, sizeof(label), songtitle, 29);
+            snprintf(s, sizeof(s), "%s %s", num, label);
+            append(all, sizeof(all), list_y[i] / 16, s);
+        }
+        snprintf(s, sizeof(s), "Previous      %d/%d       Next", listpage + 1, list_page_count);
+        append(all, sizeof(all), 44, s);
+        if (available)
+            append(all, sizeof(all), 47, "Update available - tap to view");
+    } else if (screen == LYRICS) {
+        snprintf(s, sizeof(s), "< %-17.17s  Key %-3.3s    ...", shorttitle, key);
+        text(s, 1, 1, 1);
+        int size = setting_int("font_size"), per = size >= 30 ? 19 : size >= 24 ? 26 : 36;
+        char body[9000] = "";
+        for (int i = 0; i < per && lyricpage * per + i < linecount; i++) {
+            strncat(body, lines[lyricpage * per + i], sizeof(body) - strlen(body) - 1);
+            strncat(body, "\n", sizeof(body) - strlen(body) - 1);
+        }
+        text_scale = size >= 30 ? 4 : size >= 24 ? 3 : 2;
+        text(body, text_scale == 4 ? 3 : 4, 0, 1);
+        text_scale = 2;
+        snprintf(s, sizeof(s), "Previous     %d/%d       Next", lyricpage + 1,
+                 (linecount + per - 1) / per);
+        text(s, 47, 0, 1);
+        if (*message)
+            text(message, 49, 0, 1);
+        decorate();
+        refresh();
+        mark_screen();
+        return;
+    } else if (screen == SEARCH) {
+        append(all, sizeof(all), 1, "<                      Search");
+        cleanline(s, sizeof(s), query, 35);
+        append(all, sizeof(all), 5, s);
+        append(all, sizeof(all), 9, "Tap letters, then Search.");
+        append(all, sizeof(all), 16, "Clear             Backspace");
+        const char *rows[] = {"1234567890", "qwertyuiop", "asdfghjkl", "zxcvbnm"};
+        for (int i = 0; i < 4; i++) {
+            char row[36];
+            memset(row, ' ', 35);
+            row[35] = 0;
+            for (int k = 0; rows[i][k]; k++)
+                row[(k * 60 + 8) / 16] = rows[i][k];
+            append(all, sizeof(all), 24 + i * 4, row);
+        }
+        append(all, sizeof(all), 42, "        Space           Search");
+    } else if (screen == KEYS) {
+        append(all, sizeof(all), 1, "<                 Choose key");
+        int a = keys.body ? field(&keys.j, 0, "keys") : -1;
+        for (int i = 0; i < 12; i++) {
+            int n = array_at(&keys.j, a, i);
+            if (n < 0)
+                break;
+            char name[60];
+            getstr(&keys.j, n, "name", name, sizeof(name));
+            snprintf(s, sizeof(s), "%s%s", name,
+                     jtrue(&keys.j, field(&keys.j, n, "original")) ? " (Default)" : "");
+            append(all, sizeof(all), 5 + i * 3, s);
+        }
+        if (a < 0 || !keys.j.t[a].count)
+            append(all, sizeof(all), 6, "Key changes need a saved score.");
+    } else {
+        menu_build();
+        const char *heading = screen == LANGUAGE   ? "Choose language"
+                              : screen == SETTINGS ? "Settings"
+                              : screen == OPTIONS
+                                  ? (scope_share ? "Score export options" : "Score viewing options")
+                              : screen == STORAGE   ? "Storage"
+                              : screen == DOWNLOADS ? "Offline downloads"
+                              : screen == UPDATE    ? "Updates"
+                                                    : "Hymn menu";
+        snprintf(s, sizeof(s), "<     %s", heading);
+        append(all, sizeof(all), 1, s);
+        int start = menupage * 10;
+        for (int i = 0; i < 10 && i + start < actioncount; i++) {
+            cleanline(s, sizeof(s), labels[i + start], 35);
+            append(all, sizeof(all), 6 + i * 3, s);
+        }
+        if (actioncount > 10)
+            append(all, sizeof(all), 43, "Previous                     Next");
+        if (screen == UPDATE) {
+            cleanline(s, sizeof(s), update_message, 35);
+            append(all, sizeof(all), 39, s);
+        }
+    }
+    if (*message) {
+        cleanline(s, sizeof(s), message, 35);
+        append(all, sizeof(all), 48, s);
+    }
+    char header[500] = "";
+    char *header_start = strchr(all, '\n');
+    if (header_start) {
+        header_start++;
+        char *header_end = strchr(header_start, '\n');
+        if (!header_end)
+            header_end = all + strlen(all);
+        size_t length = (size_t)(header_end - header_start);
+        if (length >= sizeof(header))
+            length = sizeof(header) - 1;
+        memcpy(header, header_start, length);
+        header[length] = 0;
+        memset(header_start, ' ', (size_t)(header_end - header_start));
+    }
+    text_offset = screen == HOME ? 8 : 12;
+    text(all, 0, 1, 1);
+    text_offset = 0;
+    text(header, 1, 0, 1);
+    if (screen == HOME) {
+        text_column = 28;
+        text(setting_bool("smart") ? "*Smart\nsearch" : "Smart\nsearch", 4, 0, 1);
+        text_column = 1;
+    }
+    decorate();
+    refresh();
+    mark_screen();
+}
+static void start_job(Job *j, int action, const char *json) {
+    if (j->pid)
+        return;
+    static unsigned serial;
+    snprintf(j->request, sizeof(j->request), "%s/state/jobs/native-%ld-%u.request.json", root,
+             (long)getpid(), ++serial);
+    snprintf(j->response, sizeof(j->response), "%s/state/jobs/native-%ld-%u.response.json", root,
+             (long)getpid(), serial);
+    FILE *f = fopen(j->request, "wb");
+    if (!f)
+        return;
+    fputs(json, f);
+    fclose(f);
+    char backend[1100];
+    snprintf(backend, sizeof(backend), "%s/backend.py", app);
+    pid_t p = fork();
+    if (!p) {
+        setpgid(0, 0);
+        execl(python, python, backend, "--root", root, "--app-dir", app, "--request", j->request,
+              "--response", j->response, (char *)NULL);
+        _exit(127);
+    }
+    if (p < 0)
+        return;
+    j->pid = p;
+    j->action = action;
+    j->started = time(NULL);
+}
+static void command(int action, const char *json) {
+    if (job.pid)
+        return;
+    snprintf(message, sizeof(message), "%s",
+             action == J_RENDER     ? "Preparing score..."
+             : action == J_DOWNLOAD ? "Downloading..."
+             : action == J_CHECK    ? "Checking for updates..."
+                                    : "Loading...");
+    draw();
+    start_job(&job, action, json);
+}
+static void save(const char *name, const char *value) {
+    char s[600];
+    snprintf(s, sizeof(s), "{\"command\":\"settings\",\"changes\":{\"%s\":%s}}", name, value);
+    command(J_SETTINGS, s);
+}
+static void toggle(const char *name) { save(name, setting_bool(name) ? "false" : "true"); }
+static void cycle(const char *name, const char **values, int count) {
+    char old[100], q[150];
+    setting_string(name, old, sizeof(old));
+    int k = 0;
+    for (int i = 0; i < count; i++)
+        if (!strcmp(old, values[i]))
+            k = (i + 1) % count;
+    snprintf(q, sizeof(q), "\"%s\"", values[k]);
+    save(name, q);
+}
+static void search(void) {
+    char *q = jquote(query), s[2400];
+    snprintf(s, sizeof(s), "{\"command\":\"search\",\"language\":\"%s\",\"query\":%s}", language,
+             q ? q : "\"\"");
+    free(q);
+    command(J_SEARCH, s);
+}
+static void request_hymn(const char *cmd, int action) {
+    char s[700];
+    extern int offset;
+    snprintf(
+        s, sizeof(s),
+        "{\"command\":\"%s\",\"language\":\"%s\",\"number\":\"%s\",\"view\":\"%s\",\"offset\":%d}",
+        cmd, language, number, view, offset);
+    command(action, s);
+}
+int offset;
+static void show_page(void) {
+    if (!imagecount)
+        return;
+    char *p = jquote(images[imagepage]), s[1600];
+    snprintf(s, sizeof(s), "{\"command\":\"display\",\"image\":%s,\"zoom\":%d,\"x\":%d,\"y\":%d}",
+             p ? p : "\"\"", zoom, panx, pany);
+    free(p);
+    command(J_DISPLAY, s);
+}
+static void show_hymn(void) {
+    if (!strcmp(view, "lyrics")) {
+        screen = LYRICS;
+        draw();
+    } else {
+        screen = SCORE;
+        request_hymn("render", J_RENDER);
+    }
+}
+static void wrap_lyrics(const char *body) {
+    linecount = 0;
+    const char *p = body;
+    while (*p && linecount < 1500) {
+        char *out = lines[linecount];
+        size_t used = 0;
+        int cols = 0, last_space = -1;
+        const char *after_space = NULL;
+        while (*p && *p != '\n' &&
+               cols < (setting_int("font_size") >= 30   ? 17
+                       : setting_int("font_size") >= 24 ? 23
+                                                        : 35)) {
+            const char *start = p;
+            unsigned c = display_next(&p);
+            if (c == '\r')
+                continue;
+            if (c == ' ') {
+                last_space = (int)used;
+                after_space = p;
+            }
+            size_t bytes = (size_t)(p - start);
+            if (used + bytes >= 179)
+                break;
+            memcpy(out + used, start, bytes);
+            used += bytes;
+            cols++;
+        }
+        if (*p && *p != '\n' && last_space > 0) {
+            used = (size_t)last_space;
+            p = after_space;
+        }
+        if (*p == '\n')
+            p++;
+        out[used] = 0;
+        linecount++;
+    }
+}
+static void result(Job *done, JSON *j, int r) {
+    int action = done->action;
+    if (done != &background)
+        message[0] = 0;
+    if (action == J_STATUS) {
+        getstr(j, r, "app_version", app_version, sizeof(app_version));
+        copy_token(&settings, j, field(j, r, "settings"));
+        int up = field(j, r, "update");
+        available = jtrue(j, field(j, up, "available"));
+        getstr(j, up, "message", update_message, sizeof(update_message));
+        setting_string("default_language", language, sizeof(language));
+        if (!strcmp(language, "last"))
+            setting_string("language", language, sizeof(language));
+        setting_string("default_view", view, sizeof(view));
+        if (!strcmp(view, "last"))
+            setting_string("view", view, sizeof(view));
+        if (!*language)
+            strcpy(language, "english");
+        if (!*view)
+            strcpy(view, "score");
+        search();
+        return;
+    }
+    if (action == J_SEARCH) {
+        strcpy(listlanguage, language);
+        copy_token(&catalog, j, r);
+        copy_token(&settings, j, field(j, r, "settings"));
+        screen = HOME;
+        if (initial) {
+            initial = 0;
+            start_job(&background, J_CHECK, "{\"command\":\"check\"}");
+        }
+    }
+    if (action == J_HYMN) {
+        copy_token(&hymn, j, r);
+        copy_token(&keys, j, r);
+        int song = field(j, r, "song");
+        char num[12], name[400], lyrics[40000];
+        getstr(j, song, "number", num, sizeof(num));
+        getstr(j, song, "title", name, sizeof(name));
+        snprintf(title, sizeof(title), "%s - %s", num, name);
+        getstr(j, r, "original_key", key, sizeof(key));
+        if (!*key)
+            strcpy(key, "--");
+        getstr(j, r, "lyrics", lyrics, sizeof(lyrics));
+        wrap_lyrics(lyrics);
+        show_hymn();
+        return;
+    }
+    if (action == J_RENDER) {
+        int a = field(j, r, "images");
+        imagecount = 0;
+        for (int i = 0; i < 25; i++) {
+            int n = array_at(j, a, i);
+            if (n < 0)
+                break;
+            jtext(j, n, images[imagecount++], sizeof(images[0]));
+        }
+        int info = field(j, r, "hymn");
+        if (info >= 0) {
+            copy_token(&keys, j, info);
+            if (!offset)
+                getstr(j, info, "original_key", key, sizeof(key));
+        }
+        show_page();
+        return;
+    }
+    if (action == J_DISPLAY) {
+        getstr(j, r, "image", viewport, sizeof(viewport));
+        panx = integer(j, field(j, r, "x"));
+        pany = integer(j, field(j, r, "y"));
+        maxx = integer(j, field(j, r, "max_x"));
+        maxy = integer(j, field(j, r, "max_y"));
+        screen = SCORE;
+    }
+    if (action == J_QR) {
+        getstr(j, r, "image", qrimage, sizeof(qrimage));
+        screen = QR;
+    }
+    if (action == J_SETTINGS) {
+        copy_token(&settings, j, r);
+        if (screen == HOME) {
+            setting_string("language", language, sizeof(language));
+            listpage = 0;
+            search();
+            return;
+        }
+    }
+    if (action == J_STORAGE) {
+        copy_token(&storage, j, r);
+        screen = STORAGE;
+    }
+    if (action == J_CLEAN || action == J_EXPORT)
+        getstr(j, r, "message", message, sizeof(message));
+    if (action == J_CHECK) {
+        int was_available = available;
+        available = jtrue(j, field(j, r, "available"));
+        getstr(j, r, "message", update_message, sizeof(update_message));
+        if (done != &background && screen == UPDATE)
+            snprintf(message, sizeof(message), "%s", update_message);
+        if (done == &background) {
+            if ((screen == HOME && was_available != available) || screen == UPDATE)
+                draw();
+            return;
+        }
+    }
+    if (action == J_DOWNLOAD) {
+        restart = jtrue(j, field(j, r, "restart"));
+        getstr(j, r, "message", message, sizeof(message));
+        draw();
+        if (restart)
+            alive = 0;
+    }
+    draw();
+}
+static void poll_job(Job *j) {
+    if (!j->pid)
+        return;
+    FILE *f = fopen(j->response, "rb");
+    if (f) {
+        fseek(f, 0, SEEK_END);
+        long size = ftell(f);
+        rewind(f);
+        if (size > 0 && size < LIMIT) {
+            char *body = calloc((size_t)size + 1, 1);
+            if (body) {
+                fread(body, 1, (size_t)size, f);
+                JSON json;
+                if (!jparse(&json, body, (size_t)size)) {
+                    if (jtrue(&json, field(&json, 0, "done"))) {
+                        int status;
+                        waitpid(j->pid, &status, 0);
+                        j->pid = 0;
+                        unlink(j->request);
+                        unlink(j->response);
+                        if (jtrue(&json, field(&json, 0, "ok")))
+                            result(j, &json, field(&json, 0, "result"));
+                        else {
+                            getstr(&json, 0, "error", message, sizeof(message));
+                            fprintf(stderr, "Worker error: %s\n", message);
+                            if (j == &background)
+                                message[0] = 0;
+                            else if (screen == SCORE && !imagecount) {
+                                screen = LYRICS;
+                                strcpy(view, "lyrics");
+                            }
+                            draw();
+                        }
+                    }
+                    free(json.t);
+                }
+                free(body);
+            }
+        }
+        fclose(f);
+    }
+    if (j->pid && time(NULL) - j->started > (j->action == J_DOWNLOAD ? 1800 : 240)) {
+        kill(-j->pid, SIGTERM);
+        waitpid(j->pid, NULL, 0);
+        j->pid = 0;
+        strcpy(message, "Could not finish. Saved hymns remain available.");
+        draw();
+    }
+}
+static void back(void) {
+    message[0] = 0;
+    menupage = 0;
+    if (screen == HOME) {
+        alive = 0;
+        return;
+    }
+    if (screen == LANGUAGE) {
+        screen = language_return;
+        draw();
+        return;
+    }
+    if (screen == SETTINGS) {
+        screen = previous;
+        if (screen == HOME) {
+            setting_string("language", language, sizeof(language));
+            listpage = 0;
+            search();
+            return;
+        }
+        if (screen == SCORE || screen == LYRICS) {
+            request_hymn("hymn", J_HYMN);
+            return;
+        }
+    } else if (screen == OPTIONS || screen == DOWNLOADS || screen == STORAGE || screen == UPDATE) {
+        screen = SETTINGS;
+    } else if (screen == LYRICS || screen == SCORE) {
+        char behavior[32];
+        setting_string("list_behavior", behavior, sizeof(behavior));
+        if (strcmp(behavior, "remember"))
+            listpage = 0;
+        screen = HOME;
+        strcpy(language, listlanguage);
+        search();
+        return;
+    } else if (screen == SEARCH) {
+        screen = HOME;
+    } else
+        screen = !strcmp(view, "lyrics") ? LYRICS : SCORE;
+    draw();
+}
+static void action(int a) {
+    char v[150], s[800];
+    const char *views[] = {"last", "score", "lyrics"}, *behaviors[] = {"top", "remember", "sticky"};
+    if (a >= A_LANG_EN && a <= A_LANG_LAST) {
+        const char *values[] = {"english", "spanish", "both", "last"};
+        snprintf(v, sizeof(v), "\"%s\"", values[a - A_LANG_EN]);
+        screen = language_return;
+        menupage = 0;
+        save(language_field, v);
+        return;
+    }
+    switch (a) {
+    case A_BACK:
+        back();
+        return;
+    case A_SHARE:
+        request_hymn("qr", J_QR);
+        return;
+    case A_VIEW:
+        strcpy(view, !strcmp(view, "score") ? "lyrics" : "score");
+        lyricpage = 0;
+        snprintf(v, sizeof(v), "\"%s\"", view);
+        request_hymn("hymn", J_HYMN);
+        return;
+    case A_SETTINGS:
+        previous = screen == HOME ? HOME : (!strcmp(view, "lyrics") ? LYRICS : SCORE);
+        screen = SETTINGS;
+        menupage = 0;
+        break;
+    case A_KEYS:
+        screen = KEYS;
+        break;
+    case A_ZOOM:
+        zoom = zoom == 100 ? 150 : zoom == 150 ? 200 : zoom == 200 ? 300 : 100;
+        panx = pany = 0;
+        screen = SCORE;
+        show_page();
+        return;
+    case A_EXPORTPDF:
+    case A_EXPORTTEXT:
+        snprintf(s, sizeof(s),
+                 "{\"command\":\"export\",\"language\":\"%s\",\"number\":\"%s\",\"offset\":%d,"
+                 "\"format\":\"%s\"}",
+                 language, number, offset, a == A_EXPORTTEXT ? "lyrics" : "pdf");
+        command(J_EXPORT, s);
+        return;
+    case A_OPTIONS:
+    case A_SHAREOPTIONS:
+        screen = OPTIONS;
+        scope_share = a == A_SHAREOPTIONS;
+        menupage = 0;
+        break;
+    case A_STORAGE:
+        menupage = 0;
+        command(J_STORAGE, "{\"command\":\"storage\"}");
+        return;
+    case A_DOWNLOADS:
+        screen = DOWNLOADS;
+        menupage = 0;
+        break;
+    case A_UPDATES:
+        screen = UPDATE;
+        menupage = 0;
+        break;
+    case A_CHECK:
+        command(J_CHECK, "{\"command\":\"check\"}");
+        return;
+    case A_DOWNLOAD:
+        command(J_DOWNLOAD, "{\"command\":\"download\"}");
+        return;
+    case A_CLEAN:
+        command(J_CLEAN, "{\"command\":\"cleanup\"}");
+        return;
+    case A_FONT:
+        snprintf(v, sizeof(v), "%d",
+                 setting_int("font_size") >= 32 ? 18 : setting_int("font_size") + 6);
+        save("font_size", v);
+        return;
+    case A_LANGUAGE:
+        choose_language("language");
+        return;
+    case A_DLANG:
+        choose_language("default_language");
+        return;
+    case A_DVIEW:
+        cycle("default_view", views, 3);
+        return;
+    case A_LIST:
+        cycle("list_behavior", behaviors, 3);
+        return;
+    case A_AWAKE:
+        toggle("keep_awake");
+        return;
+    case A_EXPORT:
+        toggle("allow_exports");
+        return;
+    case A_SMART:
+        toggle("smart");
+        return;
+    case A_OFFLANG:
+        choose_language("offline_language");
+        return;
+    case A_OFFSCORES:
+        toggle("offline_scores");
+        return;
+    case A_CHORDS:
+    case A_LYRICS:
+    case A_CREDITS:
+    case A_HEADING:
+    case A_COPYRIGHT: {
+        const char *names[] = {"chords", "lyrics", "credits", "heading", "copyright"};
+        const char *obj = scope_share ? "share_options" : "view_options",
+                   *name = names[a - A_CHORDS];
+        int t = field(&settings.j, 0, obj);
+        snprintf(s, sizeof(s), "{\"command\":\"settings\",\"changes\":{\"%s\":{\"%s\":%s}}}", obj,
+                 name, jtrue(&settings.j, field(&settings.j, t, name)) ? "false" : "true");
+        command(J_SETTINGS, s);
+        return;
+    }
+    }
+    draw();
+}
+static void tap(int x, int y) {
+    if (job.pid)
+        return;
+    message[0] = 0;
+    if (y < 55) {
+        if (screen == HOME) {
+            if (x >= 548)
+                alive = 0;
+            else if (x >= 370 && x < 540)
+                action(A_SETTINGS);
+        } else if (x < 60)
+            back();
+        else if ((screen == SCORE || screen == LYRICS) && x >= 336 && x < 480)
+            action(A_KEYS);
+        else if ((screen == SCORE || screen == LYRICS) && x >= 512) {
+            screen = MENU;
+            menupage = 0;
+            draw();
+        }
+        return;
+    }
+    if (screen == HOME) {
+        if (y < 108) {
+            if (x >= 432) {
+                toggle("smart");
+                return;
+            }
+            screen = SEARCH;
+            draw();
+            return;
+        }
+        if (y < 155) {
+            if (x < 344)
+                choose_language("language");
+            return;
+        }
+        if (y >= 156 && y < 688) {
+            int n = -1;
+            for (int row = 0; row < list_visible_count; row++)
+                if (y >= list_y[row] - 4 && y < list_y[row] + 44) {
+                    n = list_visible[row];
+                    break;
+                }
+
+            if (n < 0)
+                return;
+            getstr(&catalog.j, n, "number", number, sizeof(number));
+            getstr(&catalog.j, n, "language", language, sizeof(language));
+            offset = 0;
+            imagepage = 0;
+            panx = pany = 0;
+            zoom = 100;
+            imagecount = 0;
+            viewport[0] = 0;
+            lyricpage = 0;
+            char selected[16];
+            setting_string("default_view", selected, sizeof(selected));
+            if (strcmp(selected, "last"))
+                snprintf(view, sizeof(view), "%s", selected);
+            request_hymn("hymn", J_HYMN);
+            return;
+        }
+        if (y >= 736 && available) {
+            screen = UPDATE;
+            menupage = 0;
+            draw();
+            return;
+        }
+        if (y >= 688) {
+            if (x < 220 && listpage > 0)
+                listpage--;
+            else if (x > 380 && listpage + 1 < list_page_count)
+                listpage++;
+            draw();
+        }
+        return;
+    }
+    if (screen == KEYS) {
+        int i = (y - 80) / 48;
+        if (y < 80 || i < 0 || i >= 12)
+            return;
+        int n = array_at(&keys.j, field(&keys.j, 0, "keys"), i);
+        if (n < 0)
+            return;
+        offset = integer(&keys.j, field(&keys.j, n, "offset"));
+        getstr(&keys.j, n, "name", key, sizeof(key));
+        screen = SCORE;
+        strcpy(view, "score");
+        panx = pany = 0;
+        imagepage = 0;
+        viewport[0] = 0;
+        request_hymn("render", J_RENDER);
+        return;
+    }
+    if (screen == SEARCH) {
+        if (y >= 250 && y < 315) {
+            if (x < 300)
+                query[0] = 0;
+            else {
+                size_t n = strlen(query);
+                if (n)
+                    query[n - 1] = 0;
+            }
+            draw();
+            return;
+        }
+        if (y >= 384 && y < 640) {
+            const char *rows[] = {"1234567890", "qwertyuiop", "asdfghjkl", "zxcvbnm"};
+            int row = (y - 384) / 64, col = x / 60;
+            int count = (int)strlen(rows[row]);
+            if (col >= 0 && col < count && strlen(query) < sizeof(query) - 2) {
+                size_t n = strlen(query);
+                query[n] = rows[row][col];
+                query[n + 1] = 0;
+            }
+            draw();
+            return;
+        }
+        if (y >= 650) {
+            if (x > 390) {
+                listpage = 0;
+                search();
+            } else {
+                size_t n = strlen(query);
+                if (n < sizeof(query) - 2) {
+                    query[n] = ' ';
+                    query[n + 1] = 0;
+                }
+                draw();
+            }
+        }
+        return;
+    }
+    if (screen == LYRICS && y > 700) {
+        int per = setting_int("font_size") >= 30 ? 19 : setting_int("font_size") >= 24 ? 26 : 36;
+        if (x < 250 && lyricpage > 0)
+            lyricpage--;
+        else if (x > 350 && (lyricpage + 1) * per < linecount)
+            lyricpage++;
+        draw();
+        return;
+    }
+    if (screen == SCORE && y > 736) {
+        if (x < 220 && imagepage > 0) {
+            imagepage--;
+            pany = 0;
+            show_page();
+        } else if (x > 380 && imagepage + 1 < imagecount) {
+            imagepage++;
+            pany = 0;
+            show_page();
+        }
+        return;
+    }
+    if (screen == QR)
+        return;
+    if (screen == MENU || screen == SETTINGS || screen == OPTIONS || screen == STORAGE ||
+        screen == DOWNLOADS || screen == UPDATE || screen == LANGUAGE) {
+        menu_build();
+        if (y >= 680 && actioncount > 10) {
+            if (x < 250 && menupage > 0)
+                menupage--;
+            else if (x > 350 && (menupage + 1) * 10 < actioncount)
+                menupage++;
+            draw();
+            return;
+        }
+        int i = (y - 96) / 48 + menupage * 10;
+        if (y >= 96 && i >= 0 && i < actioncount)
+            action(actions[i]);
+    }
+}
+static int touch_axes(int fd, struct input_absinfo *x, struct input_absinfo *y) {
+    if (ioctl(fd, EVIOCGABS(ABS_MT_POSITION_X), x) == 0 &&
+        ioctl(fd, EVIOCGABS(ABS_MT_POSITION_Y), y) == 0)
+        return x->maximum > x->minimum && y->maximum > y->minimum;
+    unsigned char keybits[(KEY_MAX + 8) / 8] = {0};
+    if (ioctl(fd, EVIOCGBIT(EV_KEY, sizeof(keybits)), keybits) < 0 ||
+        !(keybits[BTN_TOUCH / 8] & (1u << (BTN_TOUCH % 8))))
+        return 0;
+    return ioctl(fd, EVIOCGABS(ABS_X), x) == 0 && ioctl(fd, EVIOCGABS(ABS_Y), y) == 0 &&
+           x->maximum > x->minimum && y->maximum > y->minimum;
+}
+static int open_touch(struct input_absinfo *x, struct input_absinfo *y) {
+    for (int i = 0; i < 32; i++) {
+        char path[80];
+        snprintf(path, sizeof(path), "/dev/input/event%d", i);
+        int fd = open(path, O_RDONLY | O_NONBLOCK);
+        if (fd < 0)
+            continue;
+        if (touch_axes(fd, x, y)) {
+            fprintf(stderr, "Touch input: %s\n", path);
+            fcntl(fd, F_SETFD, FD_CLOEXEC);
+            ioctl(fd, EVIOCGRAB, 1);
+            return fd;
+        }
+        close(fd);
+    }
+    return -1;
+}
+static int mapped(int value, struct input_absinfo *axis, int maximum) {
+    int result = (value - axis->minimum) * maximum / (axis->maximum - axis->minimum);
+    return result < 0 ? 0 : result > maximum ? maximum : result;
+}
+static void gesture_action(int kind, const Gesture *g) {
+    if (job.pid)
+        return;
+    if (kind == G_TAP)
+        tap(g->last_x, g->last_y);
+    else if (screen == SCORE) {
+        if (kind == G_PINCH) {
+            zoom = gesture_zoom(g, zoom);
+            panx = pany = 0;
+        } else {
+            panx += g->start_x - g->last_x;
+            pany += g->start_y - g->last_y;
+        }
+        show_page();
+    } else if (kind == G_DRAG) {
+        if (screen == HOME) {
+            if (g->last_y < g->start_y && listpage + 1 < list_page_count)
+                listpage++;
+            else if (g->last_y > g->start_y && listpage)
+                listpage--;
+            draw();
+        } else if (screen == LYRICS)
+            tap(g->last_y < g->start_y ? 500 : 100, 750);
+    }
+}
+static void stop_job(Job *j) {
+    if (j->pid) {
+        kill(-j->pid, SIGTERM);
+        while (waitpid(j->pid, NULL, 0) < 0 && errno == EINTR) {
+        }
+        unlink(j->request);
+        unlink(j->response);
+    }
+}
+/* Read the initial offline list in C; Python is started only for requested work. */
+static int read_doc(Doc *doc, const char *path) {
+    FILE *file = fopen(path, "rb");
+    if (!file)
+        return -1;
+    if (fseek(file, 0, SEEK_END)) {
+        fclose(file);
+        return -1;
+    }
+    long length = ftell(file);
+    rewind(file);
+    if (length <= 0 || length > LIMIT) {
+        fclose(file);
+        return -1;
+    }
+    char *body = malloc((size_t)length + 1);
+    if (!body) {
+        fclose(file);
+        return -1;
+    }
+    size_t got = fread(body, 1, (size_t)length, file);
+    fclose(file);
+    body[got] = 0;
+    int result = got == (size_t)length ? set_doc(doc, body) : -1;
+    free(body);
+    return result;
+}
+typedef struct {
+    char number[12], title[500], language[20];
+} InitialSong;
+static int song_compare(const void *a, const void *b) {
+    const InitialSong *left = a, *right = b;
+    int order = strcmp(left->language, right->language);
+    return order ? order : strcmp(left->number, right->number);
+}
+static int initial_catalog(Doc *manifest, const char *name, const char *lang, InitialSong *songs,
+                           int *count) {
+    int data = field(&manifest->j, 0, "data"), entries = field(&manifest->j, data, "files");
+    for (int i = 0;; i++) {
+        int entry = array_at(&manifest->j, entries, i);
+        if (entry < 0)
+            break;
+        char path[200], hash[80];
+        getstr(&manifest->j, entry, "path", path, sizeof(path));
+        if (strcmp(path, name))
+            continue;
+        getstr(&manifest->j, entry, "sha256", hash, sizeof(hash));
+        if (strlen(hash) != 64)
+            return -1;
+        for (const char *p = hash; *p; p++)
+            if (!isxdigit((unsigned char)*p))
+                return -1;
+        char filename[1000];
+        snprintf(filename, sizeof(filename), "%s/store/%s", root, hash);
+        Doc source = {0};
+        if (read_doc(&source, filename))
+            return -1;
+        for (int n = 1; n < source.j.t[0].next; n = source.j.t[n].next) {
+            if (*count >= 1500) {
+                clear_doc(&source);
+                return -1;
+            }
+            InitialSong *song = &songs[(*count)++];
+            getstr(&source.j, n, "number", song->number, sizeof(song->number));
+            getstr(&source.j, n, "title", song->title, sizeof(song->title));
+            snprintf(song->language, sizeof(song->language), "%s", lang);
+        }
+        clear_doc(&source);
+        return 0;
+    }
+    return 0;
+}
+static int fast_start(void) {
+    static const char defaults[] = {
+        "{\"language\":\"english\",\"view\":\"score\",\"default_language\":\"last\",\"default_"
+        "view\":\"last\",\"smart\":false,\"allow_exports\":false,\"font_size\":18,\"list_"
+        "behavior\":\"top\",\"keep_awake\":false,\"offline_language\":\"both\",\"offline_scores\":"
+        "true,\"view_options\":{\"chords\":false,\"lyrics\":true,\"credits\":true,\"heading\":true,"
+        "\"copyright\":true},\"share_options\":{\"chords\":false,\"lyrics\":true,\"credits\":true,"
+        "\"heading\":true,\"copyright\":true}}"};
+    char path[1000];
+    snprintf(path, sizeof(path), "%s/state/settings.json", root);
+    if (read_doc(&settings, path))
+        set_doc(&settings, defaults);
+    setting_string("default_language", language, sizeof(language));
+    if (!strcmp(language, "last"))
+        setting_string("language", language, sizeof(language));
+    if (!*language)
+        strcpy(language, "english");
+    setting_string("default_view", view, sizeof(view));
+    if (!strcmp(view, "last"))
+        setting_string("view", view, sizeof(view));
+    if (!*view)
+        strcpy(view, "score");
+    Doc manifest = {0};
+    snprintf(path, sizeof(path), "%s/current.json", root);
+    if (read_doc(&manifest, path))
+        return -1;
+    getstr(&manifest.j, field(&manifest.j, 0, "app"), "version", app_version, sizeof(app_version));
+    InitialSong *songs = calloc(1500, sizeof(*songs));
+    if (!songs) {
+        clear_doc(&manifest);
+        return -1;
+    }
+    int count = 0, error = 0;
+    if (strcmp(language, "spanish"))
+        error |= initial_catalog(&manifest, "catalogs/songs.json", "english", songs, &count);
+    if (strcmp(language, "english"))
+        error |= initial_catalog(&manifest, "catalogs/songs_es.json", "spanish", songs, &count);
+    clear_doc(&manifest);
+    if (error) {
+        free(songs);
+        return -1;
+    }
+    qsort(songs, (size_t)count, sizeof(*songs), song_compare);
+    char *body = calloc(LIMIT, 1);
+    if (!body) {
+        free(songs);
+        return -1;
+    }
+    size_t used = 0;
+    used += (size_t)snprintf(body, LIMIT, "{\"count\":%d,\"songs\":[", count);
+    for (int i = 0; i < count; i++) {
+        char *number_json = jquote(songs[i].number), *title_json = jquote(songs[i].title);
+        if (!number_json || !title_json) {
+            free(number_json);
+            free(title_json);
+            free(body);
+            free(songs);
+            return -1;
+        }
+        int written = snprintf(body + used, LIMIT - used,
+                               "%s{\"number\":%s,\"title\":%s,\"language\":\"%s\"}", i ? "," : "",
+                               number_json, title_json, songs[i].language);
+        free(number_json);
+        free(title_json);
+        if (written < 0 || (size_t)written >= LIMIT - used) {
+            free(body);
+            free(songs);
+            return -1;
+        }
+        used += (size_t)written;
+    }
+    if (used + 3 >= LIMIT) {
+        free(body);
+        free(songs);
+        return -1;
+    }
+    strcpy(body + used, "]}");
+    int result = set_doc(&catalog, body);
+    free(body);
+    free(songs);
+    if (result)
+        return -1;
+    strcpy(listlanguage, language);
+    Doc notice = {0};
+    snprintf(path, sizeof(path), "%s/state/check.json", root);
+    if (!read_doc(&notice, path)) {
+        available = jtrue(&notice.j, field(&notice.j, 0, "available"));
+        getstr(&notice.j, 0, "message", update_message, sizeof(update_message));
+    }
+    clear_doc(&notice);
+    initial = 0;
+    return 0;
+}
+
+static void smoke_tick(void) {
+    static int step;
+    static time_t when;
+    if (!getenv("SDA_HYMNAL_SMOKE") || job.pid || time(NULL) - when < 2)
+        return;
+    char path[1000];
+    if ((step == 0 && screen == HOME && catalog.body) || (step == 1 && screen == SCORE) ||
+        (step == 2 && screen == LYRICS) || (step == 3 && screen == QR) ||
+        (step == 4 && screen == SCORE)) {
+        snprintf(path, sizeof(path), "%s/state/native-smoke-%d.raw", root, step);
+        int in = open("/dev/fb0", O_RDONLY), out = open(path, O_WRONLY | O_CREAT | O_TRUNC, 0600);
+        unsigned char row[600];
+        struct fb_fix_screeninfo fixed;
+        struct fb_var_screeninfo variable;
+        if (in >= 0 && out >= 0 && framebuffer_layout(in, &fixed, &variable))
+            for (int i = 0; i < 800; i++) {
+                off_t offset = (off_t)(i + variable.yoffset) * fixed.line_length + variable.xoffset;
+                if (pread(in, row, sizeof(row), offset) != sizeof(row))
+                    break;
+                if (write(out, row, sizeof(row)) != sizeof(row))
+                    break;
+            }
+        if (in >= 0)
+            close(in);
+        if (out >= 0)
+            close(out);
+        if (step == 0)
+            tap(200, 180);
+        else if (step == 1)
+            action(A_VIEW);
+        else if (step == 2)
+            action(A_SHARE);
+        else if (step == 3) {
+            screen = KEYS;
+            tap(200, 80 + 7 * 48 + 10);
+        } else
+            alive = 0;
+        step++;
+        when = time(NULL);
+    }
+}
+int main(int argc, char **argv) {
+    if (argc < 4) {
+        fprintf(stderr, "Usage: hymnal ROOT APP FBINK\n");
+        return 1;
+    }
+    snprintf(root, sizeof(root), "%s", argv[1]);
+    snprintf(app, sizeof(app), "%s", argv[2]);
+    snprintf(fbink, sizeof(fbink), "%s", argv[3]);
+    signal(SIGTERM, stop_signal);
+    signal(SIGINT, stop_signal);
+    signal(SIGHUP, stop_signal);
+    signal(SIGUSR1, request_redraw);
+    struct input_absinfo ax, ay;
+    int touch = open_touch(&ax, &ay), home = open("/dev/input/event2", O_RDONLY | O_NONBLOCK);
+    if (home >= 0) {
+        fcntl(home, F_SETFD, FD_CLOEXEC);
+        ioctl(home, EVIOCGRAB, 1);
+    }
+    if (touch < 0) {
+        text("Touchscreen unavailable", 1, 1, 0);
+        return 1;
+    }
+    start_power_events();
+    hide_statusbar();
+    struct timespec settle = {0, 300000000};
+    nanosleep(&settle, NULL);
+    if (!fast_start()) {
+        draw();
+        start_job(&background, J_CHECK, "{\"command\":\"check\"}");
+    } else
+        command(J_STATUS, "{\"command\":\"status\"}");
+    TouchPoint points[2] = {{0}}, frame[2];
+    points[0].x = mapped(ax.value, &ax, 599);
+    points[0].y = mapped(ay.value, &ay, 799);
+    Gesture gesture = {0}, result_g;
+    int slot = 0;
+    time_t awake_sent = 0;
+    while (alive) {
+        poll_job(&job);
+        poll_job(&background);
+        smoke_tick();
+        read_power_events();
+        time_t now = time(NULL);
+        if (redraw_requested || (wake_redraw && now >= wake_redraw) ||
+            (wake_redraw_again && now >= wake_redraw_again)) {
+            redraw_requested = 0;
+            if (wake_redraw && now >= wake_redraw)
+                wake_redraw = 0;
+            if (wake_redraw_again && now >= wake_redraw_again)
+                wake_redraw_again = 0;
+            hide_statusbar();
+            draw();
+        }
+        int awake =
+            setting_bool("keep_awake") && (screen == LYRICS || screen == SCORE || screen == QR);
+        if (now - awake_sent >= 25) {
+            char *args[] = {"/usr/bin/lipc-set-prop", "com.lab126.powerd", "preventScreenSaver",
+                            awake ? "1" : "0", NULL};
+            run(args);
+            awake_sent = now;
+        }
+        struct input_event ev;
+        while (read(touch, &ev, sizeof(ev)) == sizeof(ev)) {
+            if (screen_sleeping)
+                continue;
+            if (ev.type == EV_ABS) {
+                if (ev.code == ABS_MT_SLOT)
+                    slot = ev.value >= 0 && ev.value < 2 ? ev.value : 2;
+                else if (slot < 2) {
+                    if (ev.code == ABS_MT_TRACKING_ID)
+                        points[slot].down = ev.value >= 0;
+                    else if (ev.code == ABS_MT_POSITION_X || ev.code == ABS_X)
+                        points[slot].x = mapped(ev.value, &ax, 599);
+                    else if (ev.code == ABS_MT_POSITION_Y || ev.code == ABS_Y)
+                        points[slot].y = mapped(ev.value, &ay, 799);
+                }
+            } else if (ev.type == EV_KEY && ev.code == BTN_TOUCH && !ev.value) {
+                points[0].down = points[1].down = 0;
+            } else if (ev.type == EV_KEY && ev.code == BTN_TOUCH && ev.value)
+                points[0].down = 1;
+            else if (ev.type == EV_SYN && ev.code == SYN_DROPPED) {
+                memset(points, 0, sizeof(points));
+                memset(&gesture, 0, sizeof(gesture));
+            } else if (ev.type == EV_SYN && ev.code == SYN_REPORT) {
+                memcpy(frame, points, sizeof(frame));
+                int kind = gesture_frame(&gesture, frame, &result_g);
+                if (kind)
+                    gesture_action(kind, &result_g);
+            }
+        }
+        if (home >= 0)
+            while (read(home, &ev, sizeof(ev)) == sizeof(ev))
+                if (ev.type == EV_KEY && ev.code == KEY_HOME && !ev.value)
+                    alive = 0;
+        struct timespec delay = {0, 80000000};
+        nanosleep(&delay, NULL);
+    }
+    stop_job(&job);
+    stop_job(&background);
+    stop_power_events();
+    char *args[] = {"/usr/bin/lipc-set-prop", "com.lab126.powerd", "preventScreenSaver", "0", NULL};
+    run(args);
+    ioctl(touch, EVIOCGRAB, 0);
+    close(touch);
+    if (home >= 0) {
+        ioctl(home, EVIOCGRAB, 0);
+        close(home);
+    }
+    clear_doc(&catalog);
+    clear_doc(&hymn);
+    clear_doc(&keys);
+    clear_doc(&settings);
+    clear_doc(&storage);
+    return restart ? 75 : 0;
+}

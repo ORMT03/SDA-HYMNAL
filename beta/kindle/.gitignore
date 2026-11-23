@@ -1,0 +1,9 @@
+# Runtime assets must be included despite the repository ignore rules.
+!downloads/
+!downloads/**
+!objects/
+!objects/**
+!manifests/
+!manifests/**
+!source/
+!source/**

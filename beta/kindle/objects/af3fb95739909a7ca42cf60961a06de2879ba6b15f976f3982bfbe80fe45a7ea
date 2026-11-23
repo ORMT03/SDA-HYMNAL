@@ -1,0 +1,3 @@
+-- Compatibility for an earlier installed KOReader plugin wrapper.
+-- The replacement launches directly from KUAL and must not enter KOReader.
+return { disabled = true }

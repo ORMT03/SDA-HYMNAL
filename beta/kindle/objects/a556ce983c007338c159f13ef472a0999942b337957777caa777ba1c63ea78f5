@@ -1,0 +1,57 @@
+/* Subscribe with the stock CLI. One event per process guarantees flushed stdout. */
+static int power_fd = -1;
+static pid_t power_pid = -1;
+static int screen_sleeping = 0;
+static time_t wake_redraw = 0, wake_redraw_again = 0;
+static char power_line[4096];
+static size_t power_used = 0;
+static volatile sig_atomic_t redraw_requested = 0;
+static void request_redraw(int signal_number) { (void)signal_number; redraw_requested = 1; }
+static void start_power_events(void) {
+    int pipefd[2];
+    if (pipe(pipefd)) return;
+    pid_t child = fork();
+    if (child < 0) { close(pipefd[0]); close(pipefd[1]); return; }
+    if (!child) {
+        close(pipefd[0]); dup2(pipefd[1], STDOUT_FILENO); close(pipefd[1]);
+        execl("/usr/bin/lipc-wait-event", "lipc-wait-event", "com.lab126.powerd",
+              "goingToScreenSaver,outOfScreenSaver,exitingScreenSaver", (char *)NULL);
+        _exit(127);
+    }
+    close(pipefd[1]); power_fd = pipefd[0]; power_pid = child; power_used = 0;
+    fcntl(power_fd, F_SETFL, O_NONBLOCK);
+    fcntl(power_fd, F_SETFD, FD_CLOEXEC);
+}
+static void stop_power_events(void) {
+    if (power_fd >= 0) { close(power_fd); power_fd = -1; }
+    if (power_pid > 0) { kill(power_pid, SIGTERM); while (waitpid(power_pid, NULL, 0) < 0 && errno == EINTR) {} power_pid = -1; }
+}
+static void read_power_events(void) {
+    if (power_fd < 0) return;
+    ssize_t count;
+    while ((count = read(power_fd, power_line + power_used, sizeof(power_line) - 1 - power_used)) > 0) {
+        power_used += (size_t)count;
+        if (power_used == sizeof(power_line) - 1) break;
+    }
+    if (count < 0 && (errno == EAGAIN || errno == EINTR)) return;
+    power_line[power_used] = 0;
+    if (strstr(power_line, "goingToScreenSaver")) {
+        screen_sleeping = 1; wake_redraw = wake_redraw_again = 0;
+        fprintf(stderr, "Power: sleep; preserving current page and draft\n");
+    } else if (strstr(power_line, "outOfScreenSaver") || strstr(power_line, "exitingScreenSaver")) {
+        screen_sleeping = 0;
+        /* The framework finishes its own redraw after the first wake notification. */
+        wake_redraw = time(NULL) + 1; wake_redraw_again = time(NULL) + 3;
+        fprintf(stderr, "Power: wake; restoring current page\n");
+    }
+    stop_power_events(); start_power_events();
+}
+static void hide_statusbar(void) {
+    pid_t child = fork();
+    if (!child) {
+        execl("/usr/bin/lipc-set-prop", "lipc-set-prop", "com.lab126.pillow", "interrogatePillow",
+              "{\"pillowId\": \"default_status_bar\", \"function\": \"nativeBridge.hideMe();\"}", (char *)NULL);
+        _exit(127);
+    }
+    if (child > 0) { int status; while (waitpid(child, &status, 0) < 0 && errno == EINTR) {} }
+}

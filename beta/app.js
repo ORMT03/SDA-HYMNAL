@@ -117,6 +117,10 @@ function scoreImageNames(song){
 const $ = id => document.getElementById(({songs:'song-list',language:'language-dropdown'})[id] || id);
 const normalize = text => String(text).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^\w\s]/g, '').trim();
 const pref = { get(key, fallback) { try { return localStorage.getItem(`beta-${key}`) || fallback; } catch { return fallback; } }, set(key, value) { try { localStorage.setItem(`beta-${key}`, value); } catch {} } };
+// Shared links use the regular site and override saved defaults only for this opening.
+let sharedView=new URLSearchParams(location.search).get('view');
+let sharedOffset=Number(new URLSearchParams(location.search).get('transpose')||0);
+if(!Number.isInteger(sharedOffset)||sharedOffset < -12||sharedOffset > 12)sharedOffset=0;
 let scoreImage = null;
 let scorePage = null, scoreContent = null, scoreMetadata = null, transposeOffset = 0, originalFifths = null, originalMinor = false, scoreBusy = false, pdfFile = null, pdfURL = null;
 const settings = { appearance:pref.get('appearance','light-scores'), fontSize:Number(pref.get('lyrics-font-size','18')), smart:pref.get('smart-search','false')==='true', defaultLanguage:pref.get('default-language','last'),defaultView:pref.get('default-view','last'),listBehavior:pref.get('list-behavior','top'),keepAwake:pref.get('keep-awake','false')==='true' };
@@ -154,12 +158,13 @@ function renderList() {
  if (!found.size) { const li = document.createElement('li'); li.textContent = !navigator.onLine&&!available.length?'This language is not saved offline. Connect or change your offline selection in Settings.':'No hymns found. Try another number, title or filter.'; li.className = 'muted'; $('songs').append(li); }
 }
 function openSong(song, updateURL = true) {
+ const requestedSharedView=sharedView,requestedSharedOffset=sharedOffset;sharedView=null;sharedOffset=0;
  if($('hymn').hidden)catalogPosition=window.scrollY;
- selected = song; mode = 'xml'; transposeOffset=0; clearPDF(); $('catalog').hidden = true; $('hymn').hidden = false; applyAppearance(); window.scrollTo(0,0);
+ selected = song; mode = 'xml'; transposeOffset=requestedSharedView==='score'?requestedSharedOffset:0; clearPDF(); $('catalog').hidden = true; $('hymn').hidden = false; applyAppearance(); window.scrollTo(0,0);
  $('hymn-title').textContent = `${song.number} - ${song.title}`; $('hymn-meta').textContent = `${song.language === 'english' ? 'English' : 'Spanish'} hymnal / ${song.number}`;
  closeHymnMenus();
  if (updateURL) history.pushState(null, '', `#${song.language}/${encodeURIComponent(song.number)}`);
- renderList(); showView($('dropdown-menu').value === 'lyrics' ? 'lyrics' : 'xml');void updateHymnWakeLock();
+ renderList(); showView(requestedSharedView==='lyrics'?'lyrics':requestedSharedView==='score'?'xml':$('dropdown-menu').value==='lyrics'?'lyrics':'xml');void updateHymnWakeLock();
 }
 // Engrave at a stable sheet width. Only the completed sheet scales on narrow screens.
 const SHEET_WIDTH = 1100;

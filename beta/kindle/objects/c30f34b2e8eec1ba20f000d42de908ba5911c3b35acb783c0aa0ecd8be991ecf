@@ -1,0 +1,19 @@
+#!/bin/sh
+set -eu
+mkdir -p /tmp/k5build
+cd /tmp/k5build
+if [ ! -d x-tools ]; then tar --zstd --no-same-owner --no-same-permissions -xf /work/kindle5.tar.zst; fi
+if [ ! -d verovio-version-6.4.1 ]; then tar -xzf /work/verovio-6.4.1.tar.gz; fi
+TC=/tmp/k5build/x-tools/arm-kindle5-linux-gnueabi
+cmake -S verovio-version-6.4.1/cmake -B native-build \
+ -DCMAKE_SYSTEM_NAME=Linux -DCMAKE_SYSTEM_PROCESSOR=arm \
+ -DCMAKE_C_COMPILER="$TC/bin/arm-kindle5-linux-gnueabi-gcc" \
+ -DCMAKE_CXX_COMPILER="$TC/bin/arm-kindle5-linux-gnueabi-g++" \
+ -DCMAKE_BUILD_TYPE=MinSizeRel -DCMAKE_EXE_LINKER_FLAGS='-static' \
+ -DNO_HUMDRUM_SUPPORT=ON -DNO_PAE_SUPPORT=ON -DNO_ABC_SUPPORT=ON \
+ -DNO_GABC_SUPPORT=ON -DNO_MXL_SUPPORT=ON -DNO_EDIT_SUPPORT=OFF
+cmake --build native-build -j 4
+"$TC/bin/arm-kindle5-linux-gnueabi-strip" native-build/verovio
+file native-build/verovio
+mkdir -p /work/native-build
+cp native-build/verovio /work/native-build/verovio

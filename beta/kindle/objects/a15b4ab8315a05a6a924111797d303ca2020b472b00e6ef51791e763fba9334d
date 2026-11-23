@@ -1,0 +1,6 @@
+#!/bin/sh
+set -eu
+CC=/tmp/k5build/x-tools/arm-kindle5-linux-gnueabi/bin/arm-kindle5-linux-gnueabi-gcc
+"$CC" -std=c99 -Os -march=armv7-a -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp -mthumb -Wall -Wextra -static -s /source/hymnal.c -o /work/native-build/hymnal
+
+"$CC" -std=c99 -Os -march=armv7-a -mtune=cortex-a8 -mfpu=neon -mfloat-abi=softfp -mthumb -static-libgcc -s /source/png_scale.c -ldl -o /work/native-build/png-scale

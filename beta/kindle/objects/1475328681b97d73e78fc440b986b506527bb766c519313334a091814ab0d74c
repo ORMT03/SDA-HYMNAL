@@ -1,0 +1,9 @@
+require('setupkoenv')
+local ok,grid=require('ffi/qrencode').qrcode(arg[1])
+assert(ok,grid)
+local f=assert(io.open(arg[2],'wb'));local n=#grid
+f:write('P5\n',n+8,' ',n+8,'\n255\n')
+for y=-3,n+4 do
+ for x=-3,n+4 do f:write(x>=1 and x<=n and y>=1 and y<=n and grid[x][y]>=0 and string.char(0) or string.char(255)) end
+end
+f:close()

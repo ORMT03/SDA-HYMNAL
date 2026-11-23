@@ -1,0 +1,15 @@
+/* Some Kindle drivers report both MT contact-lift and BTN_TOUCH=0 per tap. */
+typedef struct { int down, pending; } TouchContact;
+static void touch_contact(TouchContact *contact, int down) {
+    if (down) contact->down = 1;
+    else {
+        /* A duplicate release must not cancel a release already queued for SYN_REPORT. */
+        contact->pending |= contact->down;
+        contact->down = 0;
+    }
+}
+static int touch_report(TouchContact *contact) {
+    int released = contact->pending;
+    contact->pending = 0;
+    return released;
+}

@@ -1,0 +1,25 @@
+#ifndef COMPANION_UNICODE_DISPLAY_H
+#define COMPANION_UNICODE_DISPLAY_H
+#include <stddef.h>
+#include <stdint.h>
+#include <string.h>
+#include "unicode_display_data.h"
+/* Display copies only: IDs, original note text, drafts and sent messages remain byte-exact. */
+static inline unsigned display_read(const char **input){
+ const unsigned char *p=(const unsigned char *)*input;unsigned c=*p;if(!c)return 0;
+ int n=c<128?1:c>=0xc2&&c<=0xdf?2:c>=0xe0&&c<=0xef?3:c>=0xf0&&c<=0xf4?4:0;
+ if(!n){(*input)++;return 0xfffd;}unsigned value=n==1?c:c&((1u<<(7-n))-1);
+ for(int i=1;i<n;i++){if(!p[i]||(p[i]&0xc0)!=0x80){(*input)++;return 0xfffd;}value=(value<<6)|(p[i]&63);}
+ if((n==2&&value<128)||(n==3&&value<2048)||(n==4&&value<65536)||value>0x10ffff||(value>=0xd800&&value<=0xdfff)){(*input)++;return 0xfffd;}
+ *input+=n;return value;
+}
+static inline unsigned display_compose(unsigned base,unsigned mark){
+ size_t low=0,high=sizeof(display_compositions)/sizeof(display_compositions[0]);
+ while(low<high){size_t mid=low+(high-low)/2;unsigned a=display_compositions[mid].base,b=display_compositions[mid].mark;if(a<base||(a==base&&b<mark))low=mid+1;else high=mid;}
+ if(low<sizeof(display_compositions)/sizeof(display_compositions[0])&&display_compositions[low].base==base&&display_compositions[low].mark==mark){return display_compositions[low].composed;}return 0;
+}
+static inline unsigned display_next(const char **input){unsigned value=display_read(input);while(value&&**input){const char *next=*input;unsigned mark=display_read(&next),composed=display_compose(value,mark);if(!composed)break;value=composed;*input=next;}return value;}
+static inline int display_mark(unsigned cp){size_t low=0,high=sizeof(display_mark_ranges)/sizeof(display_mark_ranges[0]);while(low<high){size_t mid=low+(high-low)/2;if(display_mark_ranges[mid].last<cp)low=mid+1;else high=mid;}return low<sizeof(display_mark_ranges)/sizeof(display_mark_ranges[0])&&display_mark_ranges[low].first<=cp;}
+static inline size_t display_encode(unsigned c,char out[4]){if(c<128){out[0]=(char)c;return 1;}if(c<2048){out[0]=(char)(0xc0|(c>>6));out[1]=(char)(0x80|(c&63));return 2;}if(c<65536){out[0]=(char)(0xe0|(c>>12));out[1]=(char)(0x80|((c>>6)&63));out[2]=(char)(0x80|(c&63));return 3;}out[0]=(char)(0xf0|(c>>18));out[1]=(char)(0x80|((c>>12)&63));out[2]=(char)(0x80|((c>>6)&63));out[3]=(char)(0x80|(c&63));return 4;}
+static inline size_t display_copy(char *out,size_t capacity,const char *input,size_t characters){size_t used=0,count=0;if(!capacity)return 0;while(*input&&count<characters){char bytes[4];unsigned value=display_next(&input);size_t n=display_encode(value,bytes);if(n>=capacity-used)break;memcpy(out+used,bytes,n);used+=n;count++;}out[used]=0;return used;}
+#endif

@@ -1,0 +1,33 @@
+/* Dimensions are read from the actual preview, never assumed from the screen. */
+#ifndef COMPANION_IMAGE_GEOMETRY_H
+#define COMPANION_IMAGE_GEOMETRY_H
+#include <stdint.h>
+#include <stddef.h>
+#include <string.h>
+typedef struct { int w,h; } ImageSize;
+typedef struct { int x,y,w,h; } ImageBox;
+static ImageSize image_size(const unsigned char *b,size_t n) {
+    ImageSize s={0,0};
+    if(n>=24&&!memcmp(b,"\x89PNG\r\n\x1a\n",8)) {
+        uint32_t w=((uint32_t)b[16]<<24)|((uint32_t)b[17]<<16)|((uint32_t)b[18]<<8)|b[19];
+        uint32_t h=((uint32_t)b[20]<<24)|((uint32_t)b[21]<<16)|((uint32_t)b[22]<<8)|b[23];
+        if(w<=16384&&h<=16384){s.w=(int)w;s.h=(int)h;}
+    } else if(n>4&&b[0]==255&&b[1]==216) {
+        size_t p=2;
+        while(p+4<=n){if(b[p++]!=255)break;while(p<n&&b[p]==255)p++;if(p>=n)break;unsigned m=b[p++];
+            if(m==218||m==217)break;
+            if(m==1||(m>=208&&m<=215))continue;
+            if(p+2>n)break;
+            size_t len=((size_t)b[p]<<8)|b[p+1];if(len<2||len>n-p)break;
+            if(m>=192&&m<=207&&m!=196&&m!=200&&m!=204&&len>=7){s.h=(b[p+3]<<8)|b[p+4];s.w=(b[p+5]<<8)|b[p+6];break;}p+=len;
+        }
+    }
+    if(s.w<1||s.h<1||s.w>16384||s.h>16384||(uint64_t)s.w*s.h>40000000){s.w=s.h=0;}return s;
+}
+static ImageBox image_fit(ImageSize s,ImageBox box) {
+    ImageBox r=box;if(s.w<1||s.h<1||box.w<1||box.h<1){r.w=r.h=0;return r;}
+    if((int64_t)s.w*box.h>(int64_t)s.h*box.w){r.w=box.w;r.h=(int)(((int64_t)s.h*r.w+s.w/2)/s.w);}
+    else{r.h=box.h;r.w=(int)(((int64_t)s.w*r.h+s.h/2)/s.h);}
+    if(r.w<1){r.w=1;}if(r.h<1){r.h=1;}r.x+=(box.w-r.w)/2;r.y+=(box.h-r.h)/2;return r;
+}
+#endif

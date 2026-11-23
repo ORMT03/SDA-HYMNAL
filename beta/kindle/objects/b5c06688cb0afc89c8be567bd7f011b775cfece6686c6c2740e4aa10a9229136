@@ -1,0 +1,181 @@
+/* Bounded, scanline PNG decoding through the installed libpng 1.6 public ABI.
+ * API reference: https://github.com/pnggroup/libpng/blob/libpng16/png.h
+ * This helper never allocates a full-resolution RGB/RGBA image.
+ */
+#define _POSIX_C_SOURCE 200809L
+#include <dlfcn.h>
+#include <stdint.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+static void png_error(void *p, const char *text) {
+    (void)p;
+    fprintf(stderr, "PNG: %s\n", text);
+    _exit(3);
+}
+static void png_warning(void *p, const char *text) {
+    (void)p;
+    (void)text;
+}
+#define API(type, name, args)                                                                      \
+    type(*name) args = (type(*) args)dlsym(lib, #name);                                            \
+    if (!name) {                                                                                   \
+        fprintf(stderr, "Missing PNG API: %s\n", #name);                                           \
+        return 2;                                                                                  \
+    }
+int main(int argc, char **argv) {
+    if (argc != 6) {
+        fprintf(stderr, "Usage: png-scale LIBPNG INPUT OUTPUT MAX_WIDTH MAX_HEIGHT\n");
+        return 2;
+    }
+    unsigned maxw = (unsigned)atoi(argv[4]), maxh = (unsigned)atoi(argv[5]);
+    if (!maxw || !maxh || maxw > 1600 || maxh > 2000)
+        return 2;
+    void *lib = dlopen(argv[1], RTLD_NOW | RTLD_LOCAL);
+    if (!lib) {
+        fprintf(stderr, "PNG library: %s\n", dlerror());
+        return 2;
+    }
+    API(const char *, png_get_libpng_ver, (void *));
+    API(void *, png_create_read_struct,
+        (const char *, void *, void (*)(void *, const char *), void (*)(void *, const char *)));
+    API(void *, png_create_info_struct, (void *));
+    API(void, png_destroy_read_struct, (void **, void **, void **));
+    API(void, png_init_io, (void *, FILE *));
+    API(void, png_read_info, (void *, void *));
+    API(unsigned, png_get_IHDR,
+        (void *, void *, uint32_t *, uint32_t *, int *, int *, int *, int *, int *));
+    API(unsigned, png_get_valid, (void *, void *, unsigned));
+    API(void, png_set_strip_16, (void *));
+    API(void, png_set_palette_to_rgb, (void *));
+    API(void, png_set_expand_gray_1_2_4_to_8, (void *));
+    API(void, png_set_tRNS_to_alpha, (void *));
+    API(void, png_set_gray_to_rgb, (void *));
+    API(void, png_set_filler, (void *, unsigned, int));
+    API(int, png_set_interlace_handling, (void *));
+    API(void, png_read_update_info, (void *, void *));
+    API(size_t, png_get_rowbytes, (void *, void *));
+    API(void, png_read_row, (void *, unsigned char *, unsigned char *));
+    API(void, png_read_end, (void *, void *));
+    FILE *input = fopen(argv[2], "rb");
+    if (!input)
+        return 2;
+    void *png = png_create_read_struct(png_get_libpng_ver(NULL), NULL, png_error, png_warning),
+         *info = NULL;
+    unsigned char *row = NULL;
+    uint32_t *sums = NULL, *xmap = NULL, *xcounts = NULL, *ycounts = NULL;
+    FILE *output = NULL;
+    int result = 1;
+    if (!png)
+        goto done;
+    info = png_create_info_struct(png);
+    if (!info)
+        goto done;
+    png_init_io(png, input);
+    png_read_info(png, info);
+    uint32_t width, height;
+    int depth, color, interlace, compression, filter;
+    if (!png_get_IHDR(png, info, &width, &height, &depth, &color, &interlace, &compression,
+                      &filter) ||
+        !width || !height || width > 20000 || height > 40000 ||
+        (uint64_t)width * height > 100000000) {
+        fprintf(stderr, "Image dimensions exceed safe bounds\n");
+        goto done;
+    }
+    unsigned outw = width, outh = height;
+    if (outw > maxw) {
+        outh = (unsigned)((uint64_t)height * maxw / width);
+        outw = maxw;
+    }
+    if (outh > maxh) {
+        outw = (unsigned)((uint64_t)outw * maxh / outh);
+        outh = maxh;
+    }
+    if (!outw)
+        outw = 1;
+    if (!outh)
+        outh = 1;
+    int transparent = png_get_valid(png, info, 0x10) != 0;
+    if (depth == 16)
+        png_set_strip_16(png);
+    if (color == 3)
+        png_set_palette_to_rgb(png);
+    if (color == 0 && depth < 8)
+        png_set_expand_gray_1_2_4_to_8(png);
+    if (transparent)
+        png_set_tRNS_to_alpha(png);
+    if (color == 0 || color == 4)
+        png_set_gray_to_rgb(png);
+    if (!(color & 4) && !transparent)
+        png_set_filler(png, 255, 1);
+    int passes = png_set_interlace_handling(png);
+    png_read_update_info(png, info);
+    size_t rowbytes = png_get_rowbytes(png, info);
+    if (rowbytes != width * 4u) {
+        fprintf(stderr, "Unexpected PNG row layout\n");
+        goto done;
+    }
+    row = calloc(rowbytes, 1);
+    sums = calloc((size_t)outw * outh, sizeof(*sums));
+    xmap = calloc(width, sizeof(*xmap));
+    xcounts = calloc(outw, sizeof(*xcounts));
+    ycounts = calloc(outh, sizeof(*ycounts));
+    if (!row || !sums || !xmap || !xcounts || !ycounts)
+        goto done;
+    for (unsigned x = 0; x < width; x++) {
+        xmap[x] = (unsigned)((uint64_t)x * outw / width);
+        xcounts[xmap[x]]++;
+    }
+    for (unsigned y = 0; y < height; y++)
+        ycounts[(unsigned)((uint64_t)y * outh / height)]++;
+    const unsigned sx[] = {0, 4, 0, 2, 0, 1, 0}, sy[] = {0, 0, 4, 0, 2, 0, 1},
+                   dx[] = {8, 8, 4, 4, 2, 2, 1}, dy[] = {8, 8, 8, 4, 4, 2, 2};
+    for (int pass = 0; pass < passes; pass++)
+        for (unsigned y = 0; y < height; y++) {
+            png_read_row(png, row, NULL);
+            if (passes > 1 && (y < sy[pass] || (y - sy[pass]) % dy[pass]))
+                continue;
+            unsigned oy = (unsigned)((uint64_t)y * outh / height);
+            for (unsigned x = passes > 1 ? sx[pass] : 0; x < width;
+                 x += passes > 1 ? dx[pass] : 1) {
+                unsigned char *pixel = row + x * 4;
+                unsigned gray = (77u * pixel[0] + 150u * pixel[1] + 29u * pixel[2] + 128) / 256;
+                gray = (gray * pixel[3] + 255u * (255 - pixel[3]) + 127) / 255;
+                sums[(size_t)oy * outw + xmap[x]] += gray;
+            }
+        }
+    png_read_end(png, NULL);
+    output = fopen(argv[3], "wb");
+    if (!output)
+        goto done;
+    fprintf(output, "P5\n%u %u\n255\n", outw, outh);
+    for (unsigned y = 0; y < outh; y++)
+        for (unsigned x = 0; x < outw; x++) {
+            unsigned count = xcounts[x] * ycounts[y];
+            unsigned char gray = (unsigned char)((sums[(size_t)y * outw + x] + count / 2) / count);
+            if (fwrite(&gray, 1, 1, output) != 1)
+                goto done;
+        }
+    if (fclose(output)) {
+        output = NULL;
+        goto done;
+    }
+    output = NULL;
+    result = 0;
+    fprintf(stderr, "PNG scaled %ux%u to %ux%u using bounded scanlines\n", width, height, outw,
+            outh);
+done:
+    if (output)
+        fclose(output);
+    if (png)
+        png_destroy_read_struct(&png, info ? &info : NULL, NULL);
+    fclose(input);
+    free(row);
+    free(sums);
+    free(xmap);
+    free(xcounts);
+    free(ycounts);
+    dlclose(lib);
+    return result;
+}

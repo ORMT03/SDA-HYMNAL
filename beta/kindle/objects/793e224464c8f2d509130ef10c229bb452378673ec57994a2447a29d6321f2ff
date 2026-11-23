@@ -1,0 +1,29 @@
+/* Two-slot touch gestures. A pinch owns both releases, including duplicate ups. */
+#ifndef COMPANION_GESTURES_H
+#define COMPANION_GESTURES_H
+#include <string.h>
+typedef struct { int x,y,down; } TouchPoint;
+typedef struct { int active,multi,start_x,start_y,last_x,last_y,start_distance,last_distance,start_cx,start_cy,last_cx,last_cy; } Gesture;
+enum { G_NONE,G_TAP,G_DRAG,G_PINCH };
+static int gesture_distance(TouchPoint a,TouchPoint b){
+    unsigned dx=(unsigned)(a.x>b.x?a.x-b.x:b.x-a.x),dy=(unsigned)(a.y>b.y?a.y-b.y:b.y-a.y),value=dx*dx+dy*dy;
+    unsigned root=0,bit=1U<<30;while(bit>value)bit>>=2;
+    while(bit){if(value>=root+bit){value-=root+bit;root=(root>>1)+bit;}else root>>=1;bit>>=2;}return (int)root;
+}
+static int gesture_frame(Gesture *g,const TouchPoint points[2],Gesture *result){
+    int count=points[0].down+points[1].down;TouchPoint p=points[points[0].down?0:1];
+    if(count&&!g->active){memset(g,0,sizeof(*g));g->active=1;g->start_x=g->last_x=p.x;g->start_y=g->last_y=p.y;}
+    if(count==2){
+        int distance=gesture_distance(points[0],points[1]),cx=(points[0].x+points[1].x)/2,cy=(points[0].y+points[1].y)/2;
+        if(!g->multi){g->multi=1;g->start_distance=distance;g->start_cx=cx;g->start_cy=cy;}
+        g->last_distance=distance;g->last_cx=cx;g->last_cy=cy;
+    }else if(count==1&&!g->multi){g->last_x=p.x;g->last_y=p.y;}
+    if(!count&&g->active){*result=*g;memset(g,0,sizeof(*g));if(result->multi)return G_PINCH;
+        int dx=result->last_x-result->start_x,dy=result->last_y-result->start_y;return dx>40||dx< -40||dy>40||dy< -40?G_DRAG:G_TAP;}
+    return G_NONE;
+}
+static int gesture_zoom(const Gesture *g,int base){
+    if(g->start_distance<20)return base;
+    int zoom=base*g->last_distance/g->start_distance;return zoom<100?100:zoom>400?400:zoom;
+}
+#endif

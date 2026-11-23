@@ -1,0 +1,96 @@
+/* Small bounded JSON reader used by the native Kindle interface. No external runtime. */
+typedef struct { int start, end, next, count; char type; } JT;
+typedef struct { const char *s; size_t len, pos; JT *t; int used, cap, error; } JSON;
+static void jspace(JSON *j) { while (j->pos < j->len && strchr(" \r\n\t", j->s[j->pos])) j->pos++; }
+static int jvalue(JSON *j, int depth) {
+    jspace(j);
+    if (depth > 64 || j->used >= j->cap || j->pos >= j->len) { j->error = 1; return -1; }
+    int n = j->used++; JT *t = &j->t[n]; t->start = (int)j->pos; t->type = j->s[j->pos++];
+    if (t->type == '{' || t->type == '[') {
+        char end = t->type == '{' ? '}' : ']'; jspace(j);
+        if (j->pos < j->len && j->s[j->pos] == end) j->pos++;
+        else for (;;) {
+            if (t->type == '{') {
+                jspace(j); if (j->pos >= j->len || j->s[j->pos] != '"' || jvalue(j, depth+1) < 0) { j->error = 1; break; }
+                jspace(j); if (j->pos >= j->len || j->s[j->pos++] != ':') { j->error = 1; break; }
+            }
+            if (jvalue(j, depth+1) < 0) break;
+            t->count++; jspace(j);
+            if (j->pos >= j->len) { j->error = 1; break; }
+            char c = j->s[j->pos++]; if (c == end) break;
+            if (c != ',') { j->error = 1; break; }
+        }
+    } else if (t->type == '"') {
+        int closed = 0;
+        while (j->pos < j->len) {
+            unsigned char c = j->s[j->pos++]; if (c == '"') { closed = 1; break; }
+            if (c < 32) { j->error = 1; break; }
+            if (c == '\\') {
+                if (j->pos >= j->len) break;
+                char e = j->s[j->pos++];
+                if (e == 'u') { for (int k=0;k<4;k++) if (j->pos >= j->len || !isxdigit((unsigned char)j->s[j->pos++])) { j->error=1; break; } }
+                else if (!strchr("\"\\/bfnrt", e)) { j->error=1; break; }
+            }
+        }
+        if (!closed) j->error = 1;
+    } else {
+        while (j->pos < j->len && !strchr(" \r\n\t,]}", j->s[j->pos])) j->pos++;
+        size_t size = j->pos - (size_t)t->start;
+        const char *p = j->s+t->start;
+        if (!((size==4 && (!memcmp(p,"true",4)||!memcmp(p,"null",4))) || (size==5 && !memcmp(p,"false",5)))) {
+            size_t at=0;
+            if(at<size&&p[at]=='-')at++;
+            if(at<size&&p[at]=='0')at++;
+            else if(at<size&&p[at]>='1'&&p[at]<='9'){while(at<size&&isdigit((unsigned char)p[at]))at++;}
+            else j->error=1;
+            if(at<size&&p[at]=='.'){at++;size_t start=at;while(at<size&&isdigit((unsigned char)p[at]))at++;if(at==start)j->error=1;}
+            if(at<size&&(p[at]=='e'||p[at]=='E')){at++;if(at<size&&(p[at]=='+'||p[at]=='-'))at++;size_t start=at;while(at<size&&isdigit((unsigned char)p[at]))at++;if(at==start)j->error=1;}
+            if(at!=size)j->error=1;
+        }
+    }
+    t->end=(int)j->pos;t->next=j->used;return j->error ? -1 : n;
+}
+static int jparse(JSON *j, const void *s, size_t len) {
+    memset(j,0,sizeof(*j));j->s=s;j->len=len;j->cap=100000;j->t=calloc((size_t)j->cap,sizeof(JT));
+    if(!j->t)return -1;
+    int n=jvalue(j,0);jspace(j);if(n<0||j->pos!=len){free(j->t);j->t=NULL;return -1;}return 0;
+}
+static int jeq(JSON *j,int n,const char *s) { return n>=0&&j->t[n].type=='"'&&j->t[n].end-j->t[n].start==(int)strlen(s)+2&&!memcmp(j->s+j->t[n].start+1,s,strlen(s)); }
+static int jget(JSON *j,int n,const char *key) {
+    if(n<0||j->t[n].type!='{')return -1;
+    for(int k=n+1;k<j->t[n].next;){int v=k+1;if(jeq(j,k,key))return v;k=j->t[v].next;}return -1;
+}
+static unsigned jhex(const char *s) { unsigned n=0;for(int i=0;i<4;i++){unsigned char c=s[i];n=(n<<4)+(c<='9'?c-'0':(c|32)-'a'+10);}return n; }
+static void jtext(JSON *j,int n,char *out,size_t cap) {
+    size_t used=0;if(!cap)return;out[0]=0;if(n<0||j->t[n].type!='"')return;
+    for(int p=j->t[n].start+1;p<j->t[n].end-1;){
+        unsigned c=(unsigned char)j->s[p++];
+        if(c=='\\'){
+            c=(unsigned char)j->s[p++];
+            if(c=='u'){
+                c=jhex(j->s+p);p+=4;
+                if(c>=0xd800&&c<=0xdbff&&p+6<=j->t[n].end-1&&j->s[p]=='\\'&&j->s[p+1]=='u'){
+                    unsigned lo=jhex(j->s+p+2);if(lo>=0xdc00&&lo<=0xdfff){c=0x10000+((c-0xd800)<<10)+lo-0xdc00;p+=6;}
+                }
+                if(c>=0xd800&&c<=0xdfff)c=0xfffd;
+                unsigned char bytes[4];int size;
+                if(c<128){bytes[0]=(unsigned char)c;size=1;}else if(c<2048){bytes[0]=0xc0|(c>>6);bytes[1]=0x80|(c&63);size=2;}
+                else if(c<65536){bytes[0]=0xe0|(c>>12);bytes[1]=0x80|((c>>6)&63);bytes[2]=0x80|(c&63);size=3;}
+                else {bytes[0]=0xf0|(c>>18);bytes[1]=0x80|((c>>12)&63);bytes[2]=0x80|((c>>6)&63);bytes[3]=0x80|(c&63);size=4;}
+                if(used+(size_t)size>=cap)break;
+                for(int k=0;k<size;k++) { out[used++]=(char)bytes[k]; }
+                continue;
+            }
+            if(c=='n')c='\n';else if(c=='r')c='\r';else if(c=='t')c='\t';else if(c=='b')c='\b';else if(c=='f')c='\f';
+        }
+        if(!c) { c='?'; }
+        if(used+1>=cap)break;
+        out[used++]=(char)c;
+    }if(used){size_t start=used-1;while(start&&((unsigned char)out[start]&0xc0)==0x80)start--;unsigned char lead=(unsigned char)out[start];size_t expected=lead<128?1:lead>=0xc2&&lead<0xe0?2:lead>=0xe0&&lead<0xf0?3:lead>=0xf0&&lead<0xf5?4:1;if(used-start<expected)used=start;}out[used]=0;
+}
+static int jtrue(JSON *j,int n){return n>=0&&j->t[n].type=='t';}
+static char *jquote(const char *text){
+    size_t len=strlen(text);if(len>LIMIT)return NULL;char *out=malloc(len*6+3);if(!out)return NULL;size_t u=0;out[u++]='"';
+    for(size_t i=0;i<len;i++){unsigned char c=text[i];if(c=='"'||c=='\\'){out[u++]='\\';out[u++]=(char)c;}else if(c<32){snprintf(out+u,7,"\\u%04x",c);u+=6;}else out[u++]=(char)c;}
+    out[u++]='"';out[u]=0;return out;
+}

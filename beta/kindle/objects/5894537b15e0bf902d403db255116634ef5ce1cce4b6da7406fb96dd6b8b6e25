@@ -1,0 +1,140 @@
+#!/usr/bin/env python3
+"""Small private GStreamer controller. Never changes the system mixer volume."""
+import ctypes as C
+import json, os, signal, subprocess, sys, threading, time, urllib.parse
+from pathlib import Path
+from backend import Hymnal, atomic_json, read_json
+from audio_timeline import timeline
+
+class Player:
+    def __init__(self):
+        self.gst=C.CDLL('libgstreamer-0.10.so.0');self.obj=C.CDLL('libgobject-2.0.so.0')
+        g=self.gst;g.gst_init.argtypes=[C.c_void_p,C.c_void_p];g.gst_init(None,None)
+        g.gst_element_factory_make.argtypes=[C.c_char_p,C.c_char_p];g.gst_element_factory_make.restype=C.c_void_p
+        g.gst_element_set_state.argtypes=[C.c_void_p,C.c_int];g.gst_element_set_state.restype=C.c_int
+        g.gst_element_query_position.argtypes=[C.c_void_p,C.POINTER(C.c_int),C.POINTER(C.c_longlong)]
+        g.gst_element_query_duration.argtypes=g.gst_element_query_position.argtypes
+        g.gst_element_seek_simple.argtypes=[C.c_void_p,C.c_int,C.c_int,C.c_longlong]
+        g.gst_element_get_bus.argtypes=[C.c_void_p];g.gst_element_get_bus.restype=C.c_void_p
+        g.gst_bus_pop_filtered.argtypes=[C.c_void_p,C.c_int];g.gst_bus_pop_filtered.restype=C.c_void_p
+        g.gst_mini_object_unref.argtypes=[C.c_void_p]
+        self.obj.g_object_set.argtypes=[C.c_void_p,C.c_char_p];self.obj.g_object_unref.argtypes=[C.c_void_p]
+        self.p=g.gst_element_factory_make(b'playbin2',None)
+        if not self.p:raise ValueError('Audio playback is unavailable on this Kindle.')
+        self.bus=g.gst_element_get_bus(self.p)
+    def volume(self,value):self.obj.g_object_set(self.p,b'volume',C.c_double(value/100),C.c_void_p())
+    def load(self,path,volume):
+        self.gst.gst_element_set_state(self.p,1)
+        self.obj.g_object_set(self.p,b'uri',C.c_char_p(Path(path).resolve().as_uri().encode()),C.c_void_p())
+        self.volume(volume)
+        if self.gst.gst_element_set_state(self.p,4)==0:raise ValueError('The sound output could not be opened.')
+    def pause(self):self.gst.gst_element_set_state(self.p,3)
+    def resume(self):self.gst.gst_element_set_state(self.p,4)
+    def stop(self):self.gst.gst_element_set_state(self.p,1)
+    def seek(self,seconds):self.gst.gst_element_seek_simple(self.p,3,3,int(seconds*1e9))
+    def position(self):
+        fmt=C.c_int(3);value=C.c_longlong()
+        return value.value/1e9 if self.gst.gst_element_query_position(self.p,C.byref(fmt),C.byref(value)) else 0
+    def ended(self):
+        error=self.gst.gst_bus_pop_filtered(self.bus,2)
+        if error:self.gst.gst_mini_object_unref(error);raise ValueError('The audio could not be played. Check the sound output or recording format.')
+        eos=self.gst.gst_bus_pop_filtered(self.bus,1)
+        if eos:self.gst.gst_mini_object_unref(eos);return True
+        return False
+    def close(self):self.stop();self.obj.g_object_unref(self.bus);self.obj.g_object_unref(self.p)
+
+
+def run(root,app):
+    h=Hymnal(root,app);directory=h.state/'audio';directory.mkdir(parents=True,exist_ok=True)
+    state=dict(pid=os.getpid(),playing=False,paused=False,position=0,duration=0,volume=30,rate=1,offset=0,all_verses=True,source='piano',message='',download_running=False)
+    request=directory/'request.json';status=directory/'status.json';last=None;player=Player();state['volume']=max(0,min(100,int(read_json(status,{}).get('volume',30))));last_action=time.monotonic();active=None;cancel=threading.Event();lock=threading.Lock()
+    def publish():
+        with lock:atomic_json(status,state)
+    def downloads(entries):
+        state['download_running']=True;cancel.clear()
+        done=0
+        try:
+            for e in entries:
+                if cancel.is_set():break
+                if h.recording_file(e).exists():continue
+                state['message']='Downloading '+e['number']+' — '+e['title']+' ('+str(done+1)+'/'+str(len(entries))+')';publish()
+                h.save_recording(e,cancel=cancel);done+=1
+            state['message']='Download cancelled. Completed recordings are kept.' if cancel.is_set() else str(done)+' recordings downloaded.'
+        except Exception as error:state['message']=str(error)
+        finally:state['download_running']=False;publish()
+    def stop():
+        player.stop();state.update(playing=False,paused=False,position=0,section='')
+    def prepare(req):
+        nonlocal active
+        old_position=player.position() if state['playing'] or state['paused'] else 0
+        old_rate=state['rate'];was_paused=state['paused'];same=state.get('language')==req['language'] and state.get('number')==req['number'] and state['source']==req.get('source','piano')
+        song=h.find_song(req['language'],req['number'])
+        if not song:raise ValueError('This hymn is not saved.')
+        active=dict(req);state.update(title=song['number']+' — '+song['title'],language=req['language'],number=req['number'],source=req.get('source','piano'),offset=max(-12,min(12,int(req.get('offset',0)))),rate=max(.5,min(1.5,float(req.get('rate',1)))),all_verses=bool(req.get('all_verses',True)),message='Preparing audio…');publish()
+        player.stop()
+        if state['source']=='piano':
+            mapping=h.content_json('catalogs/scores.json',{});path=mapping.get(song['language']+':'+song['number'])
+            if not path:raise ValueError('MusicXML is not available for this hymn.')
+            data=h.obtain_content(path);verses=max(1,len(__import__('re').findall(r'(?m)^\s*\d+[.)]\s*$',song.get('content',''))))
+            score=timeline(data.read_bytes(),verses,state['all_verses']);state['duration']=score['duration']/state['rate'];state['sections']=score['sections']
+            target=directory/'piano.wav';scorepath=directory/'timeline.json';atomic_json(scorepath,score)
+            proc=subprocess.run([str(Path(app)/'bin/piano'),str(scorepath),str(Path(app)/'HymnPiano.wav'),str(target),str(state['offset']),str(state['rate']),'1'],stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=120)
+            if proc.returncode:raise ValueError('Piano audio could not be prepared safely.')
+        else:
+            try:h.refresh_recordings()
+            except Exception:pass
+            entry=h.recording_for(song)
+            if not entry:raise ValueError('Recording not yet available. Refresh the recording catalog when online.')
+            target=h.recording_file(entry)
+            if not target.exists():target=directory/('stream.'+entry['url'].rsplit('.',1)[-1]);h.save_recording(entry,target)
+            state['sections']=[];state['duration']=0
+        player.load(target,state['volume']);state.update(playing=True,paused=False,message='')
+        # Duration is available after GStreamer prerolls.
+        for _ in range(20):
+            fmt=C.c_int(3);value=C.c_longlong()
+            if player.gst.gst_element_query_duration(player.p,C.byref(fmt),C.byref(value)) and value.value>0:state['duration']=value.value/1e9;break
+            time.sleep(.05)
+        if same and old_position>0:player.seek(min(state['duration'],old_position*old_rate/state['rate']))
+        if same and was_paused:player.pause();state.update(playing=False,paused=True)
+    try:
+        publish()
+        while True:
+            command=read_json(request,{})
+            if command.get('id')!=last and command.get('id'):
+                last=command['id'];last_action=time.monotonic();a=command.get('action','status')
+                try:
+                    if a=='play':prepare(command)
+                    elif a=='pause':player.pause();state.update(playing=False,paused=True)
+                    elif a=='resume':player.resume();state.update(playing=True,paused=False)
+                    elif a=='stop':stop()
+                    elif a=='quit':stop();break
+                    elif a=='volume':state['volume']=max(0,min(100,int(command['value'])));player.volume(state['volume'])
+                    elif a=='seek':player.seek(max(0,min(state['duration'],float(command['value']))))
+                    elif a=='refresh':h.refresh_recordings();state['message']='Recording catalog refreshed.'
+                    elif a=='download':
+                        if not state['download_running']:
+                            entries=h.recording_entries(command.get('language'),command.get('number'));threading.Thread(target=downloads,args=(entries,),daemon=True).start()
+                    elif a=='cancel':cancel.set()
+                    elif a=='delete-all':
+                        if not state['download_running']:
+                            if state['source']=='recording':stop()
+                            h.delete_recordings();state['message']='All audio downloads deleted.'
+                    elif a=='delete':
+                        if not state['download_running']:
+                            if state['source']=='recording':stop()
+                            h.delete_recordings(command.get('language'),command.get('number'));state['message']='Downloads deleted.'
+                    state['ack']=last
+                except Exception as error:stop();state['message']=str(error);state['ack']=last
+            if state['playing'] or state['paused']:
+                state['position']=player.position()
+                if state['source']=='piano':state['section']=next((s['title'] for s in reversed(state.get('sections',[])) if s['time']/state['rate']<=state['position']),'')
+                if player.ended():state.update(playing=False,paused=False,position=state['duration'])
+            publish()
+            if not state['playing'] and not state['download_running'] and time.monotonic()-last_action>600:break
+            time.sleep(.2)
+    except Exception as error:state.update(playing=False,paused=False,message=str(error));publish()
+    finally:
+        cancel.set();player.close();state.update(pid=0,playing=False,paused=False);publish()
+        for pattern in ('piano.wav','timeline.json','stream.*'):
+            for path in directory.glob(pattern):path.unlink(missing_ok=True)
+if __name__=='__main__':run(sys.argv[1],sys.argv[2])

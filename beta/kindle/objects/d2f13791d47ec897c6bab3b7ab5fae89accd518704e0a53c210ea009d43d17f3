@@ -1,0 +1,32 @@
+/* Bounded, block-based piano renderer. No full-song audio buffer. */
+#define _POSIX_C_SOURCE 200809L
+#include <ctype.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <string.h>
+#include <math.h>
+#define LIMIT (4*1024*1024)
+#include "json.h"
+#define SR 22050
+#define BLOCK 2048
+static int element(JSON *j,int a,int i){if(a<0)return -1;int n=a+1;while(i--&&n<j->used)n=j->t[n].next;return n<j->t[a].next?n:-1;}
+static double number(JSON*j,int n){return n<0?0:atof(j->s+j->t[n].start);}
+static void le32(FILE*f,uint32_t v){for(int i=0;i<4;i++)fputc((v>>(i*8))&255,f);}
+static void le16(FILE*f,int v){fputc(v&255,f);fputc((v>>8)&255,f);}
+typedef struct {double start,end,speed;} Note;
+int main(int argc,char**argv){
+ if(argc!=7)return 2;
+ FILE*f=fopen(argv[1],"rb");if(!f)return 3;fseek(f,0,SEEK_END);long len=ftell(f);if(len<=0||len>4000000)return 4;rewind(f);char*body=calloc(len+1,1);if(!body)return 4;if(fread(body,1,len,f)!=(size_t)len)return 4;fclose(f);JSON j={0};if(jparse(&j,body,len)<0)return 5;
+ double rate=atof(argv[5]);int offset=atoi(argv[4]);if(rate<.5||rate>1.5||abs(offset)>12)return 6;
+ int a=jget(&j,0,"notes"),count=a<0?0:j.t[a].count;double duration=number(&j,jget(&j,0,"duration"))/rate;if(count<=0||count>30000||duration<=0||duration>1200)return 7;
+ Note*notes=calloc(count,sizeof(*notes));if(!notes)return 8;for(int i=0;i<count;i++){int n=element(&j,a,i);double start=number(&j,element(&j,n,0))/rate,d=number(&j,element(&j,n,1))/rate;int pitch=(int)number(&j,element(&j,n,2))+offset;if(pitch<0||pitch>127||start<0||d<=0)return 9;notes[i]=(Note){start,start+d,pow(2,(pitch-60)/12.0)};}
+ FILE*sample=fopen(argv[2],"rb");if(!sample)return 10;char header[44];if(fread(header,1,44,sample)!=44||memcmp(header,"RIFF",4)||memcmp(header+36,"data",4))return 10;uint32_t bytes=(unsigned char)header[40]|((unsigned char)header[41]<<8)|((unsigned char)header[42]<<16)|((unsigned char)header[43]<<24);if(bytes>1000000||bytes<SR*8)return 10;int16_t*pcm=malloc(bytes);if(!pcm||fread(pcm,1,bytes,sample)!=bytes)return 10;fclose(sample);int samples=bytes/2;
+ FILE*out=fopen(argv[3],"wb");if(!out)return 11;uint32_t frames=(uint32_t)((duration+.15)*SR),size=frames*2;fwrite("RIFF",1,4,out);le32(out,size+36);fwrite("WAVEfmt ",1,8,out);le32(out,16);le16(out,1);le16(out,1);le32(out,SR);le32(out,SR*2);le16(out,2);le16(out,16);fwrite("data",1,4,out);le32(out,size);
+ double mix[BLOCK];double volume=atof(argv[6]);if(volume<0||volume>1)volume=1;
+ for(uint32_t frame=0;frame<frames;frame+=BLOCK){int size=(frames-frame)<BLOCK?(int)(frames-frame):BLOCK;memset(mix,0,sizeof(mix));double begin=(double)frame/SR,finish=(double)(frame+size)/SR;
+  for(int n=0;n<count;n++){Note note=notes[n];if(note.start>finish||note.end+.08<begin)continue;for(int k=0;k<size;k++){double time=(double)(frame+k)/SR,age=time-note.start;if(age<0||time>note.end+.08)continue;double pos=age*SR*note.speed;if(pos>=SR*4)pos=SR+fmod(pos-SR,SR*3);int p=(int)pos;if(p+1>=samples)continue;double env=age<.008?.16*age/.008:age<.04?.16:.07+.09*exp(-(age-.04)/.5);if(time>note.end)env=.07*(1-(time-note.end)/.08);mix[k]+=(pcm[p]+(pcm[p+1]-pcm[p])*(pos-p))*env*volume;}}
+  for(int k=0;k<size;k++){double v=mix[k];if(v>32767)v=32767;if(v< -32768)v=-32768;le16(out,(int)v);}
+ }
+ int error=ferror(out);fclose(out);free(pcm);free(notes);free(j.t);free(body);return error?12:0;
+}

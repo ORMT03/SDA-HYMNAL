@@ -1,0 +1,159 @@
+"""MusicXML timing shared in behavior with the iOS and web piano players."""
+import re
+import xml.etree.ElementTree as ET
+
+
+def timeline(data, requested_verses=None, all_verses=True):
+    root = ET.fromstring(data)
+    if root.tag != 'score-partwise':
+        raise ValueError('This score cannot be read.')
+    for tag in ('grace', 'ornaments', 'unpitched', 'transpose'):
+        if root.find('.//' + tag) is not None:
+            raise ValueError('Piano playback does not yet support ' + tag + ' notation.')
+    for sound in root.findall('.//sound'):
+        if any(k in sound.attrib for k in ('dalsegno', 'tocoda', 'segno', 'coda')):
+            raise ValueError('Unsupported score navigation.')
+    parts = root.findall('part')
+    measures = parts[0].findall('measure') if parts else []
+    if not measures:
+        raise ValueError('No playable score is available.')
+    verses = max(1, min(20, requested_verses or max([int(n.get('number', '1')) for n in root.findall('.//lyric') if n.get('number', '1').isdigit()] or [1])))
+    active, endings = set(), []
+    for m in measures:
+        for e in m.findall('.//ending'):
+            if e.get('type') == 'start':
+                active = {int(n.strip()) for n in e.get('number', '').split(',')}
+                if not active or min(active) < 1:
+                    raise ValueError('Unsupported repeat ending.')
+        endings.append(active)
+        if any(e.get('type') in ('stop', 'discontinue') for e in m.findall('.//ending')):
+            active = set()
+    written = []
+    i, start, repeat_pass, steps, returned = 0, 0, 1, 0, False
+    while i < len(measures):
+        steps += 1
+        if steps > len(measures) * 32:
+            raise ValueError('Unsupported repeat loop.')
+        m = measures[i]; repeats = m.findall('.//repeat')
+        if any(n.get('direction') == 'forward' for n in repeats) and i != start:
+            start, repeat_pass = i, 1
+        included = not endings[i] or repeat_pass in endings[i]
+        if included:
+            written.append(i)
+        sounds = m.findall('.//sound')
+        if returned and included and any('fine' in s.attrib for s in sounds):
+            break
+        if not returned and included and any(s.get('dacapo') == 'yes' for s in sounds):
+            returned, i, start, repeat_pass = True, 0, 0, 1
+            continue
+        backwards = next((n for n in repeats if n.get('direction') == 'backward'), None)
+        if backwards is not None and not returned:
+            times = int(backwards.get('times', '2'))
+            if not 2 <= times <= 16:
+                raise ValueError('Unsupported repeat count.')
+            if repeat_pass < times:
+                repeat_pass += 1; i = start
+                continue
+            start = i + 1
+        i += 1
+        if i < len(measures) and not endings[i] and start == i:
+            repeat_pass = 1
+    words = lambda m: [n.text or '' for n in m.findall('.//words')]
+    refrain = [i for i, m in enumerate(measures) if any(re.search('refrain|chorus|coro', s, re.I) for s in words(m))]
+    fine = next((i for i, m in enumerate(measures) if any('fine' in s.attrib for s in m.findall('.//sound')) or any(s.strip().lower() == 'fine' for s in words(m))), -1)
+    dc = any(any(s.get('dacapo') == 'yes' for s in m.findall('.//sound')) or any('d.c.' in s.replace(' ', '').lower() for s in words(m)) for m in measures)
+    label = lambda v, chorus: ('Chorus · verse' if chorus else 'Verse') + ' %d of %d' % (v, verses)
+    visits = [(i, 'Score') for i in written]
+    if all_verses and verses > 1:
+        explicit = any(any(int(n.get('times', '0')) == verses for n in m.findall('.//repeat')) for m in measures)
+        engraved = any(any((n.text or '').strip().startswith(str(verses) + '. ') for n in m.findall('.//lyric/text')) and len({n.get('number') for n in m.findall('.//lyric')}) == 1 for m in measures[1:])
+        if 0 <= fine < len(measures)-1 and dc and ((refrain and refrain[0] == 0) or len(measures[fine+1].findall('.//lyric')) > 1):
+            visits = [(i, label(v, i <= fine)) for v in range(1, verses+1) for i in list(range(fine+1, len(measures))) + list(range(fine+1))]
+        elif explicit or engraved:
+            visits = []; v, previous = 1, -1
+            for i in written:
+                if i < previous: v = min(verses, v+1)
+                previous = i
+                starts = [n for n in refrain if n <= i]
+                chorus = bool(starts) and not any(len({n.get('number') for n in m.findall('.//lyric')}) > 1 for m in measures[starts[-1]:i+1])
+                visits.append((i, label(v, chorus)))
+        else:
+            visits = [(i, label(v, bool(refrain) and i >= refrain[0])) for v in range(1, verses+1) for i in written]
+    notes, tempos, sections, stanzas, choruses = [], [[0, 100]], [], {1: 0}, []
+    length = 0
+    for pi, part in enumerate(parts):
+        source = part.findall('measure')
+        if len(source) != len(measures): raise ValueError('Incompatible score parts.')
+        div, beat, divisions, tied = 1, 0, [], {}
+        for m in source:
+            value = float(m.findtext('attributes/divisions', '0'))
+            if value > 0: div = value
+            divisions.append(div)
+        for i, title in visits:
+            m, div = source[i], divisions[i]
+            if pi == 0:
+                if not sections or sections[-1]['title'] != title: sections.append(dict(beat=beat, title=title))
+                if any(re.search('refrain|chorus', s, re.I) for s in words(m)): choruses.append(beat)
+            cursor, end, chord_start = 0, 0, 0
+            for e in m:
+                if e.tag in ('backup', 'forward'):
+                    cursor += (-1 if e.tag == 'backup' else 1) * float(e.findtext('duration', '0')) / div
+                    if cursor < -.001: raise ValueError('Invalid voice timing.')
+                    end = max(end, cursor)
+                elif e.tag == 'direction' and pi == 0:
+                    bpm = next((float(n.get('tempo')) for n in e.findall('.//sound') if n.get('tempo')), 0)
+                    met = e.find('.//metronome')
+                    if not bpm and met is not None:
+                        bpm = float(met.findtext('per-minute', '0')) * dict(whole=4, half=2, quarter=1, eighth=.5, **{'16th':.25}).get(met.findtext('beat-unit'), 1) * (2 - .5 ** len(met.findall('beat-unit-dot')))
+                    if 0 < bpm <= 1000: tempos.append([max(0, beat+cursor+float(e.findtext('offset', '0'))/div), bpm])
+                elif e.tag == 'note':
+                    duration = float(e.findtext('duration', '0')) / div
+                    if duration <= 0: raise ValueError('A note has no playable duration.')
+                    chord = e.find('chord') is not None
+                    start = chord_start if chord else cursor
+                    if not chord: chord_start, cursor = cursor, cursor+duration
+                    end = max(end, start+duration)
+                    if pi == 0:
+                        for lyric in e.findall('lyric'):
+                            match = re.match(r'^(\d+)\.', lyric.findtext('text', '').strip())
+                            if match: stanzas.setdefault(int(match[1]), beat+start)
+                    p = e.find('pitch')
+                    if p is not None:
+                        alter = float(p.findtext('alter', '0'))
+                        if not alter.is_integer(): raise ValueError('Microtonal notes are unsupported.')
+                        pitch = (int(p.findtext('octave'))+1)*12 + dict(C=0,D=2,E=4,F=5,G=7,A=9,B=11)[p.findtext('step')] + int(alter)
+                        voice = (pi, e.findtext('staff'), e.findtext('voice'), pitch)
+                        starts = any(n.get('type') == 'start' for n in e.findall('tie')); stops = any(n.get('type') == 'stop' for n in e.findall('tie'))
+                        previous = tied.get(voice)
+                        if stops and previous is not None and abs(notes[previous]['beat']+notes[previous]['duration']-(beat+start)) < .001:
+                            notes[previous]['duration'] += duration
+                            if not starts: tied.pop(voice, None)
+                        else:
+                            notes.append(dict(beat=beat+start, duration=duration, pitch=pitch))
+                            if starts: tied[voice] = len(notes)-1
+                            else: tied.pop(voice, None)
+                    elif e.find('rest') is None: raise ValueError('Unsupported note.')
+            beat += end
+        length = max(length, beat)
+    if not notes: raise ValueError('No playable notes.')
+    tempos.sort(key=lambda n:n[0])
+    if all_verses and verses > 1 and len(choruses) == 1 and len(stanzas) == verses and stanzas.get(verses, length) < choruses[0] and len(visits) == len(written):
+        newnotes, newtempos, newsections, total = [], [], [], 0
+        ranges = []
+        for v in range(1, verses+1): ranges.extend([(stanzas[v], stanzas.get(v+1, choruses[0]), label(v, False)), (choruses[0], length, label(v, True))])
+        for start, end, title in ranges:
+            if end <= start: continue
+            newsections.append(dict(beat=total,title=title));newtempos.append([total, next((t[1] for t in reversed(tempos) if t[0] <= start),100)])
+            newtempos.extend([total+t[0]-start,t[1]] for t in tempos if start < t[0] < end)
+            for n in notes:
+                if n['beat'] < end and n['beat']+n['duration'] > start:
+                    newnotes.append(dict(pitch=n['pitch'],beat=total+max(start,n['beat'])-start,duration=min(end,n['beat']+n['duration'])-max(start,n['beat'])))
+            total += end-start
+        notes,tempos,sections,length = newnotes,newtempos,newsections,total
+    def seconds(b):
+        last, elapsed, bpm = 0, 0, 100
+        for t, rate in tempos:
+            if t > b: break
+            elapsed += (t-last)*60/bpm; last,bpm = t,rate
+        return elapsed+(b-last)*60/bpm
+    return dict(notes=[[seconds(n['beat']),seconds(n['beat']+n['duration'])-seconds(n['beat']),n['pitch']] for n in notes],duration=seconds(length),sections=[dict(time=seconds(s['beat']),title=s['title']) for s in sections],verseCount=verses if all_verses else 1)

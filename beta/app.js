@@ -6,12 +6,12 @@ self.HymnalSearch = (() => {
  function prepare(song) { return {...song,searchTitle:normalize(song.title),searchLyrics:normalize(song.content),searchTokens:new Set(tokens(song.title+' '+song.content))}; }
  function score(song,query) {
   const q=normalize(query), ts=tokens(q); if (!q) return 0;
-  let result=0; const number=q.padStart(3,'0');
-  if (song.number===q||song.number===number) result+=200;
+  let result=0; const number=q.padStart(3,'0'),code=normalize(song.number);
+  if (code===q||code===number||(/^\d{4}$/.test(q)&&code==='gyc'+q)) result+=200;
   if (song.searchTitle.includes(q)) result+=80;
   if (song.searchLyrics.includes(q)) result+=40;
   for(const token of ts) {
-   if(song.number===token||song.number===token.padStart(3,'0'))result+=120;
+   if(code===token||code===token.padStart(3,'0')||(/^\d{4}$/.test(token)&&code==='gyc'+token))result+=120;
    if(song.searchTitle.includes(token))result+=20;
    if(song.searchTokens.has(token))result+=8;
    if(song.searchLyrics.includes(token))result+=2;
@@ -43,7 +43,7 @@ self.HymnalPDF = {
    await engine.load(content);engine.Sheet.Transpose=offset;engine.updateGraphic();engine.render();await document.fonts.ready;
    const pages=[...staging.querySelectorAll('svg')];if(!pages.length)throw new Error('The score has no printable pages.');
    const pdf=new jspdf.jsPDF({unit:'pt',format:'letter',orientation:'portrait',compress:true});
-   pdf.setProperties({title:`${song.number} - ${song.title}`,subject:'SDA Hymnal sheet music',creator:'SDA Hymnal'});
+   pdf.setProperties({title:songLabel(song),subject:'Song Collections sheet music',creator:'SDA Hymnal'});
    for(let index=0;index<pages.length;index++) {
     if(index)pdf.addPage('letter','portrait');
     const svg=pages[index];const width=parseFloat(svg.getAttribute('width')),height=parseFloat(svg.getAttribute('height'));
@@ -58,7 +58,7 @@ self.HymnalPDF = {
      let y=32;
      if(options.heading) {
       pdf.setFontSize(20);const lines=pdf.splitTextToSize(metadata.title,480);
-      pdf.text(lines,306,y,{align:'center'});pdf.text(String(Number(song.number)),586,y,{align:'right'});y+=lines.length*23+8;
+      pdf.text(lines,306,y,{align:'center'});pdf.text(scoreNumber(song),586,y,{align:'right'});y+=lines.length*23+8;
      }
      if(options.credits) {
       pdf.setFontSize(8);
@@ -74,7 +74,7 @@ self.HymnalPDF = {
      pdf.setFontSize(8);pdf.text(pdf.splitTextToSize(metadata.footer,540),306,768,{align:'center'});
     }
    }
-   return new File([pdf.output('blob')],`${song.number}-${song.title.replace(/[^\p{L}\p{N} -]/gu,'').trim()}${offset?`-transpose-${offset}`:''}.pdf`,{type:'application/pdf'});
+   return new File([pdf.output('blob')],`${song.number?song.number+'-':''}${song.title.replace(/[^\p{L}\p{N} -]/gu,'').trim()}${offset?`-transpose-${offset}`:''}.pdf`,{type:'application/pdf'});
   } finally { if(engine)engine.clear();staging.remove(); }
  },
  async createImages({song,image}) {
@@ -86,7 +86,7 @@ self.HymnalPDF = {
    images.push(await new Promise((resolve,reject)=>{const page=new Image();page.onload=()=>resolve(page);page.onerror=()=>reject(new Error('Score image unavailable: '+name));page.src=scoreImageURL(name);}));
   }
   const pdf=new jspdf.jsPDF({unit:'pt',format:'letter',orientation:'portrait',compress:true});
-  pdf.setProperties({title:`${song.number} - ${song.title}`,subject:'SDA Hymnal original sheet music',creator:'SDA Hymnal'});
+  pdf.setProperties({title:songLabel(song),subject:'SDA Hymnal original sheet music',creator:'SDA Hymnal'});
   for(let index=0;index<images.length;index++) {
    if(index)pdf.addPage('letter','portrait');
    const page=images[index],canvas=document.createElement('canvas');
@@ -128,42 +128,92 @@ const scoreFields = [['chords','Show chords'],['credits','Show credits / lyricis
 const scoreOptions = scope => Object.fromEntries(scoreFields.map(([field])=>[field,pref.get(`score-${scope}-${field}`,field==='chords'?'false':'true')==='true']));
 if('scrollRestoration' in history)history.scrollRestoration='manual';
 let catalogPosition=0, hymnWakeLock=null, wakeRequest=null;
-let songs = [], mapping = [], manifest = {}, selected, revision = 0, renderer, mode = 'xml';
-const key = song => `${song.language}:${song.number}`;
-const scorePath = song => manifest[key(song)];
+let collections=[], songs = [], mapping = [], manifest = {}, selected, revision = 0, renderer, mode = 'xml';
+const key = song => `${song.collection}:${song.language}:${song.id}`;
+function songLabel(song){return song.number?`${song.number} - ${song.title}`:song.title;}
+function scoreNumber(song){const number=String(song.number||'');return /^\d+$/.test(number)?String(Number(number)):number;}
+const collectionLabel=id=>collections.find(c=>c.id===id)?.name||id;
+const scorePath = song => song.score || manifest[key(song)];
 async function json(url) { const response = await fetch(url); if (!response.ok) throw new Error(`Unable to load ${url}`); return response.json(); }
 function matches(song, query) { return normalize(song.title).includes(query) || normalize(song.number).includes(/^\d+$/.test(query) ? query.padStart(3, '0') : query); }
-function renderList() {
- const language = $('language').value, query = normalize($('search').value);
- const available = songs.filter(s => (language === 'both' || s.language === language));
- const found = new Set(settings.smart && query ? HymnalSearch.search(available,$('search').value) : available.filter(s => matches(s, query)));
- if (query && language === 'both') for (const song of [...found]) {
-  const own = song.language, other = own === 'english' ? 'spanish' : 'english';
-  for (const pair of mapping) if ([pair[own]].flat().includes(song.number)) for (const number of [pair[other]].flat()) {
-   const match = available.find(s => s.language === other && s.number === number); if (match) found.add(match);
+let songIndex=[],collectionState={order:[],enabled:{},includeMissing:true};
+function updateCollectionSearch(){if($('search'))$('search').placeholder=settings.smart?'Search titles & lyrics':'Search by title or number';}
+function orderedCollections(){const byId=new Map(collections.map(c=>[c.id,c]));return [...collectionState.order.filter(id=>byId.has(id)),...collections.map(c=>c.id).filter(id=>!collectionState.order.includes(id))].map(id=>byId.get(id));}
+function collectionEnabled(id){return collectionState.enabled[id]!==false;}
+function versionGraph(){
+ const records=new Map(songIndex.map(s=>[key(s),s]));for(const s of songs)records.set(key(s),s);
+ const edges=new Map([...records.keys()].map(id=>[id,new Set()])),groups=new Map();
+ function connect(a,b){if(a!==b&&edges.has(a)&&edges.has(b)){edges.get(a).add(b);edges.get(b).add(a);}}
+ function reference(value){if(typeof value==='string')return value;if(!value)return'';return `${value.collection}:${value.language}:${value.id||value.number}`;}
+ for(const [id,s]of records){if(s.versionGroup){if(!groups.has(s.versionGroup))groups.set(s.versionGroup,[]);groups.get(s.versionGroup).push(id);}for(const ref of[...(s.relatedTo||[]),...(s.translationOf?[s.translationOf]:[])])connect(id,reference(ref));}
+ for(const ids of groups.values())for(const id of ids.slice(1))connect(ids[0],id);
+ for(const pair of mapping){const ids=[];for(const language of['english','spanish'])for(const number of[pair[language]].flat().filter(v=>v!==undefined&&v!==null))ids.push(`sda:${language}:${String(number).padStart(3,'0')}`);for(const id of ids.slice(1))connect(ids[0],id);}
+ const known=new Map();
+ function group(id){if(known.has(id))return known.get(id);const visited=new Set(),queue=[id];while(queue.length){const next=queue.pop();if(visited.has(next)||!records.has(next))continue;visited.add(next);for(const other of edges.get(next)||[])queue.push(other);}const result=[...visited].map(id=>records.get(id));for(const item of visited)known.set(item,result);return result;}
+ return {records,group};
+}
+function relatedVersions(song){const loaded=new Map(songs.map(s=>[key(s),s]));return versionGraph().group(key(song)).map(s=>loaded.get(key(s))).filter(Boolean);}
+function collectionSections(language){
+ const graph=versionGraph(),loaded=new Map(songs.map(s=>[key(s),s])),targets=language==='both'?['english','spanish']:[language],sections=[],shown=new Set();
+ const compare=(a,b)=>a.language.localeCompare(b.language)||(a.number&&b.number?a.number.localeCompare(b.number,undefined,{numeric:true}):a.title.localeCompare(b.title));
+ for(const collection of orderedCollections()){
+  if(!collectionEnabled(collection.id))continue;
+  const own=songs.filter(s=>s.collection===collection.id&&(language==='both'||s.language===language)).sort(compare);
+  const rows=own.map(song=>({song,section:collection.id})),local=new Set(own.map(key));
+  if(collectionState.includeMissing){
+   const anchors=[...graph.records.values()].filter(s=>s.collection===collection.id).sort(compare);
+   for(const anchor of anchors){const peers=graph.group(key(anchor));for(const target of targets){
+    if(peers.some(s=>s.collection===collection.id&&s.language===target))continue;
+    for(const peer of peers){const song=loaded.get(key(peer));if(!song||song.collection===collection.id||song.language!==target||local.has(key(song)))continue;
+     rows.push({song,section:collection.id,translationFor:anchor});local.add(key(song));
+    }
+   }}
+  }
+  const unique=rows.filter(row=>{const id=key(row.song);if(shown.has(id))return false;shown.add(id);return true;});
+  if(unique.length)sections.push({collection,rows:unique});
+ }
+ return sections;
+}
+function renderList(){
+ const language=$('language').value,q=normalize($('search').value),sections=collectionSections(language),entries=sections.flatMap(s=>s.rows),list=$('songs');list.replaceChildren();let count=0;
+ function row(entry,related=false){const song=entry.song,li=document.createElement('li'),button=document.createElement('button');li.className=related?'related-song':'';button.className='song';button.type='button';button.setAttribute('aria-current',String(selected===song));
+  button.textContent=songLabel(song);button.addEventListener('click',()=>openSong(song));li.append(button);list.append(li);count++;return li;
+ }
+ if(!q){for(const section of sections){const divider=document.createElement('li'),heading=document.createElement('h2');divider.className='collection-divider';heading.textContent=section.collection.name;divider.append(heading);list.append(divider);for(const entry of section.rows)row(entry);}}else{
+  const graph=versionGraph(),byId=new Map(entries.map(e=>[key(e.song),e])),shown=new Set();
+  function rank(entry){const song=entry.song,anchor=entry.translationFor;let value=settings.smart?HymnalSearch.score(song,$('search').value):matches(song,q)?100:0;if(normalize(collectionLabel(song.collection)).includes(q))value+=20;if(anchor&&(matches(anchor,q)||normalize(collectionLabel(entry.section)).includes(q)))value+=30;return value;}
+  const found=entries.map(entry=>({entry,rank:rank(entry)})).filter(r=>r.rank>0).sort((a,b)=>b.rank-a.rank);
+  for(const {entry}of found){if(shown.has(key(entry.song)))continue;const first=row(entry);if(shown.size)first.classList.add('song-group-start');shown.add(key(entry.song));
+   if(language==='both')for(const peer of graph.group(key(entry.song))){const other=byId.get(key(peer));if(other&&peer.language!==entry.song.language&&!shown.has(key(peer))){row(other,true);shown.add(key(peer));}}
   }
  }
- $('songs').replaceChildren();
- for (const song of found) {
-  const li = document.createElement('li'), button = document.createElement('button');
-  button.className = 'song'; button.type = 'button'; button.setAttribute('aria-current', String(selected === song));
-  const number = document.createElement('span'); number.className = 'song-number'; number.textContent = `${song.number} - `;
-  const text = document.createElement('span'), title = document.createElement('span'), detail = document.createElement('span');
-  title.className = 'song-title'; title.textContent = song.title; detail.className = 'song-detail';
-  detail.textContent = `${song.language === 'english' ? 'ENGLISH' : 'SPANISH'} · ${scorePath(song) ? 'MUSICXML' : 'IMAGE & LYRICS'}`;
-  text.append(title, detail); button.append(number, text); button.addEventListener('click', () => openSong(song)); li.append(button); $('songs').append(li);
- }
- $('count').hidden = found.size > 0;
- $('count').textContent = `${found.size} ${found.size === 1 ? 'hymn' : 'hymns'}${query ? ' found' : ''}`;
- if (!found.size) { const li = document.createElement('li'); li.textContent = !navigator.onLine&&!available.length?'This language is not saved offline. Connect or change your offline selection in Settings.':'No hymns found. Try another number, title or filter.'; li.className = 'muted'; $('songs').append(li); }
+ const enabled=orderedCollections().filter(c=>collectionEnabled(c.id)).length;
+ const summary=$('collection-summary');if(summary)summary.textContent=q?`${count} ${count===1?'song':'songs'} found`:`${count} ${count===1?'song':'songs'} · ${enabled} ${enabled===1?'collection':'collections'}`;
+ $('count').hidden=count>0;$('count').textContent='';if(!count){const li=document.createElement('li');li.className='muted';li.textContent=!enabled?'Turn on a collection in Settings to show its songs.':'No songs found. Try another language or search, or change your collections in Settings.';list.append(li);}updateCollectionSearch();
 }
+function saveCollections(){pref.set('collection-options',JSON.stringify(collectionState));renderList();}
+function initializeCollections(){
+ try{const value=JSON.parse(pref.get('collection-options','{}'));if(value&&typeof value==='object'){collectionState.order=Array.isArray(value.order)?[...new Set(value.order.filter(id=>collections.some(c=>c.id===id)))]:[];collectionState.enabled=value.enabled&&typeof value.enabled==='object'?value.enabled:{};collectionState.includeMissing=value.includeMissing!==false;}}catch{}
+ collectionState.order=orderedCollections().map(c=>c.id);renderCollectionSettings();
+ $('include-missing-versions').checked=collectionState.includeMissing;$('include-missing-versions').addEventListener('change',()=>{collectionState.includeMissing=$('include-missing-versions').checked;saveCollections();});
+ $('reset-collection-order').addEventListener('click',()=>{collectionState.order=collections.map(c=>c.id);saveCollections();renderCollectionSettings();$('collection-settings-status').textContent='Default collection order restored.';});
+}
+function renderCollectionSettings(focus){
+ const list=$('enabled-collections');list.replaceChildren();const ordered=orderedCollections();
+ ordered.forEach((collection,index)=>{const item=document.createElement('li'),label=document.createElement('label'),check=document.createElement('input'),name=document.createElement('span'),controls=document.createElement('div');item.className='collection-setting-row';check.type='checkbox';check.checked=collectionEnabled(collection.id);check.dataset.collection=collection.id;name.textContent=collection.name;label.append(check,name);check.addEventListener('change',()=>{collectionState.enabled[collection.id]=check.checked;saveCollections();});controls.className='collection-order-buttons';
+  for(const [text,delta]of[['Move up',-1],['Move down',1]]){const button=document.createElement('button');button.type='button';button.textContent=text;button.setAttribute('aria-label',`${text}: ${collection.name}`);button.dataset.direction=String(delta);button.disabled=index+delta<0||index+delta>=ordered.length;button.addEventListener('click',()=>{const order=ordered.map(c=>c.id),next=index+delta;[order[index],order[next]]=[order[next],order[index]];collectionState.order=order;saveCollections();renderCollectionSettings({id:collection.id,delta});$('collection-settings-status').textContent=`${collection.name} moved to position ${next+1}.`;});controls.append(button);}
+  item.append(label,controls);list.append(item);
+ });
+ if(focus){const row=[...list.children].find(li=>li.querySelector('input').dataset.collection===focus.id),button=row?.querySelector(`[data-direction="${focus.delta}"]`);if(button&&!button.disabled)button.focus();else row?.querySelector('input').focus();}
+}
+
 function openSong(song, updateURL = true) {
  const requestedSharedView=sharedView,requestedSharedOffset=sharedOffset;sharedView=null;sharedOffset=0;
  if($('hymn').hidden)catalogPosition=window.scrollY;
  selected = song; mode = 'xml'; transposeOffset=requestedSharedView==='score'?requestedSharedOffset:0; transposeOffset=window.HymnalAudio?.select(song,scorePath(song),transposeOffset)??transposeOffset; clearPDF(); $('catalog').hidden = true; $('hymn').hidden = false; applyAppearance(); window.scrollTo(0,0);
- $('hymn-title').textContent = `${song.number} - ${song.title}`; $('hymn-meta').textContent = `${song.language === 'english' ? 'English' : 'Spanish'} hymnal / ${song.number}`;
+ $('hymn-title').textContent = songLabel(song); $('hymn-meta').textContent = collectionLabel(song.collection);
  closeHymnMenus();
- if (updateURL) history.pushState(null, '', `#${song.language}/${encodeURIComponent(song.number)}`);
+ if(updateURL)history.pushState(null,'',`#${song.collection}/${song.language}/${encodeURIComponent(song.id)}`);
  renderList(); showView(requestedSharedView==='lyrics'?'lyrics':requestedSharedView==='score'?'xml':$('dropdown-menu').value==='lyrics'?'lyrics':'xml');void updateHymnWakeLock();
 }
 // Engrave at a stable sheet width. Only the completed sheet scales on narrow screens.
@@ -185,9 +235,9 @@ function readScoreMetadata(content,song) {
  const fields=Object.fromEntries([...xml.querySelectorAll('miscellaneous-field')].map(el=>[el.getAttribute('name'),el.textContent.trim()]));
  const creator=type=>[...xml.querySelectorAll('creator')].find(el=>el.getAttribute('type')===type)?.textContent.trim();
  const credits=[...xml.querySelectorAll('credit')].filter(el=>el.querySelector('credit-type')?.textContent==='rights').map(el=>[...el.querySelectorAll('credit-words')].map(v=>v.textContent).join('')).join('\n').trim();
- return {title:xml.querySelector('work-title')?.textContent||song.title,
-  left:[fields['scripture-reference'],creator('poet')||creator('lyricist'),creator('translator')&&`Tr. by ${creator('translator')}`].filter(Boolean),
-  right:[[fields['tune-name'],fields['metrical-pattern']].filter(Boolean).join(' '),fields['tune-source'],creator('composer'),creator('arranger')&&`Harm. by ${creator('arranger')}`].filter(Boolean),footer:credits||fields.category||''};
+ return {title:xml.querySelector('work-title')?.textContent||xml.querySelector('movement-title')?.textContent||song.title,
+  left:[song.subtitle,fields['scripture-reference'],creator('poet')||creator('lyricist'),creator('translator')&&`Tr. by ${creator('translator')}`].filter(Boolean),
+  right:[[fields['tune-name'],fields['metrical-pattern']].filter(Boolean).join(' '),fields['tune-source'],creator('composer'),creator('arranger')&&`Harm. by ${creator('arranger')}`].filter(Boolean),footer:credits||xml.querySelector('identification > rights')?.textContent||fields.category||''};
 }
 function makeScorePage(content, song) {
  const xml = new DOMParser().parseFromString(content, 'application/xml');
@@ -195,12 +245,12 @@ function makeScorePage(content, song) {
  const creator = type => [...xml.querySelectorAll('creator')].find(el => el.getAttribute('type') === type)?.textContent.trim();
  const page = document.createElement('div'); page.className = 'score-page';
  const heading = document.createElement('div'); heading.className = 'sheet-heading';
- const title = document.createElement('h2'); title.textContent = xml.querySelector('work-title')?.textContent || song.title;
- const number = document.createElement('span'); number.className = 'sheet-number'; number.textContent = fields['hymn-number'] || String(Number(song.number));
+ const title = document.createElement('h2'); title.textContent = xml.querySelector('work-title')?.textContent || xml.querySelector('movement-title')?.textContent || song.title;
+ const number = document.createElement('span'); number.className = 'sheet-number'; number.textContent = fields['hymn-number'] || scoreNumber(song);
  heading.append(title,number);
  const credits = document.createElement('div'); credits.className = 'sheet-credits';
  const left = document.createElement('div'), right = document.createElement('div');
- for (const line of [fields['scripture-reference'],creator('poet') || creator('lyricist'),creator('translator') && `Tr. by ${creator('translator')}`]) {
+ for (const line of [song.subtitle,fields['scripture-reference'],creator('poet') || creator('lyricist'),creator('translator') && `Tr. by ${creator('translator')}`]) {
   if (line) { const row = document.createElement('div'); row.textContent = line; left.append(row); }
  }
  for (const line of [[fields['tune-name'],fields['metrical-pattern']].filter(Boolean).join(' '),fields['tune-source'],creator('composer'),creator('arranger') && `Harm. by ${creator('arranger')}`]) {
@@ -224,7 +274,7 @@ async function showView(requested) {
  mode = requested; closeHymnMenus(); applyAppearance(); cleanRenderer(); $('viewer').replaceChildren(); $('viewer').setAttribute('aria-busy', 'false');
  $('score-tools').hidden = true;
  updateHymnMenu();
- if (requested === 'lyrics') { $('status').textContent = ''; const heading=document.createElement('h2'); heading.className='lyrics-heading'; heading.textContent=`${song.number} - ${song.title}`; const text = document.createElement('pre'); text.textContent = formattedLyrics(song.content) || 'Lyrics are not available for this hymn.'; $('viewer').append(heading,text); return; }
+ if (requested === 'lyrics') { $('status').textContent = ''; const heading=document.createElement('h2'); heading.className='lyrics-heading'; heading.textContent=songLabel(song); const text = document.createElement('pre'); text.textContent = formattedLyrics(song.content) || 'Lyrics are not available for this hymn.'; $('viewer').append(heading,text); return; }
  if (requested === 'image' || !xml) {
   mode = 'image'; updateHymnMenu();
   $('status').textContent = requested === 'image' ? 'Original sheet image' : 'MusicXML is not available for this hymn yet. Showing the original sheet image.';
@@ -255,6 +305,7 @@ async function showView(requested) {
  } finally { if (ticket === revision) $('viewer').setAttribute('aria-busy','false'); }
 }
 function showImage(song, ticket) {
+ if(!song.image){mode='lyrics';updateHymnMenu();applyAppearance();$('status').textContent='This score could not be displayed. Showing its lyrics.';const text=document.createElement('pre');text.textContent=formattedLyrics(song.content);$('viewer').replaceChildren(text);return;}
  if (!navigator.onLine) {
   mode = 'lyrics'; updateHymnMenu();
   $('status').textContent = 'Images are online-only. Showing saved lyrics instead.'; applyAppearance();
@@ -271,7 +322,14 @@ function showImage(song, ticket) {
  };
  $('viewer').append(image);
 }
-function fromHash() { const [language, number] = location.hash.slice(1).split('/'); const song = songs.find(s => s.language === language && s.number === (number || '')); if (song) openSong(song, false); else { ++revision; closeHymnMenus(); cleanRenderer(); selected = null; $('hymn').hidden = true; $('catalog').hidden = false; applyAppearance(); renderList();void updateHymnWakeLock();requestAnimationFrame(()=>window.scrollTo(0,settings.listBehavior==='remember'?catalogPosition:0)); } }
+function fromHash(){
+ const parts=location.hash.slice(1).split('/').map(s=>{try{return decodeURIComponent(s);}catch{return'';}});let song;
+ if(parts.length===3)song=songs.find(s=>s.collection===parts[0]&&s.language===parts[1]&&s.id===parts[2]);
+ else if(parts.length===2&&parts[0]!=='collection')song=songs.find(s=>s.collection==='sda'&&s.language===parts[0]&&s.number===parts[1]);
+ if(song){openSong(song,false);return;}
+ ++revision;closeHymnMenus();cleanRenderer();selected=null;$('hymn').hidden=true;$('catalog').hidden=false;applyAppearance();renderList();void updateHymnWakeLock();requestAnimationFrame(()=>window.scrollTo(0,settings.listBehavior==='remember'?catalogPosition:0));
+}
+
 $('language').value = settings.defaultLanguage==='last'?pref.get('language','english'):settings.defaultLanguage;
 if (!['english','spanish','both'].includes($('language').value)) $('language').value = 'english';
 $('search').addEventListener('input', renderList);
@@ -286,10 +344,12 @@ let resizeTimer; window.addEventListener('resize', () => { clearTimeout(resizeTi
 window.addEventListener('popstate',fromHash);
 (async () => {
  try {
-  const [english, spanish, pairs, scores] = await Promise.all([json('../songs.json').catch(()=>[]),json('../songs_es.json').catch(()=>[]),json('../song_mapping.json').catch(() => []),json('scores.json')]);
-  songs = [...english.map(s => HymnalSearch.prepare({...s,language:'english'})),...spanish.map(s => HymnalSearch.prepare({...s,language:'spanish'}))]; mapping = pairs; manifest = scores;
-  $('coverage').textContent = `${Object.keys(manifest).length} hymn entries currently have MusicXML.`;
-  renderList(); if (location.hash) fromHash();
+  const [catalog,pairs,scores]=await Promise.all([json('collections.json').catch(()=>({collections:[{id:'sda',name:'SDA Hymnal',catalogs:[{language:'english',url:'../songs.json'},{language:'spanish',url:'../songs_es.json'}]}]})),json('../song_mapping.json').catch(()=>[]),json('scores.json')]);
+  collections=catalog.collections;mapping=pairs;manifest=scores;
+  const loaded=await Promise.all(collections.flatMap(c=>c.catalogs.map(async source=>(await json(source.url).catch(()=>[])).map(song=>HymnalSearch.prepare({...song,collection:c.id,id:song.id||song.number,number:song.number||'',language:source.language})))));
+  songs=loaded.flat();songIndex=catalog.versionIndex||[];initializeCollections();
+  $('coverage').textContent='';renderList();updateCollectionSearch();if(location.hash)fromHash();
+
  } catch (error) { console.error(error); $('count').textContent = 'The hymn catalog could not be loaded. Please refresh to try again.'; }
 })();
 
@@ -383,9 +443,9 @@ $('share-lyrics').addEventListener('click',async()=>{
  closeHymnMenus('options-toggle');
  const text=lyricsShareText(selected);
  try {
-  if(navigator.share)await navigator.share({title:`${selected.number} - ${selected.title}`,text});
+  if(navigator.share)await navigator.share({title:songLabel(selected),text});
   else {
-   const link=document.createElement('a'),url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));link.href=url;link.download=`${selected.number}-lyrics.txt`;link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+   const link=document.createElement('a'),url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'}));link.href=url;link.download=`${selected.id}-lyrics.txt`;link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
    $('status').textContent='Lyrics saved as a text file. You can share that file.';
   }
  } catch(error){if(error.name!=='AbortError')$('status').textContent='Unable to share lyrics. Please try again.';}
@@ -410,7 +470,7 @@ $('export-pdf').addEventListener('click',async()=>{
 async function shareScorePDF() {
  if(!pdfFile)return;
  if(navigator.canShare?.({files:[pdfFile]})&&navigator.share) {
-  try {await navigator.share({files:[pdfFile],title:`${selected.number} - ${selected.title}`});if($('pdf-ready').open)$('pdf-ready').close();return;}
+  try {await navigator.share({files:[pdfFile],title:songLabel(selected)});if($('pdf-ready').open)$('pdf-ready').close();return;}
   catch(error){if(error.name==='AbortError')return;}
  }
  // Safari may require a second tap after the asynchronous PDF preparation.
@@ -422,7 +482,7 @@ function formattedLyrics(content) {
  for(let verse=1;verse<=10;verse++)text=text.split(`${verse}.`).join(`Verse ${verse}`);
  return text.replace(/CHORUS:/gi,'Chorus');
 }
-function lyricsShareText(song){return `${song.number} - ${song.title}\n\n${formattedLyrics(song.content)}`;}
+function lyricsShareText(song){return `${songLabel(song)}\n\n${formattedLyrics(song.content)}${song.rights?'\n\n'+song.rights:''}`;}
 function closeHymnMenus(focusId) {
  for(const [toggle,panel]of [['options-toggle','hymn-options'],['key-toggle','transposition']]){$(panel).hidden=true;$(toggle).setAttribute('aria-expanded','false');}
  if(focusId)$(focusId).focus();
@@ -485,49 +545,109 @@ function centerOriginalKey(){const panel=$('transposition'),original=$('key-opti
 document.addEventListener('hymnal-audio-key',event=>{if(selected&&event.detail.song&&key(selected)===key(event.detail.song)){if(renderer)void transposeScore(event.detail.offset);else transposeOffset=event.detail.offset;}});
 
 /* Playback timing mirrors the native app, using the original MusicXML. */
+/* Playback timing mirrors the native app, using the original MusicXML. */
 function hymnTimeline(xml, requestedVerses, allVerses=true) {
  const root=new DOMParser().parseFromString(xml,'application/xml');
  if(root.querySelector('parsererror')||root.documentElement.tagName!=='score-partwise')throw Error('This score cannot be read.');
  const child=(node,name)=>[...node.children].find(n=>n.tagName===name),text=(node,name)=>child(node,name)?.textContent.trim()||'',desc=(node,name)=>[...node.getElementsByTagName(name)];
- for(const tag of ['grace','ornaments','unpitched','transpose'])if(desc(root,tag).length)throw Error(`Piano playback does not yet support ${tag} notation.`);
- for(const sound of desc(root,'sound'))if(['dalsegno','tocoda','segno','coda'].some(k=>sound.hasAttribute(k)))throw Error('Unsupported score navigation.');
+ for(const tag of ['grace','ornaments','transpose'])if(desc(root,tag).length)throw Error(`Piano playback does not yet support ${tag} notation.`);
+ for(const note of desc(root,'note'))if(child(note,'unpitched')&&!child(note,'cue'))throw Error('Piano playback for percussion notes is not supported yet.');
  const parts=desc(root,'part'),measures=parts[0]?[...parts[0].children].filter(n=>n.tagName==='measure'):[];
  if(!measures.length)throw Error('No playable score is available.');
  const verses=Math.max(1,Math.min(20,requestedVerses||Math.max(1,...desc(root,'lyric').map(n=>Number(n.getAttribute('number'))||1))));
  function order() {
-  let active=[],endings=[],route=[],i=0,start=0,pass=1,returned=false,steps=0;
-  for(const m of measures){for(const e of desc(m,'ending'))if(e.getAttribute('type')==='start'){active=(e.getAttribute('number')||'').split(',').map(Number);if(!active.length||active.some(n=>!Number.isInteger(n)||n<1))throw Error('Unsupported repeat ending.');}endings.push(active);if(desc(m,'ending').some(e=>['stop','discontinue'].includes(e.getAttribute('type'))))active=[];}
-  while(i<measures.length){if(++steps>measures.length*32)throw Error('Unsupported repeat loop.');const m=measures[i],r=desc(m,'repeat');if(r.some(n=>n.getAttribute('direction')==='forward')&&i!==start){start=i;pass=1;}const included=!endings[i].length||endings[i].includes(pass);if(included)route.push(i);const sounds=desc(m,'sound');if(returned&&included&&sounds.some(s=>s.hasAttribute('fine')))break;if(!returned&&included&&sounds.some(s=>s.getAttribute('dacapo')==='yes')){returned=true;i=0;start=0;pass=1;continue;}const back=r.find(n=>n.getAttribute('direction')==='backward');if(back&&!returned){const times=Number(back.getAttribute('times')||2);if(times<2||times>16)throw Error('Unsupported repeat count.');if(pass<times){pass++;i=start;continue;}start=i+1;}i++;if(i<measures.length&&!endings[i].length&&start===i)pass=1;}
-  return route;
+  let active=[],endings=[],route=[],cuts=[],i=0,start=0,pass=1,returned=false,steps=0;
+  const taken=new Set(),visits=new Map(),segnos=new Map(),codas=new Map();
+  const numericList=value=>{const values=[];for(const token of String(value||'').split(',')){const m=token.trim().match(/^(\d+)(?:\s*-\s*(\d+))?$/);if(!m)throw Error('Invalid repeat pass.');const a=Number(m[1]),b=Number(m[2]||m[1]);if(a<1||b<a||b>32)throw Error('Invalid repeat pass.');for(let n=a;n<=b;n++)values.push(n);}return values;};
+  function marker(map,name,index){name=name||'1';if(map.has(name)&&map.get(name)!==index)throw Error('Ambiguous navigation marker.');map.set(name,index);}
+  for(let k=0;k<measures.length;k++){
+   const m=measures[k],sounds=desc(m,'sound');
+   for(const s of sounds){if(s.hasAttribute('segno'))marker(segnos,s.getAttribute('segno'),k);if(s.hasAttribute('coda'))marker(codas,s.getAttribute('coda'),k);}
+   if(desc(m,'segno').length&&!sounds.some(s=>s.hasAttribute('segno')))marker(segnos,'1',k);
+   if(desc(m,'coda').length&&!sounds.some(s=>s.hasAttribute('coda')))marker(codas,'1',k);
+   for(const e of desc(m,'ending'))if(e.getAttribute('type')==='start')active=numericList(e.getAttribute('number'));
+   endings.push(active);if(desc(m,'ending').some(e=>['stop','discontinue'].includes(e.getAttribute('type'))))active=[];
+  }
+  // Explicit verse-repeat counts are one performance pass when All Verses is off.
+  const singleStarts=new Map();let scanStart=0;
+  if(!allVerses&&verses>1)for(let k=0;k<measures.length;k++){
+   const repeats=desc(measures[k],'repeat');if(repeats.some(r=>r.getAttribute('direction')==='forward'))scanStart=k;
+   const back=repeats.find(r=>r.getAttribute('direction')==='backward');
+   if(back){if(Number(back.getAttribute('times'))===verses)singleStarts.set(scanStart,verses);scanStart=k+1;}
+  }
+  let div=1;const divisions=measures.map(m=>{const a=child(m,'attributes'),value=a?Number(text(a,'divisions')):0;if(value>0)div=value;return div;});
+  function eventBeat(index,event,wholeAtZero=false){let cursor=0,end=0,selected=null,explicit=false;const div=divisions[index];for(const e of measures[index].children){
+   if(e===event||desc(e,event.tagName).includes(event)){selected=Math.max(0,cursor+Number(text(e,'offset'))/div);explicit=!!child(e,'offset');}
+   if(e.tagName==='backup')cursor-=Number(text(e,'duration'))/div;
+   else if(e.tagName==='forward')cursor+=Number(text(e,'duration'))/div;
+   else if(e.tagName==='note'&&!child(e,'chord'))cursor+=Number(text(e,'duration'))/div;
+   end=Math.max(end,cursor);
+  }return selected===null||(wholeAtZero&&selected===0&&!explicit)?end:selected;}
+  function target(map,name){if(map.has(name))return map.get(name);if(map.size===1&&(!name||name==='yes'||name==='1'))return [...map.values()][0];throw Error('The score refers to a missing navigation marker.');}
+  while(i<measures.length){
+   if(++steps>measures.length*64)throw Error('Unsupported navigation loop.');
+   const m=measures[i],repeats=desc(m,'repeat');
+   if(repeats.some(n=>n.getAttribute('direction')==='forward')&&i!==start){start=i;pass=1;}
+   if(singleStarts.has(i)&&!visits.has(i))pass=singleStarts.get(i);
+   const included=!endings[i].length||endings[i].includes(pass);
+   if(included){
+    const visit=(visits.get(i)||0)+1;visits.set(i,visit);route.push(i);cuts.push(undefined);
+    const events=[...desc(m,'sound'),...desc(m,'words')];let jumped=false;
+    for(const event of events){
+     const sound=event.tagName==='sound',words=sound?'':event.textContent.replace(/\s+/g,' ').trim(),timeOnly=sound?event.getAttribute('time-only'):null;
+     if(timeOnly&&!numericList(timeOnly).includes(singleStarts.size?pass:visit))continue;
+     const fine=sound?event.hasAttribute('fine'):/^fine\.?$/i.test(words);
+     if(fine&&(returned||timeOnly)){cuts[cuts.length-1]=eventBeat(i,event,true);route.cuts=cuts;return route;}
+     const dc=sound?event.getAttribute('dacapo')==='yes':/d\s*\.?\s*c\s*\./i.test(words);
+     const ds=sound?event.hasAttribute('dalsegno'):/d\s*\.?\s*s\s*\./i.test(words);
+     const toCoda=sound?event.hasAttribute('tocoda'):/^(?:last time )?to coda\b/i.test(words);
+     const tag=dc?'dc':ds?'ds':toCoda?'tocoda':'';if(!tag)continue;
+     // Prefer encoded sound directions over a duplicate printed instruction.
+     if(!sound&&desc(m,'sound').some(s=>dc?s.getAttribute('dacapo')==='yes':ds?s.hasAttribute('dalsegno'):s.hasAttribute('tocoda')))continue;
+     const token=i+':'+tag;if(taken.has(token))continue;
+     if(toCoda&&!returned&&!timeOnly){const last=Math.max(2,...measures.flatMap(x=>desc(x,'repeat').map(r=>Number(r.getAttribute('times'))||2)));if(!/last time/i.test(words)||pass!==last)continue;}
+     const destination=dc?0:ds?target(segnos,sound?event.getAttribute('dalsegno'):'1'):target(codas,sound?event.getAttribute('tocoda'):'1');
+     if(destination===i)throw Error('A navigation instruction points to itself.');
+     cuts[cuts.length-1]=eventBeat(i,event,dc||ds);taken.add(token);i=destination;
+     if(dc||ds){returned=true;start=i;pass=1;}
+     jumped=true;break;
+    }
+    if(jumped)continue;
+   }
+   const back=repeats.find(n=>n.getAttribute('direction')==='backward');
+   if(back&&(!returned||back.getAttribute('after-jump')==='yes')){const times=Number(back.getAttribute('times')||2);if(!Number.isInteger(times)||times<2||times>16)throw Error('Unsupported repeat count.');if(pass<times){pass++;i=start;continue;}start=i+1;}
+   i++;if(i<measures.length&&!endings[i].length&&start===i)pass=1;
+  }
+  route.cuts=cuts;return route;
  }
  const written=order(),refrains=measures.map((m,i)=>desc(m,'words').some(n=>/refrain|chorus|coro/i.test(n.textContent))?i:-1).filter(i=>i>=0);
  const fine=measures.findIndex(m=>desc(m,'sound').some(n=>n.hasAttribute('fine'))||desc(m,'words').some(n=>n.textContent.trim().toLowerCase()==='fine'));
  const dc=measures.some(m=>desc(m,'sound').some(n=>n.getAttribute('dacapo')==='yes')||desc(m,'words').some(n=>n.textContent.replace(/ /g,'').toLowerCase().includes('d.c.')));
  const title=(v,c)=>`${c?'Chorus · verse':'Verse'} ${v} of ${verses}`;
- let visits=written.map(i=>[i,'Score']);
+ let visits=written.map((i,p)=>[i,'Score',written.cuts[p]]);
  if(allVerses&&verses>1){
   if(fine>=0&&fine<measures.length-1&&dc&&(refrains[0]===0||desc(measures[fine+1],'lyric').length>1))visits=Array.from({length:verses},(_,v)=>[...measures.slice(fine+1).map((_,i)=>[fine+1+i,title(v+1,false)]),...measures.slice(0,fine+1).map((_,i)=>[i,title(v+1,true)])]).flat();
   else if(measures.some(m=>desc(m,'repeat').some(n=>Number(n.getAttribute('times'))===verses))||measures.slice(1).some(m=>desc(m,'lyric').some(n=>desc(n,'text').some(t=>t.textContent.trim().startsWith(`${verses}. `)))&&new Set(desc(m,'lyric').map(n=>n.getAttribute('number'))).size===1)){
-   let v=1,last=-1;visits=written.map(i=>{if(i<last)v=Math.min(verses,v+1);last=i;const start=refrains.filter(x=>x<=i).at(-1);const chorus=start!==undefined&&!measures.slice(start,i+1).some(m=>new Set(desc(m,'lyric').map(n=>n.getAttribute('number'))).size>1);return[i,title(v,chorus)];});
-  } else visits=Array.from({length:verses},(_,v)=>written.map(i=>[i,title(v+1,refrains.length&&i>=refrains[0])])).flat();
+   let v=1,last=-1;visits=written.map((i,p)=>{if(i<last)v=Math.min(verses,v+1);last=i;const start=refrains.filter(x=>x<=i).at(-1);const chorus=start!==undefined&&!measures.slice(start,i+1).some(m=>new Set(desc(m,'lyric').map(n=>n.getAttribute('number'))).size>1);return[i,title(v,chorus),written.cuts[p]];});
+  } else visits=Array.from({length:verses},(_,v)=>written.map((i,p)=>[i,title(v+1,refrains.length&&i>=refrains[0]),written.cuts[p]])).flat();
  }
  const notes=[],tempos=[[0,100]],sections=[],stanzas=new Map([[1,0]]),choruses=[];let length=0;
  parts.forEach((part,pi)=>{
   const source=[...part.children].filter(n=>n.tagName==='measure');if(source.length!==measures.length)throw Error('Incompatible score parts.');
   let div=1,beat=0;const divisions=source.map(m=>{const d=Number(text(child(m,'attributes')||m,'divisions'));if(d>0)div=d;return div;}),tied=new Map();
-  for(const [i,label]of visits){const m=source[i];div=divisions[i];if(!pi){if(sections.at(-1)?.title!==label)sections.push({beat,title:label});if(desc(m,'words').some(n=>/refrain|chorus/i.test(n.textContent)))choruses.push(beat);}
+  for(const [i,label,cut]of visits){const m=source[i];div=divisions[i];if(!pi){if(sections.at(-1)?.title!==label)sections.push({beat,title:label});if(desc(m,'words').some(n=>/refrain|chorus/i.test(n.textContent)))choruses.push(beat);}
    let cursor=0,end=0,chordStart=0;
    for(const e of m.children){
     if(['backup','forward'].includes(e.tagName)){cursor+=(e.tagName==='backup'?-1:1)*Number(text(e,'duration'))/div;if(cursor<-.001)throw Error('Invalid voice timing.');end=Math.max(end,cursor);}
-    else if(e.tagName==='direction'&&!pi){let bpm=Number(desc(e,'sound').find(n=>n.hasAttribute('tempo'))?.getAttribute('tempo'));const met=desc(e,'metronome')[0];if(!bpm&&met)bpm=Number(text(met,'per-minute'))*({whole:4,half:2,quarter:1,eighth:.5,'16th':.25}[text(met,'beat-unit')]||1)*(2-Math.pow(.5,desc(met,'beat-unit-dot').length));if(bpm>0&&bpm<=1000)tempos.push([Math.max(0,beat+cursor+Number(text(e,'offset'))/div),bpm]);}
+    else if(e.tagName==='direction'&&!pi){let bpm=Number(desc(e,'sound').find(n=>n.hasAttribute('tempo'))?.getAttribute('tempo'));const met=desc(e,'metronome')[0];if(!bpm&&met)bpm=Number(text(met,'per-minute'))*({whole:4,half:2,quarter:1,eighth:.5,'16th':.25}[text(met,'beat-unit')]||1)*(2-Math.pow(.5,desc(met,'beat-unit-dot').length));if(bpm>0&&bpm<=1000&&(cut===undefined||cursor+Number(text(e,'offset'))/div<=cut))tempos.push([Math.max(0,beat+cursor+Number(text(e,'offset'))/div),bpm]);}
     else if(e.tagName==='note'){
      const duration=Number(text(e,'duration'))/div;if(!(duration>0))throw Error('A note has no playable duration.');const chord=!!child(e,'chord'),start=chord?chordStart:cursor;if(!chord){chordStart=cursor;cursor+=duration;}end=Math.max(end,start+duration);
-     if(!pi)for(const l of desc(e,'lyric')){const match=text(l,'text').match(/^(\d+)\./);if(match&&!stanzas.has(Number(match[1])))stanzas.set(Number(match[1]),beat+start);}
-     const p=child(e,'pitch');if(p){const step={C:0,D:2,E:4,F:5,G:7,A:9,B:11}[text(p,'step')],alter=Number(text(p,'alter')),oct=Number(text(p,'octave'));if(step===undefined||!Number.isInteger(alter)||!Number.isInteger(oct))throw Error('Unsupported pitch.');const pitch=(oct+1)*12+step+alter,voice=`${pi}:${text(e,'staff')}:${text(e,'voice')}:${pitch}`,ties=desc(e,'tie'),starts=ties.some(n=>n.getAttribute('type')==='start'),stops=ties.some(n=>n.getAttribute('type')==='stop'),prev=tied.get(voice);
-      if(stops&&prev!==undefined&&Math.abs(notes[prev].beat+notes[prev].duration-(beat+start))<.001){notes[prev].duration+=duration;if(!starts)tied.delete(voice);}else{notes.push({beat:beat+start,duration,pitch});if(starts)tied.set(voice,notes.length-1);else tied.delete(voice);}
+     if(!pi&&(cut===undefined||start<cut))for(const l of desc(e,'lyric')){const match=text(l,'text').match(/^(\d+)\./);if(match&&!stanzas.has(Number(match[1])))stanzas.set(Number(match[1]),beat+start);}
+     const playable=cut===undefined?duration:Math.min(duration,cut-start);if(playable<=0||child(e,'cue'))continue;const p=child(e,'pitch');if(p){const step={C:0,D:2,E:4,F:5,G:7,A:9,B:11}[text(p,'step')],alter=Number(text(p,'alter')),oct=Number(text(p,'octave'));if(step===undefined||!Number.isInteger(alter)||!Number.isInteger(oct))throw Error('Unsupported pitch.');const pitch=(oct+1)*12+step+alter,voice=`${pi}:${text(e,'staff')}:${text(e,'voice')}:${pitch}`,ties=desc(e,'tie'),starts=ties.some(n=>n.getAttribute('type')==='start'),stops=ties.some(n=>n.getAttribute('type')==='stop'),prev=tied.get(voice);
+      if(stops&&prev!==undefined&&Math.abs(notes[prev].beat+notes[prev].duration-(beat+start))<.001){notes[prev].duration+=playable;if(!starts)tied.delete(voice);}else{notes.push({beat:beat+start,duration:playable,pitch});if(starts)tied.set(voice,notes.length-1);else tied.delete(voice);}
      }else if(!child(e,'rest'))throw Error('Unsupported note.');
     }
-   }beat+=end;
+   }beat+=cut===undefined?end:Math.min(end,Math.max(0,cut));
   }length=Math.max(length,beat);
  });
  if(!notes.length)throw Error('No playable notes.');tempos.sort((a,b)=>a[0]-b[0]);
@@ -550,12 +670,12 @@ window.HymnalAudio=(()=>{
  const mini=document.createElement('aside');mini.id='audio-mini';mini.hidden=true;mini.innerHTML='<button id="audio-mini-open"></button><button id="audio-mini-play" aria-label="Play or pause">Play</button><button id="audio-mini-stop" aria-label="Stop and close player">×</button>';document.body.append(mini);
  const listen=document.createElement('button');listen.id='listen';listen.type='button';listen.textContent='Listen';listen.setAttribute('role','menuitem');document.getElementById('hymn-options').prepend(listen);
  const storage=document.createElement('fieldset');storage.innerHTML=`<legend>Audio storage</legend><p>Piano playback uses saved scores. Recordings are saved only when you choose Download.</p><label for="audio-language">Recording language</label><select id="audio-language"><option value="en">English</option><option value="es">Spanish</option></select><input id="audio-search" type="search" aria-label="Find a recording" placeholder="Hymn number or title"><p id="audio-storage-size"></p><button id="audio-refresh">Refresh recording catalog</button><button id="audio-download-all">Download language</button><button id="audio-delete-language">Delete language downloads</button><button id="audio-delete-all">Delete all audio downloads</button><button id="audio-cancel" hidden>Cancel download</button><p id="audio-storage-message" role="status"></p><ul id="audio-recordings"></ul>`;document.getElementById('settings-dialog').insertBefore(storage,document.getElementById('offline-settings'));
- const el=id=>document.getElementById(id),id=s=>(s.language==='spanish'?'es':'en')+'-'+String(s.number).padStart(3,'0'),time=v=>`${Math.floor((v||0)/60)}:${String(Math.floor((v||0)%60)).padStart(2,'0')}`,message=t=>el('audio-message').textContent=t;
+ const el=id=>document.getElementById(id),id=s=>`${s.collection}:${s.language}:${s.id}`,time=v=>`${Math.floor((v||0)/60)}:${String(Math.floor((v||0)%60)).padStart(2,'0')}`,message=t=>el('audio-message').textContent=t;
  const cachedCatalog=()=>{try{return JSON.parse(localStorage.getItem('beta-audio-catalog')||'[]');}catch{return[];}};catalog=cachedCatalog();
  function validCatalog(value){if(!Array.isArray(value.recordings))throw Error('Invalid recording catalog.');const ids=new Set();for(const e of value.recordings){const url=new URL(e.url);if(!/^(en|es)-\d{3}$/.test(e.id)||!['en','es'].includes(e.language)||e.id!==e.language+'-'+String(e.number).padStart(3,'0')||ids.has(e.id)||!Number.isSafeInteger(e.bytes)||e.bytes<=0||!/^[\w-]+$/.test(e.revision)||url.protocol!=='https:'||url.hostname!=='raw.githubusercontent.com'||!url.pathname.toLowerCase().startsWith('/ormt03/sda-hymnal/')||! /\.(mp3|m4a)$/i.test(url.pathname))throw Error('Invalid recording catalog.');ids.add(e.id);}return value.recordings;}
  async function refresh(force=false){if(catalogLoaded&&!force)return;try{const response=await fetch(catalogURL,{cache:'no-store'});if(!response.ok)throw Error('Recordings are not yet published.');catalog=validCatalog(await response.json());localStorage.setItem('beta-audio-catalog',JSON.stringify(catalog));catalogLoaded=true;el('audio-storage-message').textContent=catalog.length?'Catalog refreshed.':'Recordings have not been published yet.';}catch(e){el('audio-storage-message').textContent=navigator.onLine?(catalog.length?'Using the saved recording catalog.':e.message):'You’re offline. Saved recordings are available.';}await renderStorage();update();}
- function entry(){return song&&catalog.find(e=>e.id===id(song));}
- function update(){el('audio-title').textContent=song?`${song.number} — ${song.title}`:'';el('audio-practice').hidden=source!=='piano';el('audio-recording-download').hidden=source!=='recording';el('audio-availability').textContent=source==='piano'?(path?'Piano playback works with saved scores offline.':'MusicXML is not available for this hymn.'):(entry()?'Original recorded key and tempo.':'Recording not yet available.');el('audio-key').disabled=busy;el('audio-verses').disabled=busy;el('audio-play').disabled=busy||!song||(source==='piano'?!path:!entry());el('audio-play').textContent=busy?'Preparing audio…':audio.paused?'Play':'Pause';el('audio-download').disabled=!entry()||downloading;el('audio-key').value=String(offset);el('audio-mini-play').textContent=audio.paused?'Play':'Pause';}
+ function entry(){return song&&catalog.find(e=>song.collection==='sda'&&e.id===(song.language==='spanish'?'es':'en')+'-'+String(song.number).padStart(3,'0'));}
+ function update(){el('audio-title').textContent=song?songLabel(song):'';el('audio-practice').hidden=source!=='piano';el('audio-recording-download').hidden=source!=='recording';el('audio-availability').textContent=source==='piano'?(song?.audioWarning||(path?'Piano playback works with saved scores offline.':'MusicXML is not available for this hymn.')):(entry()?'Original recorded key and tempo.':'Recording not yet available.');el('audio-key').disabled=busy;el('audio-verses').disabled=busy;el('audio-play').disabled=busy||!song||(source==='piano'?(!path||!!song?.audioWarning):!entry());el('audio-play').textContent=busy?'Preparing audio…':audio.paused?'Play':'Pause';el('audio-download').disabled=!entry()||downloading;el('audio-key').value=String(offset);el('audio-mini-play').textContent=audio.paused?'Play':'Pause';}
  function stop(){pendingRebuild=false;ticket++;audio.pause();audio.removeAttribute('src');audio.load();playingSong=null;busy=false;mini.hidden=true;document.body.classList.remove('has-audio-player');if(pianoURL){URL.revokeObjectURL(pianoURL);pianoURL=null;}if('mediaSession'in navigator)navigator.mediaSession.metadata=null;update();}
  function select(s,p,o=0){song=s;path=p;offset=offsets.get(id(s))??o;el('audio-source').value=source;update();return offset;}
  async function open(){if(playingSong){/* Opening from the hymn menu selects the current hymn; the mini player restores its song. */}dialog.showModal();update();await refresh();}
@@ -583,8 +703,8 @@ window.HymnalAudio=(()=>{
    if(source==='piano'){const response=await fetch(path);if(!response.ok)throw Error(navigator.onLine?'Score unavailable.':'This score is not saved offline.');const xml=await response.text(),verses=Math.max(1,(String(song.content||'').match(/^\s*\d+[.)]\s*$/gm)||[]).length),blob=await pianoBlob(xml,verses);if(token!==ticket)return;if(pianoURL)URL.revokeObjectURL(pianoURL);pianoURL=url=URL.createObjectURL(blob);}
    else{const e=entry();if(!e)throw Error('Recording not yet available.');const saved=await(await caches.open(cacheName)).match(e.url);if(token!==ticket)return;if(pianoURL)URL.revokeObjectURL(pianoURL);pianoURL=saved?URL.createObjectURL(await saved.blob()):null;url=pianoURL||e.url;currentTimeline=null;}
    if(token!==ticket)return;playingSong={song,path,source};audio.src=url;audio.playbackRate=source==='piano'?Number(el('audio-rate').value):1;audio.preservesPitch=true;audio.currentTime=resumeAt;
-   mini.hidden=false;document.body.classList.add('has-audio-player');el('audio-mini-open').textContent=`${song.number} — ${song.title}`;
-   if('mediaSession'in navigator)navigator.mediaSession.metadata=new MediaMetadata({title:`${song.number} — ${song.title}`,artist:source==='piano'?'MusicXML Piano':'Recording'});
+   mini.hidden=false;document.body.classList.add('has-audio-player');el('audio-mini-open').textContent=songLabel(song);
+   if('mediaSession'in navigator)navigator.mediaSession.metadata=new MediaMetadata({title:songLabel(song),artist:source==='piano'?'MusicXML Piano':'Recording'});
    if(wasPlaying)await audio.play();
   }catch(e){if(token===ticket)message(e.message);}finally{if(token===ticket){busy=false;update();if(pendingRebuild){pendingRebuild=false;void play(true);}}}
  }
@@ -602,3 +722,12 @@ window.HymnalAudio=(()=>{
  function scoreOffset(s,value){if(song&&id(song)===id(s))setOffset(value,true);else offsets.set(id(s),value);}
  return {select,setOffset,scoreOffset,open,stop};
 })();
+
+/* Stable collection/language/song IDs allow translations to retain their source. */
+const versionDialog=document.createElement('dialog');versionDialog.id='versions-dialog';versionDialog.innerHTML='<form method="dialog"><button class="close-settings" aria-label="Close versions">Close</button></form><h2>Languages & Versions</h2><div id="version-list"></div><p id="version-note"></p>';document.body.append(versionDialog);
+const versionButton=document.createElement('button');versionButton.type='button';versionButton.setAttribute('role','menuitem');versionButton.textContent='Languages & Versions';$('hymn-options').insertBefore(versionButton,$('score-settings'));
+versionButton.addEventListener('click',()=>{
+ if(!selected)return;closeHymnMenus();const list=$('version-list');list.replaceChildren();const versions=relatedVersions(selected);
+ for(const song of versions){const button=document.createElement('button'),title=document.createElement('strong'),source=document.createElement('span');button.type='button';button.className='version-choice';button.setAttribute('aria-current',String(song===selected));title.textContent=songLabel(song);source.textContent=`${song.language==='english'?'English':'Spanish'}${song===selected?' · Current version':''}`;button.append(title,source);button.addEventListener('click',()=>{versionDialog.close();openSong(song);});list.append(button);}
+ $('version-note').textContent=versions.length===1?'No other language versions have been added for this song yet.':'';versionDialog.showModal();
+});

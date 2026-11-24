@@ -22,12 +22,13 @@
   return response ? response.json() : null;
  }
  function validateRelease(release) {
+  if(Array.isArray(release.additionalFiles))release={...release,files:[...release.files,...release.additionalFiles]};
   if (release.schema !== 1 || !release.id || !release.version || !Array.isArray(release.files) || !release.files.length) throw new Error('Invalid release manifest');
   const paths = new Set();
   for (const file of release.files) {
    const url = new URL(file.path, base);
    const permitted = [...config.shell, ...config.catalogs].includes(file.path) ||
-    (url.pathname.startsWith(`${base.pathname}musicxml/`) && url.pathname.endsWith('.musicxml'));
+    (url.pathname.startsWith(new URL('musicxml/',base).pathname)||url.pathname.startsWith(new URL('../beta/musicxml/',base).pathname))&&url.pathname.endsWith('.musicxml');
    if (url.origin !== base.origin || url.search || url.hash || !permitted || !/^[a-f0-9]{64}$/.test(file.sha256) || !Number.isSafeInteger(file.bytes) || file.bytes < 0 || paths.has(url.href)) throw new Error('Invalid release file');
    paths.add(url.href);
   }
@@ -59,9 +60,12 @@
  }
  function selectedRelease(release,choice) {
   return {...release,selection:choice,files:release.files.filter(file=>{
+   if(file.kind==='score')return choice.scores&&(choice.language==='both'||file.language===choice.language);
+   if(file.kind==='catalog')return choice.language==='both'||file.language===choice.language;
    if(file.path==='../songs.json')return choice.language!=='spanish';
    if(file.path==='../songs_es.json')return choice.language!=='english';
-   if(file.path.startsWith('musicxml/'))return choice.scores&&(choice.language==='both'||file.path.startsWith(`musicxml/${choice.language==='english'?'English':'Spanish'}/`));
+   if(file.path==='collections/gyc-theme-songs.english.json')return choice.language!=='spanish';
+   if(file.path.endsWith('.musicxml'))return choice.scores&&(choice.language==='both'||(file.path.startsWith('../beta/musicxml/')?file.path.startsWith(`../beta/musicxml/${choice.language==='english'?'English':'Spanish'}/`):choice.language==='english'));
    return true;
   })};
  }
@@ -142,12 +146,12 @@
   if (!installed) { message('Choose languages and content in Settings, then save the hymnal for offline use. Images stay online-only.'); return; }
   const missing = await missingFiles(installed);
   if (missing.length) { message('Some offline files are missing. Use Download update to repair them.'); notice.hidden=false;updateText.textContent='Your offline download needs repair. Tap Download update to save the missing files.'; return; }
-  const scores = installed.files.filter(file => file.path.startsWith('musicxml/')).length;
+  const scores = installed.files.filter(file => file.path.endsWith('.musicxml')).length;
   message(`Ready offline · ${installed.version} · ${selectionLabel(installed.selection||defaultSelection)}${scores?' · '+scores+' scores':''}. Images are online-only.`);
   checkButton.textContent = 'Check for updates';
  }
- function showUpdate(release) {
-  if (installed?.id === release.id || (!installed && release.version === config.version)) return;
+ function showUpdate(release, repair = false) {
+  if ((installed?.id === release.id && !repair) || (!installed && release.version === config.version)) return;
   notice.hidden = false;
   updateText.textContent = `Update available: ${release.version}.`;
  }
@@ -158,7 +162,8 @@
   checking = true; lastCheck = Date.now();
   try {
    const next = await fetchRelease(); remote = next;
-   if (installed?.id !== next.id) {if(!installed&&next.version===config.version)notice.hidden=true;else showUpdate(next);}
+   const expected=installed?selectedRelease(next,installed.selection||selection()):null,repair=!!expected&&expected.files.some(file=>!installed.files.some(saved=>saved.path===file.path&&saved.sha256===file.sha256));
+   if (installed?.id !== next.id || repair) {if(!installed&&next.version===config.version)notice.hidden=true;else showUpdate(next,repair);}
    else if (installed && force) { notice.hidden=true; if((await missingFiles(installed)).length)await summary();else message(`You’re up to date · ${installed.version}. Your hymnal is ready offline.`); }
   } catch (error) {
    // Background checks never replace the installed release or disturb the reader/offline-ready message.

@@ -373,3 +373,31 @@ body.sticky-search.search-pinned #search-row{width:100%;max-width:none;margin-le
 
 /* Audio controls use the existing light/dark palette. */
 #audio-dialog{width:min(440px,calc(100vw - 24px));max-height:90dvh;overflow:auto}#audio-dialog label,#audio-dialog select,#audio-dialog input[type=range]{display:block;width:100%;margin:10px 0}#audio-dialog label input[type=checkbox]{width:auto;display:inline}#audio-dialog button{margin:4px}#audio-mini{position:fixed;bottom:0;left:0;right:0;display:flex;gap:8px;align-items:center;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:var(--surface,#fff);border-top:1px solid var(--border,#aaa);z-index:50}#audio-mini[hidden]{display:none}#audio-mini-open{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;text-align:left}body.has-audio-player{padding-bottom:100px}.theme-dark #audio-mini{background:#111;color:#eee}#audio-recordings{padding:0;list-style:none}#audio-recordings button{width:100%;text-align:left;margin:4px 0}#transposition{max-height:min(528px,70dvh);overflow-y:auto}#key-options button{min-height:44px}
+
+/* Keep beta 9's list styling; each song occupies one line. */
+#song-list .song{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#song-list .song-group-start{margin-top:16px}
+#versions-dialog{width:min(440px,calc(100vw - 30px));max-height:80dvh;overflow:auto}
+.version-choice{display:block;text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;width:100%;padding:14px;margin:8px 0}
+.version-choice span{margin-left:8px;font-size:13px;color:var(--ui-muted)}.version-choice[aria-current=true]{border-color:var(--ui-focus)}
+#version-note{color:var(--ui-muted);font-size:14px;line-height:1.5}
+#collection-settings>p{font-size:14px;line-height:1.5;color:var(--ui-muted)}
+#enabled-collections{list-style:none;padding:0;margin:12px 0}
+.collection-setting-row{display:block;padding:10px 0;border-bottom:1px solid var(--ui-border)}
+#settings-dialog .collection-setting-row>label{display:flex;align-items:center;gap:8px;min-height:32px;margin:0;padding:4px 0;line-height:1.35;font-size:15px}
+#settings-dialog .collection-setting-row input{flex:0 0 auto;width:19px;height:19px;margin:0;accent-color:var(--ui-text)}
+.collection-order-buttons{display:flex;justify-content:flex-end;gap:6px;margin-top:5px}
+#settings-dialog .collection-order-buttons button{width:auto;min-width:72px;min-height:42px;margin:0;padding:7px 10px;font-size:13px;line-height:1.2}
+#settings-dialog .missing-versions-setting{display:flex;gap:9px;align-items:center;margin-top:20px;line-height:1.4}
+#settings-dialog .missing-versions-setting input{width:19px;height:19px;flex:0 0 auto;margin:0}
+/* Retain the requested Settings gear beside the restored SDA Hymnal heading. */
+#collection-title{display:flex;align-items:center;justify-content:space-between;gap:16px;box-sizing:border-box;width:calc(100% - 32px);max-width:522px;margin:60px auto 8px}
+#collection-title h1{margin:0;text-align:left;font-size:32px;line-height:1.2}
+#collection-title #open-settings{position:static;flex:0 0 44px;width:44px;height:44px;min-height:44px;margin:0;padding:9px;border-radius:50%;box-shadow:none}
+#open-settings svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+#header-container{width:100%}#catalog>header{width:100%}
+
+/* Named space between collections; search keeps related versions together. */
+#song-list li.collection-divider,#song-list li.collection-divider:hover{list-style:none;box-shadow:none;background:transparent;border:0;border-top:1px solid var(--ui-border);border-radius:0;margin:28px 12px 12px;padding:14px 8px 0;text-align:left;cursor:default}
+#song-list .collection-divider:first-child{margin-top:8px}
+#song-list .collection-divider h2{margin:0;font-size:1rem;font-weight:600;color:var(--ui-muted)}

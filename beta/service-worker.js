@@ -7,7 +7,7 @@ const stateURL = absolute('__offline__/installed');
 const blobURL = hash => absolute(`__offline__/files/${hash}`);
 function allowed(url) {
  return [...config.shell, ...config.catalogs].some(path => absolute(path) === url.href) ||
-  (url.origin === base.origin && url.pathname.startsWith(`${base.pathname}musicxml/`) && url.pathname.endsWith('.musicxml'));
+  (url.origin===base.origin&&(url.pathname.startsWith(new URL('musicxml/',base).pathname)||url.pathname.startsWith(new URL('../beta/musicxml/',base).pathname))&&url.pathname.endsWith('.musicxml'));
 }
 self.addEventListener('install', event => event.waitUntil((async () => {
  const cache = await caches.open(config.cache);

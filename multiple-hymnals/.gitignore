@@ -1,0 +1,7 @@
+# Include offline release assets in the website branch.
+!releases/
+!releases/**
+!vendor/
+!vendor/**
+!musicxml/
+!musicxml/**

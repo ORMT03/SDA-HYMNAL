@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Hymnal Collections"><meta name="theme-color" content="#ffffff">
+<link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icons/icon-180.png">
+<title>Hymnal - 15.0 beta 9.1</title><link rel="stylesheet" href="styles.css">
+<script defer src="vendor/opensheetmusicdisplay.min.js"></script><script defer src="vendor/jspdf.umd.min.js"></script><script defer src="vendor/svg2pdf.umd.min.js"></script><script defer src="app.js"></script>
+<script defer src="vendor/fflate.min.js"></script><script defer src="offline-config.js"></script><script defer src="offline.js"></script>
+</head>
+<body>
+<div id="catalog">
+<header><div id="header-container"><div id="collection-title"><h1>Hymnal</h1><button id="open-settings" type="button" aria-label="Settings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 3-.6 2.2-2 .9-2-.6-2 3.5 1.6 1.5v2.4L2.4 14l2 3.5 2-.6 2 .9L9 20h4l.6-2.2 2-.9 2 .6 2-3.5-1.6-1.5v-2.4L19.6 8l-2-3.5-2 .6-2-.9L13 3Z"/><circle cx="11" cy="11.5" r="3"/></svg></button></div>
+<select id="language-dropdown" aria-label="Language"><option value="english">English</option><option value="spanish">Spanish</option><option value="both">English &amp; Spanish</option></select>
+<select id="dropdown-menu" aria-label="Display"><option value="music-score">Music Score and Lyrics</option><option value="lyrics">Lyrics Only</option></select>
+</div></header>
+<div id="search-row"><input type="search" id="search" placeholder="Search by number or title" aria-label="Search by number or title"><button id="smart-search" type="button" aria-pressed="false" aria-label="Smart Search: search titles and lyrics"><span>Smart</span><span>Search</span></button></div>
+<p id="collection-summary" role="status"></p><p id="count" role="status">Loading hymns…</p><ul id="song-list"></ul>
+<div id="offline-area"><button id="save-offline" type="button" disabled>Save Hymnal for Offline Use</button>
+<button id="check-updates" type="button" hidden>Check for updates</button>
+<progress id="offline-progress" aria-label="Offline download progress" max="1" value="0" hidden></progress>
+<p id="offline-status" role="status">Preparing offline support…</p>
+</div>
+
+<div id="version">Version 15.0 beta 9.1</div>
+<details id="offline-help"><summary>Offline use on iPhone</summary><p>In Safari, tap Share → Add to Home Screen. Open the Home Screen app while online, then tap Save Hymnal for Offline Use. Keep it open until Ready offline appears.</p><p>Saves all available MusicXML scores, English and Spanish lyrics, and the app. Sheet images are online-only. Test in Airplane Mode before you need it. The app checks for updates each time it opens. A notice at the bottom offers new or changed files only. Offline or failed checks leave the saved hymnal working. If iPhone storage is cleared, download again.</p></details>
+<div id="update-notice" hidden role="status"><p id="update-text"></p><button id="install-update" type="button">Download update</button></div>
+<span id="coverage"></span>
+</div>
+<section id="hymn" hidden aria-label="Hymn viewer">
+<nav id="hymn-navigation" aria-label="Hymn navigation">
+<button id="back-button" type="button" aria-label="Back to hymns"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 5-7 7 7 7"/></svg></button>
+<h1 id="hymn-title"></h1><p id="hymn-meta" hidden></p>
+<div id="hymn-actions"><button id="key-toggle" type="button" aria-expanded="false" aria-controls="transposition" aria-haspopup="menu" disabled>Key: —</button><button id="options-toggle" type="button" aria-label="Hymn options" aria-expanded="false" aria-controls="hymn-options" aria-haspopup="menu"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle class="dot" cx="8" cy="12" r=".9"/><circle class="dot" cx="12" cy="12" r=".9"/><circle class="dot" cx="16" cy="12" r=".9"/></svg></button></div>
+<div id="hymn-options" class="hymn-popover" role="menu" aria-label="Hymn options" hidden>
+<button id="export-pdf" type="button" role="menuitem" disabled>Share score PDF<span aria-hidden="true">↥</span></button>
+<button id="share-lyrics" type="button" role="menuitem" hidden>Share Lyrics<span aria-hidden="true">↥</span></button>
+<button id="view-toggle" type="button" role="menuitem">View Lyrics<span aria-hidden="true">♫</span></button>
+<button id="score-settings" type="button" role="menuitem">Settings<span aria-hidden="true">⚙</span></button>
+</div>
+<div id="transposition" class="hymn-popover" role="menu" aria-label="Transpose key" hidden><select id="musical-key" aria-label="Choose musical key" hidden></select><div id="key-options" role="group" aria-label="Musical keys"></div><output id="transpose-offset" class="visually-hidden" aria-live="polite">Original key</output></div>
+</nav>
+<p id="status" role="status"></p><div id="score-tools" hidden><label for="zoom">Score size</label><input id="zoom" type="range" min="60" max="150" value="90" step="10"><output id="zoom-value" for="zoom">90%</output></div><div id="viewer" aria-busy="false"></div>
+<dialog id="pdf-ready" aria-labelledby="pdf-title"><form method="dialog"><button class="close-settings" aria-label="Close PDF sharing">Close</button></form><h2 id="pdf-title">Score PDF ready</h2><p>Share this score or save a copy.</p><div class="pdf-actions"><button id="share-pdf" type="button">Share PDF</button><a id="download-pdf" download>Download PDF</a></div><p id="pdf-description"></p></dialog>
+</section>
+<dialog id="settings-dialog" aria-labelledby="settings-title"><form method="dialog"><button class="close-settings" aria-label="Close settings">Close</button></form><h2 id="settings-title">Settings</h2><fieldset id="collection-settings"><legend>Collections</legend><p>Turn collections on or off, then choose the order they appear.</p><ul id="enabled-collections"></ul><button id="reset-collection-order" type="button">Reset collection order</button><label class="missing-versions-setting"><input id="include-missing-versions" type="checkbox" checked> Include missing-language versions</label><p>Show linked translations from other collections when a hymnal has no version in the selected language. They appear under that hymnal even if their source collection is turned off.</p><p id="collection-settings-status" role="status"></p></fieldset>
+<fieldset><legend>Language &amp; view</legend>
+<label for="default-language">Default language</label><select id="default-language"><option value="last">Last used</option><option value="english">English</option><option value="spanish">Spanish</option><option value="both">English &amp; Spanish</option></select>
+<label for="default-view">Default view</label><select id="default-view"><option value="last">Last used</option><option value="music-score">Music score &amp; lyrics</option><option value="lyrics">Lyrics only</option></select>
+<label for="list-behavior">Hymn list</label><select id="list-behavior"><option value="top">Start at the top</option><option value="remember">Remember my place</option><option value="sticky">Keep search visible</option></select>
+<label><input id="keep-awake" type="checkbox"> Keep screen awake while viewing a hymn</label><p id="wake-status">Off by default. Works while a hymn is open, when supported by your browser.</p></fieldset>
+<fieldset id="offline-settings"><legend>Offline storage</legend>
+<label for="offline-language">Download language</label><select id="offline-language"><option value="both">English &amp; Spanish</option><option value="english">English</option><option value="spanish">Spanish</option></select>
+<label for="offline-content">Download content</label><select id="offline-content"><option value="scores">Scores &amp; lyrics</option><option value="lyrics">Lyrics only</option></select>
+<p>Downloads include all collections in the selected languages. These choices apply when you save or update the offline hymnal. Images are online-only.</p>
+<button id="save-offline-selection" type="button">Save offline selection</button>
+<p id="storage-usage" role="status">Checking saved storage…</p><button id="clean-storage" type="button">Clean up unused files</button><p id="storage-status" role="status"></p>
+<p>Unused files are removed after a successful download. Files needed by your saved hymnal are kept, including files reused from older versions.</p></fieldset>
+<label for="appearance">Appearance</label><select id="appearance"><option value="light-scores">Follow system, keep scores light</option><option value="system">Follow system</option><option value="light">Always light</option><option value="dark">Always dark</option></select>
+<fieldset><legend>Lyrics text size</legend><label for="lyrics-size">Size: <output id="lyrics-size-value">18 pt</output></label><input id="lyrics-size" type="range" min="12" max="40" step="1" value="18"><div id="font-presets"><button type="button" data-size="12">XS</button><button type="button" data-size="14">S</button><button type="button" data-size="18">M (default)</button><button type="button" data-size="22">L</button><button type="button" data-size="26">XL</button><button type="button" data-size="34">Huge</button></div></fieldset>
+<fieldset id="view-preferences"><legend>Score viewing</legend></fieldset><fieldset id="share-preferences"><legend>Score PDF sharing</legend></fieldset>
+<p>Viewing and PDF options are saved separately. These options apply to rendered scores; original images cannot be changed. PDFs use the selected key on 8.5 × 11-inch pages.</p><button id="reset-preferences" type="button">Reset these settings</button></dialog>
+</body></html>

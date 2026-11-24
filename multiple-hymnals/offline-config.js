@@ -1,5 +1,5 @@
 self.HYMNAL_OFFLINE = {
- version: '15.0 beta 9.1',
+ version: '15.0 beta 9.2',
  cache: 'sda-hymnal-multiple-hymnals-bootstrap-v2',
  contentCache: 'sda-hymnal-multiple-hymnals-files-v1',
  stateCache: 'sda-hymnal-multiple-hymnals-state-v1',

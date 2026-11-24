@@ -6,12 +6,12 @@ self.HymnalSearch = (() => {
  function prepare(song) { return {...song,searchTitle:normalize(song.title),searchLyrics:normalize(song.content),searchTokens:new Set(tokens(song.title+' '+song.content))}; }
  function score(song,query) {
   const q=normalize(query), ts=tokens(q); if (!q) return 0;
-  let result=0; const number=q.padStart(3,'0');
-  if (song.number===q||song.number===number) result+=200;
+  let result=0; const number=q.padStart(3,'0'),code=normalize(song.number);
+  if (code===q||code===number||(/^\d{4}$/.test(q)&&code==='gyc'+q)) result+=200;
   if (song.searchTitle.includes(q)) result+=80;
   if (song.searchLyrics.includes(q)) result+=40;
   for(const token of ts) {
-   if(song.number===token||song.number===token.padStart(3,'0'))result+=120;
+   if(code===token||code===token.padStart(3,'0')||(/^\d{4}$/.test(token)&&code==='gyc'+token))result+=120;
    if(song.searchTitle.includes(token))result+=20;
    if(song.searchTokens.has(token))result+=8;
    if(song.searchLyrics.includes(token))result+=2;
@@ -58,7 +58,7 @@ self.HymnalPDF = {
      let y=32;
      if(options.heading) {
       pdf.setFontSize(20);const lines=pdf.splitTextToSize(metadata.title,480);
-      pdf.text(lines,306,y,{align:'center'});pdf.text((song.number?String(Number(song.number)):''),586,y,{align:'right'});y+=lines.length*23+8;
+      pdf.text(lines,306,y,{align:'center'});pdf.text(scoreNumber(song),586,y,{align:'right'});y+=lines.length*23+8;
      }
      if(options.credits) {
       pdf.setFontSize(8);
@@ -131,6 +131,7 @@ let catalogPosition=0, hymnWakeLock=null, wakeRequest=null;
 let collections=[], songs = [], mapping = [], manifest = {}, selected, revision = 0, renderer, mode = 'xml';
 const key = song => `${song.collection}:${song.language}:${song.id}`;
 function songLabel(song){return song.number?`${song.number} - ${song.title}`:song.title;}
+function scoreNumber(song){const number=String(song.number||'');return /^\d+$/.test(number)?String(Number(number)):number;}
 const collectionLabel=id=>collections.find(c=>c.id===id)?.name||id;
 const scorePath = song => song.score || manifest[key(song)];
 async function json(url) { const response = await fetch(url); if (!response.ok) throw new Error(`Unable to load ${url}`); return response.json(); }
@@ -176,13 +177,9 @@ function collectionSections(language){
 function renderList(){
  const language=$('language').value,q=normalize($('search').value),sections=collectionSections(language),entries=sections.flatMap(s=>s.rows),list=$('songs');list.replaceChildren();let count=0;
  function row(entry,related=false){const song=entry.song,li=document.createElement('li'),button=document.createElement('button');li.className=related?'related-song':'';button.className='song';button.type='button';button.setAttribute('aria-current',String(selected===song));
-  const title=document.createElement('span');title.className='song-title';title.textContent=songLabel(song);
-  const detail=document.createElement('span');detail.className='song-detail';detail.textContent=collectionLabel(song.collection)+(entry.translationFor?` · ${song.language==='spanish'?'Spanish':'English'} version of ${collectionLabel(entry.section)}${entry.translationFor.number?' '+entry.translationFor.number:''}`:song.subtitle?' · '+song.subtitle.split('\n')[0]:'');
-  button.append(title,detail);button.addEventListener('click',()=>openSong(song));li.append(button);list.append(li);count++;return li;
+  button.textContent=songLabel(song);button.addEventListener('click',()=>openSong(song));li.append(button);list.append(li);count++;return li;
  }
- if(!q){for(const section of sections){const li=document.createElement('li'),heading=document.createElement('h2');li.className='collection-heading';heading.textContent=section.collection.name;li.append(heading);list.append(li);
-   let missingHeading=false;for(const entry of section.rows){if(entry.translationFor&&!missingHeading){const li=document.createElement('li');li.className='language-additions';li.textContent='Additional language versions';list.append(li);missingHeading=true;}row(entry);}
-  }}else{
+ if(!q){for(const section of sections)for(const entry of section.rows)row(entry);}else{
   const graph=versionGraph(),byId=new Map(entries.map(e=>[key(e.song),e])),shown=new Set();
   function rank(entry){const song=entry.song,anchor=entry.translationFor;let value=settings.smart?HymnalSearch.score(song,$('search').value):matches(song,q)?100:0;if(normalize(collectionLabel(song.collection)).includes(q))value+=20;if(anchor&&(matches(anchor,q)||normalize(collectionLabel(entry.section)).includes(q)))value+=30;return value;}
   const found=entries.map(entry=>({entry,rank:rank(entry)})).filter(r=>r.rank>0).sort((a,b)=>b.rank-a.rank);
@@ -191,7 +188,7 @@ function renderList(){
   }
  }
  const enabled=orderedCollections().filter(c=>collectionEnabled(c.id)).length;
- $('collection-summary').textContent=q?`${count} ${count===1?'song':'songs'} found`:`${count} ${count===1?'song':'songs'} · ${enabled} ${enabled===1?'collection':'collections'}`;
+ const summary=$('collection-summary');if(summary)summary.textContent=q?`${count} ${count===1?'song':'songs'} found`:`${count} ${count===1?'song':'songs'} · ${enabled} ${enabled===1?'collection':'collections'}`;
  $('count').hidden=count>0;$('count').textContent='';if(!count){const li=document.createElement('li');li.className='muted';li.textContent=!enabled?'Turn on a collection in Settings to show its songs.':'No songs found. Try another language or search, or change your collections in Settings.';list.append(li);}updateCollectionSearch();
 }
 function saveCollections(){pref.set('collection-options',JSON.stringify(collectionState));renderList();}
@@ -249,7 +246,7 @@ function makeScorePage(content, song) {
  const page = document.createElement('div'); page.className = 'score-page';
  const heading = document.createElement('div'); heading.className = 'sheet-heading';
  const title = document.createElement('h2'); title.textContent = xml.querySelector('work-title')?.textContent || xml.querySelector('movement-title')?.textContent || song.title;
- const number = document.createElement('span'); number.className = 'sheet-number'; number.textContent = fields['hymn-number'] || (song.number?String(Number(song.number)):'');
+ const number = document.createElement('span'); number.className = 'sheet-number'; number.textContent = fields['hymn-number'] || scoreNumber(song);
  heading.append(title,number);
  const credits = document.createElement('div'); credits.className = 'sheet-credits';
  const left = document.createElement('div'), right = document.createElement('div');
@@ -485,7 +482,7 @@ function formattedLyrics(content) {
  for(let verse=1;verse<=10;verse++)text=text.split(`${verse}.`).join(`Verse ${verse}`);
  return text.replace(/CHORUS:/gi,'Chorus');
 }
-function lyricsShareText(song){return `${songLabel(song)}\n${collectionLabel(song.collection)}\n\n${formattedLyrics(song.content)}${song.rights?'\n\n'+song.rights:''}`;}
+function lyricsShareText(song){return `${songLabel(song)}\n\n${formattedLyrics(song.content)}${song.rights?'\n\n'+song.rights:''}`;}
 function closeHymnMenus(focusId) {
  for(const [toggle,panel]of [['options-toggle','hymn-options'],['key-toggle','transposition']]){$(panel).hidden=true;$(toggle).setAttribute('aria-expanded','false');}
  if(focusId)$(focusId).focus();
@@ -731,8 +728,6 @@ const versionDialog=document.createElement('dialog');versionDialog.id='versions-
 const versionButton=document.createElement('button');versionButton.type='button';versionButton.setAttribute('role','menuitem');versionButton.textContent='Languages & Versions';$('hymn-options').insertBefore(versionButton,$('score-settings'));
 versionButton.addEventListener('click',()=>{
  if(!selected)return;closeHymnMenus();const list=$('version-list');list.replaceChildren();const versions=relatedVersions(selected);
- for(const song of versions){const button=document.createElement('button'),title=document.createElement('strong'),source=document.createElement('span');button.type='button';button.className='version-choice';button.setAttribute('aria-current',String(song===selected));title.textContent=songLabel(song);source.textContent=`${collectionLabel(song.collection)} · ${song.language==='english'?'English':'Spanish'}${song===selected?' · Current version':''}`;button.append(title,source);button.addEventListener('click',()=>{versionDialog.close();openSong(song);});list.append(button);}
+ for(const song of versions){const button=document.createElement('button'),title=document.createElement('strong'),source=document.createElement('span');button.type='button';button.className='version-choice';button.setAttribute('aria-current',String(song===selected));title.textContent=songLabel(song);source.textContent=`${song.language==='english'?'English':'Spanish'}${song===selected?' · Current version':''}`;button.append(title,source);button.addEventListener('click',()=>{versionDialog.close();openSong(song);});list.append(button);}
  $('version-note').textContent=versions.length===1?'No other language versions have been added for this song yet.':'';versionDialog.showModal();
 });
-const sourceCaption=document.createElement('p');sourceCaption.id='hymn-source';$('hymn').insertBefore(sourceCaption,$('status'));
-const originalOpenSong=openSong;openSong=function(song,updateURL=true){sourceCaption.textContent=collectionLabel(song.collection);return originalOpenSong(song,updateURL);};

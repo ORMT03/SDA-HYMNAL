@@ -1,0 +1,99 @@
+SDA HYMNAL — 15.0 beta 11.3 — KINDLE TOUCH (K5)
+
+ALREADY INSTALLED: UPDATE THROUGH GITHUB
+Do not copy the installer over an existing installation to upgrade it.
+1. Upload the complete supplied GitHub copy-over folder to the repository's
+   website branch and wait for GitHub Pages to finish deploying.
+2. Wake the Kindle and connect Wi-Fi. Open SDA Hymnal from its single KUAL entry.
+3. Open Settings, tap Next if needed, then Updates. Tap Check for updates.
+   This checks only; it does not install anything.
+4. Tap Download update. Keep the Kindle awake while it verifies the download.
+   The app reopens automatically after applying the update.
+5. In beta 8, Updates shows the currently installed version above the check button.
+
+The existing Kindle version already checks beta/kindle/release.json when opened,
+so it can discover this release once published. It also checks the regular beta
+website manifest for shared songs. Automatic checking never downloads an update.
+Offline checks leave saved hymns usable. Only missing/changed files are fetched;
+existing songs are reused. Do not install beta 10 by SSH or by replacing app files.
+
+FRESH INSTALLATION
+The installer is published at beta/kindle/downloads/SDA-Hymnal-Kindle-Touch-15.0-beta-10.zip.
+The webpage beta/kindle/ links to it and includes these instructions.
+Prerequisites: a jailbroken Kindle Touch (K5), working KUAL, Kindle Python 3.9
+with Pillow, and the existing KOReader files (fonts, LuaJIT, rendering libraries,
+and FBInk). KOReader's reader interface is not launched. Firmware tested: 5.3.7.3.
+1. Download and unzip the installer on your computer.
+2. Connect the Kindle by USB. Copy the ZIP's extensions folder to the top level
+   of the Kindle drive, merging folders. The resulting launcher must be at
+   extensions/sda-hymnal/launch.sh, beside the other KUAL extensions. Do not put
+   it in documents and do not leave it inside an extra enclosing ZIP folder.
+3. Eject the Kindle, open KUAL, and tap SDA Hymnal (beta).
+4. English and Spanish lyrics are included. To save scores, use Settings >
+   Offline downloads, select languages and Scores and lyrics, then Save selected
+   hymnal offline. This uses the regular website's existing scores and ZIPs.
+5. Press the physical Home button to exit. Normal sleep behavior is preserved.
+
+USE
+Outlined buttons mark each tap target. Smart Search sits beside the search field.
+Tap Language to choose English, Spanish, or English & Spanish; it does not cycle.
+The bilingual list places English first, then Spanish within each collection.
+Named dividers separate collections. Settings > Collections turns them on or
+off, moves them up, and includes linked missing-language versions. SDA Hymnal
+comes first by default, with the five reviewed GYC theme songs below it. Bilingual search
+places mapped translations directly below each match, with gaps between groups.
+Language abbreviations are not appended to hymn titles.
+Tap a hymn for its score; the menu switches between score and lyrics. The top
+bar contains Back, Key, and the hymn menu. Swipe to scroll a score; pinch or use
+Score zoom to enlarge it. Chords are hidden by default in viewing and export.
+The first engraving takes several seconds; later openings use the saved score.
+The music fonts needed for accidentals and other SMuFL symbols are included.
+
+QR SHARING
+The QR code opens the regular beta website, not a separate Kindle viewer:
+https://ormt03.github.io/SDA-HYMNAL/beta/?view=lyrics#english/001
+Score links use view=score and retain the selected transposition. Update the
+website's saved iPhone copy to beta 8 first so it understands these link options.
+The phone needs network access or its own offline copy. The Kindle can generate
+QR codes offline. Optional PDF/text file export is off by default in Settings.
+
+SPANISH AND OTHER IMAGE FALLBACKS
+A hymn with no MusicXML downloads its existing sheet image from the regular
+website when opened online. Images are never included in bulk offline downloads.
+Beta 8 uses a bounded scanline PNG decoder rather than expanding the full-sized
+image into several large memory buffers. Decoder/render failures return to
+saved lyrics. Original images, scores, lyrics, and catalogs are not duplicated
+under beta/kindle on the server. Native downloads reuse their normal URLs and
+the normal website release/collection archives.
+
+PUBLISHING AND SOURCES
+Copy the supplied GitHub copy-over folder into the website branch at the repo
+root. Its beta/kindle/.gitignore allows the runtime release assets despite the
+repository's generic ignore rules. Publish the entire folder, including hidden
+.gitignore files; no commit or push is performed by the build tools.
+The native manifest and installer are under beta/kindle. Only Kindle-specific
+code, fonts, licenses, and installer live there. There is no cloned web app or
+separate native song archive. Legacy Kindle share URLs are intentionally unsupported.
+Native C/Python/Lua source is included in the app and download objects. The
+original Verovio 6.4.1 source is hosted once at beta/kindle/source/verovio-6.4.1.tar.gz;
+licenses and build scripts are included. Build with Koxtoolchain's Kindle5 ARM
+Cortex-A8 toolchain. build_release.py reads the regular website's release.json
+and shares its catalog, MusicXML, and archive URLs. Rebuild it after a website
+release to publish a matching Kindle app/feed. Preserve old published archives
+needed by existing update manifests. No Kindle app files are replaced by this
+release-preparation task; upgrade the device through its explicit updater.
+
+AUDIO
+Listen is in the hymn menu. Choose MusicXML Piano or Recording. Piano uses the existing website score and bundled piano sound, with single/all verses, chorus handling, play/pause, stop, seek, tempo 50–150%, and key changes ±12 semitones. The key picker opens with Original in its middle, with higher and lower keys available.
+
+Volume controls are inside Listen: decrease/increase by 10%, or tap Volume / mute. These controls adjust the app's audio without changing the Kindle's system mixer. Volume starts at 30% and is retained by the player. Headphone output also depends on the Kindle's existing headphone mixer level.
+
+Audio storage is in Settings and Listen. Refresh the recording catalog, download the current hymn or selected language, delete recordings, or cancel downloads while retaining completed ones. Recordings are published separately at the regular repository's audio/catalog.json; the catalog currently contains no recordings. Online playback stages a temporary recording, which is removed when the player exits. No recordings or sheet images are downloaded by the hymnal updater.
+
+The app checks for a new hymnal version automatically on launch, but only your explicit Download update action installs it. Publishing beta 9 does not replace the installed app until you choose that action.
+
+BETA 10
+The regular beta website and Kindle share the collection catalogs and scores.
+English hymn 606 includes the latest reviewed revision. Additional collection
+QR codes open their song directly on the regular beta website. GYC piano
+playback includes cue timing, alternate endings, and printed score navigation.

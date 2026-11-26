@@ -2,8 +2,8 @@
   "schema": 1,
   "platform": "kindle-touch-k5",
   "app": {
-    "id": "kindle-15.0-beta-11.2-79d1e449ae14f08a",
-    "version": "15.0 beta 11.2",
+    "id": "kindle-15.0-beta-11.3-414b598703ac5811",
+    "version": "15.0 beta 11.3",
     "files": [
       {
         "path": "HymnPiano.wav",
@@ -13,9 +13,9 @@
       },
       {
         "path": "README.txt",
-        "sha256": "21745457916f4144238bd2bcc8a3165bfcc6176f276d9c924aa2a7a18edc5500",
+        "sha256": "cc1020686cb7903afd8c8cd15438bd9658775103de46f8593ed3947b20496407",
         "bytes": 7192,
-        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/21745457916f4144238bd2bcc8a3165bfcc6176f276d9c924aa2a7a18edc5500"
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/cc1020686cb7903afd8c8cd15438bd9658775103de46f8593ed3947b20496407"
       },
       {
         "path": "audio_timeline.py",
@@ -31,15 +31,15 @@
       },
       {
         "path": "backend.py",
-        "sha256": "86d199d0bf296bfb26246e54bb1b80494893def2b477d22942411bf78eda8775",
-        "bytes": 56646,
-        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/86d199d0bf296bfb26246e54bb1b80494893def2b477d22942411bf78eda8775"
+        "sha256": "6989e98909fbb5534235c01c803c74ab890dbda198cebb965199c6aeb04a5781",
+        "bytes": 57494,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/6989e98909fbb5534235c01c803c74ab890dbda198cebb965199c6aeb04a5781"
       },
       {
         "path": "bin/hymnal",
-        "sha256": "8576f355f214cb277045ff6b8990c660908e98d9a1b0809f30e60c4b0996faa7",
-        "bytes": 418048,
-        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/8576f355f214cb277045ff6b8990c660908e98d9a1b0809f30e60c4b0996faa7"
+        "sha256": "119ec86039e0113b60e846190bc79f9f9c40f4217a9add2eaa6c4b8bbaf0fb73",
+        "bytes": 422152,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/119ec86039e0113b60e846190bc79f9f9c40f4217a9add2eaa6c4b8bbaf0fb73"
       },
       {
         "path": "bin/piano",
@@ -171,9 +171,9 @@
       },
       {
         "path": "source/hymnal.c",
-        "sha256": "629ac6ebd8ce3f2d2f9935b130e0b7ba24c33b98c60e198fed871d23336200c5",
-        "bytes": 74529,
-        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/629ac6ebd8ce3f2d2f9935b130e0b7ba24c33b98c60e198fed871d23336200c5"
+        "sha256": "da4897854633fda5dee91d974e7753fc922348036a640729d8d46b73eb8ff06b",
+        "bytes": 91137,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/da4897854633fda5dee91d974e7753fc922348036a640729d8d46b73eb8ff06b"
       },
       {
         "path": "source/image_geometry.h",
@@ -470,8 +470,8 @@
     ]
   },
   "data": {
-    "id": "15.0-beta-11.2-f4a32c1299828e07",
-    "version": "15.0 beta 11.2",
+    "id": "15.0-beta-11.3-1ebe6a7739365d54",
+    "version": "15.0 beta 11.3",
     "files": [
       {
         "kind": "catalog",
@@ -7726,9 +7726,9 @@
       }
     ],
     "archive": {
-      "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.2-f4a32c1299828e07-full.zip",
-      "sha256": "ed78e1a04ac64740d6bf0eb50a8b996bd8584b5a39ac2e3a03bc5ca3c22c76a0",
-      "bytes": 4937485
+      "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.3-1ebe6a7739365d54-full.zip",
+      "sha256": "79556d7187a68bf9c63c3fc7d4bde4608ccddd28b951d3a1b34a01453a01996c",
+      "bytes": 4937486
     },
     "collections": [
       {
@@ -7737,9 +7737,9 @@
           "scores": false
         },
         "full": {
-          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.2-f4a32c1299828e07-both-lyrics-full.zip",
-          "sha256": "28e103d4b2e28765099912d785dc1b32fce773d535eebf8f26c4e675a3ad51c0",
-          "bytes": 1754240
+          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.3-1ebe6a7739365d54-both-lyrics-full.zip",
+          "sha256": "90f35049a8a996ecb4346d6e2b4dc241dbd7d298a566c790dcfed43752c8ce76",
+          "bytes": 1754241
         }
       },
       {
@@ -7748,9 +7748,9 @@
           "scores": true
         },
         "full": {
-          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.2-f4a32c1299828e07-english-scores-full.zip",
-          "sha256": "fbd754fd786695d32c397823360f5293bbd2781e36b4d25ad6c806b8366c3d8f",
-          "bytes": 4812456
+          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.3-1ebe6a7739365d54-english-scores-full.zip",
+          "sha256": "0badc7f43c09ac787000ac449a3651c93ad658268f76a39930624db169655793",
+          "bytes": 4812457
         }
       },
       {
@@ -7759,9 +7759,9 @@
           "scores": false
         },
         "full": {
-          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.2-f4a32c1299828e07-english-lyrics-full.zip",
-          "sha256": "3dd6f3f398de0e3afa6a5f73e9ee31509c0b4cd6368688aa662c18c7e9998293",
-          "bytes": 1629211
+          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.3-1ebe6a7739365d54-english-lyrics-full.zip",
+          "sha256": "3d706acbceaaad2bfef41dfc607e10f4e24132edaae16b41e768310d2844a268",
+          "bytes": 1629212
         }
       },
       {
@@ -7770,9 +7770,9 @@
           "scores": true
         },
         "full": {
-          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.2-f4a32c1299828e07-spanish-scores-full.zip",
-          "sha256": "7099f79eb3cc3e9b621d7306412f0cffb1b41a3281742c39f418c3f6939dbeb9",
-          "bytes": 1565798
+          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.3-1ebe6a7739365d54-spanish-scores-full.zip",
+          "sha256": "591ccd41e824b7c618d2285a28040fd5beefc64df2c01f8d894fce2d99f8b580",
+          "bytes": 1565799
         }
       },
       {
@@ -7781,9 +7781,9 @@
           "scores": false
         },
         "full": {
-          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.2-f4a32c1299828e07-spanish-lyrics-full.zip",
-          "sha256": "7099f79eb3cc3e9b621d7306412f0cffb1b41a3281742c39f418c3f6939dbeb9",
-          "bytes": 1565798
+          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.3-1ebe6a7739365d54-spanish-lyrics-full.zip",
+          "sha256": "591ccd41e824b7c618d2285a28040fd5beefc64df2c01f8d894fce2d99f8b580",
+          "bytes": 1565799
         }
       }
     ]

@@ -1,0 +1,12 @@
+
+# Hymnal Release Builder — begin
+!releases/
+!releases/**
+!vendor/
+!vendor/**
+!musicxml/
+!musicxml/**
+!release-builder-state.json
+!kindle/
+!kindle/**
+# Hymnal Release Builder — end

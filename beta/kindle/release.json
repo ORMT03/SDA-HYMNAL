@@ -2,8 +2,8 @@
   "schema": 1,
   "platform": "kindle-touch-k5",
   "app": {
-    "id": "kindle-15.0-beta-10-61ea824068ae97fb",
-    "version": "15.0 beta 10",
+    "id": "kindle-15.0-beta-11-536c700ae7f04fce",
+    "version": "15.0 beta 11",
     "files": [
       {
         "path": "HymnPiano.wav",
@@ -13,9 +13,9 @@
       },
       {
         "path": "README.txt",
-        "sha256": "40c72501d8c455e9cf59f193dc842a511f9859a47dfcde63025661b9472da35f",
+        "sha256": "a46f401b3ec6b4ed8883dcad1976cd186c5088804196421c2e15856a02631e95",
         "bytes": 7190,
-        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/40c72501d8c455e9cf59f193dc842a511f9859a47dfcde63025661b9472da35f"
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/a46f401b3ec6b4ed8883dcad1976cd186c5088804196421c2e15856a02631e95"
       },
       {
         "path": "audio_timeline.py",
@@ -31,9 +31,9 @@
       },
       {
         "path": "backend.py",
-        "sha256": "61e4949ff98cc3f494f998eb630cb540057340ecd01471af3e5b82f6b38ffdf3",
-        "bytes": 55852,
-        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/61e4949ff98cc3f494f998eb630cb540057340ecd01471af3e5b82f6b38ffdf3"
+        "sha256": "b939ba7a2ec12231ea858791e04a5370cd52d37d777268a91864f10fceff2b8c",
+        "bytes": 55923,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/b939ba7a2ec12231ea858791e04a5370cd52d37d777268a91864f10fceff2b8c"
       },
       {
         "path": "bin/hymnal",
@@ -61,22 +61,42 @@
       },
       {
         "path": "catalogs/collections.json",
-        "sha256": "5e332a1c5e4556d948ad1c231015404f0cfccbcbe45d7192988547fa0eb43245",
-        "bytes": 200432,
+        "sha256": "788017188119482d97602d12c7acce32a8205b94ad403acce4f46c37b86dd16c",
+        "bytes": 204494,
         "url": "https://ormt03.github.io/SDA-HYMNAL/beta/collections.json",
+        "kind": "shared_catalog",
         "website_path": "collections.json",
         "data_path": "musicxml/English/_collections/collections.json",
-        "kind": "shared_catalog",
         "language": null
       },
       {
+        "path": "catalogs/collections/collections/happy-songs-for-boys-and-girls.english.json",
+        "sha256": "0134eb48e8bf350675f63e164e1ffe51038fdddb0128476777fcd31d38c4e8ff",
+        "bytes": 12928,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/collections/happy-songs-for-boys-and-girls.english.json",
+        "kind": "shared_catalog",
+        "website_path": "collections/happy-songs-for-boys-and-girls.english.json",
+        "data_path": "musicxml/English/_collections/catalogs/collections/happy-songs-for-boys-and-girls.english.json",
+        "language": "english"
+      },
+      {
+        "path": "catalogs/collections/collections/happy-songs-for-boys-and-girls.spanish.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "bytes": 3,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/collections/happy-songs-for-boys-and-girls.spanish.json",
+        "kind": "shared_catalog",
+        "website_path": "collections/happy-songs-for-boys-and-girls.spanish.json",
+        "data_path": "musicxml/English/_collections/catalogs/collections/happy-songs-for-boys-and-girls.spanish.json",
+        "language": "spanish"
+      },
+      {
         "path": "catalogs/gyc-theme-songs.english.json",
-        "sha256": "9b1df619e718668b240ccddf523f94be2ce733ba3059ed5555fea7e230ca4cdb",
-        "bytes": 8246,
+        "sha256": "6ac29f417997511be655505cb83cd959437128232fcbf353f2adc65c44ff9704",
+        "bytes": 14390,
         "url": "https://ormt03.github.io/SDA-HYMNAL/beta/collections/gyc-theme-songs.english.json",
+        "kind": "shared_catalog",
         "website_path": "collections/gyc-theme-songs.english.json",
         "data_path": "musicxml/English/_collections/gyc-theme-songs.english.json",
-        "kind": "shared_catalog",
         "language": "english"
       },
       {
@@ -147,9 +167,9 @@
       },
       {
         "path": "source/hymnal.c",
-        "sha256": "9ee79b66ed4c6176ba60102e53e1f0aa81948eb043bca89ec7dfbe4c459ba528",
+        "sha256": "4b5775a03afb7f6cf9479277832ec3c614e948fcb6a7d4465d5860868b754ecb",
         "bytes": 73861,
-        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/9ee79b66ed4c6176ba60102e53e1f0aa81948eb043bca89ec7dfbe4c459ba528"
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/4b5775a03afb7f6cf9479277832ec3c614e948fcb6a7d4465d5860868b754ecb"
       },
       {
         "path": "source/image_geometry.h",
@@ -219,8 +239,8 @@
         "collection": "gyc-theme-songs",
         "website_path": "musicxml/GYC/Before_the_Throne.musicxml",
         "path": "musicxml/English/_collections/GYC/Before_the_Throne.musicxml",
-        "sha256": "0d345066441f7e7794917da9cc7585593a77ad760d2df32f9eca05daacd5ec08",
-        "bytes": 121942,
+        "sha256": "94ea81f1c215d54daf528c8262ee848ecd124a2da52dcbccfa20b3b8ec38683d",
+        "bytes": 121924,
         "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/GYC/Before_the_Throne.musicxml"
       },
       {
@@ -262,12 +282,192 @@
         "sha256": "b5bbefd28989535f0f8e34a3bdf52de6febdab670f96f208c85a6e07f0a139b5",
         "bytes": 172950,
         "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/GYC/Yet_Not_I_But_Through_Christ_in_Me.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "gyc-theme-songs",
+        "website_path": "musicxml/GYC/Break_Forth.musicxml",
+        "path": "musicxml/English/_collections/GYC/Break_Forth.musicxml",
+        "sha256": "bb1322ec1b8710771cd94343bc1ca2af3be04ec0a6aaa02facaaef10d4f85e6b",
+        "bytes": 552890,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/GYC/Break_Forth.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "gyc-theme-songs",
+        "website_path": "musicxml/GYC/But_If_Not.musicxml",
+        "path": "musicxml/English/_collections/GYC/But_If_Not.musicxml",
+        "sha256": "c57f2e7d3351edf799efdc1cfcd50b0000aba53477304ccc6ab50b56b160f658",
+        "bytes": 541084,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/GYC/But_If_Not.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "gyc-theme-songs",
+        "website_path": "musicxml/GYC/See_the_Invisible.musicxml",
+        "path": "musicxml/English/_collections/GYC/See_the_Invisible.musicxml",
+        "sha256": "228efaf1e01903540d25e03bf283e4f2fe0f464ba9aaf809f6fac8fdea1e35ef",
+        "bytes": 506655,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/GYC/See_the_Invisible.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "gyc-theme-songs",
+        "website_path": "musicxml/GYC/Wherever_He_Goes.musicxml",
+        "path": "musicxml/English/_collections/GYC/Wherever_He_Goes.musicxml",
+        "sha256": "3502fa07e5f850e5082559e4091c0ef93167d2c243a13d3267391e41d4dd8fa0",
+        "bytes": 636472,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/GYC/Wherever_He_Goes.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "musicxml/Happy Songs for Boys and Girls/001_Children_Sing.musicxml",
+        "path": "musicxml/English/_collections/Happy Songs for Boys and Girls/001_Children_Sing.musicxml",
+        "sha256": "796ee6d1baf72971147da1868a2031a55949e5e9e0606b178abd0f562135ba75",
+        "bytes": 72843,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Happy%20Songs%20for%20Boys%20and%20Girls/001_Children_Sing.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "musicxml/Happy Songs for Boys and Girls/002_Good_Morning_Everybody.musicxml",
+        "path": "musicxml/English/_collections/Happy Songs for Boys and Girls/002_Good_Morning_Everybody.musicxml",
+        "sha256": "f5097becf76db7e19df194dd35e681624a4830509a16cd43e049e1bb1ab81b20",
+        "bytes": 74506,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Happy%20Songs%20for%20Boys%20and%20Girls/002_Good_Morning_Everybody.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "musicxml/Happy Songs for Boys and Girls/003_All_the_Children_Praise_the_Lord.musicxml",
+        "path": "musicxml/English/_collections/Happy Songs for Boys and Girls/003_All_the_Children_Praise_the_Lord.musicxml",
+        "sha256": "12be6894df1a93307950a98f89d7ff83e155c81e539eff55cf8c3823dede39d6",
+        "bytes": 39241,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Happy%20Songs%20for%20Boys%20and%20Girls/003_All_the_Children_Praise_the_Lord.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "musicxml/Happy Songs for Boys and Girls/004_Always_Cheerful.musicxml",
+        "path": "musicxml/English/_collections/Happy Songs for Boys and Girls/004_Always_Cheerful.musicxml",
+        "sha256": "c1f73fd967bc432b759cba85224731e5eb7882fcd4c468c25bb0233d4843ec7c",
+        "bytes": 106052,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Happy%20Songs%20for%20Boys%20and%20Girls/004_Always_Cheerful.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "musicxml/Happy Songs for Boys and Girls/005_I_Was_Glad.musicxml",
+        "path": "musicxml/English/_collections/Happy Songs for Boys and Girls/005_I_Was_Glad.musicxml",
+        "sha256": "f4be048b62673a277f200c8fb2ed5ddfc7343a2a303db8799b64b8da920bd5b9",
+        "bytes": 51852,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Happy%20Songs%20for%20Boys%20and%20Girls/005_I_Was_Glad.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "musicxml/Happy Songs for Boys and Girls/006_Ten_Commandments_Song.musicxml",
+        "path": "musicxml/English/_collections/Happy Songs for Boys and Girls/006_Ten_Commandments_Song.musicxml",
+        "sha256": "8e862bfc1199a4ef87108b03a2762a92e5fa0042c69c63f38fd3db784f7308e4",
+        "bytes": 99867,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Happy%20Songs%20for%20Boys%20and%20Girls/006_Ten_Commandments_Song.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "musicxml/Happy Songs for Boys and Girls/007_The_First_Commandment.musicxml",
+        "path": "musicxml/English/_collections/Happy Songs for Boys and Girls/007_The_First_Commandment.musicxml",
+        "sha256": "192864e94f8747530a60c68225ffa30334d0e7cce7b0747e2e91ebea31e02b18",
+        "bytes": 95883,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Happy%20Songs%20for%20Boys%20and%20Girls/007_The_First_Commandment.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "musicxml/Happy Songs for Boys and Girls/008_Jesus_Loves_the_Children.musicxml",
+        "path": "musicxml/English/_collections/Happy Songs for Boys and Girls/008_Jesus_Loves_the_Children.musicxml",
+        "sha256": "cdd8957171ea8ece8e6cd38fac671431dab240d34df86a234329bd341a673fc9",
+        "bytes": 74573,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Happy%20Songs%20for%20Boys%20and%20Girls/008_Jesus_Loves_the_Children.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "musicxml/Happy Songs for Boys and Girls/009_Lord_Teach_a_Little_Child_to_Pray.musicxml",
+        "path": "musicxml/English/_collections/Happy Songs for Boys and Girls/009_Lord_Teach_a_Little_Child_to_Pray.musicxml",
+        "sha256": "b5446251632ca81c753b6db51d9e7f2ad4e441db488fd6cf387236fd4536afca",
+        "bytes": 92066,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Happy%20Songs%20for%20Boys%20and%20Girls/009_Lord_Teach_a_Little_Child_to_Pray.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "musicxml/Happy Songs for Boys and Girls/010_Come_to_My_Heart.musicxml",
+        "path": "musicxml/English/_collections/Happy Songs for Boys and Girls/010_Come_to_My_Heart.musicxml",
+        "sha256": "2a0d1100e960cde9a83a756a01a922c522ccddf1bcb6dd2e3b1b70adb14e5470",
+        "bytes": 57934,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Happy%20Songs%20for%20Boys%20and%20Girls/010_Come_to_My_Heart.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "musicxml/Happy Songs for Boys and Girls/011_Little_Childs_Belief.musicxml",
+        "path": "musicxml/English/_collections/Happy Songs for Boys and Girls/011_Little_Childs_Belief.musicxml",
+        "sha256": "20ed92b9848519c600c53f47c68a59cbf88b183ae8eae50cffc7e3db70f0b49d",
+        "bytes": 94565,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Happy%20Songs%20for%20Boys%20and%20Girls/011_Little_Childs_Belief.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "musicxml/Happy Songs for Boys and Girls/012_We_Sing.musicxml",
+        "path": "musicxml/English/_collections/Happy Songs for Boys and Girls/012_We_Sing.musicxml",
+        "sha256": "0b81c801d11bd8c4690241fdd9b9c181b9410e66dd77a24d40c5b52fae0a2661",
+        "bytes": 90044,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Happy%20Songs%20for%20Boys%20and%20Girls/012_We_Sing.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "musicxml/Happy Songs for Boys and Girls/015_With_Folded_Hands.musicxml",
+        "path": "musicxml/English/_collections/Happy Songs for Boys and Girls/015_With_Folded_Hands.musicxml",
+        "sha256": "0b0a62b5aeb014abc2181b23583d3c306e6611e407c813cb40c19d8c498c521c",
+        "bytes": 54812,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Happy%20Songs%20for%20Boys%20and%20Girls/015_With_Folded_Hands.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "musicxml/Happy Songs for Boys and Girls/016_Birthday_Song.musicxml",
+        "path": "musicxml/English/_collections/Happy Songs for Boys and Girls/016_Birthday_Song.musicxml",
+        "sha256": "854b43563841bc3747c2837d1b5954310173810b91faf938a7025e2d29019d57",
+        "bytes": 85375,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Happy%20Songs%20for%20Boys%20and%20Girls/016_Birthday_Song.musicxml"
       }
     ]
   },
   "data": {
-    "id": "15.0-beta-10-7e0865d27202292d",
-    "version": "15.0 beta 10",
+    "id": "15.0-beta-11-e16f31a22bc0d640",
+    "version": "15.0 beta 11",
     "files": [
       {
         "kind": "catalog",
@@ -299,9 +499,46 @@
       {
         "website_path": "scores.json",
         "path": "catalogs/scores.json",
-        "sha256": "aa4ffa286b6736a9dad59baabf5eee7330691dda5310b322812adc8facce1b88",
-        "bytes": 55070,
+        "sha256": "4000a5476cf0ac0ff4daf31f7516a26917721b969007235b66a19fe1a5baaff5",
+        "bytes": 57357,
         "url": "https://ormt03.github.io/SDA-HYMNAL/beta/scores.json"
+      },
+      {
+        "website_path": "collections.json",
+        "path": "musicxml/English/_collections/collections.json",
+        "sha256": "788017188119482d97602d12c7acce32a8205b94ad403acce4f46c37b86dd16c",
+        "bytes": 204494,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/collections.json"
+      },
+      {
+        "kind": "catalog",
+        "language": "english",
+        "collection": "gyc-theme-songs",
+        "website_path": "collections/gyc-theme-songs.english.json",
+        "path": "musicxml/English/_collections/gyc-theme-songs.english.json",
+        "sha256": "6ac29f417997511be655505cb83cd959437128232fcbf353f2adc65c44ff9704",
+        "bytes": 14390,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/collections/gyc-theme-songs.english.json"
+      },
+      {
+        "kind": "catalog",
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "collections/happy-songs-for-boys-and-girls.english.json",
+        "path": "musicxml/English/_collections/catalogs/collections/happy-songs-for-boys-and-girls.english.json",
+        "sha256": "0134eb48e8bf350675f63e164e1ffe51038fdddb0128476777fcd31d38c4e8ff",
+        "bytes": 12928,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/collections/happy-songs-for-boys-and-girls.english.json"
+      },
+      {
+        "kind": "catalog",
+        "language": "spanish",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "collections/happy-songs-for-boys-and-girls.spanish.json",
+        "path": "musicxml/English/_collections/catalogs/collections/happy-songs-for-boys-and-girls.spanish.json",
+        "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "bytes": 3,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/collections/happy-songs-for-boys-and-girls.spanish.json"
       },
       {
         "kind": "score",
@@ -7259,8 +7496,8 @@
         "collection": "gyc-theme-songs",
         "website_path": "musicxml/GYC/Before_the_Throne.musicxml",
         "path": "musicxml/English/_collections/GYC/Before_the_Throne.musicxml",
-        "sha256": "0d345066441f7e7794917da9cc7585593a77ad760d2df32f9eca05daacd5ec08",
-        "bytes": 121942,
+        "sha256": "94ea81f1c215d54daf528c8262ee848ecd124a2da52dcbccfa20b3b8ec38683d",
+        "bytes": 121924,
         "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/GYC/Before_the_Throne.musicxml"
       },
       {
@@ -7304,82 +7541,245 @@
         "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/GYC/Yet_Not_I_But_Through_Christ_in_Me.musicxml"
       },
       {
-        "website_path": "collections.json",
-        "path": "musicxml/English/_collections/collections.json",
-        "sha256": "5e332a1c5e4556d948ad1c231015404f0cfccbcbe45d7192988547fa0eb43245",
-        "bytes": 200432,
-        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/collections.json"
-      },
-      {
-        "kind": "catalog",
+        "kind": "score",
         "language": "english",
         "collection": "gyc-theme-songs",
-        "website_path": "collections/gyc-theme-songs.english.json",
-        "path": "musicxml/English/_collections/gyc-theme-songs.english.json",
-        "sha256": "9b1df619e718668b240ccddf523f94be2ce733ba3059ed5555fea7e230ca4cdb",
-        "bytes": 8246,
-        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/collections/gyc-theme-songs.english.json"
+        "website_path": "musicxml/GYC/Break_Forth.musicxml",
+        "path": "musicxml/English/_collections/GYC/Break_Forth.musicxml",
+        "sha256": "bb1322ec1b8710771cd94343bc1ca2af3be04ec0a6aaa02facaaef10d4f85e6b",
+        "bytes": 552890,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/GYC/Break_Forth.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "gyc-theme-songs",
+        "website_path": "musicxml/GYC/But_If_Not.musicxml",
+        "path": "musicxml/English/_collections/GYC/But_If_Not.musicxml",
+        "sha256": "c57f2e7d3351edf799efdc1cfcd50b0000aba53477304ccc6ab50b56b160f658",
+        "bytes": 541084,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/GYC/But_If_Not.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "gyc-theme-songs",
+        "website_path": "musicxml/GYC/See_the_Invisible.musicxml",
+        "path": "musicxml/English/_collections/GYC/See_the_Invisible.musicxml",
+        "sha256": "228efaf1e01903540d25e03bf283e4f2fe0f464ba9aaf809f6fac8fdea1e35ef",
+        "bytes": 506655,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/GYC/See_the_Invisible.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "gyc-theme-songs",
+        "website_path": "musicxml/GYC/Wherever_He_Goes.musicxml",
+        "path": "musicxml/English/_collections/GYC/Wherever_He_Goes.musicxml",
+        "sha256": "3502fa07e5f850e5082559e4091c0ef93167d2c243a13d3267391e41d4dd8fa0",
+        "bytes": 636472,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/GYC/Wherever_He_Goes.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "musicxml/Happy Songs for Boys and Girls/001_Children_Sing.musicxml",
+        "path": "musicxml/English/_collections/Happy Songs for Boys and Girls/001_Children_Sing.musicxml",
+        "sha256": "796ee6d1baf72971147da1868a2031a55949e5e9e0606b178abd0f562135ba75",
+        "bytes": 72843,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Happy%20Songs%20for%20Boys%20and%20Girls/001_Children_Sing.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "musicxml/Happy Songs for Boys and Girls/002_Good_Morning_Everybody.musicxml",
+        "path": "musicxml/English/_collections/Happy Songs for Boys and Girls/002_Good_Morning_Everybody.musicxml",
+        "sha256": "f5097becf76db7e19df194dd35e681624a4830509a16cd43e049e1bb1ab81b20",
+        "bytes": 74506,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Happy%20Songs%20for%20Boys%20and%20Girls/002_Good_Morning_Everybody.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "musicxml/Happy Songs for Boys and Girls/003_All_the_Children_Praise_the_Lord.musicxml",
+        "path": "musicxml/English/_collections/Happy Songs for Boys and Girls/003_All_the_Children_Praise_the_Lord.musicxml",
+        "sha256": "12be6894df1a93307950a98f89d7ff83e155c81e539eff55cf8c3823dede39d6",
+        "bytes": 39241,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Happy%20Songs%20for%20Boys%20and%20Girls/003_All_the_Children_Praise_the_Lord.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "musicxml/Happy Songs for Boys and Girls/004_Always_Cheerful.musicxml",
+        "path": "musicxml/English/_collections/Happy Songs for Boys and Girls/004_Always_Cheerful.musicxml",
+        "sha256": "c1f73fd967bc432b759cba85224731e5eb7882fcd4c468c25bb0233d4843ec7c",
+        "bytes": 106052,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Happy%20Songs%20for%20Boys%20and%20Girls/004_Always_Cheerful.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "musicxml/Happy Songs for Boys and Girls/005_I_Was_Glad.musicxml",
+        "path": "musicxml/English/_collections/Happy Songs for Boys and Girls/005_I_Was_Glad.musicxml",
+        "sha256": "f4be048b62673a277f200c8fb2ed5ddfc7343a2a303db8799b64b8da920bd5b9",
+        "bytes": 51852,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Happy%20Songs%20for%20Boys%20and%20Girls/005_I_Was_Glad.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "musicxml/Happy Songs for Boys and Girls/006_Ten_Commandments_Song.musicxml",
+        "path": "musicxml/English/_collections/Happy Songs for Boys and Girls/006_Ten_Commandments_Song.musicxml",
+        "sha256": "8e862bfc1199a4ef87108b03a2762a92e5fa0042c69c63f38fd3db784f7308e4",
+        "bytes": 99867,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Happy%20Songs%20for%20Boys%20and%20Girls/006_Ten_Commandments_Song.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "musicxml/Happy Songs for Boys and Girls/007_The_First_Commandment.musicxml",
+        "path": "musicxml/English/_collections/Happy Songs for Boys and Girls/007_The_First_Commandment.musicxml",
+        "sha256": "192864e94f8747530a60c68225ffa30334d0e7cce7b0747e2e91ebea31e02b18",
+        "bytes": 95883,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Happy%20Songs%20for%20Boys%20and%20Girls/007_The_First_Commandment.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "musicxml/Happy Songs for Boys and Girls/008_Jesus_Loves_the_Children.musicxml",
+        "path": "musicxml/English/_collections/Happy Songs for Boys and Girls/008_Jesus_Loves_the_Children.musicxml",
+        "sha256": "cdd8957171ea8ece8e6cd38fac671431dab240d34df86a234329bd341a673fc9",
+        "bytes": 74573,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Happy%20Songs%20for%20Boys%20and%20Girls/008_Jesus_Loves_the_Children.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "musicxml/Happy Songs for Boys and Girls/009_Lord_Teach_a_Little_Child_to_Pray.musicxml",
+        "path": "musicxml/English/_collections/Happy Songs for Boys and Girls/009_Lord_Teach_a_Little_Child_to_Pray.musicxml",
+        "sha256": "b5446251632ca81c753b6db51d9e7f2ad4e441db488fd6cf387236fd4536afca",
+        "bytes": 92066,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Happy%20Songs%20for%20Boys%20and%20Girls/009_Lord_Teach_a_Little_Child_to_Pray.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "musicxml/Happy Songs for Boys and Girls/010_Come_to_My_Heart.musicxml",
+        "path": "musicxml/English/_collections/Happy Songs for Boys and Girls/010_Come_to_My_Heart.musicxml",
+        "sha256": "2a0d1100e960cde9a83a756a01a922c522ccddf1bcb6dd2e3b1b70adb14e5470",
+        "bytes": 57934,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Happy%20Songs%20for%20Boys%20and%20Girls/010_Come_to_My_Heart.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "musicxml/Happy Songs for Boys and Girls/011_Little_Childs_Belief.musicxml",
+        "path": "musicxml/English/_collections/Happy Songs for Boys and Girls/011_Little_Childs_Belief.musicxml",
+        "sha256": "20ed92b9848519c600c53f47c68a59cbf88b183ae8eae50cffc7e3db70f0b49d",
+        "bytes": 94565,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Happy%20Songs%20for%20Boys%20and%20Girls/011_Little_Childs_Belief.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "musicxml/Happy Songs for Boys and Girls/012_We_Sing.musicxml",
+        "path": "musicxml/English/_collections/Happy Songs for Boys and Girls/012_We_Sing.musicxml",
+        "sha256": "0b81c801d11bd8c4690241fdd9b9c181b9410e66dd77a24d40c5b52fae0a2661",
+        "bytes": 90044,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Happy%20Songs%20for%20Boys%20and%20Girls/012_We_Sing.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "musicxml/Happy Songs for Boys and Girls/015_With_Folded_Hands.musicxml",
+        "path": "musicxml/English/_collections/Happy Songs for Boys and Girls/015_With_Folded_Hands.musicxml",
+        "sha256": "0b0a62b5aeb014abc2181b23583d3c306e6611e407c813cb40c19d8c498c521c",
+        "bytes": 54812,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Happy%20Songs%20for%20Boys%20and%20Girls/015_With_Folded_Hands.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls",
+        "website_path": "musicxml/Happy Songs for Boys and Girls/016_Birthday_Song.musicxml",
+        "path": "musicxml/English/_collections/Happy Songs for Boys and Girls/016_Birthday_Song.musicxml",
+        "sha256": "854b43563841bc3747c2837d1b5954310173810b91faf938a7025e2d29019d57",
+        "bytes": 85375,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Happy%20Songs%20for%20Boys%20and%20Girls/016_Birthday_Song.musicxml"
       }
     ],
     "archive": {
-      "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-10-7e0865d27202292d-full.zip",
-      "sha256": "e62ae82a7cb3bef614da1ee279020ced93718d69e61da4f180f841d41d3565b3",
-      "bytes": 4830323
+      "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11-e16f31a22bc0d640-full.zip",
+      "sha256": "c8975cfcc17423f115792944913045f6a263cc245709c303e18d93f594d68f5f",
+      "bytes": 4937097
     },
     "collections": [
-      {
-        "selection": {
-          "language": "english",
-          "scores": true
-        },
-        "full": {
-          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-10-7e0865d27202292d-english-scores-full.zip",
-          "sha256": "d841444fa9650e41b1e599c3a33a1e946d1d49425a9781ddf3ac9b17252a8fb7",
-          "bytes": 4705515
-        }
-      },
-      {
-        "selection": {
-          "language": "english",
-          "scores": false
-        },
-        "full": {
-          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-10-7e0865d27202292d-english-lyrics-full.zip",
-          "sha256": "a56b943dcafe4bebdd04169e94f74ec7fcb5e88d265f9d76ff004526030e0fa2",
-          "bytes": 1621608
-        }
-      },
-      {
-        "selection": {
-          "language": "spanish",
-          "scores": true
-        },
-        "full": {
-          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-10-7e0865d27202292d-spanish-scores-full.zip",
-          "sha256": "f9a1b6eca1712bf78c8a1c8bf9d1651658872e3bef36138f1a06bc5094bfa27d",
-          "bytes": 1563809
-        }
-      },
-      {
-        "selection": {
-          "language": "spanish",
-          "scores": false
-        },
-        "full": {
-          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-10-7e0865d27202292d-spanish-lyrics-full.zip",
-          "sha256": "f9a1b6eca1712bf78c8a1c8bf9d1651658872e3bef36138f1a06bc5094bfa27d",
-          "bytes": 1563809
-        }
-      },
       {
         "selection": {
           "language": "both",
           "scores": false
         },
         "full": {
-          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-10-7e0865d27202292d-both-lyrics-full.zip",
-          "sha256": "3f02af951a9c7007159ba496000bb5576c2c94ea6ca5f80c4561e33f5e6951f5",
-          "bytes": 1746416
+          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11-e16f31a22bc0d640-both-lyrics-full.zip",
+          "sha256": "97ac167b00d79c777febd150f7cebe66d09df3b0942bdc50506af91f615ef272",
+          "bytes": 1753852
+        }
+      },
+      {
+        "selection": {
+          "language": "english",
+          "scores": true
+        },
+        "full": {
+          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11-e16f31a22bc0d640-english-scores-full.zip",
+          "sha256": "14481f4394833603e11ccd55855f13006434740ca23848395499c65e39a8a78c",
+          "bytes": 4812068
+        }
+      },
+      {
+        "selection": {
+          "language": "english",
+          "scores": false
+        },
+        "full": {
+          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11-e16f31a22bc0d640-english-lyrics-full.zip",
+          "sha256": "2c37594a69cf47e4e646f715cff368ab05e2650d3e24b909fae69e47b170ac7e",
+          "bytes": 1628823
+        }
+      },
+      {
+        "selection": {
+          "language": "spanish",
+          "scores": true
+        },
+        "full": {
+          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11-e16f31a22bc0d640-spanish-scores-full.zip",
+          "sha256": "28b66a791d1a2ed82e1a41dc518fadb66ffd1b377876530f7906748ef0e9ec9a",
+          "bytes": 1565410
+        }
+      },
+      {
+        "selection": {
+          "language": "spanish",
+          "scores": false
+        },
+        "full": {
+          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11-e16f31a22bc0d640-spanish-lyrics-full.zip",
+          "sha256": "28b66a791d1a2ed82e1a41dc518fadb66ffd1b377876530f7906748ef0e9ec9a",
+          "bytes": 1565410
         }
       }
     ]

@@ -10,7 +10,8 @@
     "source": "GYC Theme Songs",
     "subtitle": "",
     "rights": "©1997 Sovereign Grace Worship",
-    "versionGroup": null
+    "versionGroup": null,
+    "collectionNumber": "2016"
   },
   {
     "id": "let-his-glory-be-seen",
@@ -23,7 +24,8 @@
     "source": "GYC Theme Songs",
     "subtitle": "GYC 2017 Theme Song",
     "rights": "© Copyright 2017 Kaleb Genstler",
-    "versionGroup": null
+    "versionGroup": null,
+    "collectionNumber": "2017"
   },
   {
     "id": "this-witness-i-will-bear",
@@ -36,7 +38,8 @@
     "source": "GYC Theme Songs",
     "subtitle": "The apostles’ song · Acts 1:8",
     "rights": "Copyright © Kaleb Genstler",
-    "versionGroup": null
+    "versionGroup": null,
+    "collectionNumber": "2018"
   },
   {
     "id": "our-princes-call",
@@ -49,7 +52,8 @@
     "source": "GYC Theme Songs",
     "subtitle": "GYC 2019 Theme Song\n\nJonathan, the prince, said to his young armor-bearer, “Come, let us go!\nFor nothing can hinder the Lord from saving,\nwhether by many or by few.”\n1 Samuel 14:6",
     "rights": "© GYC Music 2019",
-    "versionGroup": null
+    "versionGroup": null,
+    "collectionNumber": "2019"
   },
   {
     "id": "yet-not-i-but-through-christ-in-me",
@@ -62,6 +66,51 @@
     "source": "GYC Theme Songs",
     "subtitle": "GYC 2021 Theme Song",
     "rights": "Copyright © 2018 CityAlight Music",
-    "versionGroup": null
+    "versionGroup": null,
+    "collectionNumber": "2021"
+  },
+  {
+    "id": "break-forth",
+    "number": "GYC2022",
+    "title": "Break Forth",
+    "content": "Verse 1\nAll around us in this world, Sorrow is crying. \nSuffering in misery: Our world is dying. \nIt is ours to help and bless, \nGive them aid and kindness. \nSo we hear Christ calling us, \nWill you go, and share My grace? \n\nChorus\nThen shall our light break forth as the dawn, \nLove shall be our voice and song. \nHearts will seek and find His Word, \nAnd the glory of the Lord will fill the earth. \n\nVerse 2\nGo ye into all the world: That is our calling. \nGive the message faithfully, All nations drawing. \nBlend with deeds, the words we speak: \nTruth in love to those we meet. \nAs we hear Christ’s call repeat, \nWill you go, and feed My sheep? \n\nVerse 3\nGeneration of God’s youth, Brighten the darkness, \nGive the everlasting word, Always in kindness. \nDeeds of love will help them see, \nThat our words are true indeed. \nDo you hear Christ’s call in truth: \nWill you go, and be My youth? \n\nEnding\nAnd the glory of the Lord will fill the earth.",
+    "rights": "©2022 Anthony Evert / www.sacrednotes.com - v18",
+    "score": "musicxml/GYC/Break_Forth.musicxml",
+    "language": "english",
+    "collectionNumber": "2022",
+    "source": "GYC Theme Songs"
+  },
+  {
+    "id": "but-if-not",
+    "number": "GYC2023",
+    "title": "But If Not",
+    "content": "1.\nThis world is dark and filled with such confusion. \nThe truths of God seem hidden from its view, \nbut I am called to bring light to the darkness by living out the truth. \nWhile evil seeks to lead men to deception, \nGod’s holy Word is light to show the way \nalong a path that’s leading ever upward, towards eternal day! \n\nChorus\nAnd though the heavens fall, \nstill I will trust Him. \nand in my darkest trial I believe \nthat God who loves me so \nwill save me by His hand. \nBut if not, but if not, still, I will stand!\n\nVerse 2\nI am not promised to a life of comfort \nand not exempted from the sting of pain, \nbut I am promised there will be Another walking though the flames. \nWhen trials come, I will be ever faithful \nunto the God who gave His only Son. \nNot by my strength but through the Holy Spirit, I will overcome! ",
+    "rights": "But if Not © 2023 by Daniel Cerna is licensed under CC BY-NC-ND 4.0",
+    "score": "musicxml/GYC/But_If_Not.musicxml",
+    "language": "english",
+    "collectionNumber": "2023",
+    "source": "GYC Theme Songs"
+  },
+  {
+    "id": "see-the-invisible",
+    "number": "GYC2025",
+    "title": "See the Invisible",
+    "content": "Verse 1\nChoices will come that confront us all: \nTo live for ourselves or to follow God’s call. \nPleasures of sin last a season but soon pass away \nDown through the ages both now and then, \nMany have lived for the glories of men. \nWill we refuse the riches of kingdoms that soon will fade? \n\nChorus\nThose who endure, those who will stand \nAre those who can see what no one else can. \nLooking to Christ, and trusting His hand, \nWe’ll see the Invisible; by faith we will stand.\n\nVerse 2\nFear not the darkness fear God alone; \nThough we’re afflicted, He cares for His own. \nTrust in the One who has yielded His Son for us all. \nHe who has promised is faithful still; \nLet us take courage and follow His will. \nThus we withstand the power of kingdoms that soon will fall.\n\nVerse 3\nGod’s Word is certain, His promise sure; \nThere’s a reward for the ones who endure; \nHe who is coming will come and He will not delay. \nMysteries of life will be then made clear; \nWith His own hand He will wipe every tear. \nChrist will inherit the kingdoms of earth and with Him we’ll reign. ",
+    "rights": "",
+    "score": "musicxml/GYC/See_the_Invisible.musicxml",
+    "language": "english",
+    "collectionNumber": "2025",
+    "source": "GYC Theme Songs"
+  },
+  {
+    "id": "wherever-he-goes",
+    "number": "GYC2024",
+    "title": "Wherever He Goes",
+    "content": "Verse 1\nYou sent Your Son to us in love, \neternal life to share. \nHis sacrifice His precious blood, \nshed for me is almost more than I can bear. \nWhat can I do? What can I say \nbut promise You today, \nYes, promise You today? \n\nChorus\nWherever He goes I’ll follow, \nover mountains, through stormy seas. \nWherever He goes, I’ll follow \ncause of all that He’s done for me. H\ne gave His life, what more could He give? \nThe ultimate price so I could live. \nI’ll take His hand and follow the Lamb \nwherever He goes! \n\nVerse 2\nHe calls me to adventure now, \nSaying take hold of your cross. \nJourney through paths unknown \nin search of souls who have been lost. \nI don’t feel worthy, how can it be, \nthe Father should choose someone like me? \nBut He will give me strength. \nas I move forward in faith! \n\nChorus 2\nWherever He goes I’ll follow, \nover mountains, through stormy seas. \nWherever He goes, I’ll follow \ncause of all that He’s done for me. H\ne gave His life, what more could He give? \nThe ultimate price so I could live. \nI’ll take His hand and follow the Lamb \nwherever He goes! \nwherever He goes! \n\nVerse 3\nStanding before the throne of God \njoined upon the glassy sea, \nchoirs of thousands shout, \n“The Lamb has gained the victory!” \nThere we will sing the song of the Lamb \nfathomless joy and harps in hand. \nJust thinking of that day \ngives me the courage to say: \n\nChorus 2\nWherever He goes I’ll follow, \nover mountains, through stormy seas. \nWherever He goes, I’ll follow \ncause of all that He’s done for me. H\ne gave His life, what more could He give? \nThe ultimate price so I could live. \nI’ll take His hand and follow the Lamb \nwherever He goes! \nwherever He goes! ",
+    "rights": "Wherever He Goes © 2024 by Daniel Cerna is licensed under CC BY-NC-ND 4.0",
+    "score": "musicxml/GYC/Wherever_He_Goes.musicxml",
+    "language": "english",
+    "collectionNumber": "2024",
+    "source": "GYC Theme Songs"
   }
 ]

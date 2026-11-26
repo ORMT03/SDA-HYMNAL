@@ -7,3 +7,13 @@
 !manifests/**
 !source/
 !source/**
+# Hymnal Release Builder — begin
+!downloads/
+!downloads/**
+!objects/
+!objects/**
+!manifests/
+!manifests/**
+!source/
+!source/**
+# Hymnal Release Builder — end

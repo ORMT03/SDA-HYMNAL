@@ -2,7 +2,7 @@
 importScripts('./offline-config.js');
 const config = self.HYMNAL_OFFLINE;
 const base = new URL('./', self.location.href);
-const absolute = path => new URL(path, base).href;
+const absolute = path => new URL(path.split('/').map(encodeURIComponent).join('/'), base).href;
 const stateURL = absolute('__offline__/installed');
 const blobURL = hash => absolute(`__offline__/files/${hash}`);
 // Hymnal manifest bridge — begin
@@ -17,7 +17,7 @@ async function hymnalClientManifest(request){
  for(const name of ['shell','catalogs']){const match=text.match(new RegExp('\\b'+name+'\\s*:\\s*\\[([^\\]]*)\\]'));if(match)for(const value of match[1].matchAll(/'([^']*)'|"([^"]*)"/g))allowed.add(value[1]??value[2]);}
  if(!allowed.size)for(const path of [...config.shell,...config.catalogs])allowed.add(path);
  const all=[...release.files,...(release.additionalFiles||[]),...(release.extensionFiles||[])],files=[],extensionFiles=[];
- for(const file of all){const url=new URL(file.path,base);const score=url.origin===base.origin&&url.pathname.startsWith(new URL('musicxml/',base).pathname)&&url.pathname.endsWith('.musicxml');(allowed.has(file.path)||score?files:extensionFiles).push(file);}
+ for(const file of all){const url=new URL(absolute(file.path));const score=url.origin===base.origin&&url.pathname.startsWith(new URL('musicxml/',base).pathname)&&url.pathname.endsWith('.musicxml');(allowed.has(file.path)||score?files:extensionFiles).push(file);}
  return new Response(JSON.stringify({...release,files,additionalFiles:[],extensionFiles}),{headers:{'Content-Type':'application/json','Cache-Control':'no-store','X-Hymnal-Manifest-Bridge':'1'}});
 }
 // Hymnal manifest bridge — end

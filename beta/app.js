@@ -133,7 +133,7 @@ const key = song => `${song.collection}:${song.language}:${song.id}`;
 function songLabel(song){return song.number?`${song.number} - ${song.title}`:song.title;}
 function scoreNumber(song){const number=String(song.number||'');return /^\d+$/.test(number)?String(Number(number)):number;}
 const collectionLabel=id=>collections.find(c=>c.id===id)?.name||id;
-const scorePath = song => song.score || manifest[key(song)];
+const scorePath = song => {const path=song.score || manifest[key(song)];return path ? path.split('/').map(encodeURIComponent).join('/') : path;};
 async function json(url) { const response = await fetch(url); if (!response.ok) throw new Error(`Unable to load ${url}`); return response.json(); }
 function matches(song, query) { return normalize(song.title).includes(query) || normalize(song.number).includes(/^\d+$/.test(query) ? query.padStart(3, '0') : query); }
 let songIndex=[],collectionState={order:[],enabled:{},includeMissing:true};

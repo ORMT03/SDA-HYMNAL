@@ -1,7 +1,7 @@
 'use strict';
 (() => {
  const config = self.HYMNAL_OFFLINE, base = new URL('./', location.href);
- const absolute = path => new URL(path, base).href;
+ const absolute = path => new URL(path.split('/').map(encodeURIComponent).join('/'), base).href;
  const stateURL = absolute('__offline__/installed');
  const blobURL = hash => absolute(`__offline__/files/${hash}`);
  const button = document.getElementById('save-offline');
@@ -24,10 +24,10 @@
  function validateRelease(release) {
   // Hymnal Release Builder: extensible metadata, bounded to this site's safe paths.
   if(release.schema!==1||!release.id||!release.version||!Array.isArray(release.files)||!release.files.length)throw Error('Invalid release manifest');
-  release={...release,files:[...release.files,...(release.additionalFiles||[]),...(release.extensionFiles||[])]};
+  release={...release,files:[...release.files,...(release.additionalFiles||[]),...(release.extensionFiles||[]),...(release.encodedFiles||[])]};
   const paths=new Set();
   for(const file of release.files){
-   const url=new URL(file.path,base),inside=url.origin===base.origin&&url.pathname.startsWith(base.pathname);
+   const url=new URL(absolute(file.path)),inside=url.origin===base.origin&&url.pathname.startsWith(base.pathname);
    const declared=[...config.shell,...config.catalogs].includes(file.path);
    const score=inside&&url.pathname.startsWith(new URL('musicxml/',base).pathname)&&url.pathname.endsWith('.musicxml');
    const catalog=inside&&file.kind==='catalog'&&/^collections\/[A-Za-z0-9._/-]+\.json$/.test(file.path)&&!file.path.split('/').includes('..');
@@ -250,7 +250,7 @@
    missing = await missingFiles(release);
    for (let i=0;i<missing.length;i++) {
     message(`Saving changed files… ${i+1} of ${missing.length}. Keep this app open.`);
-    await saveFile(cache,missing[i],await fresh(missing[i].path,45000));
+    await saveFile(cache,missing[i],await fresh(absolute(missing[i].path),45000));
     progress.value = 90+Math.round(9*(i+1)/missing.length);
    }
    if ((await missingFiles(release)).length) throw new Error('Incomplete download');

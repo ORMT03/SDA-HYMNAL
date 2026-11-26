@@ -2,8 +2,8 @@
   "schema": 1,
   "platform": "kindle-touch-k5",
   "app": {
-    "id": "kindle-15.0-beta-11.4-cff4bdef022c0e91",
-    "version": "15.0 beta 11.4",
+    "id": "kindle-15.0-beta-11.5-b32937a9dd4a9194",
+    "version": "15.0 beta 11.5",
     "files": [
       {
         "path": "HymnPiano.wav",
@@ -13,9 +13,9 @@
       },
       {
         "path": "README.txt",
-        "sha256": "fe55cead6a57df7e3307a6f325c80d5dc3be944c6b255e528167a712104c86d0",
+        "sha256": "a8c0efd213d06eb16c07c69c7955e0347f9bedb23fe32918c6994ddc8e1f2e59",
         "bytes": 7192,
-        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/fe55cead6a57df7e3307a6f325c80d5dc3be944c6b255e528167a712104c86d0"
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/a8c0efd213d06eb16c07c69c7955e0347f9bedb23fe32918c6994ddc8e1f2e59"
       },
       {
         "path": "audio_timeline.py",
@@ -31,9 +31,9 @@
       },
       {
         "path": "backend.py",
-        "sha256": "5d72ef0132807715afdd368d9f33c3c364f0292e8254935f4c41b652440d6fc6",
+        "sha256": "44de78744b4fdefc587f74e4dd294fee3604765611baaaff53b14d1d37448d3b",
         "bytes": 57494,
-        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/5d72ef0132807715afdd368d9f33c3c364f0292e8254935f4c41b652440d6fc6"
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/44de78744b4fdefc587f74e4dd294fee3604765611baaaff53b14d1d37448d3b"
       },
       {
         "path": "bin/hymnal",
@@ -61,8 +61,8 @@
       },
       {
         "path": "catalogs/collections.json",
-        "sha256": "788017188119482d97602d12c7acce32a8205b94ad403acce4f46c37b86dd16c",
-        "bytes": 204494,
+        "sha256": "a8a182357555cc32471b6dbe7a3237c58186cc308699611ca545932e2704c9c1",
+        "bytes": 204515,
         "url": "https://ormt03.github.io/SDA-HYMNAL/beta/collections.json",
         "kind": "shared_catalog",
         "website_path": "collections.json",
@@ -94,8 +94,8 @@
       },
       {
         "path": "catalogs/gyc-theme-songs.english.json",
-        "sha256": "6ac29f417997511be655505cb83cd959437128232fcbf353f2adc65c44ff9704",
-        "bytes": 14390,
+        "sha256": "f14ae8f48a546c8809071c7ebdf5f3b478756be5b001cb34198a1851cfbbd16a",
+        "bytes": 13514,
         "url": "https://ormt03.github.io/SDA-HYMNAL/beta/collections/gyc-theme-songs.english.json",
         "kind": "shared_catalog",
         "website_path": "collections/gyc-theme-songs.english.json",
@@ -171,9 +171,9 @@
       },
       {
         "path": "source/hymnal.c",
-        "sha256": "925dcb9a26b45448d973bf006a6af22867b09728022d6af1b7e426d57f5fe6b5",
+        "sha256": "e8dfb72d7485eacf186c32527599d9e4c5a7a750a005bdea33171e74b76c1193",
         "bytes": 91144,
-        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/925dcb9a26b45448d973bf006a6af22867b09728022d6af1b7e426d57f5fe6b5"
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/e8dfb72d7485eacf186c32527599d9e4c5a7a750a005bdea33171e74b76c1193"
       },
       {
         "path": "source/image_geometry.h",
@@ -470,8 +470,8 @@
     ]
   },
   "data": {
-    "id": "15.0-beta-11.4-c4adf62133dfbb25",
-    "version": "15.0 beta 11.4",
+    "id": "15.0-beta-11.5-15c5bc85468b17af",
+    "version": "15.0 beta 11.5",
     "files": [
       {
         "kind": "catalog",
@@ -510,8 +510,8 @@
       {
         "website_path": "collections.json",
         "path": "musicxml/English/_collections/collections.json",
-        "sha256": "788017188119482d97602d12c7acce32a8205b94ad403acce4f46c37b86dd16c",
-        "bytes": 204494,
+        "sha256": "a8a182357555cc32471b6dbe7a3237c58186cc308699611ca545932e2704c9c1",
+        "bytes": 204515,
         "url": "https://ormt03.github.io/SDA-HYMNAL/beta/collections.json"
       },
       {
@@ -520,8 +520,8 @@
         "collection": "gyc-theme-songs",
         "website_path": "collections/gyc-theme-songs.english.json",
         "path": "musicxml/English/_collections/gyc-theme-songs.english.json",
-        "sha256": "6ac29f417997511be655505cb83cd959437128232fcbf353f2adc65c44ff9704",
-        "bytes": 14390,
+        "sha256": "f14ae8f48a546c8809071c7ebdf5f3b478756be5b001cb34198a1851cfbbd16a",
+        "bytes": 13514,
         "url": "https://ormt03.github.io/SDA-HYMNAL/beta/collections/gyc-theme-songs.english.json"
       },
       {
@@ -7726,9 +7726,9 @@
       }
     ],
     "archive": {
-      "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.4-c4adf62133dfbb25-full.zip",
-      "sha256": "267f15e2516c75b6d37f938affb529d9f31c4bb6dd45be82d899ff8c5747a4fb",
-      "bytes": 4937486
+      "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.5-15c5bc85468b17af-full.zip",
+      "sha256": "0de6092058f195bb48ee01f4aa0525be28d528cd4a19d461f3baaea421afba77",
+      "bytes": 4937331
     },
     "collections": [
       {
@@ -7737,9 +7737,9 @@
           "scores": false
         },
         "full": {
-          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.4-c4adf62133dfbb25-both-lyrics-full.zip",
-          "sha256": "1d7c5ad51a918bb3b2d9c8dcbebb246c86ae02c40e204c527b3b049d1e02ae78",
-          "bytes": 1754241
+          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.5-15c5bc85468b17af-both-lyrics-full.zip",
+          "sha256": "7be2b48f615a3193e0081be539ec4d2b2793305c37bbffb6585535831c8929cc",
+          "bytes": 1754086
         }
       },
       {
@@ -7748,9 +7748,9 @@
           "scores": true
         },
         "full": {
-          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.4-c4adf62133dfbb25-english-scores-full.zip",
-          "sha256": "8f7c92ead0dc71530749fda111f2d3aaf660ac8643d8498a91351b59dcf6fafc",
-          "bytes": 4812457
+          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.5-15c5bc85468b17af-english-scores-full.zip",
+          "sha256": "2c0a3fa6d59b659037fdf35d29e3b2319b2489dbf2a180724465e610bca450e2",
+          "bytes": 4812302
         }
       },
       {
@@ -7759,9 +7759,9 @@
           "scores": false
         },
         "full": {
-          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.4-c4adf62133dfbb25-english-lyrics-full.zip",
-          "sha256": "6e509474457d43b6286c78e9d22f6082bdfd56a409aa791084b249b149cbefff",
-          "bytes": 1629212
+          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.5-15c5bc85468b17af-english-lyrics-full.zip",
+          "sha256": "7b749e61d0f64c6260e8830243059783050f4254abda5b79e491ea66c672a8df",
+          "bytes": 1629057
         }
       },
       {
@@ -7770,9 +7770,9 @@
           "scores": true
         },
         "full": {
-          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.4-c4adf62133dfbb25-spanish-scores-full.zip",
-          "sha256": "4f1f1617b8aa998620f54521fa7c507a0fff62efa86fa71ecc11803ac8ad4632",
-          "bytes": 1565799
+          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.5-15c5bc85468b17af-spanish-scores-full.zip",
+          "sha256": "09340a6442547cc777ce01fa984174572992ab38dd8290fa59e81e28d8aab5ad",
+          "bytes": 1565813
         }
       },
       {
@@ -7781,9 +7781,9 @@
           "scores": false
         },
         "full": {
-          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.4-c4adf62133dfbb25-spanish-lyrics-full.zip",
-          "sha256": "4f1f1617b8aa998620f54521fa7c507a0fff62efa86fa71ecc11803ac8ad4632",
-          "bytes": 1565799
+          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.5-15c5bc85468b17af-spanish-lyrics-full.zip",
+          "sha256": "09340a6442547cc777ce01fa984174572992ab38dd8290fa59e81e28d8aab5ad",
+          "bytes": 1565813
         }
       }
     ]

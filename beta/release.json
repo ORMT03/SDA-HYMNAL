@@ -1,12 +1,12 @@
 {
   "schema": 1,
-  "id": "15.0-beta-11.4-c4adf62133dfbb25",
-  "version": "15.0 beta 11.4",
+  "id": "15.0-beta-11.5-15c5bc85468b17af",
+  "version": "15.0 beta 11.5",
   "files": [
     {
       "kind": "shell",
       "path": "index.html",
-      "sha256": "377c3a802f56ac15e621f5f11115f26ed0306cfd865813e0cefc62fda482b49d",
+      "sha256": "17787761d8ba5b52f9da6a7c03d635abbfa65409f4518dac2476e4e30784c648",
       "bytes": 9815,
       "type": "text/html"
     },
@@ -34,14 +34,14 @@
     {
       "kind": "shell",
       "path": "offline-config.js",
-      "sha256": "7b4cbcd928de6b256895e888c6edbb8de29c81a815a16fca21baa67d01f88762",
+      "sha256": "efa9fbbaa1d280d5bbeafc674fee27b2df4d33948169b7695ac6bc65bbc1881f",
       "bytes": 736,
       "type": "text/javascript"
     },
     {
       "kind": "shell",
       "path": "manifest.json",
-      "sha256": "74ecd14111aa301fdc7f3387727d432b56bc7b7e4ac1553071c13fc09216e1e1",
+      "sha256": "350383b85c606cb37049520e41139278f3e6f89955aeb05c4bfada35bf24b7da",
       "bytes": 429,
       "type": "application/json"
     },
@@ -6590,8 +6590,8 @@
     },
     {
       "path": "collections.json",
-      "sha256": "788017188119482d97602d12c7acce32a8205b94ad403acce4f46c37b86dd16c",
-      "bytes": 204494,
+      "sha256": "a8a182357555cc32471b6dbe7a3237c58186cc308699611ca545932e2704c9c1",
+      "bytes": 204515,
       "type": "application/json"
     },
     {
@@ -6599,8 +6599,8 @@
       "collection": "gyc-theme-songs",
       "language": "english",
       "path": "collections/gyc-theme-songs.english.json",
-      "sha256": "6ac29f417997511be655505cb83cd959437128232fcbf353f2adc65c44ff9704",
-      "bytes": 14390,
+      "sha256": "f14ae8f48a546c8809071c7ebdf5f3b478756be5b001cb34198a1851cfbbd16a",
+      "bytes": 13514,
       "type": "application/json"
     }
   ],
@@ -6625,117 +6625,129 @@
     }
   ],
   "full": {
-    "url": "releases/15.0-beta-11.4-c4adf62133dfbb25-full.zip",
-    "sha256": "267f15e2516c75b6d37f938affb529d9f31c4bb6dd45be82d899ff8c5747a4fb",
-    "bytes": 4937486
+    "url": "releases/15.0-beta-11.5-15c5bc85468b17af-full.zip",
+    "sha256": "0de6092058f195bb48ee01f4aa0525be28d528cd4a19d461f3baaea421afba77",
+    "bytes": 4937331
   },
   "deltas": [
     {
-      "url": "releases/15.0-beta-10-7e0865d27202292d--15.0-beta-11.4-c4adf62133dfbb25-delta.zip",
-      "sha256": "4a2c50bc3f0f52b9edfc1523882a012f656df2d509d98519d6e3e81fd141bbf5",
-      "bytes": 344888,
+      "url": "releases/15.0-beta-10-7e0865d27202292d--15.0-beta-11.5-15c5bc85468b17af-delta.zip",
+      "sha256": "cc7e68f2d34a190b093f53f876b5b97f60606ee449ec46e01e8d78b9b580434b",
+      "bytes": 344733,
       "from": "15.0-beta-10-7e0865d27202292d"
     },
     {
-      "url": "releases/15.0-beta-11-e16f31a22bc0d640--15.0-beta-11.4-c4adf62133dfbb25-delta.zip",
-      "sha256": "3baa5ed16ecc22dda794ec31c2f77034114e6f7e5e3a44a986b529b6fe2ec955",
-      "bytes": 194312,
+      "url": "releases/15.0-beta-11-e16f31a22bc0d640--15.0-beta-11.5-15c5bc85468b17af-delta.zip",
+      "sha256": "b488a9a77c00a82a69f5c9297a12a61b947eb223d0be5dd86bcac319f2e6ddbf",
+      "bytes": 224858,
       "from": "15.0-beta-11-e16f31a22bc0d640"
     },
     {
-      "url": "releases/15.0-beta-11.1-e3d1483975c5fdd7--15.0-beta-11.4-c4adf62133dfbb25-delta.zip",
-      "sha256": "bc746b8047a8785b636a0adb012055e1fbcaf8738b9478567db9912eccde32ce",
-      "bytes": 4398,
+      "url": "releases/15.0-beta-11.1-e3d1483975c5fdd7--15.0-beta-11.5-15c5bc85468b17af-delta.zip",
+      "sha256": "567cb1bb293c54be83fcd6fdc24597cbbdc2ef3051e83cd36c1a34e307eb9abd",
+      "bytes": 34944,
       "from": "15.0-beta-11.1-e3d1483975c5fdd7"
     },
     {
-      "url": "releases/15.0-beta-11.2-f4a32c1299828e07--15.0-beta-11.4-c4adf62133dfbb25-delta.zip",
-      "sha256": "bc746b8047a8785b636a0adb012055e1fbcaf8738b9478567db9912eccde32ce",
-      "bytes": 4398,
+      "url": "releases/15.0-beta-11.2-f4a32c1299828e07--15.0-beta-11.5-15c5bc85468b17af-delta.zip",
+      "sha256": "567cb1bb293c54be83fcd6fdc24597cbbdc2ef3051e83cd36c1a34e307eb9abd",
+      "bytes": 34944,
       "from": "15.0-beta-11.2-f4a32c1299828e07"
     },
     {
-      "url": "releases/15.0-beta-11.3-1ebe6a7739365d54--15.0-beta-11.4-c4adf62133dfbb25-delta.zip",
-      "sha256": "bc746b8047a8785b636a0adb012055e1fbcaf8738b9478567db9912eccde32ce",
-      "bytes": 4398,
+      "url": "releases/15.0-beta-11.3-1ebe6a7739365d54--15.0-beta-11.5-15c5bc85468b17af-delta.zip",
+      "sha256": "567cb1bb293c54be83fcd6fdc24597cbbdc2ef3051e83cd36c1a34e307eb9abd",
+      "bytes": 34944,
       "from": "15.0-beta-11.3-1ebe6a7739365d54"
     },
     {
-      "url": "releases/15.0-beta-2-1c1f552371cced97--15.0-beta-11.4-c4adf62133dfbb25-delta.zip",
-      "sha256": "4d266730b93bd681f240514f00e52be7b2c05e687cef628bee901987e079b97d",
-      "bytes": 1045751,
+      "url": "releases/15.0-beta-11.4-c4adf62133dfbb25--15.0-beta-11.5-15c5bc85468b17af-delta.zip",
+      "sha256": "567cb1bb293c54be83fcd6fdc24597cbbdc2ef3051e83cd36c1a34e307eb9abd",
+      "bytes": 34944,
+      "from": "15.0-beta-11.4-c4adf62133dfbb25"
+    },
+    {
+      "url": "releases/15.0-beta-2-1c1f552371cced97--15.0-beta-11.5-15c5bc85468b17af-delta.zip",
+      "sha256": "1a18db234ae7c8b1ab527728b92e06c674f20ed35548435121d898e414b7403e",
+      "bytes": 1045596,
       "from": "15.0-beta-2-1c1f552371cced97"
     },
     {
-      "url": "releases/15.0-beta-3-339e25a4e865b114--15.0-beta-11.4-c4adf62133dfbb25-delta.zip",
-      "sha256": "7aa4b1ed51c42d2dc837f2a3aa943b9236a34a0403ac4d29020089c2435b668f",
-      "bytes": 537744,
+      "url": "releases/15.0-beta-3-339e25a4e865b114--15.0-beta-11.5-15c5bc85468b17af-delta.zip",
+      "sha256": "168615da8f848376ac752055b91bea12131981f13e92f954715421d9c527c755",
+      "bytes": 537589,
       "from": "15.0-beta-3-339e25a4e865b114"
     },
     {
-      "url": "releases/15.0-beta-3-989387b733c6badb--15.0-beta-11.4-c4adf62133dfbb25-delta.zip",
-      "sha256": "7aa4b1ed51c42d2dc837f2a3aa943b9236a34a0403ac4d29020089c2435b668f",
-      "bytes": 537744,
+      "url": "releases/15.0-beta-3-989387b733c6badb--15.0-beta-11.5-15c5bc85468b17af-delta.zip",
+      "sha256": "168615da8f848376ac752055b91bea12131981f13e92f954715421d9c527c755",
+      "bytes": 537589,
       "from": "15.0-beta-3-989387b733c6badb"
     },
     {
-      "url": "releases/15.0-beta-4-2245920ec0cdd450--15.0-beta-11.4-c4adf62133dfbb25-delta.zip",
-      "sha256": "7aa4b1ed51c42d2dc837f2a3aa943b9236a34a0403ac4d29020089c2435b668f",
-      "bytes": 537744,
+      "url": "releases/15.0-beta-4-2245920ec0cdd450--15.0-beta-11.5-15c5bc85468b17af-delta.zip",
+      "sha256": "168615da8f848376ac752055b91bea12131981f13e92f954715421d9c527c755",
+      "bytes": 537589,
       "from": "15.0-beta-4-2245920ec0cdd450"
     },
     {
-      "url": "releases/15.0-beta-4-56f5d97241df4946--15.0-beta-11.4-c4adf62133dfbb25-delta.zip",
-      "sha256": "7aa4b1ed51c42d2dc837f2a3aa943b9236a34a0403ac4d29020089c2435b668f",
-      "bytes": 537744,
+      "url": "releases/15.0-beta-4-56f5d97241df4946--15.0-beta-11.5-15c5bc85468b17af-delta.zip",
+      "sha256": "168615da8f848376ac752055b91bea12131981f13e92f954715421d9c527c755",
+      "bytes": 537589,
       "from": "15.0-beta-4-56f5d97241df4946"
     },
     {
-      "url": "releases/15.0-beta-4-b4c2144cf2a23376--15.0-beta-11.4-c4adf62133dfbb25-delta.zip",
-      "sha256": "7aa4b1ed51c42d2dc837f2a3aa943b9236a34a0403ac4d29020089c2435b668f",
-      "bytes": 537744,
+      "url": "releases/15.0-beta-4-b4c2144cf2a23376--15.0-beta-11.5-15c5bc85468b17af-delta.zip",
+      "sha256": "168615da8f848376ac752055b91bea12131981f13e92f954715421d9c527c755",
+      "bytes": 537589,
       "from": "15.0-beta-4-b4c2144cf2a23376"
     },
     {
-      "url": "releases/15.0-beta-5-ed450d07f3882730--15.0-beta-11.4-c4adf62133dfbb25-delta.zip",
-      "sha256": "7aa4b1ed51c42d2dc837f2a3aa943b9236a34a0403ac4d29020089c2435b668f",
-      "bytes": 537744,
+      "url": "releases/15.0-beta-5-ed450d07f3882730--15.0-beta-11.5-15c5bc85468b17af-delta.zip",
+      "sha256": "168615da8f848376ac752055b91bea12131981f13e92f954715421d9c527c755",
+      "bytes": 537589,
       "from": "15.0-beta-5-ed450d07f3882730"
     },
     {
-      "url": "releases/15.0-beta-6-c279eb31299a4e19--15.0-beta-11.4-c4adf62133dfbb25-delta.zip",
-      "sha256": "7aa4b1ed51c42d2dc837f2a3aa943b9236a34a0403ac4d29020089c2435b668f",
-      "bytes": 537744,
+      "url": "releases/15.0-beta-6-c279eb31299a4e19--15.0-beta-11.5-15c5bc85468b17af-delta.zip",
+      "sha256": "168615da8f848376ac752055b91bea12131981f13e92f954715421d9c527c755",
+      "bytes": 537589,
       "from": "15.0-beta-6-c279eb31299a4e19"
     },
     {
-      "url": "releases/15.0-beta-7-ba9143f0de358df2--15.0-beta-11.4-c4adf62133dfbb25-delta.zip",
-      "sha256": "7aa4b1ed51c42d2dc837f2a3aa943b9236a34a0403ac4d29020089c2435b668f",
-      "bytes": 537744,
+      "url": "releases/15.0-beta-7-ba9143f0de358df2--15.0-beta-11.5-15c5bc85468b17af-delta.zip",
+      "sha256": "168615da8f848376ac752055b91bea12131981f13e92f954715421d9c527c755",
+      "bytes": 537589,
       "from": "15.0-beta-7-ba9143f0de358df2"
     },
     {
-      "url": "releases/15.0-beta-7-e93b68fc275af191--15.0-beta-11.4-c4adf62133dfbb25-delta.zip",
-      "sha256": "7aa4b1ed51c42d2dc837f2a3aa943b9236a34a0403ac4d29020089c2435b668f",
-      "bytes": 537744,
+      "url": "releases/15.0-beta-7-e93b68fc275af191--15.0-beta-11.5-15c5bc85468b17af-delta.zip",
+      "sha256": "168615da8f848376ac752055b91bea12131981f13e92f954715421d9c527c755",
+      "bytes": 537589,
       "from": "15.0-beta-7-e93b68fc275af191"
     },
     {
-      "url": "releases/15.0-beta-8-f5486abad0e7a652--15.0-beta-11.4-c4adf62133dfbb25-delta.zip",
-      "sha256": "7aa4b1ed51c42d2dc837f2a3aa943b9236a34a0403ac4d29020089c2435b668f",
-      "bytes": 537744,
+      "url": "releases/15.0-beta-8-34bfab34756b6b4c--15.0-beta-11.5-15c5bc85468b17af-delta.zip",
+      "sha256": "168615da8f848376ac752055b91bea12131981f13e92f954715421d9c527c755",
+      "bytes": 537589,
+      "from": "15.0-beta-8-34bfab34756b6b4c"
+    },
+    {
+      "url": "releases/15.0-beta-8-f5486abad0e7a652--15.0-beta-11.5-15c5bc85468b17af-delta.zip",
+      "sha256": "168615da8f848376ac752055b91bea12131981f13e92f954715421d9c527c755",
+      "bytes": 537589,
       "from": "15.0-beta-8-f5486abad0e7a652"
     },
     {
-      "url": "releases/15.0-beta-9-22469958f5e8bd36--15.0-beta-11.4-c4adf62133dfbb25-delta.zip",
-      "sha256": "7aa4b1ed51c42d2dc837f2a3aa943b9236a34a0403ac4d29020089c2435b668f",
-      "bytes": 537744,
+      "url": "releases/15.0-beta-9-22469958f5e8bd36--15.0-beta-11.5-15c5bc85468b17af-delta.zip",
+      "sha256": "168615da8f848376ac752055b91bea12131981f13e92f954715421d9c527c755",
+      "bytes": 537589,
       "from": "15.0-beta-9-22469958f5e8bd36"
     },
     {
-      "url": "releases/legacy-15.0-beta-1.1-2185981ac774--15.0-beta-11.4-c4adf62133dfbb25-delta.zip",
-      "sha256": "067354536ec9201e2598f2028b0e71c12853e1d0ce16baef6afa1b6ce0673080",
-      "bytes": 1058416,
+      "url": "releases/legacy-15.0-beta-1.1-2185981ac774--15.0-beta-11.5-15c5bc85468b17af-delta.zip",
+      "sha256": "f8c87987339f47ff39c48667679a9de2b7724716c41d9ef1e864a89edf8997f6",
+      "bytes": 1058261,
       "from": "legacy-15.0-beta-1.1-2185981ac774"
     }
   ],
@@ -6746,117 +6758,129 @@
         "scores": false
       },
       "full": {
-        "url": "releases/15.0-beta-11.4-c4adf62133dfbb25-both-lyrics-full.zip",
-        "sha256": "1d7c5ad51a918bb3b2d9c8dcbebb246c86ae02c40e204c527b3b049d1e02ae78",
-        "bytes": 1754241
+        "url": "releases/15.0-beta-11.5-15c5bc85468b17af-both-lyrics-full.zip",
+        "sha256": "7be2b48f615a3193e0081be539ec4d2b2793305c37bbffb6585535831c8929cc",
+        "bytes": 1754086
       },
       "deltas": [
         {
-          "url": "releases/15.0-beta-10-7e0865d27202292d--15.0-beta-11.4-c4adf62133dfbb25-both-lyrics-delta.zip",
-          "sha256": "021e0a9611a932905ce89f3e7bb8ceefb7ba7cf4952d75493231c781a9f420a8",
-          "bytes": 241331,
+          "url": "releases/15.0-beta-10-7e0865d27202292d--15.0-beta-11.5-15c5bc85468b17af-both-lyrics-delta.zip",
+          "sha256": "b864202aa35933fdbf98d1c8abcee091e5f84270d56c76bdfb57f3f99c2d0da1",
+          "bytes": 241176,
           "from": "15.0-beta-10-7e0865d27202292d"
         },
         {
-          "url": "releases/15.0-beta-11-e16f31a22bc0d640--15.0-beta-11.4-c4adf62133dfbb25-both-lyrics-delta.zip",
-          "sha256": "3baa5ed16ecc22dda794ec31c2f77034114e6f7e5e3a44a986b529b6fe2ec955",
-          "bytes": 194312,
+          "url": "releases/15.0-beta-11-e16f31a22bc0d640--15.0-beta-11.5-15c5bc85468b17af-both-lyrics-delta.zip",
+          "sha256": "b488a9a77c00a82a69f5c9297a12a61b947eb223d0be5dd86bcac319f2e6ddbf",
+          "bytes": 224858,
           "from": "15.0-beta-11-e16f31a22bc0d640"
         },
         {
-          "url": "releases/15.0-beta-11.1-e3d1483975c5fdd7--15.0-beta-11.4-c4adf62133dfbb25-both-lyrics-delta.zip",
-          "sha256": "bc746b8047a8785b636a0adb012055e1fbcaf8738b9478567db9912eccde32ce",
-          "bytes": 4398,
+          "url": "releases/15.0-beta-11.1-e3d1483975c5fdd7--15.0-beta-11.5-15c5bc85468b17af-both-lyrics-delta.zip",
+          "sha256": "567cb1bb293c54be83fcd6fdc24597cbbdc2ef3051e83cd36c1a34e307eb9abd",
+          "bytes": 34944,
           "from": "15.0-beta-11.1-e3d1483975c5fdd7"
         },
         {
-          "url": "releases/15.0-beta-11.2-f4a32c1299828e07--15.0-beta-11.4-c4adf62133dfbb25-both-lyrics-delta.zip",
-          "sha256": "bc746b8047a8785b636a0adb012055e1fbcaf8738b9478567db9912eccde32ce",
-          "bytes": 4398,
+          "url": "releases/15.0-beta-11.2-f4a32c1299828e07--15.0-beta-11.5-15c5bc85468b17af-both-lyrics-delta.zip",
+          "sha256": "567cb1bb293c54be83fcd6fdc24597cbbdc2ef3051e83cd36c1a34e307eb9abd",
+          "bytes": 34944,
           "from": "15.0-beta-11.2-f4a32c1299828e07"
         },
         {
-          "url": "releases/15.0-beta-11.3-1ebe6a7739365d54--15.0-beta-11.4-c4adf62133dfbb25-both-lyrics-delta.zip",
-          "sha256": "bc746b8047a8785b636a0adb012055e1fbcaf8738b9478567db9912eccde32ce",
-          "bytes": 4398,
+          "url": "releases/15.0-beta-11.3-1ebe6a7739365d54--15.0-beta-11.5-15c5bc85468b17af-both-lyrics-delta.zip",
+          "sha256": "567cb1bb293c54be83fcd6fdc24597cbbdc2ef3051e83cd36c1a34e307eb9abd",
+          "bytes": 34944,
           "from": "15.0-beta-11.3-1ebe6a7739365d54"
         },
         {
-          "url": "releases/15.0-beta-2-1c1f552371cced97--15.0-beta-11.4-c4adf62133dfbb25-both-lyrics-delta.zip",
-          "sha256": "c80386887d6a11f0977159a048d8d09e788cc5bba955acc94c0130de8edabd2b",
-          "bytes": 914614,
+          "url": "releases/15.0-beta-11.4-c4adf62133dfbb25--15.0-beta-11.5-15c5bc85468b17af-both-lyrics-delta.zip",
+          "sha256": "567cb1bb293c54be83fcd6fdc24597cbbdc2ef3051e83cd36c1a34e307eb9abd",
+          "bytes": 34944,
+          "from": "15.0-beta-11.4-c4adf62133dfbb25"
+        },
+        {
+          "url": "releases/15.0-beta-2-1c1f552371cced97--15.0-beta-11.5-15c5bc85468b17af-both-lyrics-delta.zip",
+          "sha256": "bfe8742007b7c43ead2a60ba69fec14a07d1f5263f7ea4be9f1f0d9cc93958be",
+          "bytes": 914459,
           "from": "15.0-beta-2-1c1f552371cced97"
         },
         {
-          "url": "releases/15.0-beta-3-339e25a4e865b114--15.0-beta-11.4-c4adf62133dfbb25-both-lyrics-delta.zip",
-          "sha256": "dfaad624b8cc818e521dc75d91856d8a8eaf762c7cb732f74c09b84c50c8f497",
-          "bytes": 406607,
+          "url": "releases/15.0-beta-3-339e25a4e865b114--15.0-beta-11.5-15c5bc85468b17af-both-lyrics-delta.zip",
+          "sha256": "5faaf418ae4555910ec68affb93a31ff7cbdc569b4681a4b1215f878be729152",
+          "bytes": 406452,
           "from": "15.0-beta-3-339e25a4e865b114"
         },
         {
-          "url": "releases/15.0-beta-3-989387b733c6badb--15.0-beta-11.4-c4adf62133dfbb25-both-lyrics-delta.zip",
-          "sha256": "dfaad624b8cc818e521dc75d91856d8a8eaf762c7cb732f74c09b84c50c8f497",
-          "bytes": 406607,
+          "url": "releases/15.0-beta-3-989387b733c6badb--15.0-beta-11.5-15c5bc85468b17af-both-lyrics-delta.zip",
+          "sha256": "5faaf418ae4555910ec68affb93a31ff7cbdc569b4681a4b1215f878be729152",
+          "bytes": 406452,
           "from": "15.0-beta-3-989387b733c6badb"
         },
         {
-          "url": "releases/15.0-beta-4-2245920ec0cdd450--15.0-beta-11.4-c4adf62133dfbb25-both-lyrics-delta.zip",
-          "sha256": "dfaad624b8cc818e521dc75d91856d8a8eaf762c7cb732f74c09b84c50c8f497",
-          "bytes": 406607,
+          "url": "releases/15.0-beta-4-2245920ec0cdd450--15.0-beta-11.5-15c5bc85468b17af-both-lyrics-delta.zip",
+          "sha256": "5faaf418ae4555910ec68affb93a31ff7cbdc569b4681a4b1215f878be729152",
+          "bytes": 406452,
           "from": "15.0-beta-4-2245920ec0cdd450"
         },
         {
-          "url": "releases/15.0-beta-4-56f5d97241df4946--15.0-beta-11.4-c4adf62133dfbb25-both-lyrics-delta.zip",
-          "sha256": "dfaad624b8cc818e521dc75d91856d8a8eaf762c7cb732f74c09b84c50c8f497",
-          "bytes": 406607,
+          "url": "releases/15.0-beta-4-56f5d97241df4946--15.0-beta-11.5-15c5bc85468b17af-both-lyrics-delta.zip",
+          "sha256": "5faaf418ae4555910ec68affb93a31ff7cbdc569b4681a4b1215f878be729152",
+          "bytes": 406452,
           "from": "15.0-beta-4-56f5d97241df4946"
         },
         {
-          "url": "releases/15.0-beta-4-b4c2144cf2a23376--15.0-beta-11.4-c4adf62133dfbb25-both-lyrics-delta.zip",
-          "sha256": "dfaad624b8cc818e521dc75d91856d8a8eaf762c7cb732f74c09b84c50c8f497",
-          "bytes": 406607,
+          "url": "releases/15.0-beta-4-b4c2144cf2a23376--15.0-beta-11.5-15c5bc85468b17af-both-lyrics-delta.zip",
+          "sha256": "5faaf418ae4555910ec68affb93a31ff7cbdc569b4681a4b1215f878be729152",
+          "bytes": 406452,
           "from": "15.0-beta-4-b4c2144cf2a23376"
         },
         {
-          "url": "releases/15.0-beta-5-ed450d07f3882730--15.0-beta-11.4-c4adf62133dfbb25-both-lyrics-delta.zip",
-          "sha256": "dfaad624b8cc818e521dc75d91856d8a8eaf762c7cb732f74c09b84c50c8f497",
-          "bytes": 406607,
+          "url": "releases/15.0-beta-5-ed450d07f3882730--15.0-beta-11.5-15c5bc85468b17af-both-lyrics-delta.zip",
+          "sha256": "5faaf418ae4555910ec68affb93a31ff7cbdc569b4681a4b1215f878be729152",
+          "bytes": 406452,
           "from": "15.0-beta-5-ed450d07f3882730"
         },
         {
-          "url": "releases/15.0-beta-6-c279eb31299a4e19--15.0-beta-11.4-c4adf62133dfbb25-both-lyrics-delta.zip",
-          "sha256": "dfaad624b8cc818e521dc75d91856d8a8eaf762c7cb732f74c09b84c50c8f497",
-          "bytes": 406607,
+          "url": "releases/15.0-beta-6-c279eb31299a4e19--15.0-beta-11.5-15c5bc85468b17af-both-lyrics-delta.zip",
+          "sha256": "5faaf418ae4555910ec68affb93a31ff7cbdc569b4681a4b1215f878be729152",
+          "bytes": 406452,
           "from": "15.0-beta-6-c279eb31299a4e19"
         },
         {
-          "url": "releases/15.0-beta-7-ba9143f0de358df2--15.0-beta-11.4-c4adf62133dfbb25-both-lyrics-delta.zip",
-          "sha256": "dfaad624b8cc818e521dc75d91856d8a8eaf762c7cb732f74c09b84c50c8f497",
-          "bytes": 406607,
+          "url": "releases/15.0-beta-7-ba9143f0de358df2--15.0-beta-11.5-15c5bc85468b17af-both-lyrics-delta.zip",
+          "sha256": "5faaf418ae4555910ec68affb93a31ff7cbdc569b4681a4b1215f878be729152",
+          "bytes": 406452,
           "from": "15.0-beta-7-ba9143f0de358df2"
         },
         {
-          "url": "releases/15.0-beta-7-e93b68fc275af191--15.0-beta-11.4-c4adf62133dfbb25-both-lyrics-delta.zip",
-          "sha256": "dfaad624b8cc818e521dc75d91856d8a8eaf762c7cb732f74c09b84c50c8f497",
-          "bytes": 406607,
+          "url": "releases/15.0-beta-7-e93b68fc275af191--15.0-beta-11.5-15c5bc85468b17af-both-lyrics-delta.zip",
+          "sha256": "5faaf418ae4555910ec68affb93a31ff7cbdc569b4681a4b1215f878be729152",
+          "bytes": 406452,
           "from": "15.0-beta-7-e93b68fc275af191"
         },
         {
-          "url": "releases/15.0-beta-8-f5486abad0e7a652--15.0-beta-11.4-c4adf62133dfbb25-both-lyrics-delta.zip",
-          "sha256": "dfaad624b8cc818e521dc75d91856d8a8eaf762c7cb732f74c09b84c50c8f497",
-          "bytes": 406607,
+          "url": "releases/15.0-beta-8-34bfab34756b6b4c--15.0-beta-11.5-15c5bc85468b17af-both-lyrics-delta.zip",
+          "sha256": "5faaf418ae4555910ec68affb93a31ff7cbdc569b4681a4b1215f878be729152",
+          "bytes": 406452,
+          "from": "15.0-beta-8-34bfab34756b6b4c"
+        },
+        {
+          "url": "releases/15.0-beta-8-f5486abad0e7a652--15.0-beta-11.5-15c5bc85468b17af-both-lyrics-delta.zip",
+          "sha256": "5faaf418ae4555910ec68affb93a31ff7cbdc569b4681a4b1215f878be729152",
+          "bytes": 406452,
           "from": "15.0-beta-8-f5486abad0e7a652"
         },
         {
-          "url": "releases/15.0-beta-9-22469958f5e8bd36--15.0-beta-11.4-c4adf62133dfbb25-both-lyrics-delta.zip",
-          "sha256": "dfaad624b8cc818e521dc75d91856d8a8eaf762c7cb732f74c09b84c50c8f497",
-          "bytes": 406607,
+          "url": "releases/15.0-beta-9-22469958f5e8bd36--15.0-beta-11.5-15c5bc85468b17af-both-lyrics-delta.zip",
+          "sha256": "5faaf418ae4555910ec68affb93a31ff7cbdc569b4681a4b1215f878be729152",
+          "bytes": 406452,
           "from": "15.0-beta-9-22469958f5e8bd36"
         },
         {
-          "url": "releases/legacy-15.0-beta-1.1-2185981ac774--15.0-beta-11.4-c4adf62133dfbb25-both-lyrics-delta.zip",
-          "sha256": "3a277d81e711c30f51b81eda8ccb6695e1e7533e6d2262df0f87ae362470a838",
-          "bytes": 927279,
+          "url": "releases/legacy-15.0-beta-1.1-2185981ac774--15.0-beta-11.5-15c5bc85468b17af-both-lyrics-delta.zip",
+          "sha256": "10339759c9cf7edf131a6e5939506004a13c4485e8138d1a2f1f752a82ba55ef",
+          "bytes": 927124,
           "from": "legacy-15.0-beta-1.1-2185981ac774"
         }
       ]
@@ -6867,117 +6891,129 @@
         "scores": true
       },
       "full": {
-        "url": "releases/15.0-beta-11.4-c4adf62133dfbb25-english-scores-full.zip",
-        "sha256": "8f7c92ead0dc71530749fda111f2d3aaf660ac8643d8498a91351b59dcf6fafc",
-        "bytes": 4812457
+        "url": "releases/15.0-beta-11.5-15c5bc85468b17af-english-scores-full.zip",
+        "sha256": "2c0a3fa6d59b659037fdf35d29e3b2319b2489dbf2a180724465e610bca450e2",
+        "bytes": 4812302
       },
       "deltas": [
         {
-          "url": "releases/15.0-beta-10-7e0865d27202292d--15.0-beta-11.4-c4adf62133dfbb25-english-scores-delta.zip",
-          "sha256": "3adb95fc4004d0aa7d8c7143ad0c8ba5ac161446a15b0c74115d8ce7b3b36985",
-          "bytes": 344667,
+          "url": "releases/15.0-beta-10-7e0865d27202292d--15.0-beta-11.5-15c5bc85468b17af-english-scores-delta.zip",
+          "sha256": "ed3d3caa563124723d5250df3d807a28fc015c7971c831b17d1fbf1f805bba0f",
+          "bytes": 344512,
           "from": "15.0-beta-10-7e0865d27202292d"
         },
         {
-          "url": "releases/15.0-beta-11-e16f31a22bc0d640--15.0-beta-11.4-c4adf62133dfbb25-english-scores-delta.zip",
-          "sha256": "3baa5ed16ecc22dda794ec31c2f77034114e6f7e5e3a44a986b529b6fe2ec955",
-          "bytes": 194312,
+          "url": "releases/15.0-beta-11-e16f31a22bc0d640--15.0-beta-11.5-15c5bc85468b17af-english-scores-delta.zip",
+          "sha256": "b488a9a77c00a82a69f5c9297a12a61b947eb223d0be5dd86bcac319f2e6ddbf",
+          "bytes": 224858,
           "from": "15.0-beta-11-e16f31a22bc0d640"
         },
         {
-          "url": "releases/15.0-beta-11.1-e3d1483975c5fdd7--15.0-beta-11.4-c4adf62133dfbb25-english-scores-delta.zip",
-          "sha256": "bc746b8047a8785b636a0adb012055e1fbcaf8738b9478567db9912eccde32ce",
-          "bytes": 4398,
+          "url": "releases/15.0-beta-11.1-e3d1483975c5fdd7--15.0-beta-11.5-15c5bc85468b17af-english-scores-delta.zip",
+          "sha256": "567cb1bb293c54be83fcd6fdc24597cbbdc2ef3051e83cd36c1a34e307eb9abd",
+          "bytes": 34944,
           "from": "15.0-beta-11.1-e3d1483975c5fdd7"
         },
         {
-          "url": "releases/15.0-beta-11.2-f4a32c1299828e07--15.0-beta-11.4-c4adf62133dfbb25-english-scores-delta.zip",
-          "sha256": "bc746b8047a8785b636a0adb012055e1fbcaf8738b9478567db9912eccde32ce",
-          "bytes": 4398,
+          "url": "releases/15.0-beta-11.2-f4a32c1299828e07--15.0-beta-11.5-15c5bc85468b17af-english-scores-delta.zip",
+          "sha256": "567cb1bb293c54be83fcd6fdc24597cbbdc2ef3051e83cd36c1a34e307eb9abd",
+          "bytes": 34944,
           "from": "15.0-beta-11.2-f4a32c1299828e07"
         },
         {
-          "url": "releases/15.0-beta-11.3-1ebe6a7739365d54--15.0-beta-11.4-c4adf62133dfbb25-english-scores-delta.zip",
-          "sha256": "bc746b8047a8785b636a0adb012055e1fbcaf8738b9478567db9912eccde32ce",
-          "bytes": 4398,
+          "url": "releases/15.0-beta-11.3-1ebe6a7739365d54--15.0-beta-11.5-15c5bc85468b17af-english-scores-delta.zip",
+          "sha256": "567cb1bb293c54be83fcd6fdc24597cbbdc2ef3051e83cd36c1a34e307eb9abd",
+          "bytes": 34944,
           "from": "15.0-beta-11.3-1ebe6a7739365d54"
         },
         {
-          "url": "releases/15.0-beta-2-1c1f552371cced97--15.0-beta-11.4-c4adf62133dfbb25-english-scores-delta.zip",
-          "sha256": "4cdeccfc973a64fbd9037c0c76c87a396ad36fad8393c974108e6520c275ea53",
-          "bytes": 1045530,
+          "url": "releases/15.0-beta-11.4-c4adf62133dfbb25--15.0-beta-11.5-15c5bc85468b17af-english-scores-delta.zip",
+          "sha256": "567cb1bb293c54be83fcd6fdc24597cbbdc2ef3051e83cd36c1a34e307eb9abd",
+          "bytes": 34944,
+          "from": "15.0-beta-11.4-c4adf62133dfbb25"
+        },
+        {
+          "url": "releases/15.0-beta-2-1c1f552371cced97--15.0-beta-11.5-15c5bc85468b17af-english-scores-delta.zip",
+          "sha256": "e78cffd71a32bd10928f40edc12e5efd78c6a9a2cddecd01a81d19412ddef197",
+          "bytes": 1045375,
           "from": "15.0-beta-2-1c1f552371cced97"
         },
         {
-          "url": "releases/15.0-beta-3-339e25a4e865b114--15.0-beta-11.4-c4adf62133dfbb25-english-scores-delta.zip",
-          "sha256": "f88e6e383a74014552a39c2016ae6b4d0945adceca95580290e2028603b6fbd1",
-          "bytes": 537523,
+          "url": "releases/15.0-beta-3-339e25a4e865b114--15.0-beta-11.5-15c5bc85468b17af-english-scores-delta.zip",
+          "sha256": "5d877cda4705756888c2da9d33f3292d727706bbffb2b1d2ae45b466ef7b31e2",
+          "bytes": 537368,
           "from": "15.0-beta-3-339e25a4e865b114"
         },
         {
-          "url": "releases/15.0-beta-3-989387b733c6badb--15.0-beta-11.4-c4adf62133dfbb25-english-scores-delta.zip",
-          "sha256": "f88e6e383a74014552a39c2016ae6b4d0945adceca95580290e2028603b6fbd1",
-          "bytes": 537523,
+          "url": "releases/15.0-beta-3-989387b733c6badb--15.0-beta-11.5-15c5bc85468b17af-english-scores-delta.zip",
+          "sha256": "5d877cda4705756888c2da9d33f3292d727706bbffb2b1d2ae45b466ef7b31e2",
+          "bytes": 537368,
           "from": "15.0-beta-3-989387b733c6badb"
         },
         {
-          "url": "releases/15.0-beta-4-2245920ec0cdd450--15.0-beta-11.4-c4adf62133dfbb25-english-scores-delta.zip",
-          "sha256": "f88e6e383a74014552a39c2016ae6b4d0945adceca95580290e2028603b6fbd1",
-          "bytes": 537523,
+          "url": "releases/15.0-beta-4-2245920ec0cdd450--15.0-beta-11.5-15c5bc85468b17af-english-scores-delta.zip",
+          "sha256": "5d877cda4705756888c2da9d33f3292d727706bbffb2b1d2ae45b466ef7b31e2",
+          "bytes": 537368,
           "from": "15.0-beta-4-2245920ec0cdd450"
         },
         {
-          "url": "releases/15.0-beta-4-56f5d97241df4946--15.0-beta-11.4-c4adf62133dfbb25-english-scores-delta.zip",
-          "sha256": "f88e6e383a74014552a39c2016ae6b4d0945adceca95580290e2028603b6fbd1",
-          "bytes": 537523,
+          "url": "releases/15.0-beta-4-56f5d97241df4946--15.0-beta-11.5-15c5bc85468b17af-english-scores-delta.zip",
+          "sha256": "5d877cda4705756888c2da9d33f3292d727706bbffb2b1d2ae45b466ef7b31e2",
+          "bytes": 537368,
           "from": "15.0-beta-4-56f5d97241df4946"
         },
         {
-          "url": "releases/15.0-beta-4-b4c2144cf2a23376--15.0-beta-11.4-c4adf62133dfbb25-english-scores-delta.zip",
-          "sha256": "f88e6e383a74014552a39c2016ae6b4d0945adceca95580290e2028603b6fbd1",
-          "bytes": 537523,
+          "url": "releases/15.0-beta-4-b4c2144cf2a23376--15.0-beta-11.5-15c5bc85468b17af-english-scores-delta.zip",
+          "sha256": "5d877cda4705756888c2da9d33f3292d727706bbffb2b1d2ae45b466ef7b31e2",
+          "bytes": 537368,
           "from": "15.0-beta-4-b4c2144cf2a23376"
         },
         {
-          "url": "releases/15.0-beta-5-ed450d07f3882730--15.0-beta-11.4-c4adf62133dfbb25-english-scores-delta.zip",
-          "sha256": "f88e6e383a74014552a39c2016ae6b4d0945adceca95580290e2028603b6fbd1",
-          "bytes": 537523,
+          "url": "releases/15.0-beta-5-ed450d07f3882730--15.0-beta-11.5-15c5bc85468b17af-english-scores-delta.zip",
+          "sha256": "5d877cda4705756888c2da9d33f3292d727706bbffb2b1d2ae45b466ef7b31e2",
+          "bytes": 537368,
           "from": "15.0-beta-5-ed450d07f3882730"
         },
         {
-          "url": "releases/15.0-beta-6-c279eb31299a4e19--15.0-beta-11.4-c4adf62133dfbb25-english-scores-delta.zip",
-          "sha256": "f88e6e383a74014552a39c2016ae6b4d0945adceca95580290e2028603b6fbd1",
-          "bytes": 537523,
+          "url": "releases/15.0-beta-6-c279eb31299a4e19--15.0-beta-11.5-15c5bc85468b17af-english-scores-delta.zip",
+          "sha256": "5d877cda4705756888c2da9d33f3292d727706bbffb2b1d2ae45b466ef7b31e2",
+          "bytes": 537368,
           "from": "15.0-beta-6-c279eb31299a4e19"
         },
         {
-          "url": "releases/15.0-beta-7-ba9143f0de358df2--15.0-beta-11.4-c4adf62133dfbb25-english-scores-delta.zip",
-          "sha256": "f88e6e383a74014552a39c2016ae6b4d0945adceca95580290e2028603b6fbd1",
-          "bytes": 537523,
+          "url": "releases/15.0-beta-7-ba9143f0de358df2--15.0-beta-11.5-15c5bc85468b17af-english-scores-delta.zip",
+          "sha256": "5d877cda4705756888c2da9d33f3292d727706bbffb2b1d2ae45b466ef7b31e2",
+          "bytes": 537368,
           "from": "15.0-beta-7-ba9143f0de358df2"
         },
         {
-          "url": "releases/15.0-beta-7-e93b68fc275af191--15.0-beta-11.4-c4adf62133dfbb25-english-scores-delta.zip",
-          "sha256": "f88e6e383a74014552a39c2016ae6b4d0945adceca95580290e2028603b6fbd1",
-          "bytes": 537523,
+          "url": "releases/15.0-beta-7-e93b68fc275af191--15.0-beta-11.5-15c5bc85468b17af-english-scores-delta.zip",
+          "sha256": "5d877cda4705756888c2da9d33f3292d727706bbffb2b1d2ae45b466ef7b31e2",
+          "bytes": 537368,
           "from": "15.0-beta-7-e93b68fc275af191"
         },
         {
-          "url": "releases/15.0-beta-8-f5486abad0e7a652--15.0-beta-11.4-c4adf62133dfbb25-english-scores-delta.zip",
-          "sha256": "f88e6e383a74014552a39c2016ae6b4d0945adceca95580290e2028603b6fbd1",
-          "bytes": 537523,
+          "url": "releases/15.0-beta-8-34bfab34756b6b4c--15.0-beta-11.5-15c5bc85468b17af-english-scores-delta.zip",
+          "sha256": "5d877cda4705756888c2da9d33f3292d727706bbffb2b1d2ae45b466ef7b31e2",
+          "bytes": 537368,
+          "from": "15.0-beta-8-34bfab34756b6b4c"
+        },
+        {
+          "url": "releases/15.0-beta-8-f5486abad0e7a652--15.0-beta-11.5-15c5bc85468b17af-english-scores-delta.zip",
+          "sha256": "5d877cda4705756888c2da9d33f3292d727706bbffb2b1d2ae45b466ef7b31e2",
+          "bytes": 537368,
           "from": "15.0-beta-8-f5486abad0e7a652"
         },
         {
-          "url": "releases/15.0-beta-9-22469958f5e8bd36--15.0-beta-11.4-c4adf62133dfbb25-english-scores-delta.zip",
-          "sha256": "f88e6e383a74014552a39c2016ae6b4d0945adceca95580290e2028603b6fbd1",
-          "bytes": 537523,
+          "url": "releases/15.0-beta-9-22469958f5e8bd36--15.0-beta-11.5-15c5bc85468b17af-english-scores-delta.zip",
+          "sha256": "5d877cda4705756888c2da9d33f3292d727706bbffb2b1d2ae45b466ef7b31e2",
+          "bytes": 537368,
           "from": "15.0-beta-9-22469958f5e8bd36"
         },
         {
-          "url": "releases/legacy-15.0-beta-1.1-2185981ac774--15.0-beta-11.4-c4adf62133dfbb25-english-scores-delta.zip",
-          "sha256": "689278566d66db941fa17d0b7f8e2567fb432b8164fdce5c7636fecd93023961",
-          "bytes": 1058195,
+          "url": "releases/legacy-15.0-beta-1.1-2185981ac774--15.0-beta-11.5-15c5bc85468b17af-english-scores-delta.zip",
+          "sha256": "58b69c95a09c12f3d4ac7e683053ecf9fa28a427ae0cf20c3a8bd879d20db8bd",
+          "bytes": 1058040,
           "from": "legacy-15.0-beta-1.1-2185981ac774"
         }
       ]
@@ -6988,117 +7024,129 @@
         "scores": false
       },
       "full": {
-        "url": "releases/15.0-beta-11.4-c4adf62133dfbb25-english-lyrics-full.zip",
-        "sha256": "6e509474457d43b6286c78e9d22f6082bdfd56a409aa791084b249b149cbefff",
-        "bytes": 1629212
+        "url": "releases/15.0-beta-11.5-15c5bc85468b17af-english-lyrics-full.zip",
+        "sha256": "7b749e61d0f64c6260e8830243059783050f4254abda5b79e491ea66c672a8df",
+        "bytes": 1629057
       },
       "deltas": [
         {
-          "url": "releases/15.0-beta-10-7e0865d27202292d--15.0-beta-11.4-c4adf62133dfbb25-english-lyrics-delta.zip",
-          "sha256": "17071ce379c0595645c5fe6817441803612f21e2ba52df8c3e7a0159cb3b41c5",
-          "bytes": 241110,
+          "url": "releases/15.0-beta-10-7e0865d27202292d--15.0-beta-11.5-15c5bc85468b17af-english-lyrics-delta.zip",
+          "sha256": "14066113423f0da3414a231fc4f4fa9ec07b48f0103790f6d1b8a919a79cfd19",
+          "bytes": 240955,
           "from": "15.0-beta-10-7e0865d27202292d"
         },
         {
-          "url": "releases/15.0-beta-11-e16f31a22bc0d640--15.0-beta-11.4-c4adf62133dfbb25-english-lyrics-delta.zip",
-          "sha256": "3baa5ed16ecc22dda794ec31c2f77034114e6f7e5e3a44a986b529b6fe2ec955",
-          "bytes": 194312,
+          "url": "releases/15.0-beta-11-e16f31a22bc0d640--15.0-beta-11.5-15c5bc85468b17af-english-lyrics-delta.zip",
+          "sha256": "b488a9a77c00a82a69f5c9297a12a61b947eb223d0be5dd86bcac319f2e6ddbf",
+          "bytes": 224858,
           "from": "15.0-beta-11-e16f31a22bc0d640"
         },
         {
-          "url": "releases/15.0-beta-11.1-e3d1483975c5fdd7--15.0-beta-11.4-c4adf62133dfbb25-english-lyrics-delta.zip",
-          "sha256": "bc746b8047a8785b636a0adb012055e1fbcaf8738b9478567db9912eccde32ce",
-          "bytes": 4398,
+          "url": "releases/15.0-beta-11.1-e3d1483975c5fdd7--15.0-beta-11.5-15c5bc85468b17af-english-lyrics-delta.zip",
+          "sha256": "567cb1bb293c54be83fcd6fdc24597cbbdc2ef3051e83cd36c1a34e307eb9abd",
+          "bytes": 34944,
           "from": "15.0-beta-11.1-e3d1483975c5fdd7"
         },
         {
-          "url": "releases/15.0-beta-11.2-f4a32c1299828e07--15.0-beta-11.4-c4adf62133dfbb25-english-lyrics-delta.zip",
-          "sha256": "bc746b8047a8785b636a0adb012055e1fbcaf8738b9478567db9912eccde32ce",
-          "bytes": 4398,
+          "url": "releases/15.0-beta-11.2-f4a32c1299828e07--15.0-beta-11.5-15c5bc85468b17af-english-lyrics-delta.zip",
+          "sha256": "567cb1bb293c54be83fcd6fdc24597cbbdc2ef3051e83cd36c1a34e307eb9abd",
+          "bytes": 34944,
           "from": "15.0-beta-11.2-f4a32c1299828e07"
         },
         {
-          "url": "releases/15.0-beta-11.3-1ebe6a7739365d54--15.0-beta-11.4-c4adf62133dfbb25-english-lyrics-delta.zip",
-          "sha256": "bc746b8047a8785b636a0adb012055e1fbcaf8738b9478567db9912eccde32ce",
-          "bytes": 4398,
+          "url": "releases/15.0-beta-11.3-1ebe6a7739365d54--15.0-beta-11.5-15c5bc85468b17af-english-lyrics-delta.zip",
+          "sha256": "567cb1bb293c54be83fcd6fdc24597cbbdc2ef3051e83cd36c1a34e307eb9abd",
+          "bytes": 34944,
           "from": "15.0-beta-11.3-1ebe6a7739365d54"
         },
         {
-          "url": "releases/15.0-beta-2-1c1f552371cced97--15.0-beta-11.4-c4adf62133dfbb25-english-lyrics-delta.zip",
-          "sha256": "24173691b0a5ecf6ef58ffda2bc5a52a4b51bdfecfa84b1162d479f7fb544c64",
-          "bytes": 914393,
+          "url": "releases/15.0-beta-11.4-c4adf62133dfbb25--15.0-beta-11.5-15c5bc85468b17af-english-lyrics-delta.zip",
+          "sha256": "567cb1bb293c54be83fcd6fdc24597cbbdc2ef3051e83cd36c1a34e307eb9abd",
+          "bytes": 34944,
+          "from": "15.0-beta-11.4-c4adf62133dfbb25"
+        },
+        {
+          "url": "releases/15.0-beta-2-1c1f552371cced97--15.0-beta-11.5-15c5bc85468b17af-english-lyrics-delta.zip",
+          "sha256": "d7e8b34713e71d21bfa3cc2f617d84a15b2f4167a8118a273b2cae6559c0eb6c",
+          "bytes": 914238,
           "from": "15.0-beta-2-1c1f552371cced97"
         },
         {
-          "url": "releases/15.0-beta-3-339e25a4e865b114--15.0-beta-11.4-c4adf62133dfbb25-english-lyrics-delta.zip",
-          "sha256": "03a7e3438268feca975d7a06b0fd981f97534925c31117159720af58191aefcc",
-          "bytes": 406386,
+          "url": "releases/15.0-beta-3-339e25a4e865b114--15.0-beta-11.5-15c5bc85468b17af-english-lyrics-delta.zip",
+          "sha256": "5571ad2cd3fc35eeb3af8ed38ed19d77b9571c2047cb8d8b497b53d5228c56ae",
+          "bytes": 406231,
           "from": "15.0-beta-3-339e25a4e865b114"
         },
         {
-          "url": "releases/15.0-beta-3-989387b733c6badb--15.0-beta-11.4-c4adf62133dfbb25-english-lyrics-delta.zip",
-          "sha256": "03a7e3438268feca975d7a06b0fd981f97534925c31117159720af58191aefcc",
-          "bytes": 406386,
+          "url": "releases/15.0-beta-3-989387b733c6badb--15.0-beta-11.5-15c5bc85468b17af-english-lyrics-delta.zip",
+          "sha256": "5571ad2cd3fc35eeb3af8ed38ed19d77b9571c2047cb8d8b497b53d5228c56ae",
+          "bytes": 406231,
           "from": "15.0-beta-3-989387b733c6badb"
         },
         {
-          "url": "releases/15.0-beta-4-2245920ec0cdd450--15.0-beta-11.4-c4adf62133dfbb25-english-lyrics-delta.zip",
-          "sha256": "03a7e3438268feca975d7a06b0fd981f97534925c31117159720af58191aefcc",
-          "bytes": 406386,
+          "url": "releases/15.0-beta-4-2245920ec0cdd450--15.0-beta-11.5-15c5bc85468b17af-english-lyrics-delta.zip",
+          "sha256": "5571ad2cd3fc35eeb3af8ed38ed19d77b9571c2047cb8d8b497b53d5228c56ae",
+          "bytes": 406231,
           "from": "15.0-beta-4-2245920ec0cdd450"
         },
         {
-          "url": "releases/15.0-beta-4-56f5d97241df4946--15.0-beta-11.4-c4adf62133dfbb25-english-lyrics-delta.zip",
-          "sha256": "03a7e3438268feca975d7a06b0fd981f97534925c31117159720af58191aefcc",
-          "bytes": 406386,
+          "url": "releases/15.0-beta-4-56f5d97241df4946--15.0-beta-11.5-15c5bc85468b17af-english-lyrics-delta.zip",
+          "sha256": "5571ad2cd3fc35eeb3af8ed38ed19d77b9571c2047cb8d8b497b53d5228c56ae",
+          "bytes": 406231,
           "from": "15.0-beta-4-56f5d97241df4946"
         },
         {
-          "url": "releases/15.0-beta-4-b4c2144cf2a23376--15.0-beta-11.4-c4adf62133dfbb25-english-lyrics-delta.zip",
-          "sha256": "03a7e3438268feca975d7a06b0fd981f97534925c31117159720af58191aefcc",
-          "bytes": 406386,
+          "url": "releases/15.0-beta-4-b4c2144cf2a23376--15.0-beta-11.5-15c5bc85468b17af-english-lyrics-delta.zip",
+          "sha256": "5571ad2cd3fc35eeb3af8ed38ed19d77b9571c2047cb8d8b497b53d5228c56ae",
+          "bytes": 406231,
           "from": "15.0-beta-4-b4c2144cf2a23376"
         },
         {
-          "url": "releases/15.0-beta-5-ed450d07f3882730--15.0-beta-11.4-c4adf62133dfbb25-english-lyrics-delta.zip",
-          "sha256": "03a7e3438268feca975d7a06b0fd981f97534925c31117159720af58191aefcc",
-          "bytes": 406386,
+          "url": "releases/15.0-beta-5-ed450d07f3882730--15.0-beta-11.5-15c5bc85468b17af-english-lyrics-delta.zip",
+          "sha256": "5571ad2cd3fc35eeb3af8ed38ed19d77b9571c2047cb8d8b497b53d5228c56ae",
+          "bytes": 406231,
           "from": "15.0-beta-5-ed450d07f3882730"
         },
         {
-          "url": "releases/15.0-beta-6-c279eb31299a4e19--15.0-beta-11.4-c4adf62133dfbb25-english-lyrics-delta.zip",
-          "sha256": "03a7e3438268feca975d7a06b0fd981f97534925c31117159720af58191aefcc",
-          "bytes": 406386,
+          "url": "releases/15.0-beta-6-c279eb31299a4e19--15.0-beta-11.5-15c5bc85468b17af-english-lyrics-delta.zip",
+          "sha256": "5571ad2cd3fc35eeb3af8ed38ed19d77b9571c2047cb8d8b497b53d5228c56ae",
+          "bytes": 406231,
           "from": "15.0-beta-6-c279eb31299a4e19"
         },
         {
-          "url": "releases/15.0-beta-7-ba9143f0de358df2--15.0-beta-11.4-c4adf62133dfbb25-english-lyrics-delta.zip",
-          "sha256": "03a7e3438268feca975d7a06b0fd981f97534925c31117159720af58191aefcc",
-          "bytes": 406386,
+          "url": "releases/15.0-beta-7-ba9143f0de358df2--15.0-beta-11.5-15c5bc85468b17af-english-lyrics-delta.zip",
+          "sha256": "5571ad2cd3fc35eeb3af8ed38ed19d77b9571c2047cb8d8b497b53d5228c56ae",
+          "bytes": 406231,
           "from": "15.0-beta-7-ba9143f0de358df2"
         },
         {
-          "url": "releases/15.0-beta-7-e93b68fc275af191--15.0-beta-11.4-c4adf62133dfbb25-english-lyrics-delta.zip",
-          "sha256": "03a7e3438268feca975d7a06b0fd981f97534925c31117159720af58191aefcc",
-          "bytes": 406386,
+          "url": "releases/15.0-beta-7-e93b68fc275af191--15.0-beta-11.5-15c5bc85468b17af-english-lyrics-delta.zip",
+          "sha256": "5571ad2cd3fc35eeb3af8ed38ed19d77b9571c2047cb8d8b497b53d5228c56ae",
+          "bytes": 406231,
           "from": "15.0-beta-7-e93b68fc275af191"
         },
         {
-          "url": "releases/15.0-beta-8-f5486abad0e7a652--15.0-beta-11.4-c4adf62133dfbb25-english-lyrics-delta.zip",
-          "sha256": "03a7e3438268feca975d7a06b0fd981f97534925c31117159720af58191aefcc",
-          "bytes": 406386,
+          "url": "releases/15.0-beta-8-34bfab34756b6b4c--15.0-beta-11.5-15c5bc85468b17af-english-lyrics-delta.zip",
+          "sha256": "5571ad2cd3fc35eeb3af8ed38ed19d77b9571c2047cb8d8b497b53d5228c56ae",
+          "bytes": 406231,
+          "from": "15.0-beta-8-34bfab34756b6b4c"
+        },
+        {
+          "url": "releases/15.0-beta-8-f5486abad0e7a652--15.0-beta-11.5-15c5bc85468b17af-english-lyrics-delta.zip",
+          "sha256": "5571ad2cd3fc35eeb3af8ed38ed19d77b9571c2047cb8d8b497b53d5228c56ae",
+          "bytes": 406231,
           "from": "15.0-beta-8-f5486abad0e7a652"
         },
         {
-          "url": "releases/15.0-beta-9-22469958f5e8bd36--15.0-beta-11.4-c4adf62133dfbb25-english-lyrics-delta.zip",
-          "sha256": "03a7e3438268feca975d7a06b0fd981f97534925c31117159720af58191aefcc",
-          "bytes": 406386,
+          "url": "releases/15.0-beta-9-22469958f5e8bd36--15.0-beta-11.5-15c5bc85468b17af-english-lyrics-delta.zip",
+          "sha256": "5571ad2cd3fc35eeb3af8ed38ed19d77b9571c2047cb8d8b497b53d5228c56ae",
+          "bytes": 406231,
           "from": "15.0-beta-9-22469958f5e8bd36"
         },
         {
-          "url": "releases/legacy-15.0-beta-1.1-2185981ac774--15.0-beta-11.4-c4adf62133dfbb25-english-lyrics-delta.zip",
-          "sha256": "96afac216a464a14a34f0e5774cd53534f95ef931d6f80ec3bebb3527f765f2f",
-          "bytes": 927058,
+          "url": "releases/legacy-15.0-beta-1.1-2185981ac774--15.0-beta-11.5-15c5bc85468b17af-english-lyrics-delta.zip",
+          "sha256": "d6e8a18a3473f166315a720df69039f9c2607cb16432cd5aab516c21938b6831",
+          "bytes": 926903,
           "from": "legacy-15.0-beta-1.1-2185981ac774"
         }
       ]
@@ -7109,117 +7157,129 @@
         "scores": true
       },
       "full": {
-        "url": "releases/15.0-beta-11.4-c4adf62133dfbb25-spanish-scores-full.zip",
-        "sha256": "4f1f1617b8aa998620f54521fa7c507a0fff62efa86fa71ecc11803ac8ad4632",
-        "bytes": 1565799
+        "url": "releases/15.0-beta-11.5-15c5bc85468b17af-spanish-scores-full.zip",
+        "sha256": "09340a6442547cc777ce01fa984174572992ab38dd8290fa59e81e28d8aab5ad",
+        "bytes": 1565813
       },
       "deltas": [
         {
-          "url": "releases/15.0-beta-10-7e0865d27202292d--15.0-beta-11.4-c4adf62133dfbb25-spanish-scores-delta.zip",
-          "sha256": "b1011b77131bae83d34c84d372fc4381c0b400fd33bbf79f438a85108794729b",
-          "bytes": 232419,
+          "url": "releases/15.0-beta-10-7e0865d27202292d--15.0-beta-11.5-15c5bc85468b17af-spanish-scores-delta.zip",
+          "sha256": "dca53259b60fad17edd57a058ce6e08371451dde9d282aef25524e22b15a3fed",
+          "bytes": 232433,
           "from": "15.0-beta-10-7e0865d27202292d"
         },
         {
-          "url": "releases/15.0-beta-11-e16f31a22bc0d640--15.0-beta-11.4-c4adf62133dfbb25-spanish-scores-delta.zip",
-          "sha256": "3baa5ed16ecc22dda794ec31c2f77034114e6f7e5e3a44a986b529b6fe2ec955",
-          "bytes": 194312,
+          "url": "releases/15.0-beta-11-e16f31a22bc0d640--15.0-beta-11.5-15c5bc85468b17af-spanish-scores-delta.zip",
+          "sha256": "953925efad168bdcaa717937b9dcd6305d049e1cea8435fdf38ffcdde4a7f31a",
+          "bytes": 219934,
           "from": "15.0-beta-11-e16f31a22bc0d640"
         },
         {
-          "url": "releases/15.0-beta-11.1-e3d1483975c5fdd7--15.0-beta-11.4-c4adf62133dfbb25-spanish-scores-delta.zip",
-          "sha256": "bc746b8047a8785b636a0adb012055e1fbcaf8738b9478567db9912eccde32ce",
-          "bytes": 4398,
+          "url": "releases/15.0-beta-11.1-e3d1483975c5fdd7--15.0-beta-11.5-15c5bc85468b17af-spanish-scores-delta.zip",
+          "sha256": "f08694a11ae2c0570568bee04d0dc64c2be34252b568cc2fb082d4c8e6e004f1",
+          "bytes": 30020,
           "from": "15.0-beta-11.1-e3d1483975c5fdd7"
         },
         {
-          "url": "releases/15.0-beta-11.2-f4a32c1299828e07--15.0-beta-11.4-c4adf62133dfbb25-spanish-scores-delta.zip",
-          "sha256": "bc746b8047a8785b636a0adb012055e1fbcaf8738b9478567db9912eccde32ce",
-          "bytes": 4398,
+          "url": "releases/15.0-beta-11.2-f4a32c1299828e07--15.0-beta-11.5-15c5bc85468b17af-spanish-scores-delta.zip",
+          "sha256": "f08694a11ae2c0570568bee04d0dc64c2be34252b568cc2fb082d4c8e6e004f1",
+          "bytes": 30020,
           "from": "15.0-beta-11.2-f4a32c1299828e07"
         },
         {
-          "url": "releases/15.0-beta-11.3-1ebe6a7739365d54--15.0-beta-11.4-c4adf62133dfbb25-spanish-scores-delta.zip",
-          "sha256": "bc746b8047a8785b636a0adb012055e1fbcaf8738b9478567db9912eccde32ce",
-          "bytes": 4398,
+          "url": "releases/15.0-beta-11.3-1ebe6a7739365d54--15.0-beta-11.5-15c5bc85468b17af-spanish-scores-delta.zip",
+          "sha256": "f08694a11ae2c0570568bee04d0dc64c2be34252b568cc2fb082d4c8e6e004f1",
+          "bytes": 30020,
           "from": "15.0-beta-11.3-1ebe6a7739365d54"
         },
         {
-          "url": "releases/15.0-beta-2-1c1f552371cced97--15.0-beta-11.4-c4adf62133dfbb25-spanish-scores-delta.zip",
-          "sha256": "76327951a6a01f3de18e73afe4f6557a000f362e00fe3c7c61e270413a734d40",
-          "bytes": 905702,
+          "url": "releases/15.0-beta-11.4-c4adf62133dfbb25--15.0-beta-11.5-15c5bc85468b17af-spanish-scores-delta.zip",
+          "sha256": "f08694a11ae2c0570568bee04d0dc64c2be34252b568cc2fb082d4c8e6e004f1",
+          "bytes": 30020,
+          "from": "15.0-beta-11.4-c4adf62133dfbb25"
+        },
+        {
+          "url": "releases/15.0-beta-2-1c1f552371cced97--15.0-beta-11.5-15c5bc85468b17af-spanish-scores-delta.zip",
+          "sha256": "0e3cc2a341532522a8a1e390e0fe5eaac7809a7409856eaed15b24ad67f9cfbc",
+          "bytes": 905716,
           "from": "15.0-beta-2-1c1f552371cced97"
         },
         {
-          "url": "releases/15.0-beta-3-339e25a4e865b114--15.0-beta-11.4-c4adf62133dfbb25-spanish-scores-delta.zip",
-          "sha256": "5d4894b353ec3edea6ce30547ee3dfeef43beaac848d0a34cdfa617ade821e03",
-          "bytes": 397695,
+          "url": "releases/15.0-beta-3-339e25a4e865b114--15.0-beta-11.5-15c5bc85468b17af-spanish-scores-delta.zip",
+          "sha256": "5e8860a03467488df4ee60b49730d6102888a1e79ca451f8592ed3c7aa0ffb14",
+          "bytes": 397709,
           "from": "15.0-beta-3-339e25a4e865b114"
         },
         {
-          "url": "releases/15.0-beta-3-989387b733c6badb--15.0-beta-11.4-c4adf62133dfbb25-spanish-scores-delta.zip",
-          "sha256": "5d4894b353ec3edea6ce30547ee3dfeef43beaac848d0a34cdfa617ade821e03",
-          "bytes": 397695,
+          "url": "releases/15.0-beta-3-989387b733c6badb--15.0-beta-11.5-15c5bc85468b17af-spanish-scores-delta.zip",
+          "sha256": "5e8860a03467488df4ee60b49730d6102888a1e79ca451f8592ed3c7aa0ffb14",
+          "bytes": 397709,
           "from": "15.0-beta-3-989387b733c6badb"
         },
         {
-          "url": "releases/15.0-beta-4-2245920ec0cdd450--15.0-beta-11.4-c4adf62133dfbb25-spanish-scores-delta.zip",
-          "sha256": "5d4894b353ec3edea6ce30547ee3dfeef43beaac848d0a34cdfa617ade821e03",
-          "bytes": 397695,
+          "url": "releases/15.0-beta-4-2245920ec0cdd450--15.0-beta-11.5-15c5bc85468b17af-spanish-scores-delta.zip",
+          "sha256": "5e8860a03467488df4ee60b49730d6102888a1e79ca451f8592ed3c7aa0ffb14",
+          "bytes": 397709,
           "from": "15.0-beta-4-2245920ec0cdd450"
         },
         {
-          "url": "releases/15.0-beta-4-56f5d97241df4946--15.0-beta-11.4-c4adf62133dfbb25-spanish-scores-delta.zip",
-          "sha256": "5d4894b353ec3edea6ce30547ee3dfeef43beaac848d0a34cdfa617ade821e03",
-          "bytes": 397695,
+          "url": "releases/15.0-beta-4-56f5d97241df4946--15.0-beta-11.5-15c5bc85468b17af-spanish-scores-delta.zip",
+          "sha256": "5e8860a03467488df4ee60b49730d6102888a1e79ca451f8592ed3c7aa0ffb14",
+          "bytes": 397709,
           "from": "15.0-beta-4-56f5d97241df4946"
         },
         {
-          "url": "releases/15.0-beta-4-b4c2144cf2a23376--15.0-beta-11.4-c4adf62133dfbb25-spanish-scores-delta.zip",
-          "sha256": "5d4894b353ec3edea6ce30547ee3dfeef43beaac848d0a34cdfa617ade821e03",
-          "bytes": 397695,
+          "url": "releases/15.0-beta-4-b4c2144cf2a23376--15.0-beta-11.5-15c5bc85468b17af-spanish-scores-delta.zip",
+          "sha256": "5e8860a03467488df4ee60b49730d6102888a1e79ca451f8592ed3c7aa0ffb14",
+          "bytes": 397709,
           "from": "15.0-beta-4-b4c2144cf2a23376"
         },
         {
-          "url": "releases/15.0-beta-5-ed450d07f3882730--15.0-beta-11.4-c4adf62133dfbb25-spanish-scores-delta.zip",
-          "sha256": "5d4894b353ec3edea6ce30547ee3dfeef43beaac848d0a34cdfa617ade821e03",
-          "bytes": 397695,
+          "url": "releases/15.0-beta-5-ed450d07f3882730--15.0-beta-11.5-15c5bc85468b17af-spanish-scores-delta.zip",
+          "sha256": "5e8860a03467488df4ee60b49730d6102888a1e79ca451f8592ed3c7aa0ffb14",
+          "bytes": 397709,
           "from": "15.0-beta-5-ed450d07f3882730"
         },
         {
-          "url": "releases/15.0-beta-6-c279eb31299a4e19--15.0-beta-11.4-c4adf62133dfbb25-spanish-scores-delta.zip",
-          "sha256": "5d4894b353ec3edea6ce30547ee3dfeef43beaac848d0a34cdfa617ade821e03",
-          "bytes": 397695,
+          "url": "releases/15.0-beta-6-c279eb31299a4e19--15.0-beta-11.5-15c5bc85468b17af-spanish-scores-delta.zip",
+          "sha256": "5e8860a03467488df4ee60b49730d6102888a1e79ca451f8592ed3c7aa0ffb14",
+          "bytes": 397709,
           "from": "15.0-beta-6-c279eb31299a4e19"
         },
         {
-          "url": "releases/15.0-beta-7-ba9143f0de358df2--15.0-beta-11.4-c4adf62133dfbb25-spanish-scores-delta.zip",
-          "sha256": "5d4894b353ec3edea6ce30547ee3dfeef43beaac848d0a34cdfa617ade821e03",
-          "bytes": 397695,
+          "url": "releases/15.0-beta-7-ba9143f0de358df2--15.0-beta-11.5-15c5bc85468b17af-spanish-scores-delta.zip",
+          "sha256": "5e8860a03467488df4ee60b49730d6102888a1e79ca451f8592ed3c7aa0ffb14",
+          "bytes": 397709,
           "from": "15.0-beta-7-ba9143f0de358df2"
         },
         {
-          "url": "releases/15.0-beta-7-e93b68fc275af191--15.0-beta-11.4-c4adf62133dfbb25-spanish-scores-delta.zip",
-          "sha256": "5d4894b353ec3edea6ce30547ee3dfeef43beaac848d0a34cdfa617ade821e03",
-          "bytes": 397695,
+          "url": "releases/15.0-beta-7-e93b68fc275af191--15.0-beta-11.5-15c5bc85468b17af-spanish-scores-delta.zip",
+          "sha256": "5e8860a03467488df4ee60b49730d6102888a1e79ca451f8592ed3c7aa0ffb14",
+          "bytes": 397709,
           "from": "15.0-beta-7-e93b68fc275af191"
         },
         {
-          "url": "releases/15.0-beta-8-f5486abad0e7a652--15.0-beta-11.4-c4adf62133dfbb25-spanish-scores-delta.zip",
-          "sha256": "5d4894b353ec3edea6ce30547ee3dfeef43beaac848d0a34cdfa617ade821e03",
-          "bytes": 397695,
+          "url": "releases/15.0-beta-8-34bfab34756b6b4c--15.0-beta-11.5-15c5bc85468b17af-spanish-scores-delta.zip",
+          "sha256": "5e8860a03467488df4ee60b49730d6102888a1e79ca451f8592ed3c7aa0ffb14",
+          "bytes": 397709,
+          "from": "15.0-beta-8-34bfab34756b6b4c"
+        },
+        {
+          "url": "releases/15.0-beta-8-f5486abad0e7a652--15.0-beta-11.5-15c5bc85468b17af-spanish-scores-delta.zip",
+          "sha256": "5e8860a03467488df4ee60b49730d6102888a1e79ca451f8592ed3c7aa0ffb14",
+          "bytes": 397709,
           "from": "15.0-beta-8-f5486abad0e7a652"
         },
         {
-          "url": "releases/15.0-beta-9-22469958f5e8bd36--15.0-beta-11.4-c4adf62133dfbb25-spanish-scores-delta.zip",
-          "sha256": "5d4894b353ec3edea6ce30547ee3dfeef43beaac848d0a34cdfa617ade821e03",
-          "bytes": 397695,
+          "url": "releases/15.0-beta-9-22469958f5e8bd36--15.0-beta-11.5-15c5bc85468b17af-spanish-scores-delta.zip",
+          "sha256": "5e8860a03467488df4ee60b49730d6102888a1e79ca451f8592ed3c7aa0ffb14",
+          "bytes": 397709,
           "from": "15.0-beta-9-22469958f5e8bd36"
         },
         {
-          "url": "releases/legacy-15.0-beta-1.1-2185981ac774--15.0-beta-11.4-c4adf62133dfbb25-spanish-scores-delta.zip",
-          "sha256": "7a3128127d610d3dead5901f2ee6bcb527c04c7528b0c811c4a176fe7bc106f1",
-          "bytes": 918367,
+          "url": "releases/legacy-15.0-beta-1.1-2185981ac774--15.0-beta-11.5-15c5bc85468b17af-spanish-scores-delta.zip",
+          "sha256": "4da2282b3c1baf450c4cb665df0d590d2afabc114f17785da1b44666b1b5e53e",
+          "bytes": 918381,
           "from": "legacy-15.0-beta-1.1-2185981ac774"
         }
       ]
@@ -7230,117 +7290,129 @@
         "scores": false
       },
       "full": {
-        "url": "releases/15.0-beta-11.4-c4adf62133dfbb25-spanish-lyrics-full.zip",
-        "sha256": "4f1f1617b8aa998620f54521fa7c507a0fff62efa86fa71ecc11803ac8ad4632",
-        "bytes": 1565799
+        "url": "releases/15.0-beta-11.5-15c5bc85468b17af-spanish-lyrics-full.zip",
+        "sha256": "09340a6442547cc777ce01fa984174572992ab38dd8290fa59e81e28d8aab5ad",
+        "bytes": 1565813
       },
       "deltas": [
         {
-          "url": "releases/15.0-beta-10-7e0865d27202292d--15.0-beta-11.4-c4adf62133dfbb25-spanish-lyrics-delta.zip",
-          "sha256": "b1011b77131bae83d34c84d372fc4381c0b400fd33bbf79f438a85108794729b",
-          "bytes": 232419,
+          "url": "releases/15.0-beta-10-7e0865d27202292d--15.0-beta-11.5-15c5bc85468b17af-spanish-lyrics-delta.zip",
+          "sha256": "dca53259b60fad17edd57a058ce6e08371451dde9d282aef25524e22b15a3fed",
+          "bytes": 232433,
           "from": "15.0-beta-10-7e0865d27202292d"
         },
         {
-          "url": "releases/15.0-beta-11-e16f31a22bc0d640--15.0-beta-11.4-c4adf62133dfbb25-spanish-lyrics-delta.zip",
-          "sha256": "3baa5ed16ecc22dda794ec31c2f77034114e6f7e5e3a44a986b529b6fe2ec955",
-          "bytes": 194312,
+          "url": "releases/15.0-beta-11-e16f31a22bc0d640--15.0-beta-11.5-15c5bc85468b17af-spanish-lyrics-delta.zip",
+          "sha256": "953925efad168bdcaa717937b9dcd6305d049e1cea8435fdf38ffcdde4a7f31a",
+          "bytes": 219934,
           "from": "15.0-beta-11-e16f31a22bc0d640"
         },
         {
-          "url": "releases/15.0-beta-11.1-e3d1483975c5fdd7--15.0-beta-11.4-c4adf62133dfbb25-spanish-lyrics-delta.zip",
-          "sha256": "bc746b8047a8785b636a0adb012055e1fbcaf8738b9478567db9912eccde32ce",
-          "bytes": 4398,
+          "url": "releases/15.0-beta-11.1-e3d1483975c5fdd7--15.0-beta-11.5-15c5bc85468b17af-spanish-lyrics-delta.zip",
+          "sha256": "f08694a11ae2c0570568bee04d0dc64c2be34252b568cc2fb082d4c8e6e004f1",
+          "bytes": 30020,
           "from": "15.0-beta-11.1-e3d1483975c5fdd7"
         },
         {
-          "url": "releases/15.0-beta-11.2-f4a32c1299828e07--15.0-beta-11.4-c4adf62133dfbb25-spanish-lyrics-delta.zip",
-          "sha256": "bc746b8047a8785b636a0adb012055e1fbcaf8738b9478567db9912eccde32ce",
-          "bytes": 4398,
+          "url": "releases/15.0-beta-11.2-f4a32c1299828e07--15.0-beta-11.5-15c5bc85468b17af-spanish-lyrics-delta.zip",
+          "sha256": "f08694a11ae2c0570568bee04d0dc64c2be34252b568cc2fb082d4c8e6e004f1",
+          "bytes": 30020,
           "from": "15.0-beta-11.2-f4a32c1299828e07"
         },
         {
-          "url": "releases/15.0-beta-11.3-1ebe6a7739365d54--15.0-beta-11.4-c4adf62133dfbb25-spanish-lyrics-delta.zip",
-          "sha256": "bc746b8047a8785b636a0adb012055e1fbcaf8738b9478567db9912eccde32ce",
-          "bytes": 4398,
+          "url": "releases/15.0-beta-11.3-1ebe6a7739365d54--15.0-beta-11.5-15c5bc85468b17af-spanish-lyrics-delta.zip",
+          "sha256": "f08694a11ae2c0570568bee04d0dc64c2be34252b568cc2fb082d4c8e6e004f1",
+          "bytes": 30020,
           "from": "15.0-beta-11.3-1ebe6a7739365d54"
         },
         {
-          "url": "releases/15.0-beta-2-1c1f552371cced97--15.0-beta-11.4-c4adf62133dfbb25-spanish-lyrics-delta.zip",
-          "sha256": "76327951a6a01f3de18e73afe4f6557a000f362e00fe3c7c61e270413a734d40",
-          "bytes": 905702,
+          "url": "releases/15.0-beta-11.4-c4adf62133dfbb25--15.0-beta-11.5-15c5bc85468b17af-spanish-lyrics-delta.zip",
+          "sha256": "f08694a11ae2c0570568bee04d0dc64c2be34252b568cc2fb082d4c8e6e004f1",
+          "bytes": 30020,
+          "from": "15.0-beta-11.4-c4adf62133dfbb25"
+        },
+        {
+          "url": "releases/15.0-beta-2-1c1f552371cced97--15.0-beta-11.5-15c5bc85468b17af-spanish-lyrics-delta.zip",
+          "sha256": "0e3cc2a341532522a8a1e390e0fe5eaac7809a7409856eaed15b24ad67f9cfbc",
+          "bytes": 905716,
           "from": "15.0-beta-2-1c1f552371cced97"
         },
         {
-          "url": "releases/15.0-beta-3-339e25a4e865b114--15.0-beta-11.4-c4adf62133dfbb25-spanish-lyrics-delta.zip",
-          "sha256": "5d4894b353ec3edea6ce30547ee3dfeef43beaac848d0a34cdfa617ade821e03",
-          "bytes": 397695,
+          "url": "releases/15.0-beta-3-339e25a4e865b114--15.0-beta-11.5-15c5bc85468b17af-spanish-lyrics-delta.zip",
+          "sha256": "5e8860a03467488df4ee60b49730d6102888a1e79ca451f8592ed3c7aa0ffb14",
+          "bytes": 397709,
           "from": "15.0-beta-3-339e25a4e865b114"
         },
         {
-          "url": "releases/15.0-beta-3-989387b733c6badb--15.0-beta-11.4-c4adf62133dfbb25-spanish-lyrics-delta.zip",
-          "sha256": "5d4894b353ec3edea6ce30547ee3dfeef43beaac848d0a34cdfa617ade821e03",
-          "bytes": 397695,
+          "url": "releases/15.0-beta-3-989387b733c6badb--15.0-beta-11.5-15c5bc85468b17af-spanish-lyrics-delta.zip",
+          "sha256": "5e8860a03467488df4ee60b49730d6102888a1e79ca451f8592ed3c7aa0ffb14",
+          "bytes": 397709,
           "from": "15.0-beta-3-989387b733c6badb"
         },
         {
-          "url": "releases/15.0-beta-4-2245920ec0cdd450--15.0-beta-11.4-c4adf62133dfbb25-spanish-lyrics-delta.zip",
-          "sha256": "5d4894b353ec3edea6ce30547ee3dfeef43beaac848d0a34cdfa617ade821e03",
-          "bytes": 397695,
+          "url": "releases/15.0-beta-4-2245920ec0cdd450--15.0-beta-11.5-15c5bc85468b17af-spanish-lyrics-delta.zip",
+          "sha256": "5e8860a03467488df4ee60b49730d6102888a1e79ca451f8592ed3c7aa0ffb14",
+          "bytes": 397709,
           "from": "15.0-beta-4-2245920ec0cdd450"
         },
         {
-          "url": "releases/15.0-beta-4-56f5d97241df4946--15.0-beta-11.4-c4adf62133dfbb25-spanish-lyrics-delta.zip",
-          "sha256": "5d4894b353ec3edea6ce30547ee3dfeef43beaac848d0a34cdfa617ade821e03",
-          "bytes": 397695,
+          "url": "releases/15.0-beta-4-56f5d97241df4946--15.0-beta-11.5-15c5bc85468b17af-spanish-lyrics-delta.zip",
+          "sha256": "5e8860a03467488df4ee60b49730d6102888a1e79ca451f8592ed3c7aa0ffb14",
+          "bytes": 397709,
           "from": "15.0-beta-4-56f5d97241df4946"
         },
         {
-          "url": "releases/15.0-beta-4-b4c2144cf2a23376--15.0-beta-11.4-c4adf62133dfbb25-spanish-lyrics-delta.zip",
-          "sha256": "5d4894b353ec3edea6ce30547ee3dfeef43beaac848d0a34cdfa617ade821e03",
-          "bytes": 397695,
+          "url": "releases/15.0-beta-4-b4c2144cf2a23376--15.0-beta-11.5-15c5bc85468b17af-spanish-lyrics-delta.zip",
+          "sha256": "5e8860a03467488df4ee60b49730d6102888a1e79ca451f8592ed3c7aa0ffb14",
+          "bytes": 397709,
           "from": "15.0-beta-4-b4c2144cf2a23376"
         },
         {
-          "url": "releases/15.0-beta-5-ed450d07f3882730--15.0-beta-11.4-c4adf62133dfbb25-spanish-lyrics-delta.zip",
-          "sha256": "5d4894b353ec3edea6ce30547ee3dfeef43beaac848d0a34cdfa617ade821e03",
-          "bytes": 397695,
+          "url": "releases/15.0-beta-5-ed450d07f3882730--15.0-beta-11.5-15c5bc85468b17af-spanish-lyrics-delta.zip",
+          "sha256": "5e8860a03467488df4ee60b49730d6102888a1e79ca451f8592ed3c7aa0ffb14",
+          "bytes": 397709,
           "from": "15.0-beta-5-ed450d07f3882730"
         },
         {
-          "url": "releases/15.0-beta-6-c279eb31299a4e19--15.0-beta-11.4-c4adf62133dfbb25-spanish-lyrics-delta.zip",
-          "sha256": "5d4894b353ec3edea6ce30547ee3dfeef43beaac848d0a34cdfa617ade821e03",
-          "bytes": 397695,
+          "url": "releases/15.0-beta-6-c279eb31299a4e19--15.0-beta-11.5-15c5bc85468b17af-spanish-lyrics-delta.zip",
+          "sha256": "5e8860a03467488df4ee60b49730d6102888a1e79ca451f8592ed3c7aa0ffb14",
+          "bytes": 397709,
           "from": "15.0-beta-6-c279eb31299a4e19"
         },
         {
-          "url": "releases/15.0-beta-7-ba9143f0de358df2--15.0-beta-11.4-c4adf62133dfbb25-spanish-lyrics-delta.zip",
-          "sha256": "5d4894b353ec3edea6ce30547ee3dfeef43beaac848d0a34cdfa617ade821e03",
-          "bytes": 397695,
+          "url": "releases/15.0-beta-7-ba9143f0de358df2--15.0-beta-11.5-15c5bc85468b17af-spanish-lyrics-delta.zip",
+          "sha256": "5e8860a03467488df4ee60b49730d6102888a1e79ca451f8592ed3c7aa0ffb14",
+          "bytes": 397709,
           "from": "15.0-beta-7-ba9143f0de358df2"
         },
         {
-          "url": "releases/15.0-beta-7-e93b68fc275af191--15.0-beta-11.4-c4adf62133dfbb25-spanish-lyrics-delta.zip",
-          "sha256": "5d4894b353ec3edea6ce30547ee3dfeef43beaac848d0a34cdfa617ade821e03",
-          "bytes": 397695,
+          "url": "releases/15.0-beta-7-e93b68fc275af191--15.0-beta-11.5-15c5bc85468b17af-spanish-lyrics-delta.zip",
+          "sha256": "5e8860a03467488df4ee60b49730d6102888a1e79ca451f8592ed3c7aa0ffb14",
+          "bytes": 397709,
           "from": "15.0-beta-7-e93b68fc275af191"
         },
         {
-          "url": "releases/15.0-beta-8-f5486abad0e7a652--15.0-beta-11.4-c4adf62133dfbb25-spanish-lyrics-delta.zip",
-          "sha256": "5d4894b353ec3edea6ce30547ee3dfeef43beaac848d0a34cdfa617ade821e03",
-          "bytes": 397695,
+          "url": "releases/15.0-beta-8-34bfab34756b6b4c--15.0-beta-11.5-15c5bc85468b17af-spanish-lyrics-delta.zip",
+          "sha256": "5e8860a03467488df4ee60b49730d6102888a1e79ca451f8592ed3c7aa0ffb14",
+          "bytes": 397709,
+          "from": "15.0-beta-8-34bfab34756b6b4c"
+        },
+        {
+          "url": "releases/15.0-beta-8-f5486abad0e7a652--15.0-beta-11.5-15c5bc85468b17af-spanish-lyrics-delta.zip",
+          "sha256": "5e8860a03467488df4ee60b49730d6102888a1e79ca451f8592ed3c7aa0ffb14",
+          "bytes": 397709,
           "from": "15.0-beta-8-f5486abad0e7a652"
         },
         {
-          "url": "releases/15.0-beta-9-22469958f5e8bd36--15.0-beta-11.4-c4adf62133dfbb25-spanish-lyrics-delta.zip",
-          "sha256": "5d4894b353ec3edea6ce30547ee3dfeef43beaac848d0a34cdfa617ade821e03",
-          "bytes": 397695,
+          "url": "releases/15.0-beta-9-22469958f5e8bd36--15.0-beta-11.5-15c5bc85468b17af-spanish-lyrics-delta.zip",
+          "sha256": "5e8860a03467488df4ee60b49730d6102888a1e79ca451f8592ed3c7aa0ffb14",
+          "bytes": 397709,
           "from": "15.0-beta-9-22469958f5e8bd36"
         },
         {
-          "url": "releases/legacy-15.0-beta-1.1-2185981ac774--15.0-beta-11.4-c4adf62133dfbb25-spanish-lyrics-delta.zip",
-          "sha256": "7a3128127d610d3dead5901f2ee6bcb527c04c7528b0c811c4a176fe7bc106f1",
-          "bytes": 918367,
+          "url": "releases/legacy-15.0-beta-1.1-2185981ac774--15.0-beta-11.5-15c5bc85468b17af-spanish-lyrics-delta.zip",
+          "sha256": "4da2282b3c1baf450c4cb665df0d590d2afabc114f17785da1b44666b1b5e53e",
+          "bytes": 918381,
           "from": "legacy-15.0-beta-1.1-2185981ac774"
         }
       ]

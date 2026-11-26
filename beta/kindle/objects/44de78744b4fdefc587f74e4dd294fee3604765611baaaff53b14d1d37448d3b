@@ -1,0 +1,859 @@
+#!/usr/bin/env python3
+"""SDA Hymnal K5: native data, rendering, and verified incremental updates."""
+import argparse
+import contextlib
+import copy
+import fcntl
+import hashlib
+import html
+import io
+import json
+import os
+from pathlib import Path, PurePosixPath
+import re
+import resource
+import shutil
+import ssl
+import sys
+import subprocess
+import tempfile
+import time
+import unicodedata
+import urllib.parse
+import urllib.error
+import urllib.request
+import zipfile
+import xml.etree.ElementTree as ET
+
+VERSION = '15.0 beta 11.5'
+BASE = 'https://ormt03.github.io/SDA-HYMNAL/'
+DEFAULTS = dict(recording_language='english', language='english', view='score', default_language='last', default_view='last',
+                smart=False, allow_exports=False, font_size=18, list_behavior='top', keep_awake=False,
+                offline_language='both', offline_scores=True, collections_enabled={'sda': True, 'gyc-theme-songs': True, 'happy-songs-for-boys-and-girls': True}, collection_order=['sda', 'gyc-theme-songs', 'happy-songs-for-boys-and-girls'], include_missing_versions=True,
+                view_options=dict(chords=False, lyrics=True, credits=True, heading=True, copyright=True),
+                share_options=dict(chords=False, lyrics=True, credits=True, heading=True, copyright=True))
+LANGUAGES = ('english', 'spanish', 'both')
+
+def read_json(path, default=None):
+    try:
+        return json.loads(Path(path).read_text(encoding='utf-8'))
+    except (OSError, ValueError):
+        return copy.deepcopy(default)
+
+def atomic_json(path, value):
+    path = Path(path); path.parent.mkdir(parents=True, exist_ok=True)
+    temp = path.with_name(path.name + '.part-' + str(os.getpid()))
+    with temp.open('w', encoding='utf-8') as out:
+        json.dump(value, out, ensure_ascii=False, separators=(',', ':'))
+        out.flush(); os.fsync(out.fileno())
+    os.replace(str(temp), str(path))
+
+def digest_file(path):
+    digest = hashlib.sha256()
+    with Path(path).open('rb') as source:
+        for chunk in iter(lambda: source.read(131072), b''):
+            digest.update(chunk)
+    return digest.hexdigest()
+
+def safe_relative(path):
+    if not isinstance(path, str) or not path or '\\' in path or '\x00' in path:
+        raise ValueError('Invalid file path')
+    parts = PurePosixPath(path)
+    if parts.is_absolute() or '..' in parts.parts or str(parts) != path:
+        raise ValueError('Invalid file path')
+    return path
+
+def normalize(text):
+    return re.sub(r'[^\w\s]', ' ', ''.join(c for c in unicodedata.normalize('NFD', str(text))
+                                         if unicodedata.category(c) != 'Mn').lower())
+
+def lyrics_text(song):
+    text = song.get('content', '')
+    for number in range(1, 11):
+        text = text.replace(str(number) + '.', 'Verse ' + str(number))
+    return re.sub('CHORUS:', 'Chorus', text, flags=re.I)
+
+def score_metadata(root, song):
+    fields = {e.get('name'): (e.text or '').strip() for e in root.findall('.//miscellaneous-field')}
+    def creator(kind):
+        return next(((e.text or '').strip() for e in root.findall('.//creator') if e.get('type') == kind), '')
+    right = [' '.join(filter(None, [fields.get('tune-name'), fields.get('metrical-pattern')])),
+             fields.get('tune-source', ''), creator('composer')]
+    if creator('arranger'): right.append('Harm. by ' + creator('arranger'))
+    left = [fields.get('scripture-reference', ''), creator('poet') or creator('lyricist')]
+    if creator('translator'): left.append('Tr. by ' + creator('translator'))
+    rights = '\n'.join(' '.join((n.text or '').strip() for n in e.findall('credit-words')) for e in root.findall('credit')
+                       if e.findtext('credit-type') == 'rights')
+    return dict(title=root.findtext('work/work-title') or root.findtext('movement-title') or song['title'],
+                left=list(filter(None, left)), right=list(filter(None, right)),
+                footer=rights or root.findtext('identification/rights') or fields.get('category', ''))
+
+def render_limits():
+    # Limit each renderer child independently; the native interface stays small.
+    resource.setrlimit(resource.RLIMIT_AS, (160*1024*1024,160*1024*1024))
+    resource.setrlimit(resource.RLIMIT_CPU,(90,95))
+
+class Hymnal:
+    def __init__(self, root, app_dir=None, progress=None):
+        self.root = Path(root).resolve()
+        self.state = self.root / 'state'; self.store = self.root / 'store'
+        self.cache = self.root / 'cache'; self.releases = self.root / 'releases'
+        for directory in [self.state, self.store, self.cache, self.releases]:
+            directory.mkdir(parents=True, exist_ok=True)
+        self.current = read_json(self.root / 'current.json', {})
+        self.config = read_json(self.root / 'config.json', {})
+        self.base = self.config.get('base_url', BASE)
+        self.update_url = urllib.parse.urljoin(self.base, 'beta/kindle/release.json')
+        self.website_url = urllib.parse.urljoin(self.base, 'beta/release.json')
+        self.app_dir = Path(app_dir) if app_dir else self.releases / self.current.get('app', {}).get('id', 'none')
+        self.progress = progress or (lambda *args, **kwargs: None)
+        self._songs = None
+        # Older clients install app/catalog bridge files through the explicit download.
+        # Promote those already-verified bytes locally; startup never fetches content.
+        data=self.current.get('data')
+        if data:
+            available=data.setdefault('available_files',list(data.get('files',[])));saved=data.setdefault('files',[]);changed=False
+            selection=data.get('selection',dict(language='both',scores=True))
+            available_paths={e['path'] for e in available};saved_paths={e['path'] for e in saved}
+            for entry in self.current.get('app',{}).get('files',[]):
+                if entry.get('kind')!='shared_catalog':continue
+                selected=not entry.get('language') or selection.get('language','both') in ('both',entry['language'])
+                if entry['data_path'] in available_paths and (not selected or entry['data_path'] in saved_paths):continue
+                if not self.have(entry):continue
+                local=dict(path=entry['data_path'],website_path=entry['website_path'],sha256=entry['sha256'],bytes=entry['bytes'],url=entry['url'])
+                if entry.get('language'):local.update(kind='catalog',language=entry['language'],collection=entry.get('collection','gyc-theme-songs'))
+                if not any(e['path']==local['path'] for e in available):available.append(local);changed=True
+                if (not entry.get('language') or selection.get('language','both') in ('both',entry['language'])) and not any(e['path']==local['path'] for e in saved):saved.append(local);changed=True
+            for entry in self.current.get('app',{}).get('additional_data',[]):
+                # Metadata only: retain discoverability without startup downloads.
+                if not any(e['path']==entry['path'] for e in available):available.append(entry);changed=True
+                if selection.get('scores') and selection.get('language','both') in ('both',entry.get('language')) and entry['path'] not in saved_paths and self.have(entry):saved.append(entry);changed=True
+            if changed:atomic_json(self.root/'current.json',self.current)
+
+    @contextlib.contextmanager
+    def lock(self):
+        with (self.state / 'write.lock').open('a') as lock:
+            fcntl.flock(lock, fcntl.LOCK_EX)
+            try: yield
+            finally: fcntl.flock(lock, fcntl.LOCK_UN)
+
+    def settings(self):
+        saved = read_json(self.state / 'settings.json', {})
+        result = copy.deepcopy(DEFAULTS)
+        for key, value in saved.items():
+            if key in result:
+                if isinstance(result[key], dict) and isinstance(value, dict): result[key].update(value)
+                else: result[key] = value
+        catalog={c['id']:c for c in self.collections()};result['collection_list']=[catalog[c] for c in dict.fromkeys(result['collection_order']+list(catalog)) if c in catalog]
+        return result
+
+    def save_settings(self, changes):
+        result = self.settings()
+        for key, value in changes.items():
+            if key not in DEFAULTS: continue
+            if isinstance(DEFAULTS[key], dict):
+                if not isinstance(value, dict): raise ValueError('Invalid score options')
+                for field in DEFAULTS[key]:
+                    if field in value: result[key][field] = bool(value[field])
+            else: result[key] = value
+        for field in ['language', 'offline_language', 'recording_language']:
+            if result[field] not in LANGUAGES: raise ValueError('Invalid language')
+        if result['default_language'] not in ('last',) + LANGUAGES: raise ValueError('Invalid default language')
+        if result['default_view'] not in ('last', 'score', 'lyrics') or result['view'] not in ('score', 'lyrics'):
+            raise ValueError('Invalid view')
+        if result['list_behavior'] not in ('top', 'remember', 'sticky'): raise ValueError('Invalid list option')
+        if not isinstance(result['collection_order'],list) or any(not isinstance(v,str) for v in result['collection_order']): raise ValueError('Invalid collection order')
+        result['collection_order']=list(dict.fromkeys(result['collection_order']))
+        result['font_size'] = max(12, min(40, int(result['font_size'])))
+        for field in ['smart', 'keep_awake', 'offline_scores', 'allow_exports', 'include_missing_versions']: result[field] = bool(result[field])
+        with self.lock(): atomic_json(self.state / 'settings.json', result)
+        return self.settings()
+
+    def trusted_url(self, url):
+        parsed, origin = urllib.parse.urlsplit(url), urllib.parse.urlsplit(self.base)
+        if parsed.scheme != 'https' and not (self.config.get('allow_local_http') and
+                parsed.hostname in ('127.0.0.1', 'localhost') and parsed.scheme == 'http'):
+            raise ValueError('Updates require HTTPS')
+        clean = urllib.parse.unquote(parsed.path)
+        if (parsed.netloc != origin.netloc or not clean.startswith(origin.path) or
+                '..' in PurePosixPath(clean).parts or parsed.username or parsed.password or parsed.fragment):
+            raise ValueError('Update URL is outside this hymnal')
+        return url
+
+    def fetch(self, url, maximum=4000000, timeout=20):
+        self.trusted_url(url)
+        try:
+            import certifi
+            context = ssl.create_default_context(cafile=certifi.where())
+        except ImportError:
+            context = ssl.create_default_context()
+        request = urllib.request.Request(url, headers={'User-Agent': 'SDA-Hymnal-Kindle/' + VERSION,
+                                                       'Cache-Control': 'no-cache'})
+        with urllib.request.urlopen(request, timeout=timeout, context=context) as response:
+            self.trusted_url(response.geturl())
+            data = response.read(maximum + 1)
+        if len(data) > maximum: raise ValueError('Download exceeded its allowed size')
+        return data
+
+    def fetch_json(self, url):
+        value = json.loads(self.fetch(url).decode('utf-8'))
+        if not isinstance(value, dict): raise ValueError('Invalid release')
+        return value
+
+    def validate_files(self, release, kind):
+        if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_.-]{0,119}', str(release.get('id', ''))) or '..' in release['id']:
+            raise ValueError('Invalid release identifier')
+        if not isinstance(release.get('files'), list) or not release['files']:
+            raise ValueError('Empty release')
+        seen = set()
+        for entry in release['files']:
+            path = safe_relative(entry['path'])
+            if path in seen or not re.fullmatch('[0-9a-f]{64}', entry.get('sha256', '')):
+                raise ValueError('Invalid release file')
+            if not isinstance(entry.get('bytes'), int) or not 0 <= entry['bytes'] <= 40000000:
+                raise ValueError('Invalid file size')
+            self.trusted_url(entry['url']); seen.add(path)
+            if kind == 'data' and path not in ('catalogs/songs.json', 'catalogs/songs_es.json',
+                    'catalogs/song_mapping.json', 'catalogs/scores.json', 'catalogs/collections.json') and not (
+                    path.startswith('musicxml/English/') or path.startswith('musicxml/Spanish/')):
+                raise ValueError('Unexpected hymn content')
+        required = ['backend.py', 'bin/hymnal', 'svg_to_png.lua', 'qr.lua', 'bin/verovio', 'bin/png-scale', 'fonts/Bravura.otf', 'fonts/Leipzig.ttf', 'resources.zip'] if kind == 'app' else [
+            'catalogs/songs.json', 'catalogs/songs_es.json', 'catalogs/scores.json', 'catalogs/song_mapping.json']
+        if not all(path in seen for path in required): raise ValueError('Incomplete release')
+        return release
+
+    def website_data(self, release, app=None):
+        # Use the same catalog paths as the native feed, including future collections.
+        entries=release.get('files',[])+release.get('additionalFiles',[])+release.get('extensionFiles',[])
+        allowed={'../songs.json':'catalogs/songs.json','../songs_es.json':'catalogs/songs_es.json',
+                 '../song_mapping.json':'catalogs/song_mapping.json','scores.json':'catalogs/scores.json',
+                 'collections.json':'musicxml/English/_collections/collections.json',
+                 'collections/gyc-theme-songs.english.json':'musicxml/English/_collections/gyc-theme-songs.english.json'}
+        for entry in self.current.get('data',{}).get('available_files',self.current.get('data',{}).get('files',[])):
+            if entry.get('website_path') and not entry['website_path'].startswith('musicxml/'):allowed[entry['website_path']]=entry['path']
+        for entry in (app or self.current.get('app',{})).get('files',[]):
+            if entry.get('kind')=='shared_catalog':allowed[entry['website_path']]=entry['data_path']
+        files=[]
+        for entry in entries:
+            path=entry.get('path','')
+            catalog=entry.get('kind')=='catalog' and path.startswith('collections/') and path.endswith('.json')
+            score=path.startswith('musicxml/') and path.endswith('.musicxml')
+            if path not in allowed and not catalog and not score:continue
+            mapped=allowed.get(path,'musicxml/English/_collections/catalogs/'+path if catalog else path if path.startswith(('musicxml/English/','musicxml/Spanish/')) else 'musicxml/English/_collections/'+path[len('musicxml/'):])
+            files.append(dict(**{k:entry[k] for k in ('kind','language','collection') if k in entry},website_path=path,path=mapped,sha256=entry['sha256'],bytes=entry['bytes'],url=urllib.parse.urljoin(self.website_url,urllib.parse.quote(path,safe='/'))))
+        full=release.get('full')
+        if full:full=dict(full,url=urllib.parse.urljoin(self.website_url,full['url']))
+        collections=[dict(selection=c['selection'],full=dict(c['full'],url=urllib.parse.urljoin(self.website_url,c['full']['url']))) for c in release.get('collections',[])]
+        return self.validate_files(dict(id=release['id'],version=release['version'],files=files,archive=full,collections=collections),'data')
+
+    def check(self):
+        """Checking only retrieves manifests; it cannot install or fetch content."""
+        errors = []; pending = {}; current = read_json(self.root / 'current.json', {})
+        try:
+            manifest = self.fetch_json(self.update_url)
+            if manifest.get('schema') != 1 or manifest.get('platform')!='kindle-touch-k5': raise ValueError('Unsupported Kindle release')
+            pending['app'] = self.validate_files(manifest['app'], 'app')
+            if manifest.get('data'): pending['data'] = self.validate_files(manifest['data'], 'data')
+        except Exception as error: errors.append('Kindle update check: ' + str(error))
+        try:
+            website = self.website_data(self.fetch_json(self.website_url), pending.get('app'))
+            if not pending.get('data') or sorted((e['path'],e['sha256'])for e in pending['data']['files'])!=sorted((e['path'],e['sha256'])for e in website['files']): pending['data'] = website
+        except Exception as error: errors.append('Hymnal update check: ' + str(error))
+        if not pending:
+            result=dict(available=False, offline=True, message='You’re offline. Unable to check for updates.', details=errors)
+            atomic_json(self.state/'check.json',result)
+            return result
+        def changed(kind, item):
+            installed=current.get(kind,{})
+            if kind=='data':
+                fingerprint=lambda entries:sorted((e['path'],e['sha256']) for e in entries)
+                return fingerprint(installed.get('available_files',installed.get('files',[])))!=fingerprint(item['files']) or any(not self.have(e) for e in self.selected_data(item,self.settings())['files'])
+            return installed.get('id')!=item['id']
+        available = any(changed(kind,item) for kind,item in pending.items())
+        atomic_json(self.state / 'pending.json', pending)
+        versions = [item['version'] for kind, item in pending.items() if changed(kind,item)]
+        result = dict(available=available, offline=False,
+                      message='Update available: ' + ' / '.join(versions) + '.' if available else 'You’re up to date.',
+                      app_version=pending.get('app', current.get('app', {})).get('version'),
+                      data_version=pending.get('data', current.get('data', {})).get('version'), details=errors)
+        atomic_json(self.state / 'check.json', result)
+        return result
+
+    def blob_path(self, entry): return self.store / entry['sha256']
+
+    def have(self, entry):
+        path = self.blob_path(entry)
+        return path.is_file() and path.stat().st_size == entry['bytes'] and digest_file(path) == entry['sha256']
+
+    def put_blob(self, entry, data):
+        if len(data) != entry['bytes'] or hashlib.sha256(data).hexdigest() != entry['sha256']:
+            raise ValueError('Verification failed: ' + entry['path'])
+        path = self.blob_path(entry); temp = path.with_suffix('.part')
+        with temp.open('wb') as out: out.write(data); out.flush(); os.fsync(out.fileno())
+        os.replace(str(temp), str(path))
+
+    def selected_data(self, release, settings):
+        def wanted(entry):
+            path = entry['path']; language = settings['offline_language']
+            if entry.get('kind')=='catalog':return language=='both' or entry.get('language')==language
+            if entry.get('website_path')=='collections.json':return True
+            if entry.get('kind')=='score':return settings['offline_scores'] and (language=='both' or entry.get('language')==language)
+            if path == 'catalogs/songs.json': return language != 'spanish'
+            if path == 'catalogs/songs_es.json': return language != 'english'
+            if path.startswith('musicxml/'):
+                return settings['offline_scores'] and (language == 'both' or path.startswith('musicxml/' + language.title() + '/'))
+            return True
+        return dict(release, files=[e for e in release['files'] if wanted(e)], available_files=release['files'],
+                    selection=dict(language=settings['offline_language'], scores=settings['offline_scores']))
+
+    def fetch_entries(self, release, files, pack=None):
+        missing = [e for e in files if not self.have(e)]
+        if missing and pack and pack.get('bytes', 0) < sum(e['bytes'] for e in missing):
+            try:
+                self.progress('Downloading the collection…', 10)
+                archive = self.fetch(pack['url'], maximum=pack['bytes'], timeout=120)
+                if len(archive) != pack['bytes'] or hashlib.sha256(archive).hexdigest() != pack['sha256']:
+                    raise ValueError('Archive verification failed')
+                with zipfile.ZipFile(io.BytesIO(archive)) as zipped:
+                    for entry in missing:
+                        name = 'files/' + entry['sha256']
+                        try:
+                            info = zipped.getinfo(name)
+                            if info.file_size != entry['bytes']: raise ValueError('Invalid archived size')
+                            self.put_blob(entry, zipped.read(name))
+                        except KeyError: pass
+            except Exception:
+                # Verified individual files resume a missing or interrupted ZIP.
+                pass
+        for index, entry in enumerate(missing):
+            if not self.have(entry): self.put_blob(entry, self.fetch(entry['url'], maximum=entry['bytes'], timeout=60))
+            self.progress('Saving required files…', 15 + int(70 * (index + 1) / max(1, len(missing))))
+
+    def download(self, refresh=True):
+        if refresh: self.check()
+        pending = read_json(self.state / 'pending.json', {})
+        if not pending: raise ValueError('Connect to check for an update first.')
+        with self.lock():
+            previous = read_json(self.root / 'current.json', {})
+            next_state = copy.deepcopy(previous)
+            app = pending.get('app', previous.get('app'))
+            data = pending.get('data')
+            if data is None and previous.get('data'):
+                data = dict(previous['data'], files=previous['data'].get('available_files', previous['data']['files']))
+            if not app or not data: raise ValueError('The complete app and hymnal manifest are required.')
+            selected = self.selected_data(data, self.settings())
+            self.fetch_entries(app, app['files'], app.get('full'))
+            app_path = self.releases / app['id']
+            if not app_path.is_dir():
+                stage = self.releases / (app['id'] + '.partial'); stage.mkdir(exist_ok=True)
+                for entry in app['files']:
+                    target = stage / safe_relative(entry['path']); target.parent.mkdir(parents=True, exist_ok=True)
+                    shutil.copyfile(str(self.blob_path(entry)), str(target))
+                    if entry['path'].startswith('bin/'): target.chmod(0o755)
+                with zipfile.ZipFile(str(stage/'resources.zip')) as resource_zip:
+                    total=0
+                    for info in resource_zip.infolist():
+                        if info.is_dir():continue
+                        relative=safe_relative(info.filename);total+=info.file_size
+                        if total>20000000:raise ValueError('Invalid engraving resource size')
+                        target=stage/'resources'/relative;target.parent.mkdir(parents=True,exist_ok=True)
+                        target.write_bytes(resource_zip.read(info.filename))
+                for entry in app['files']:
+                    if entry['path'].endswith('.py'): compile((stage / entry['path']).read_text(encoding='utf-8'), entry['path'], 'exec')
+                os.replace(str(stage), str(app_path))
+            selection = selected['selection']
+            pack = next((p['full'] for p in data.get('collections', []) if p['selection'] == selection), None)
+            if pack is None and selection == dict(language='both', scores=True): pack = data.get('archive')
+            self.fetch_entries(data, selected['files'], pack)
+            if not all(self.have(e) for e in app['files'] + selected['files']): raise ValueError('Download is incomplete')
+            next_state = dict(schema=1, app=app, data=selected, saved_at=time.time())
+            if previous.get('app'): atomic_json(self.state / 'recovery-app.json', previous['app'])
+            atomic_json(self.root / 'current.json', next_state)
+            self.current = next_state; self._songs=None
+            self.progress('All files verified. Applying the update…', 100)
+            try: self._cleanup()
+            except OSError: pass
+        return dict(restart=True, message='Saved offline. The app will reopen to apply the update.')
+
+    def entry(self, path, available=False):
+        data = self.current.get('data', {})
+        return next((e for e in data.get('available_files' if available else 'files', []) if e['path'] == path), None)
+
+    def cached_catalog(self,entry,default=None):
+        if not entry:return copy.deepcopy(default)
+        if not hasattr(self,'_catalog_cache'):self._catalog_cache={}
+        key=entry['sha256']
+        if key not in self._catalog_cache:
+            value=read_json(self.blob_path(entry))
+            if value is None:return copy.deepcopy(default)
+            self._catalog_cache[key]=value
+        return self._catalog_cache[key]
+
+    def content_json(self, path, default=None):
+        return self.cached_catalog(self.entry(path),default)
+
+    def catalog_value(self, website_path, default=None):
+        entry=next((e for e in self.current.get('data',{}).get('files',[]) if e.get('website_path')==website_path),None)
+        return self.cached_catalog(entry,default)
+
+    def collections(self):
+        return self.catalog_value('collections.json',{}).get('collections',[dict(id='sda',name='SDA Hymnal',catalogs=[])])
+
+    def songs(self):
+        if self._songs is None:
+            self._songs=[]
+            for language, filename in [('english','songs.json'),('spanish','songs_es.json')]:
+                for song in self.content_json('catalogs/'+filename,[]):self._songs.append(dict(song,collection='sda',id=song.get('id',song['number']),language=language))
+            for collection in self.collections():
+                if collection['id']=='sda':continue
+                for catalog in collection.get('catalogs',[]):
+                    for song in self.catalog_value(catalog['url'],[]):self._songs.append(dict(song,collection=collection['id'],language=catalog['language']))
+        return self._songs
+
+    def find_song(self, language, number, collection=None):
+        number=str(number);number=number.zfill(3) if number.isdigit() else number
+        return next((s for s in self.songs() if s['language']==language and (s['number']==number or s.get('id')==number) and (not collection or s.get('collection','sda')==collection)),None)
+
+    def score_path(self,song):
+        mapping=self.content_json('catalogs/scores.json',{})
+        path=song.get('score') or mapping.get(song.get('collection','sda')+':'+song['language']+':'+song.get('id',song['number'])) or mapping.get(song['language']+':'+song['number'])
+        if not path:return None
+        entry=next((e for e in self.current.get('data',{}).get('available_files',self.current.get('data',{}).get('files',[])) if e.get('website_path')==path),None)
+        return entry['path'] if entry else path
+
+    def version_graph(self):
+        identity=lambda s:(s.get('collection','sda'),s['language'],str(s.get('id',s['number'])))
+        records={identity(s):s for s in self.catalog_value('collections.json',{}).get('versionIndex',[])}
+        records.update({identity(s):s for s in self.songs()});edges={k:set() for k in records};groups={}
+        def connect(a,b):
+            if a in edges and b in edges:edges[a].add(b);edges[b].add(a)
+        for key,song in records.items():
+            if song.get('versionGroup'):groups.setdefault(song['versionGroup'],[]).append(key)
+            for ref in song.get('relatedTo',[])+([song['translationOf']] if song.get('translationOf') else []):
+                target=tuple(ref.split(':')) if isinstance(ref,str) else (ref['collection'],ref['language'],str(ref.get('id',ref.get('number'))))
+                connect(key,target)
+        for group in groups.values():
+            for key in group[1:]:connect(group[0],key)
+        for pair in self.content_json('catalogs/song_mapping.json',[]):
+            ids=[]
+            for lang in ('english','spanish'):
+                nums=pair.get(lang,[]);nums=nums if isinstance(nums,list) else [nums]
+                ids += [('sda',lang,str(n).zfill(3)) for n in nums if n is not None]
+            for key in ids[1:]:connect(ids[0],key)
+        components={}
+        def related(key):
+            if key in components:return components[key]
+            visited=set();queue=[key]
+            while queue:
+                node=queue.pop()
+                if node in visited or node not in records:continue
+                visited.add(node);queue.extend(edges[node]-visited)
+            result=[records[k] for k in sorted(visited)]
+            for node in visited:components[node]=result
+            return result
+        return identity,related,records
+
+    def search(self,request):
+        settings=self.settings();language=request.get('language',settings['language']);query=normalize(request.get('query','')).strip();smart=request.get('smart',settings['smart'])
+        identity,related,records=self.version_graph();loaded={identity(s):s for s in self.songs()};catalogs={c['id']:c for c in self.collections()}
+        order=list(dict.fromkeys(settings['collection_order']+list(catalogs)));sections=[];shown=set()
+        targets=('english','spanish') if language=='both' else (language,)
+        for cid in order:
+            if cid not in catalogs or not settings['collections_enabled'].get(cid,True):continue
+            own=sorted((s for s in self.songs() if s.get('collection','sda')==cid and s['language'] in targets),key=lambda s:(s['language'],s['number']))
+            rows=[(s,None) for s in own];local={identity(s) for s in own}
+            if settings['include_missing_versions']:
+                for anchor in records.values():
+                    if anchor.get('collection','sda')!=cid:continue
+                    peers=related(identity(anchor))
+                    for target in targets:
+                        if any(s.get('collection','sda')==cid and s['language']==target for s in peers):continue
+                        for peer in peers:
+                            key=identity(peer)
+                            if key in loaded and key not in local and peer['language']==target:
+                                rows.append((loaded[key],anchor));local.add(key)
+            unique=[]
+            for song,anchor in rows:
+                if identity(song) not in shown:unique.append((song,anchor));shown.add(identity(song))
+            if unique:sections.append((catalogs[cid],unique))
+        def output(song,**extra):return dict(number=song['number'],id=song.get('id',song['number']),title=song['title'],language=song['language'],collection=song.get('collection','sda'),**extra)
+        ordered=[];grouped=bool(query and language=='both')
+        if not query:
+            for collection,rows in sections:
+                for index,(song,_) in enumerate(rows):ordered.append(output(song,**({'collection_heading':collection['name']} if index==0 else {})))
+        else:
+            entries={identity(s):(s,a,c) for c,rows in sections for s,a in rows};ranked=[]
+            for song,anchor,collection in entries.values():
+                title=normalize(song['title']);code=normalize(song['number']);lyrics=normalize(song.get('content','')) if smart else '';rank=0
+                if code==query or (query.isdigit() and (code==query.zfill(3) or code=='gyc'+query)):rank=200
+                elif query in title:rank=100
+                if smart:rank+=(40 if query in lyrics else 0)+sum((20 if w in title else 0)+(4 if w in lyrics else 0) for w in query.split())
+                if query in normalize(collection['name']):rank+=20
+                if anchor and (query in normalize(anchor['title']) or query==anchor['number']):rank+=30
+                if rank:ranked.append((rank,song))
+            ranked.sort(key=lambda row:(-row[0],row[1]['language'],row[1]['number']));seen=set()
+            for _,song in ranked:
+                if identity(song) in seen:continue
+                peers=[song]+([loaded[identity(p)] for p in related(identity(song)) if p['language']!=song['language'] and identity(p) in entries] if grouped else [])
+                for index,peer in enumerate(peers):
+                    ordered.append(output(peer,group_start=index==0));seen.add(identity(peer))
+        return dict(songs=ordered,count=len(ordered),settings=settings,grouped=grouped)
+
+    def obtain_content(self, path):
+        entry = self.entry(path, available=True) or self.entry(path)
+        if not entry: raise ValueError('No score file is available for this hymn.')
+        if self.have(entry): return self.blob_path(entry)
+        try:
+            data = self.fetch(entry['url'], maximum=entry['bytes'])
+            if hashlib.sha256(data).hexdigest() != entry['sha256']: raise ValueError('Newer file on server')
+        except Exception:
+            archive = self.current.get('data', {}).get('archive')
+            if not archive: raise
+            zipped = self.fetch(archive['url'], maximum=archive['bytes'], timeout=120)
+            if hashlib.sha256(zipped).hexdigest() != archive['sha256']: raise ValueError('Archive verification failed')
+            with zipfile.ZipFile(io.BytesIO(zipped)) as source: data = source.read('files/' + entry['sha256'])
+        # A viewed online score may be reused; selection cleanup can remove it later.
+        self.put_blob(entry, data)
+        return self.blob_path(entry)
+
+    def hymn(self, request):
+        song = self.find_song(request['language'], request['number'],request.get('collection'))
+        if song and request.get('view') in ('score','lyrics'):
+            self.save_settings(dict(view=request['view']))
+        if not song: raise ValueError('This hymn’s language is not saved. Change the offline selection in Settings.')
+        mapping = self.content_json('catalogs/scores.json', {})
+        score = self.score_path(song)
+        fifths, minor = None, False
+        entry = self.entry(score, available=True) if score else None
+        if entry and self.blob_path(entry).exists():
+            root = ET.parse(str(self.blob_path(entry))).getroot()
+            fifths = int(root.findtext('.//key/fifths', '0')); minor = root.findtext('.//key/mode') == 'minor'
+        major = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'Ab', 'A', 'Bb', 'B']
+        tonic = ((fifths or 0) * 7 + (9 if minor else 0)) % 12
+        keys = []
+        for offset in range(12, -13, -1):
+            name = major[(tonic + offset) % 12]
+            keys.append(dict(name=name + (' minor' if minor else ''), offset=offset, original=offset == 0))
+        identity,related,_=self.version_graph();loaded={identity(s):s for s in self.songs()};versions=[dict(number=s['number'],title=s['title'],language=s['language'],collection=s.get('collection','sda')) for s in related(identity(song)) if identity(s) in loaded]
+        return dict(versions=versions,song=song, lyrics=lyrics_text(song), has_score=bool(score), original_key=major[tonic] + (' minor' if minor else '') if fifths is not None else None, keys=keys if fifths is not None else [])
+
+    def _draw_metadata(self, image, metadata, song, options, first, last):
+        from PIL import ImageDraw, ImageFont
+        draw = ImageDraw.Draw(image); width, height = image.size
+        fonts = Path(self.config.get('koreader_dir', '/mnt/us/koreader')) / 'fonts/noto'
+        def font(size, bold=False):
+            for filename in [('NotoSerif-Bold.ttf' if bold else 'NotoSerif-Regular.ttf'), 'NotoSans-Regular.ttf']:
+                try: return ImageFont.truetype(str(fonts / filename), size)
+                except OSError: pass
+            return ImageFont.load_default()
+        def text_width(text, face):
+            box = draw.textbbox((0, 0), text, font=face) if hasattr(draw, 'textbbox') else (0, 0) + draw.textsize(text, font=face)
+            return box[2] - box[0]
+        if first:
+            if options['heading']:
+                face = font(30, True); title = metadata['title']
+                while text_width(title, face) > width - 160 and len(title) > 10:
+                    face = font(max(16, getattr(face, 'size', 30) - 1), True)
+                    if getattr(face, 'size', 16) <= 16: break
+                draw.text(((width - text_width(title, face))/2, 15), title, font=face, fill='black')
+                label=str(int(song['number'])) if song['number'].isdigit() else song['number'];number_font=font(30 if song['number'].isdigit() else 18,True)
+                draw.text((width-25-text_width(label,number_font),15),label,font=number_font,fill='black')
+            if options['credits']:
+                face = font(13)
+                for index, line in enumerate(metadata['left']): draw.text((35, 70+index*16), line, font=face, fill='black')
+                for index, line in enumerate(metadata['right']): draw.text((width-35-text_width(line, face), 70+index*16), line, font=face, fill='black')
+        if last and options['copyright'] and metadata['footer']:
+            face = font(13); lines = metadata['footer'].splitlines()
+            for index, line in enumerate(lines): draw.text(((width-text_width(line, face))/2, height-35-16*(len(lines)-1-index)), line, font=face, fill='black')
+        return image
+
+    def render(self, request):
+        song = self.find_song(request['language'], request['number'],request.get('collection'))
+        if not song: raise ValueError('This hymn is not saved in the selected language.')
+        settings = self.settings(); scope = request.get('scope', 'view')
+        if scope not in ('view', 'share'): raise ValueError('Invalid score settings')
+        options = settings[scope + '_options']; offset = int(request.get('offset', 0))
+        if not -12 <= offset <= 12: raise ValueError('Invalid transposition')
+        mapping = self.content_json('catalogs/scores.json', {}); score = self.score_path(song)
+        identity = dict(hymn=song.get('collection','sda')+':'+song['language']+':'+song.get('id',song['number']), offset=offset, options=options,
+                        data=self.current.get('data', {}).get('id'), app=self.current.get('app', {}).get('id'))
+        cache_id = hashlib.sha256(json.dumps(identity, sort_keys=True).encode()).hexdigest()[:24]
+        folder = self.cache / 'scores' / cache_id; pdf = folder / 'score.pdf'
+        if pdf.is_file() and not request.get('refresh'): return dict(pdf=str(pdf), images=[str(p) for p in sorted(folder.glob('*.png')) if p.name != 'display.png'], image_fallback=not bool(score), cached=True,hymn=read_json(folder/'hymn.json',self.hymn(request)))
+        folder.mkdir(parents=True, exist_ok=True)
+        from PIL import Image
+        pngs = []
+        if score:
+            source = self.obtain_content(score); tree = ET.parse(str(source)); root = tree.getroot()
+            metadata = score_metadata(root, song)
+            if not options['chords']:
+                for parent in root.iter():
+                    for node in list(parent):
+                        if node.tag == 'harmony': parent.remove(node)
+            if not options['lyrics']:
+                for parent in root.iter():
+                    for node in list(parent):
+                        if node.tag == 'lyric': parent.remove(node)
+            sanitized = folder / 'score.musicxml'; tree.write(str(sanitized), encoding='utf-8', xml_declaration=True)
+            prefix = folder / 'engraved'
+            command = [str(self.app_dir / 'bin/verovio'), '-f', 'xml', '-a', '-r', str(self.app_dir / 'resources'),
+                       '--font', 'Bravura', '--header', 'none', '--footer', 'none', '--breaks', 'encoded',
+                       '--page-width', '2159', '--page-height', '2794', '--page-margin-top', '230',
+                       '--page-margin-bottom', '100', '--page-margin-left', '65', '--page-margin-right', '65',
+                       '--min-last-justification', '0', '--scale', '50', '--transpose', str(offset) if offset else 'P1', '-o', str(prefix), str(sanitized)]
+            self.progress('Engraving the score on your Kindle…', 15)
+            completed = subprocess.run(command, preexec_fn=render_limits, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=120)
+            (folder / 'engraving.log').write_bytes(completed.stderr)
+            if completed.returncode: raise ValueError('The score could not be engraved. ' + completed.stderr.decode('utf-8', 'replace')[-250:])
+            svgs = sorted(folder.glob('engraved*.svg'))
+            if not svgs: raise ValueError('The engraving engine produced no pages.')
+            koreader = Path(self.config.get('koreader_dir', '/mnt/us/koreader'))
+            for index, svg in enumerate(svgs):
+                png = svg.with_suffix('.png')
+                completed = subprocess.run([str(koreader/'luajit'), str(self.app_dir/'svg_to_png.lua'),
+                                            str(svg), str(png), '1275', '1650'], cwd=str(koreader),
+                                           stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=90, preexec_fn=render_limits)
+                if completed.returncode or not png.is_file():
+                    raise ValueError('The native image renderer could not display this score: ' + completed.stderr.decode('utf-8','replace')[-250:])
+                with Image.open(str(png)) as im:
+                    white = Image.new('RGB', (1275, 1650), 'white'); converted = im.convert('RGBA').resize((1275,1650), Image.Resampling.LANCZOS if hasattr(Image,'Resampling') else Image.LANCZOS)
+                    white.paste(converted, (0, 0), converted)
+                    self._draw_metadata(white, metadata, song, options, index == 0, index == len(svgs)-1)
+                    white.save(str(png)); white.close()
+                pngs.append(png)
+                self.progress('Preparing page ' + str(index+1) + '…', 40+int(40*(index+1)/len(svgs)))
+        else:
+            # Images are fetched only for a requested hymn, never by offline downloads.
+            count = max(1, int(song.get('pages', 1))); name = song['image']; base = name.rsplit('.',1)[0].replace('_Full','')
+            names = [name] if count == 1 else [base+('_'+str(i) if i else '')+'.png' for i in range(count)]
+            for index, name in enumerate(names):
+                url = urllib.parse.urljoin(self.base, 'src/Hymnal.XF/Resources/Assets/MusicSheets/'+urllib.parse.quote(name))
+                data = self.fetch(url, maximum=16000000, timeout=45)
+                source_png=folder/('download-'+str(index)+'.png');source_png.write_bytes(data);del data
+                scaled=folder/('scaled-'+str(index)+'.pgm')
+                koreader=Path(self.config.get('koreader_dir','/mnt/us/koreader'))
+                decoder=self.app_dir/'bin/png-scale'
+                environment=dict(os.environ,LD_LIBRARY_PATH=str(koreader/'libs'))
+                decoded=subprocess.run([str(decoder),str(koreader/'libs/libpng16.so.16'),str(source_png),str(scaled),'1170','1545'],env=environment,stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=90,preexec_fn=render_limits)
+                if decoded.returncode or not scaled.is_file():raise ValueError('The sheet image could not be safely decoded. Saved lyrics remain available.')
+                with Image.open(str(scaled)) as im:
+                    # The decoded image is already small. Never expand the original PNG in Python.
+                    paper=Image.new('RGB',(1275,1650),'white');paper.paste(im,((1275-im.width)//2,(1650-im.height)//2))
+                    png=folder/('original-'+str(index)+'.png');paper.save(str(png));paper.close()
+                source_png.unlink(missing_ok=True);scaled.unlink(missing_ok=True)
+                pngs.append(png)
+        pages = [Image.open(str(p)).convert('RGB') for p in pngs]
+        try:
+            temp = folder/'score.partial.pdf'
+            pages[0].save(str(temp), 'PDF', resolution=150.0, save_all=True, append_images=pages[1:])
+            os.replace(str(temp),str(pdf))
+        finally:
+            for page in pages: page.close()
+        info=self.hymn(request);atomic_json(folder/'hymn.json',info)
+        return dict(pdf=str(pdf), images=[str(p) for p in pngs], pages=len(pngs), image_fallback=not bool(score), cached=False,hymn=info)
+
+    def share(self, request):
+        song=self.find_song(request['language'],request['number'],request.get('collection'))
+        if not song:raise ValueError('Hymn not found')
+        view='lyrics' if request.get('view')=='lyrics' else 'score'
+        query={'view':view}
+        if view=='score':query['transpose']=str(max(-12,min(12,int(request.get('offset',0)))))
+        url=urllib.parse.urljoin(self.base,'beta/')+'?'+urllib.parse.urlencode(query)+'#'+('' if song.get('collection','sda')=='sda' else song['collection']+'/')+song['language']+'/'+urllib.parse.quote(song.get('id',song['number']),safe='')
+        return dict(url=url,title=song['number']+' - '+song['title'],view=view)
+
+    def display(self, request):
+        """Make a bounded viewport from an existing page, never re-engrave for zoom."""
+        from PIL import Image
+        path=Path(request['image']).resolve()
+        if self.cache not in path.parents or not path.is_file(): raise ValueError('Invalid score image')
+        zoom=max(100,min(400,int(request.get('zoom',100))))
+        with Image.open(str(path)) as original:
+            width=600*zoom//100; height=max(1,original.height*width//original.width)
+            image=original.convert('RGB').resize((width,height),Image.Resampling.LANCZOS if hasattr(Image,'Resampling') else Image.LANCZOS)
+        x=max(0,min(width-600,int(request.get('x',0))));y=max(0,min(max(0,height-672),int(request.get('y',0))))
+        canvas=Image.new('RGB',(600,672),'white');crop=image.crop((x,y,min(x+600,width),min(y+672,height)))
+        canvas.paste(crop,(0,0));target=self.cache/'display.png';canvas.save(str(target));raw=self.cache/'display.raw';raw.write_bytes(canvas.convert('L').tobytes());canvas.close();image.close()
+        return dict(image=str(raw),x=x,y=y,max_x=max(0,width-600),max_y=max(0,height-672))
+
+    def qr(self, request):
+        result=self.share(request);koreader=Path(self.config.get('koreader_dir','/mnt/us/koreader'))
+        target=self.cache/'share.pgm'
+        completed=subprocess.run([str(koreader/'luajit'),str(self.app_dir/'qr.lua'),result['url'],str(target)],cwd=str(koreader),stdout=subprocess.PIPE,stderr=subprocess.PIPE,timeout=30,preexec_fn=render_limits)
+        if completed.returncode: raise ValueError('Unable to prepare the sharing code.')
+        from PIL import Image
+        with Image.open(str(target)) as image:
+            scale=480//image.width;size=image.width*scale
+            qr=image.resize((size,size),Image.Resampling.NEAREST if hasattr(Image,'Resampling') else Image.NEAREST).convert('L')
+            qr.save(str(self.cache/'share.png'))
+            canvas=Image.new('L',(600,500),255);canvas.paste(qr,((600-size)//2,(500-size)//2));(self.cache/'share.raw').write_bytes(canvas.tobytes())
+        return dict(result,image=str(self.cache/'share.raw'))
+
+    def export(self, request):
+        if not self.settings()['allow_exports']:raise ValueError('Enable file export in Settings first.')
+        song = self.find_song(request['language'], request['number'],request.get('collection'))
+        if not song: raise ValueError('Hymn not found')
+        target_dir = Path(self.config.get('export_dir', '/mnt/us/documents/SDA Hymnal Exports'))
+        target_dir.mkdir(parents=True, exist_ok=True)
+        stem = song['number'] + '-' + re.sub(r'[^\w -]', '', song['title']).strip()
+        if request.get('format') == 'lyrics':
+            destination = target_dir/(stem+'.txt')
+            destination.write_text(song['number']+' - '+song['title']+'\n\n'+lyrics_text(song), encoding='utf-8')
+        else:
+            rendered = self.render(dict(request, scope='share')); destination = target_dir/(stem+'-key-'+str(int(request.get('offset',0)))+'.pdf')
+            shutil.copyfile(rendered['pdf'],str(destination))
+        return dict(path=str(destination), message='Saved to Documents / SDA Hymnal Exports. Copy it by USB to share.')
+
+    def protected(self):
+        current = read_json(self.root/'current.json',{}); recovery = read_json(self.state/'recovery-app.json',{})
+        entries = current.get('app',{}).get('files',[]) + current.get('data',{}).get('files',[]) + recovery.get('files',[])
+        return {e['sha256'] for e in entries}, {i for i in [current.get('app',{}).get('id'),recovery.get('id')] if i}
+
+    def storage(self):
+        keep, app_ids = self.protected(); active = unused = rendered = 0
+        for path in self.store.iterdir():
+            if path.is_file():
+                if path.name in keep: active += path.stat().st_size
+                else: unused += path.stat().st_size
+        for path in (self.cache/'scores').rglob('*'):
+            if path.is_file(): rendered += path.stat().st_size
+        return dict(saved_bytes=active, unused_bytes=unused, rendered_bytes=rendered,
+                    selection=self.current.get('data',{}).get('selection'), settings=self.settings(),
+                    app_version=self.current.get('app',{}).get('version', VERSION), data_version=self.current.get('data',{}).get('version','Unknown'))
+
+    def _cleanup(self):
+        current = read_json(self.root/'current.json',{})
+        if not current or not all(self.have(e) for e in current.get('app',{}).get('files',[])+current.get('data',{}).get('files',[])):
+            return dict(removed=0, message='Cleanup skipped because the saved hymnal is incomplete.')
+        keep, app_ids = self.protected(); removed=0
+        for path in self.store.iterdir():
+            if path.is_file() and path.name not in keep: path.unlink(); removed+=1
+        for path in self.releases.iterdir():
+            if path.is_dir() and path.name not in app_ids: shutil.rmtree(str(path))
+        return dict(removed=removed, message='Unused files removed. Current and recovery files were kept.')
+
+    def cleanup(self):
+        with self.lock(): return self._cleanup()
+
+    def status(self):
+        return dict(settings=self.settings(), storage=self.storage(), update=read_json(self.state/'check.json',{}),
+                    app_version=self.current.get('app',{}).get('version',VERSION),
+                    data_version=self.current.get('data',{}).get('version','Unknown'))
+
+    def recording_ssl(self):
+        try:
+            import certifi
+            return ssl.create_default_context(cafile=certifi.where())
+        except ImportError:
+            return ssl.create_default_context()
+
+    def recording_entries(self, language=None, number=None):
+        entries=read_json(self.state/'audio/catalog.json',{}).get('recordings',[])
+        language={'english':'en','spanish':'es'}.get(language,language)
+        return [e for e in entries if (not language or language=='both' or e['language']==language) and (number is None or int(e['number'])==int(number))]
+
+    def recording_for(self,song):
+        return next(iter(self.recording_entries(song['language'],song['number'])),None)
+
+    def refresh_recordings(self):
+        url='https://raw.githubusercontent.com/ORMT03/SDA-HYMNAL/HEAD/audio/catalog.json'
+        try:
+            with urllib.request.urlopen(url,timeout=15,context=self.recording_ssl()) as response:
+                body=response.read(1000001)
+        except urllib.error.HTTPError as error:
+            if error.code==404:raise ValueError('Recordings have not been published yet. Saved recordings remain available.') from error
+            raise ValueError('Unable to refresh the recording catalog. Saved recordings remain available.') from error
+        except OSError as error:
+            raise ValueError('Unable to refresh the recording catalog. Check Wi-Fi; saved recordings remain available.') from error
+        if len(body)>1000000:raise ValueError('Recording catalog is too large.')
+        catalog=json.loads(body);seen=set()
+        if not isinstance(catalog.get('recordings'),list):raise ValueError('Invalid recording catalog.')
+        for e in catalog['recordings']:
+            u=urllib.parse.urlsplit(e['url'])
+            if e['language'] not in ('en','es') or not str(e['number']).isdigit() or e['id']!=e['language']+'-%03d'%int(e['number']) or e['id'] in seen or not re.fullmatch(r'[A-Za-z0-9_-]+',e['revision']) or not isinstance(e['bytes'],int) or not 0<e['bytes']<=100000000 or u.scheme!='https' or u.netloc!='raw.githubusercontent.com' or not u.path.lower().startswith('/ormt03/sda-hymnal/') or not u.path.lower().endswith(('.mp3','.m4a')):raise ValueError('Invalid recording catalog.')
+            seen.add(e['id'])
+        atomic_json(self.state/'audio/catalog.json',catalog)
+        return catalog
+
+    def recording_file(self,e):
+        return self.root/'audio'/(e['id']+'-'+e['revision']+'.'+e['url'].rsplit('.',1)[-1].lower())
+
+    def save_recording(self,e,target=None,cancel=None):
+        target=target or self.recording_file(e);target.parent.mkdir(parents=True,exist_ok=True)
+        if shutil.disk_usage(target.parent).free<e['bytes']+20000000:raise ValueError('Not enough storage for this recording.')
+        partial=target.with_suffix(target.suffix+'.part')
+        try:
+            with urllib.request.urlopen(e['url'],timeout=30,context=self.recording_ssl()) as response,partial.open('wb') as out:
+                total=0
+                while True:
+                    if cancel is not None and cancel.is_set():raise InterruptedError('Download cancelled. Completed recordings are kept.')
+                    block=response.read(65536)
+                    if not block:break
+                    total+=len(block)
+                    if total>e['bytes']:raise ValueError('Recording size mismatch.')
+                    out.write(block)
+            if total!=e['bytes']:raise ValueError('Recording was incomplete.')
+            os.replace(partial,target)
+        finally:
+            if partial.exists():partial.unlink()
+
+    def delete_recordings(self,language=None,number=None):
+        for e in self.recording_entries(language,number):
+            for p in (self.root/'audio').glob(e['id']+'-*'):
+                if p.is_file():p.unlink()
+        if language is None and number is None:
+            for p in (self.root/'audio').glob('*'):
+                if p.is_file():p.unlink()
+
+    def audio(self,request):
+        directory=self.state/'audio';directory.mkdir(parents=True,exist_ok=True)
+        state=read_json(directory/'status.json',{});pid=state.get('pid',0);running=False
+        if pid:
+            try:running=b'audio_worker.py' in Path('/proc/%d/cmdline'%pid).read_bytes() and str(self.root).encode() in Path('/proc/%d/cmdline'%pid).read_bytes()
+            except OSError:pass
+        action=request.get('action','status')
+        if action!='status':
+            if not running:
+                atomic_json(directory/'request.json',{})
+                log=(directory/'worker.log').open('ab')
+                subprocess.Popen([sys.executable,str(self.app_dir/'audio_worker.py'),str(self.root),str(self.app_dir)],stdin=subprocess.DEVNULL,stdout=log,stderr=log,start_new_session=True,close_fds=True);log.close()
+                for _ in range(40):
+                    time.sleep(.05);state=read_json(directory/'status.json',{})
+                    if state.get('pid'):break
+            command=dict(request,id=str(time.time_ns()))
+            atomic_json(directory/'request.json',command)
+            for _ in range(8):
+                time.sleep(.05);state=read_json(directory/'status.json',{})
+                if state.get('ack')==command['id']:break
+        else:
+            if not running:state.update(playing=False,paused=False,pid=0)
+        entries=self.recording_entries(request.get('catalog_language'))
+        state['recordings']=[dict(e,downloaded=self.recording_file(e).exists()) for e in entries]
+        state['stored_bytes']=sum(p.stat().st_size for p in (self.root/'audio').glob('*') if p.is_file() and p.suffix in ('.mp3','.m4a'))
+        state.pop('sections',None)
+        return state
+
+    def dispatch(self, request):
+        command = request.get('command')
+        actions = dict(audio=lambda:self.audio(request), status=lambda:self.status(), search=lambda:self.search(request), hymn=lambda:self.hymn(request),
+                       settings=lambda:self.save_settings(request.get('changes',{})), check=self.check,
+                       download=lambda:self.download(request.get('refresh',True)), render=lambda:self.render(request),
+                       share=lambda:self.share(request), qr=lambda:self.qr(request), display=lambda:self.display(request), export=lambda:self.export(request), storage=self.storage, cleanup=self.cleanup)
+        if command not in actions: raise ValueError('Unknown app command')
+        return actions[command]()
+
+def main():
+    parser=argparse.ArgumentParser(); parser.add_argument('--root',required=True); parser.add_argument('--app-dir')
+    parser.add_argument('--request',required=True); parser.add_argument('--response',required=True); args=parser.parse_args()
+    response=Path(args.response)
+    def progress(message,percent): atomic_json(response,dict(done=False,message=message,percent=percent))
+    try:
+        request=read_json(args.request)
+        if not isinstance(request,dict): raise ValueError('Invalid request')
+        if request.get('command') in ('render','export'):render_limits()
+        result=Hymnal(args.root,args.app_dir,progress).dispatch(request)
+        atomic_json(response,dict(done=True,ok=True,result=result))
+    except Exception as error:
+        atomic_json(response,dict(done=True,ok=False,error=str(error)))
+        return 1
+    return 0
+if __name__=='__main__': raise SystemExit(main())

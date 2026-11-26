@@ -2,8 +2,8 @@
   "schema": 1,
   "platform": "kindle-touch-k5",
   "app": {
-    "id": "kindle-15.0-beta-11-536c700ae7f04fce",
-    "version": "15.0 beta 11",
+    "id": "kindle-15.0-beta-11.1-561456d454e5826a",
+    "version": "15.0 beta 11.1",
     "files": [
       {
         "path": "HymnPiano.wav",
@@ -13,9 +13,9 @@
       },
       {
         "path": "README.txt",
-        "sha256": "a46f401b3ec6b4ed8883dcad1976cd186c5088804196421c2e15856a02631e95",
-        "bytes": 7190,
-        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/a46f401b3ec6b4ed8883dcad1976cd186c5088804196421c2e15856a02631e95"
+        "sha256": "d1994296d730d8eaa6528bfd46b48833d108ddd58479778985373e926f57d102",
+        "bytes": 7192,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/d1994296d730d8eaa6528bfd46b48833d108ddd58479778985373e926f57d102"
       },
       {
         "path": "audio_timeline.py",
@@ -31,9 +31,9 @@
       },
       {
         "path": "backend.py",
-        "sha256": "b939ba7a2ec12231ea858791e04a5370cd52d37d777268a91864f10fceff2b8c",
-        "bytes": 55923,
-        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/b939ba7a2ec12231ea858791e04a5370cd52d37d777268a91864f10fceff2b8c"
+        "sha256": "7def67cb7010a365ed89148982f0f6fb5531e7d6254d46d3b3fc26dbffc77927",
+        "bytes": 56646,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/7def67cb7010a365ed89148982f0f6fb5531e7d6254d46d3b3fc26dbffc77927"
       },
       {
         "path": "bin/hymnal",
@@ -67,7 +67,8 @@
         "kind": "shared_catalog",
         "website_path": "collections.json",
         "data_path": "musicxml/English/_collections/collections.json",
-        "language": null
+        "language": null,
+        "collection": null
       },
       {
         "path": "catalogs/collections/collections/happy-songs-for-boys-and-girls.english.json",
@@ -77,7 +78,8 @@
         "kind": "shared_catalog",
         "website_path": "collections/happy-songs-for-boys-and-girls.english.json",
         "data_path": "musicxml/English/_collections/catalogs/collections/happy-songs-for-boys-and-girls.english.json",
-        "language": "english"
+        "language": "english",
+        "collection": "happy-songs-for-boys-and-girls"
       },
       {
         "path": "catalogs/collections/collections/happy-songs-for-boys-and-girls.spanish.json",
@@ -87,7 +89,8 @@
         "kind": "shared_catalog",
         "website_path": "collections/happy-songs-for-boys-and-girls.spanish.json",
         "data_path": "musicxml/English/_collections/catalogs/collections/happy-songs-for-boys-and-girls.spanish.json",
-        "language": "spanish"
+        "language": "spanish",
+        "collection": "happy-songs-for-boys-and-girls"
       },
       {
         "path": "catalogs/gyc-theme-songs.english.json",
@@ -97,7 +100,8 @@
         "kind": "shared_catalog",
         "website_path": "collections/gyc-theme-songs.english.json",
         "data_path": "musicxml/English/_collections/gyc-theme-songs.english.json",
-        "language": "english"
+        "language": "english",
+        "collection": "gyc-theme-songs"
       },
       {
         "path": "fonts/Bravura.otf",
@@ -167,9 +171,9 @@
       },
       {
         "path": "source/hymnal.c",
-        "sha256": "4b5775a03afb7f6cf9479277832ec3c614e948fcb6a7d4465d5860868b754ecb",
-        "bytes": 73861,
-        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/4b5775a03afb7f6cf9479277832ec3c614e948fcb6a7d4465d5860868b754ecb"
+        "sha256": "46974bdef071a60953b0de424f8c08048cf0e538ab18c9acfe006ae5de1834c0",
+        "bytes": 73863,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/46974bdef071a60953b0de424f8c08048cf0e538ab18c9acfe006ae5de1834c0"
       },
       {
         "path": "source/image_geometry.h",
@@ -466,8 +470,8 @@
     ]
   },
   "data": {
-    "id": "15.0-beta-11-e16f31a22bc0d640",
-    "version": "15.0 beta 11",
+    "id": "15.0-beta-11.1-e3d1483975c5fdd7",
+    "version": "15.0 beta 11.1",
     "files": [
       {
         "kind": "catalog",
@@ -7722,9 +7726,9 @@
       }
     ],
     "archive": {
-      "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11-e16f31a22bc0d640-full.zip",
-      "sha256": "c8975cfcc17423f115792944913045f6a263cc245709c303e18d93f594d68f5f",
-      "bytes": 4937097
+      "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.1-e3d1483975c5fdd7-full.zip",
+      "sha256": "a6c876a943d8c76d873ecb438c12f3e7fca2d5d9128ba29e5665eae95b096ad4",
+      "bytes": 4937485
     },
     "collections": [
       {
@@ -7733,9 +7737,9 @@
           "scores": false
         },
         "full": {
-          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11-e16f31a22bc0d640-both-lyrics-full.zip",
-          "sha256": "97ac167b00d79c777febd150f7cebe66d09df3b0942bdc50506af91f615ef272",
-          "bytes": 1753852
+          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.1-e3d1483975c5fdd7-both-lyrics-full.zip",
+          "sha256": "dd79d7ecc13f18193002bcb4fc57ba4b33b1e454aa1834b571688c9bfcbb5ea3",
+          "bytes": 1754240
         }
       },
       {
@@ -7744,9 +7748,9 @@
           "scores": true
         },
         "full": {
-          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11-e16f31a22bc0d640-english-scores-full.zip",
-          "sha256": "14481f4394833603e11ccd55855f13006434740ca23848395499c65e39a8a78c",
-          "bytes": 4812068
+          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.1-e3d1483975c5fdd7-english-scores-full.zip",
+          "sha256": "480010c26e57dc8418fff41843fa96ee330fdbbcafdbb886b0eab6527a353884",
+          "bytes": 4812456
         }
       },
       {
@@ -7755,9 +7759,9 @@
           "scores": false
         },
         "full": {
-          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11-e16f31a22bc0d640-english-lyrics-full.zip",
-          "sha256": "2c37594a69cf47e4e646f715cff368ab05e2650d3e24b909fae69e47b170ac7e",
-          "bytes": 1628823
+          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.1-e3d1483975c5fdd7-english-lyrics-full.zip",
+          "sha256": "70a3629fe01cfccb3289642757e3af6ed61ee88b395958b85abd7c8552604315",
+          "bytes": 1629211
         }
       },
       {
@@ -7766,9 +7770,9 @@
           "scores": true
         },
         "full": {
-          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11-e16f31a22bc0d640-spanish-scores-full.zip",
-          "sha256": "28b66a791d1a2ed82e1a41dc518fadb66ffd1b377876530f7906748ef0e9ec9a",
-          "bytes": 1565410
+          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.1-e3d1483975c5fdd7-spanish-scores-full.zip",
+          "sha256": "c540f83aef79636ae3b6f5127530daaa0a8b2d14187e3ffba10c08d73a010022",
+          "bytes": 1565798
         }
       },
       {
@@ -7777,9 +7781,9 @@
           "scores": false
         },
         "full": {
-          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11-e16f31a22bc0d640-spanish-lyrics-full.zip",
-          "sha256": "28b66a791d1a2ed82e1a41dc518fadb66ffd1b377876530f7906748ef0e9ec9a",
-          "bytes": 1565410
+          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-11.1-e3d1483975c5fdd7-spanish-lyrics-full.zip",
+          "sha256": "c540f83aef79636ae3b6f5127530daaa0a8b2d14187e3ffba10c08d73a010022",
+          "bytes": 1565798
         }
       }
     ]

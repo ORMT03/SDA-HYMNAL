@@ -22,19 +22,24 @@
   return response ? response.json() : null;
  }
  function validateRelease(release) {
-  if(Array.isArray(release.additionalFiles))release={...release,files:[...release.files,...release.additionalFiles]};
-  if (release.schema !== 1 || !release.id || !release.version || !Array.isArray(release.files) || !release.files.length) throw new Error('Invalid release manifest');
-  const paths = new Set();
-  for (const file of release.files) {
-   const url = new URL(file.path, base);
-   const permitted = [...config.shell, ...config.catalogs].includes(file.path) ||
-    (url.pathname.startsWith(new URL('musicxml/',base).pathname)||url.pathname.startsWith(new URL('../beta/musicxml/',base).pathname))&&url.pathname.endsWith('.musicxml');
-   if (url.origin !== base.origin || url.search || url.hash || !permitted || !/^[a-f0-9]{64}$/.test(file.sha256) || !Number.isSafeInteger(file.bytes) || file.bytes < 0 || paths.has(url.href)) throw new Error('Invalid release file');
+  // Hymnal Release Builder: extensible metadata, bounded to this site's safe paths.
+  if(release.schema!==1||!release.id||!release.version||!Array.isArray(release.files)||!release.files.length)throw Error('Invalid release manifest');
+  release={...release,files:[...release.files,...(release.additionalFiles||[]),...(release.extensionFiles||[])]};
+  const paths=new Set();
+  for(const file of release.files){
+   const url=new URL(file.path,base),inside=url.origin===base.origin&&url.pathname.startsWith(base.pathname);
+   const declared=[...config.shell,...config.catalogs].includes(file.path);
+   const score=inside&&url.pathname.startsWith(new URL('musicxml/',base).pathname)&&url.pathname.endsWith('.musicxml');
+   const catalog=inside&&file.kind==='catalog'&&/^collections\/[A-Za-z0-9._/-]+\.json$/.test(file.path)&&!file.path.split('/').includes('..');
+   const shell=inside&&file.kind==='shell'&&(/\.(?:js|css|json|woff2?|ttf|otf)$/.test(file.path)||/^icons\/[A-Za-z0-9._/-]+\.(?:png|svg|ico)$/.test(file.path));
+   if(url.origin!==base.origin||url.search||url.hash||(!declared&&!score&&!catalog&&!shell)||!/^[a-f0-9]{64}$/.test(file.sha256)||!Number.isSafeInteger(file.bytes)||file.bytes<0||paths.has(url.href))throw Error('Invalid release file: '+file.path);
    paths.add(url.href);
   }
-  for (const path of [...config.shell,...config.catalogs]) if (!paths.has(absolute(path))) throw new Error('Incomplete release manifest');
+  // Collection catalogs can be added or removed between releases.
+  for(const path of [...config.shell,...config.catalogs.filter(path=>!path.startsWith('collections/'))])if(!paths.has(absolute(path)))throw Error('Incomplete release manifest: '+path);
   return release;
  }
+
  async function fresh(path, timeout = 15000, onProgress) {
   const url = new URL(path, base);
   if (url.origin !== base.origin) throw new Error('Invalid update URL');

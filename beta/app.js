@@ -326,6 +326,7 @@ function fromHash(){
  const parts=location.hash.slice(1).split('/').map(s=>{try{return decodeURIComponent(s);}catch{return'';}});let song;
  if(parts.length===3)song=songs.find(s=>s.collection===parts[0]&&s.language===parts[1]&&s.id===parts[2]);
  else if(parts.length===2&&parts[0]!=='collection')song=songs.find(s=>s.collection==='sda'&&s.language===parts[0]&&s.number===parts[1]);
+ if(!song){let ref=parts.length===3?{collection:parts[0],language:parts[1],id:parts[2]}:parts.length===2?{collection:'sda',language:parts[0],id:parts[1]}:null;const seen=new Set();while(ref){const k=`${ref.collection}:${ref.language}:${ref.id}`;if(seen.has(k))break;seen.add(k);song=songs.find(s=>s.collection===ref.collection&&s.language===ref.language&&s.id===ref.id);if(song)break;ref=self.HymnalSongAliases?.[k];}}
  if(song){openSong(song,false);return;}
  ++revision;closeHymnMenus();cleanRenderer();selected=null;$('hymn').hidden=true;$('catalog').hidden=false;applyAppearance();renderList();void updateHymnWakeLock();requestAnimationFrame(()=>window.scrollTo(0,settings.listBehavior==='remember'?catalogPosition:0));
 }
@@ -345,7 +346,7 @@ window.addEventListener('popstate',fromHash);
 (async () => {
  try {
   const [catalog,pairs,scores]=await Promise.all([json('collections.json').catch(()=>({collections:[{id:'sda',name:'SDA Hymnal',catalogs:[{language:'english',url:'../songs.json'},{language:'spanish',url:'../songs_es.json'}]}]})),json('../song_mapping.json').catch(()=>[]),json('scores.json')]);
-  collections=catalog.collections;mapping=pairs;manifest=scores;
+  collections=catalog.collections;mapping=pairs;manifest=scores;self.HymnalSongAliases=catalog.songAliases||{};
   const loaded=await Promise.all(collections.flatMap(c=>c.catalogs.map(async source=>(await json(source.url).catch(()=>[])).map(song=>HymnalSearch.prepare({...song,collection:c.id,id:song.id||song.number,number:song.number||'',language:source.language})))));
   songs=loaded.flat();songIndex=catalog.versionIndex||[];initializeCollections();
   $('coverage').textContent='';renderList();updateCollectionSearch();if(location.hash)fromHash();

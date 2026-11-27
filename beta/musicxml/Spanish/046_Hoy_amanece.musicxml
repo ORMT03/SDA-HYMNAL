@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='UTF-8'?>
 <score-partwise version="4.0">
   <movement-title>Hoy amanece</movement-title>
   <identification>
@@ -26,7 +26,7 @@ Culto matutino | Gén. 1:5, 21
         <bottom-margin>60</bottom-margin>
       </page-margins>
     </page-layout>
-    <lyric-font font-family="Times New Roman" font-size="10" />
+    <lyric-font font-family="Times New Roman" font-size="10"/>
   </defaults>
   <credit page="1">
     <credit-type>title</credit-type>
@@ -60,13 +60,13 @@ Culto matutino | Gén. 1:5, 21
   </credit>
   <part-list>
     <score-part id="P1">
-      <part-name print-object="no" />
+      <part-name print-object="no"/>
       <part-name-display print-object="no">
-        <display-text />
+        <display-text/>
       </part-name-display>
-      <part-abbreviation print-object="no" />
+      <part-abbreviation print-object="no"/>
       <part-abbreviation-display print-object="no">
-        <display-text />
+        <display-text/>
       </part-abbreviation-display>
       <score-instrument id="P1-I1">
         <instrument-name>Piano</instrument-name>
@@ -86,7 +86,7 @@ Culto matutino | Gén. 1:5, 21
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <top-system-distance>95</top-system-distance>
+          <top-system-distance>80</top-system-distance>
         </system-layout>
       </print>
       <attributes>
@@ -108,22 +108,11 @@ Culto matutino | Gén. 1:5, 21
           <line>4</line>
         </clef>
       </attributes>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m1h1">
         <root>
           <root-step>C</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">major-seventh</kind>
-        <bass>
-          <bass-step>B</bass-step>
-        </bass>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -172,6 +161,16 @@ Culto matutino | Gén. 1:5, 21
           <text>ta</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m1h2">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">major-seventh</kind>
+        <bass>
+          <bass-step>B</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -206,7 +205,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>2</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
@@ -237,46 +236,11 @@ Culto matutino | Gén. 1:5, 21
       </note>
     </measure>
     <measure number="2">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m2h1">
         <root>
           <root-step>A</root-step>
         </root>
         <kind use-symbols="no">minor</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>12</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">suspended-fourth</kind>
-        <offset>14</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>B</bass-step>
-        </bass>
-        <offset>16</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -287,7 +251,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -304,7 +268,7 @@ Culto matutino | Gén. 1:5, 21
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -312,10 +276,17 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m2h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -324,7 +295,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -341,7 +312,7 @@ Culto matutino | Gén. 1:5, 21
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -349,10 +320,17 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m2h3">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -376,6 +354,13 @@ Culto matutino | Gén. 1:5, 21
           <text>es</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m2h4">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">suspended-fourth</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -399,6 +384,16 @@ Culto matutino | Gén. 1:5, 21
           <text>mi</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m2h5">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>B</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -438,7 +433,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>2</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
@@ -453,7 +448,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -465,12 +460,12 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -478,7 +473,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -517,7 +512,7 @@ Culto matutino | Gén. 1:5, 21
       </note>
     </measure>
     <measure number="3">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m3h1">
         <root>
           <root-step>A</root-step>
         </root>
@@ -525,55 +520,6 @@ Culto matutino | Gén. 1:5, 21
         <bass>
           <bass-step>C</bass-step>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>C</bass-step>
-        </bass>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>B</bass-step>
-        </bass>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <offset>12</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>G</bass-step>
-        </bass>
-        <offset>16</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -584,7 +530,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -600,6 +546,16 @@ Culto matutino | Gén. 1:5, 21
           <text>li</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m3h4">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>B</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -608,7 +564,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -625,7 +581,7 @@ Culto matutino | Gén. 1:5, 21
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -633,10 +589,17 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m3h5">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -683,6 +646,16 @@ Culto matutino | Gén. 1:5, 21
           <text>luz</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m3h6">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>G</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -720,6 +693,13 @@ Culto matutino | Gén. 1:5, 21
         <stem>down</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m3h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -731,6 +711,16 @@ Culto matutino | Gén. 1:5, 21
         <stem>down</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m3h3">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>C</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -758,7 +748,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>3</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
@@ -806,7 +796,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -840,10 +830,10 @@ Culto matutino | Gén. 1:5, 21
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m4h1">
         <root>
           <root-step>G</root-step>
         </root>
@@ -851,41 +841,6 @@ Culto matutino | Gén. 1:5, 21
         <bass>
           <bass-step>F</bass-step>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <offset>10</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>12</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">suspended-second</kind>
-        <bass>
-          <bass-step>D</bass-step>
-        </bass>
-        <offset>16</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -896,7 +851,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -912,6 +867,13 @@ Culto matutino | Gén. 1:5, 21
           <text>glo</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m4h2">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -920,7 +882,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -936,6 +898,13 @@ Culto matutino | Gén. 1:5, 21
           <text>ria</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m4h4">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -960,7 +929,7 @@ Culto matutino | Gén. 1:5, 21
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -995,7 +964,7 @@ Culto matutino | Gén. 1:5, 21
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -1006,6 +975,16 @@ Culto matutino | Gén. 1:5, 21
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m4h5">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">suspended-second</kind>
+        <bass>
+          <bass-step>D</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -1040,7 +1019,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>2</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
@@ -1055,6 +1034,13 @@ Culto matutino | Gén. 1:5, 21
         <stem>down</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m4h3">
+        <root>
+          <root-step>B</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -1077,7 +1063,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -1127,52 +1113,11 @@ Culto matutino | Gén. 1:5, 21
       </note>
     </measure>
     <measure number="5">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m5h1">
         <root>
           <root-step>G</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <bass>
-          <bass-step>F</bass-step>
-        </bass>
-        <offset>10</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>E</bass-step>
-        </bass>
-        <offset>12</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>14</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>B</bass-step>
-        </bass>
-        <offset>16</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1183,7 +1128,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -1200,20 +1145,20 @@ Culto matutino | Gén. 1:5, 21
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
         <duration>6</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <note>
@@ -1224,27 +1169,37 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
         <duration>6</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m5h3">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>E</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -1268,6 +1223,13 @@ Culto matutino | Gén. 1:5, 21
           <text>a</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m5h4">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -1291,6 +1253,16 @@ Culto matutino | Gén. 1:5, 21
           <text>quien</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m5h5">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>B</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -1315,7 +1287,7 @@ Culto matutino | Gén. 1:5, 21
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -1356,7 +1328,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -1368,7 +1340,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -1380,7 +1352,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -1403,6 +1375,16 @@ Culto matutino | Gén. 1:5, 21
         <stem>down</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m5h2">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <bass>
+          <bass-step>F</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -1449,7 +1431,7 @@ Culto matutino | Gén. 1:5, 21
       </note>
     </measure>
     <measure number="6">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m6h1">
         <root>
           <root-step>F</root-step>
         </root>
@@ -1457,70 +1439,6 @@ Culto matutino | Gén. 1:5, 21
         <bass>
           <bass-step>A</bass-step>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">suspended-fourth</kind>
-        <degree>
-          <degree-value>7</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <degree>
-          <degree-value>9</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>F</bass-step>
-        </bass>
-        <offset>12</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>F</bass-step>
-        </bass>
-        <degree>
-          <degree-value>9</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <offset>14</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <bass>
-          <bass-step>F</bass-step>
-        </bass>
-        <offset>16</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1531,7 +1449,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -1548,7 +1466,7 @@ Culto matutino | Gén. 1:5, 21
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -1556,10 +1474,17 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m6h3">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -1568,7 +1493,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -1585,7 +1510,7 @@ Culto matutino | Gén. 1:5, 21
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -1593,10 +1518,20 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m6h4">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>F</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -1620,6 +1555,21 @@ Culto matutino | Gén. 1:5, 21
           <text>por</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m6h5">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>F</bass-step>
+        </bass>
+        <degree>
+          <degree-value>9</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -1643,6 +1593,16 @@ Culto matutino | Gén. 1:5, 21
           <text>que</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m6h6">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <bass>
+          <bass-step>F</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -1677,7 +1637,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -1711,12 +1671,12 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -1724,7 +1684,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -1742,6 +1702,23 @@ Culto matutino | Gén. 1:5, 21
         <stem>down</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m6h2">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">suspended-fourth</kind>
+        <degree>
+          <degree-value>7</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <degree>
+          <degree-value>9</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -1761,7 +1738,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>6</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>2</staff>
       </note>
@@ -1773,56 +1750,14 @@ Culto matutino | Gén. 1:5, 21
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m7h1">
         <root>
           <root-step>A</root-step>
         </root>
         <kind use-symbols="no">minor</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">half-diminished</kind>
-        <bass>
-          <bass-step>A</bass-step>
-          <bass-alter>-1</bass-alter>
-        </bass>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>G</bass-step>
-        </bass>
-        <offset>12</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>14</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>G</bass-step>
-        </bass>
-        <offset>16</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1833,7 +1768,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -1849,6 +1784,17 @@ Culto matutino | Gén. 1:5, 21
           <text>brin</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m7h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">half-diminished</kind>
+        <bass>
+          <bass-step>A</bass-step>
+          <bass-alter>-1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -1857,7 +1803,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -1873,6 +1819,16 @@ Culto matutino | Gén. 1:5, 21
           <text>da</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m7h3">
+        <root>
+          <root-step>E</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>G</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -1896,6 +1852,13 @@ Culto matutino | Gén. 1:5, 21
           <text>un</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m7h4">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -1919,6 +1882,16 @@ Culto matutino | Gén. 1:5, 21
           <text>nue</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m7h5">
+        <root>
+          <root-step>E</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>G</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -1958,7 +1931,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>2</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
@@ -1970,7 +1943,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>2</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
@@ -1985,12 +1958,12 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>3</octave>
@@ -1998,7 +1971,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -2010,7 +1983,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -2064,7 +2037,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>6</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <accidental>flat</accidental>
         <stem>down</stem>
         <staff>2</staff>
@@ -2077,13 +2050,13 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>6</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>2</staff>
       </note>
     </measure>
     <measure number="8">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m8h1">
         <root>
           <root-step>A</root-step>
         </root>
@@ -2091,79 +2064,6 @@ Culto matutino | Gén. 1:5, 21
         <bass>
           <bass-step>G</bass-step>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>F</bass-step>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <bass>
-          <bass-step>C</bass-step>
-        </bass>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">minor-ninth</kind>
-        <bass>
-          <bass-step>B</bass-step>
-        </bass>
-        <offset>10</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <offset>12</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-        </root>
-        <kind use-symbols="no">half-diminished</kind>
-        <bass>
-          <bass-step>A</bass-step>
-        </bass>
-        <offset>14</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <degree>
-          <degree-value>9</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <offset>16</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2174,7 +2074,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -2190,6 +2090,16 @@ Culto matutino | Gén. 1:5, 21
           <text>dí</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m8h4">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <bass>
+          <bass-step>C</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -2198,11 +2108,11 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <slur type="start" number="1" placement="below" />
+          <slur type="start" number="1" placement="below"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>end</syllabic>
@@ -2218,7 +2128,7 @@ Culto matutino | Gén. 1:5, 21
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -2226,10 +2136,17 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m8h6">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -2253,6 +2170,16 @@ Culto matutino | Gén. 1:5, 21
           <text>su</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m8h7">
+        <root>
+          <root-step>B</root-step>
+        </root>
+        <kind use-symbols="no">half-diminished</kind>
+        <bass>
+          <bass-step>A</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -2276,6 +2203,18 @@ Culto matutino | Gén. 1:5, 21
           <text>tier</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m8h8">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <degree>
+          <degree-value>9</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -2300,7 +2239,7 @@ Culto matutino | Gén. 1:5, 21
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -2325,6 +2264,16 @@ Culto matutino | Gén. 1:5, 21
         <stem>down</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m8h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>F</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -2336,6 +2285,13 @@ Culto matutino | Gén. 1:5, 21
         <stem>down</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m8h3">
+        <root>
+          <root-step>E</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -2366,7 +2322,7 @@ Culto matutino | Gén. 1:5, 21
         <stem>down</stem>
         <staff>1</staff>
         <notations>
-          <slur type="stop" number="1" placement="below" />
+          <slur type="stop" number="1" placement="below"/>
         </notations>
       </note>
       <backup>
@@ -2380,7 +2336,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -2392,7 +2348,7 @@ Culto matutino | Gén. 1:5, 21
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -2476,6 +2432,16 @@ Culto matutino | Gén. 1:5, 21
         <stem>down</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m8h5">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">minor-ninth</kind>
+        <bass>
+          <bass-step>B</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -2511,7 +2477,7 @@ Culto matutino | Gén. 1:5, 21
       </note>
     </measure>
     <measure number="9">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es046m9h1">
         <root>
           <root-step>C</root-step>
         </root>
@@ -2524,14 +2490,14 @@ Culto matutino | Gén. 1:5, 21
           <octave>4</octave>
         </pitch>
         <duration>6</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>single</syllabic>
@@ -2552,14 +2518,14 @@ Culto matutino | Gén. 1:5, 21
           <octave>4</octave>
         </pitch>
         <duration>6</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <backup>
@@ -2571,31 +2537,31 @@ Culto matutino | Gén. 1:5, 21
           <octave>3</octave>
         </pitch>
         <duration>6</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>3</octave>
         </pitch>
         <duration>6</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <note>
@@ -2604,31 +2570,31 @@ Culto matutino | Gén. 1:5, 21
           <octave>3</octave>
         </pitch>
         <duration>6</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>3</octave>
         </pitch>
         <duration>6</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <barline location="right">

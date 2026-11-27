@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='UTF-8'?>
 <score-partwise version="4.0">
   <movement-title>A ti, glorioso Dios</movement-title>
   <identification>
@@ -25,7 +25,7 @@
         <bottom-margin>60</bottom-margin>
       </page-margins>
     </page-layout>
-    <lyric-font font-family="Times New Roman" font-size="10" />
+    <lyric-font font-family="Times New Roman" font-size="10"/>
   </defaults>
   <credit page="1">
     <credit-type>title</credit-type>
@@ -58,13 +58,13 @@
   </credit>
   <part-list>
     <score-part id="P1">
-      <part-name print-object="no" />
+      <part-name print-object="no"/>
       <part-name-display print-object="no">
-        <display-text />
+        <display-text/>
       </part-name-display>
-      <part-abbreviation print-object="no" />
+      <part-abbreviation print-object="no"/>
       <part-abbreviation-display print-object="no">
-        <display-text />
+        <display-text/>
       </part-abbreviation-display>
       <score-instrument id="P1-I1">
         <instrument-name>Piano</instrument-name>
@@ -84,7 +84,7 @@
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <top-system-distance>95</top-system-distance>
+          <top-system-distance>80</top-system-distance>
         </system-layout>
       </print>
       <attributes>
@@ -106,7 +106,7 @@
           <line>4</line>
         </clef>
       </attributes>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m1h1">
         <root>
           <root-step>E</root-step>
           <root-alter>-1</root-alter>
@@ -184,7 +184,7 @@
       </note>
     </measure>
     <measure number="1">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m2h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
@@ -193,24 +193,6 @@
         <bass>
           <bass-step>D</bass-step>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -237,6 +219,14 @@
           <text>Pa</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m2h2">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -261,6 +251,14 @@
           <text>dre, e</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m2h3">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -479,7 +477,7 @@
       </note>
     </measure>
     <measure number="2">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m3h1">
         <root>
           <root-step>E</root-step>
           <root-alter>-1</root-alter>
@@ -496,7 +494,7 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -548,7 +546,7 @@
         <duration>6</duration>
         <voice>2</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
@@ -586,7 +584,7 @@
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -613,7 +611,7 @@
         <duration>6</duration>
         <voice>6</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>2</staff>
       </note>
@@ -631,41 +629,11 @@
       </note>
     </measure>
     <measure number="3">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m4h1">
         <root>
           <root-step>F</root-step>
         </root>
         <kind use-symbols="no">minor</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>G</bass-step>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">suspended-fourth</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -692,6 +660,17 @@
           <text>tá</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m4h2">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>G</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -715,6 +694,14 @@
           <text>mos</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m4h3">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">suspended-fourth</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -738,6 +725,14 @@
           <text>te</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m4h4">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -936,39 +931,12 @@
       </note>
     </measure>
     <measure number="4">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m5h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">dominant</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">dominant-ninth</kind>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">suspended-fourth</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -994,6 +962,14 @@
           <text>o</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m5h3">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">suspended-fourth</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -1021,6 +997,14 @@
           <text>res,</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m5h4">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1059,9 +1043,17 @@
         <stem>down</stem>
         <staff>1</staff>
         <notations>
-          <slur type="start" number="1" placement="below" />
+          <slur type="start" number="1" placement="below"/>
         </notations>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m5h2">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">dominant-ninth</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -1073,7 +1065,7 @@
         <stem>down</stem>
         <staff>1</staff>
         <notations>
-          <slur type="stop" number="1" placement="below" />
+          <slur type="stop" number="1" placement="below"/>
         </notations>
       </note>
       <note>
@@ -1188,10 +1180,10 @@
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m6h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
@@ -1201,40 +1193,6 @@
           <bass-step>D</bass-step>
           <bass-alter>-1</bass-alter>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <bass>
-          <bass-step>D</bass-step>
-          <bass-alter>-1</bass-alter>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>C</bass-step>
-        </bass>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1261,6 +1219,18 @@
           <text>Hi</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m6h2">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <bass>
+          <bass-step>D</bass-step>
+          <bass-alter>-1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1285,6 +1255,17 @@
           <text>jo</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m6h3">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>C</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -1308,6 +1289,14 @@
           <text>Re</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m6h4">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -1495,21 +1484,12 @@
       </note>
     </measure>
     <measure number="6">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m7h1">
         <root>
           <root-step>E</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">suspended-second</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1521,7 +1501,7 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -1537,6 +1517,14 @@
           <text>tor,</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m7h2">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">suspended-second</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1573,7 +1561,7 @@
         <duration>6</duration>
         <voice>2</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
@@ -1600,7 +1588,7 @@
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -1627,7 +1615,7 @@
         <duration>6</duration>
         <voice>6</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>2</staff>
       </note>
@@ -1656,7 +1644,7 @@
       </note>
     </measure>
     <measure number="7">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m8h1">
         <root>
           <root-step>A</root-step>
           <root-alter>-1</root-alter>
@@ -1665,39 +1653,6 @@
         <bass>
           <bass-step>C</bass-step>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>B</bass-step>
-          <bass-alter>-1</bass-alter>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <bass>
-          <bass-step>A</bass-step>
-          <bass-alter>-1</bass-alter>
-        </bass>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">suspended-fourth</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1724,6 +1679,18 @@
           <text>ñor</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m8h2">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>B</bass-step>
+          <bass-alter>-1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -1747,6 +1714,17 @@
           <text>de</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m8h3">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <bass>
+          <bass-step>A</bass-step>
+          <bass-alter>-1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -1770,6 +1748,13 @@
           <text>los</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m8h4">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">suspended-fourth</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -1977,7 +1962,7 @@
       </note>
     </measure>
     <measure number="8">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m9h1">
         <root>
           <root-step>F</root-step>
         </root>
@@ -1986,33 +1971,6 @@
           <bass-step>A</bass-step>
           <bass-alter>-1</bass-alter>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2038,6 +1996,14 @@
           <text>ño</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m9h3">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -2065,6 +2031,14 @@
           <text>res,</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m9h4">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -2102,6 +2076,14 @@
         <stem>down</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m9h2">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -2227,7 +2209,7 @@
         <stem>down</stem>
         <staff>2</staff>
         <notations>
-          <slur type="start" number="10" placement="below" />
+          <slur type="start" number="10" placement="below"/>
         </notations>
       </note>
       <note>
@@ -2242,7 +2224,7 @@
         <stem>down</stem>
         <staff>2</staff>
         <notations>
-          <slur type="stop" number="10" placement="below" />
+          <slur type="stop" number="10" placement="below"/>
         </notations>
       </note>
       <note>
@@ -2277,10 +2259,10 @@
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m10h1">
         <root>
           <root-step>F</root-step>
         </root>
@@ -2288,36 +2270,6 @@
         <bass>
           <bass-step>A</bass-step>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>G</bass-step>
-        </bass>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2343,6 +2295,14 @@
           <text>San</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m10h2">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -2366,6 +2326,14 @@
           <text>to Es</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m10h3">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -2389,6 +2357,17 @@
           <text>pí</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m10h4">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>G</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -2607,24 +2586,12 @@
       </note>
     </measure>
     <measure number="10">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m11h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>D</bass-step>
-        </bass>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2635,7 +2602,7 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -2651,6 +2618,17 @@
           <text>tu,</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m11h2">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>D</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -2685,7 +2663,7 @@
         <duration>6</duration>
         <voice>2</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
@@ -2712,7 +2690,7 @@
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -2740,7 +2718,7 @@
         <duration>6</duration>
         <voice>6</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>2</staff>
       </note>
@@ -2757,40 +2735,12 @@
       </note>
     </measure>
     <measure number="11">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m12h1">
         <root>
           <root-step>E</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>D</bass-step>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">suspended-fourth</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2828,6 +2778,17 @@
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m12h2">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>D</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -2852,6 +2813,13 @@
           <text>Con</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m12h3">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -2875,6 +2843,13 @@
           <text>so</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m12h4">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">suspended-fourth</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -3072,23 +3047,11 @@
       </note>
     </measure>
     <measure number="12">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m13h1">
         <root>
           <root-step>G</root-step>
         </root>
         <kind use-symbols="no">minor</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>G</bass-step>
-        </bass>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3100,7 +3063,7 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -3116,6 +3079,17 @@
           <text>dor:</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m13h2">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>G</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -3151,7 +3125,7 @@
         <duration>6</duration>
         <voice>2</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
@@ -3178,7 +3152,7 @@
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -3205,7 +3179,7 @@
         <duration>6</duration>
         <voice>6</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>2</staff>
       </note>
@@ -3239,10 +3213,10 @@
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m14h1">
         <root>
           <root-step>C</root-step>
         </root>
@@ -3250,39 +3224,6 @@
         <bass>
           <bass-step>E</bass-step>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>D</bass-step>
-        </bass>
-        <degree>
-          <degree-value>9</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3308,6 +3249,22 @@
           <text>gran</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m14h2">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>D</bass-step>
+        </bass>
+        <degree>
+          <degree-value>9</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -3332,6 +3289,13 @@
           <text>de,</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m14h3">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -3356,6 +3320,13 @@
           <text>tri</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m14h4">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -3548,23 +3519,11 @@
       </note>
     </measure>
     <measure number="14">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m15h1">
         <root>
           <root-step>F</root-step>
         </root>
         <kind use-symbols="no">minor</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>G</bass-step>
-        </bass>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3576,7 +3535,7 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -3592,6 +3551,17 @@
           <text>Dios</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m15h2">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>G</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -3626,7 +3596,7 @@
         <duration>6</duration>
         <voice>2</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
@@ -3665,7 +3635,7 @@
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -3692,7 +3662,7 @@
         <duration>6</duration>
         <voice>6</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>2</staff>
       </note>
@@ -3709,7 +3679,7 @@
       </note>
     </measure>
     <measure number="15">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m16h1">
         <root>
           <root-step>F</root-step>
         </root>
@@ -3718,36 +3688,6 @@
           <bass-step>A</bass-step>
           <bass-alter>-1</bass-alter>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>B</bass-step>
-          <bass-alter>-1</bass-alter>
-        </bass>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">suspended-fourth</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3773,6 +3713,13 @@
           <text>ta</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m16h2">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -3797,6 +3744,18 @@
           <text>mos</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m16h3">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>B</bass-step>
+          <bass-alter>-1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -3821,6 +3780,14 @@
           <text>con</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m16h4">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">suspended-fourth</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -4030,7 +3997,7 @@
       </note>
     </measure>
     <measure number="16">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es005m17h1">
         <root>
           <root-step>E</root-step>
           <root-alter>-1</root-alter>
@@ -4047,7 +4014,7 @@
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -4074,7 +4041,7 @@
         <duration>6</duration>
         <voice>2</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
@@ -4090,7 +4057,7 @@
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -4106,7 +4073,7 @@
         <duration>6</duration>
         <voice>6</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>2</staff>
       </note>

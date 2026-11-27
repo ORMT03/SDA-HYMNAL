@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='UTF-8'?>
 <score-partwise version="4.0">
   <movement-title>Queda, Señor</movement-title>
   <identification>
@@ -26,7 +26,7 @@ Cierre del culto | Efe. 3:17
         <bottom-margin>60</bottom-margin>
       </page-margins>
     </page-layout>
-    <lyric-font font-family="Times New Roman" font-size="10" />
+    <lyric-font font-family="Times New Roman" font-size="10"/>
   </defaults>
   <credit page="1">
     <credit-type>title</credit-type>
@@ -54,13 +54,13 @@ Cierre del culto | Efe. 3:17
   </credit>
   <part-list>
     <score-part id="P1">
-      <part-name print-object="no" />
+      <part-name print-object="no"/>
       <part-name-display print-object="no">
-        <display-text />
+        <display-text/>
       </part-name-display>
-      <part-abbreviation print-object="no" />
+      <part-abbreviation print-object="no"/>
       <part-abbreviation-display print-object="no">
-        <display-text />
+        <display-text/>
       </part-abbreviation-display>
       <score-instrument id="P1-I1">
         <instrument-name>Piano</instrument-name>
@@ -80,7 +80,7 @@ Cierre del culto | Efe. 3:17
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <top-system-distance>95</top-system-distance>
+          <top-system-distance>80</top-system-distance>
         </system-layout>
       </print>
       <attributes>
@@ -102,43 +102,11 @@ Cierre del culto | Efe. 3:17
           <line>4</line>
         </clef>
       </attributes>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m1h1">
         <root>
           <root-step>D</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-          <root-alter>1</root-alter>
-        </root>
-        <kind use-symbols="no">diminished</kind>
-        <bass>
-          <bass-step>C</bass-step>
-          <bass-alter>1</bass-alter>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <bass>
-          <bass-step>A</bass-step>
-        </bass>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -157,7 +125,7 @@ Cierre del culto | Efe. 3:17
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -169,6 +137,18 @@ Cierre del culto | Efe. 3:17
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m1h2">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>1</root-alter>
+        </root>
+        <kind use-symbols="no">diminished</kind>
+        <bass>
+          <bass-step>C</bass-step>
+          <bass-alter>1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -187,7 +167,7 @@ Cierre del culto | Efe. 3:17
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -215,7 +195,7 @@ Cierre del culto | Efe. 3:17
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -226,6 +206,13 @@ Cierre del culto | Efe. 3:17
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m1h3">
+        <root>
+          <root-step>B</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -242,7 +229,7 @@ Cierre del culto | Efe. 3:17
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -254,6 +241,16 @@ Cierre del culto | Efe. 3:17
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m1h4">
+        <root>
+          <root-step>B</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <bass>
+          <bass-step>A</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -270,7 +267,7 @@ Cierre del culto | Efe. 3:17
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -297,7 +294,7 @@ Cierre del culto | Efe. 3:17
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -322,7 +319,7 @@ Cierre del culto | Efe. 3:17
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>1</alter>
@@ -349,7 +346,7 @@ Cierre del culto | Efe. 3:17
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>1</alter>
@@ -373,7 +370,7 @@ Cierre del culto | Efe. 3:17
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>3</octave>
@@ -396,7 +393,7 @@ Cierre del culto | Efe. 3:17
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>3</octave>
@@ -409,35 +406,11 @@ Cierre del culto | Efe. 3:17
       </note>
     </measure>
     <measure number="2">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m2h1">
         <root>
           <root-step>G</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">suspended-second</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">major-ninth</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -472,6 +445,13 @@ Cierre del culto | Efe. 3:17
           <text>te</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m2h2">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -504,6 +484,13 @@ Cierre del culto | Efe. 3:17
           <text>ra</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m2h3">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">suspended-second</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -568,6 +555,13 @@ Cierre del culto | Efe. 3:17
         <staff>1</staff>
         <beam number="1">end</beam>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m2h4">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">major-ninth</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -608,7 +602,7 @@ Cierre del culto | Efe. 3:17
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>3</octave>
@@ -631,7 +625,7 @@ Cierre del culto | Efe. 3:17
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <alter>1</alter>
@@ -655,7 +649,7 @@ Cierre del culto | Efe. 3:17
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -668,42 +662,11 @@ Cierre del culto | Efe. 3:17
       </note>
     </measure>
     <measure number="3">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m3h1">
         <root>
           <root-step>D</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>C</bass-step>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <bass>
-          <bass-step>D</bass-step>
-          <bass-alter>1</bass-alter>
-        </bass>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -722,7 +685,7 @@ Cierre del culto | Efe. 3:17
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -734,6 +697,16 @@ Cierre del culto | Efe. 3:17
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m3h2">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>C</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -751,7 +724,7 @@ Cierre del culto | Efe. 3:17
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -779,7 +752,7 @@ Cierre del culto | Efe. 3:17
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -790,6 +763,13 @@ Cierre del culto | Efe. 3:17
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m3h3">
+        <root>
+          <root-step>B</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -808,7 +788,7 @@ Cierre del culto | Efe. 3:17
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -819,6 +799,17 @@ Cierre del culto | Efe. 3:17
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m3h4">
+        <root>
+          <root-step>B</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <bass>
+          <bass-step>D</bass-step>
+          <bass-alter>1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -836,7 +827,7 @@ Cierre del culto | Efe. 3:17
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -862,7 +853,7 @@ Cierre del culto | Efe. 3:17
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -887,7 +878,7 @@ Cierre del culto | Efe. 3:17
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -911,7 +902,7 @@ Cierre del culto | Efe. 3:17
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -934,7 +925,7 @@ Cierre del culto | Efe. 3:17
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>3</octave>
@@ -959,7 +950,7 @@ Cierre del culto | Efe. 3:17
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>3</octave>
@@ -978,72 +969,14 @@ Cierre del culto | Efe. 3:17
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m4h1">
         <root>
           <root-step>E</root-step>
         </root>
         <kind use-symbols="no">minor</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-          <root-alter>1</root-alter>
-        </root>
-        <kind use-symbols="no">suspended-fourth</kind>
-        <degree>
-          <degree-value>7</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <offset>1</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>G</bass-step>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-          <root-alter>1</root-alter>
-        </root>
-        <kind use-symbols="no">diminished</kind>
-        <offset>3</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-        </root>
-        <kind use-symbols="no">suspended-fourth</kind>
-        <bass>
-          <bass-step>A</bass-step>
-        </bass>
-        <degree>
-          <degree-value>7</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1062,6 +995,19 @@ Cierre del culto | Efe. 3:17
           <text>llé</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m4h2">
+        <root>
+          <root-step>F</root-step>
+          <root-alter>1</root-alter>
+        </root>
+        <kind use-symbols="no">suspended-fourth</kind>
+        <degree>
+          <degree-value>7</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -1079,6 +1025,16 @@ Cierre del culto | Efe. 3:17
           <text>na</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m4h3">
+        <root>
+          <root-step>E</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>G</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -1095,6 +1051,14 @@ Cierre del culto | Efe. 3:17
           <text>me</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m4h4">
+        <root>
+          <root-step>G</root-step>
+          <root-alter>1</root-alter>
+        </root>
+        <kind use-symbols="no">diminished</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -1111,6 +1075,21 @@ Cierre del culto | Efe. 3:17
           <text>de a</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m4h5">
+        <root>
+          <root-step>E</root-step>
+        </root>
+        <kind use-symbols="no">suspended-fourth</kind>
+        <bass>
+          <bass-step>A</bass-step>
+        </bass>
+        <degree>
+          <degree-value>7</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -1188,6 +1167,13 @@ Cierre del culto | Efe. 3:17
         <stem>down</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m4h6">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -1216,7 +1202,7 @@ Cierre del culto | Efe. 3:17
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>3</octave>
@@ -1241,7 +1227,7 @@ Cierre del culto | Efe. 3:17
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>3</octave>
@@ -1265,7 +1251,7 @@ Cierre del culto | Efe. 3:17
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>3</octave>
@@ -1291,7 +1277,7 @@ Cierre del culto | Efe. 3:17
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>3</octave>
@@ -1346,47 +1332,11 @@ Cierre del culto | Efe. 3:17
       </note>
     </measure>
     <measure number="5">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m5h1">
         <root>
           <root-step>D</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>C</bass-step>
-          <bass-alter>1</bass-alter>
-        </bass>
-        <degree>
-          <degree-value>9</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <bass>
-          <bass-step>A</bass-step>
-        </bass>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1405,7 +1355,7 @@ Cierre del culto | Efe. 3:17
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -1417,6 +1367,22 @@ Cierre del culto | Efe. 3:17
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m5h2">
+        <root>
+          <root-step>B</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>C</bass-step>
+          <bass-alter>1</bass-alter>
+        </bass>
+        <degree>
+          <degree-value>9</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -1451,6 +1417,13 @@ Cierre del culto | Efe. 3:17
           <text>flu</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m5h3">
+        <root>
+          <root-step>B</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -1468,7 +1441,7 @@ Cierre del culto | Efe. 3:17
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -1479,6 +1452,16 @@ Cierre del culto | Efe. 3:17
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m5h4">
+        <root>
+          <root-step>B</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <bass>
+          <bass-step>A</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -1496,7 +1479,7 @@ Cierre del culto | Efe. 3:17
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -1527,7 +1510,7 @@ Cierre del culto | Efe. 3:17
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -1553,7 +1536,7 @@ Cierre del culto | Efe. 3:17
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -1577,7 +1560,7 @@ Cierre del culto | Efe. 3:17
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>1</alter>
@@ -1602,7 +1585,7 @@ Cierre del culto | Efe. 3:17
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>3</octave>
@@ -1625,7 +1608,7 @@ Cierre del culto | Efe. 3:17
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>3</octave>
@@ -1638,42 +1621,11 @@ Cierre del culto | Efe. 3:17
       </note>
     </measure>
     <measure number="6">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m6h1">
         <root>
           <root-step>G</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <bass>
-          <bass-step>G</bass-step>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>F</bass-step>
-          <bass-alter>1</bass-alter>
-        </bass>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1693,7 +1645,7 @@ Cierre del culto | Efe. 3:17
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -1720,6 +1672,16 @@ Cierre del culto | Efe. 3:17
           <text>ma</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m6h2">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <bass>
+          <bass-step>G</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -1737,7 +1699,7 @@ Cierre del culto | Efe. 3:17
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <alter>1</alter>
@@ -1765,6 +1727,17 @@ Cierre del culto | Efe. 3:17
           <text>ca en</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m6h3">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>F</bass-step>
+          <bass-alter>1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -1806,7 +1779,7 @@ Cierre del culto | Efe. 3:17
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -1829,7 +1802,7 @@ Cierre del culto | Efe. 3:17
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -1841,6 +1814,13 @@ Cierre del culto | Efe. 3:17
         <stem>down</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m6h4">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -1854,7 +1834,7 @@ Cierre del culto | Efe. 3:17
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -1881,7 +1861,7 @@ Cierre del culto | Efe. 3:17
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -1904,7 +1884,7 @@ Cierre del culto | Efe. 3:17
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -1928,7 +1908,7 @@ Cierre del culto | Efe. 3:17
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -1951,7 +1931,7 @@ Cierre del culto | Efe. 3:17
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -1970,54 +1950,14 @@ Cierre del culto | Efe. 3:17
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m7h1">
         <root>
           <root-step>G</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <bass>
-          <bass-step>G</bass-step>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>F</bass-step>
-          <bass-alter>1</bass-alter>
-        </bass>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>F</bass-step>
-          <bass-alter>1</bass-alter>
-        </bass>
-        <degree>
-          <degree-value>9</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2036,7 +1976,7 @@ Cierre del culto | Efe. 3:17
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -2048,7 +1988,7 @@ Cierre del culto | Efe. 3:17
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -2059,6 +1999,16 @@ Cierre del culto | Efe. 3:17
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m7h2">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <bass>
+          <bass-step>G</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -2077,7 +2027,7 @@ Cierre del culto | Efe. 3:17
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -2089,7 +2039,7 @@ Cierre del culto | Efe. 3:17
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -2118,7 +2068,7 @@ Cierre del culto | Efe. 3:17
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -2130,7 +2080,7 @@ Cierre del culto | Efe. 3:17
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -2141,6 +2091,17 @@ Cierre del culto | Efe. 3:17
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m7h3">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>F</bass-step>
+          <bass-alter>1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -2159,7 +2120,7 @@ Cierre del culto | Efe. 3:17
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -2186,6 +2147,22 @@ Cierre del culto | Efe. 3:17
           <text>pre</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m7h4">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>F</bass-step>
+          <bass-alter>1</bass-alter>
+        </bass>
+        <degree>
+          <degree-value>9</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -2264,7 +2241,7 @@ Cierre del culto | Efe. 3:17
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -2288,7 +2265,7 @@ Cierre del culto | Efe. 3:17
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -2312,7 +2289,7 @@ Cierre del culto | Efe. 3:17
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -2336,7 +2313,7 @@ Cierre del culto | Efe. 3:17
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -2361,7 +2338,7 @@ Cierre del culto | Efe. 3:17
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -2375,7 +2352,7 @@ Cierre del culto | Efe. 3:17
       </note>
     </measure>
     <measure number="8">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m8h1">
         <root>
           <root-step>A</root-step>
         </root>
@@ -2390,22 +2367,6 @@ Cierre del culto | Efe. 3:17
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
         </degree>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2424,7 +2385,7 @@ Cierre del culto | Efe. 3:17
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -2436,7 +2397,7 @@ Cierre del culto | Efe. 3:17
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -2447,6 +2408,13 @@ Cierre del culto | Efe. 3:17
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m8h2">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -2464,7 +2432,7 @@ Cierre del culto | Efe. 3:17
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -2476,7 +2444,7 @@ Cierre del culto | Efe. 3:17
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -2487,6 +2455,13 @@ Cierre del culto | Efe. 3:17
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m8h3">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -2503,7 +2478,7 @@ Cierre del culto | Efe. 3:17
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -2516,7 +2491,7 @@ Cierre del culto | Efe. 3:17
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -2542,7 +2517,7 @@ Cierre del culto | Efe. 3:17
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>3</octave>
@@ -2565,7 +2540,7 @@ Cierre del culto | Efe. 3:17
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -2588,7 +2563,7 @@ Cierre del culto | Efe. 3:17
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -2601,19 +2576,11 @@ Cierre del culto | Efe. 3:17
       </note>
     </measure>
     <measure number="9">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m9h1">
         <root>
           <root-step>G</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2632,7 +2599,7 @@ Cierre del culto | Efe. 3:17
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -2643,6 +2610,13 @@ Cierre del culto | Efe. 3:17
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es042m9h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -2659,7 +2633,7 @@ Cierre del culto | Efe. 3:17
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -2686,7 +2660,7 @@ Cierre del culto | Efe. 3:17
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>3</octave>
@@ -2709,7 +2683,7 @@ Cierre del culto | Efe. 3:17
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>

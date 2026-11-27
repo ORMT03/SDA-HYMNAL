@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='UTF-8'?>
 <score-partwise version="4.0">
   <movement-title>En momentos así</movement-title>
   <identification>
@@ -27,7 +27,7 @@ Inicio del culto | Sal. 25:1
         <bottom-margin>60</bottom-margin>
       </page-margins>
     </page-layout>
-    <lyric-font font-family="Times New Roman" font-size="10" />
+    <lyric-font font-family="Times New Roman" font-size="10"/>
   </defaults>
   <credit page="1">
     <credit-type>title</credit-type>
@@ -62,13 +62,13 @@ Inicio del culto | Sal. 25:1
   </credit>
   <part-list>
     <score-part id="P1">
-      <part-name print-object="no" />
+      <part-name print-object="no"/>
       <part-name-display print-object="no">
-        <display-text />
+        <display-text/>
       </part-name-display>
-      <part-abbreviation print-object="no" />
+      <part-abbreviation print-object="no"/>
       <part-abbreviation-display print-object="no">
-        <display-text />
+        <display-text/>
       </part-abbreviation-display>
       <score-instrument id="P1-I1">
         <instrument-name>Piano</instrument-name>
@@ -88,7 +88,7 @@ Inicio del culto | Sal. 25:1
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <top-system-distance>95</top-system-distance>
+          <top-system-distance>80</top-system-distance>
         </system-layout>
       </print>
       <attributes>
@@ -110,7 +110,7 @@ Inicio del culto | Sal. 25:1
           <line>4</line>
         </clef>
       </attributes>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m1h1">
         <root>
           <root-step>D</root-step>
         </root>
@@ -163,7 +163,7 @@ Inicio del culto | Sal. 25:1
         <duration>2</duration>
       </backup>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>5</voice>
         <type>quarter</type>
@@ -171,7 +171,7 @@ Inicio del culto | Sal. 25:1
       </note>
     </measure>
     <measure number="1">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m2h1">
         <root>
           <root-step>D</root-step>
         </root>
@@ -181,15 +181,6 @@ Inicio del culto | Sal. 25:1
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
         </degree>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-          <root-alter>1</root-alter>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <offset>2</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -207,6 +198,14 @@ Inicio del culto | Sal. 25:1
           <text>men</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m2h2">
+        <root>
+          <root-step>F</root-step>
+          <root-alter>1</root-alter>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -215,7 +214,7 @@ Inicio del culto | Sal. 25:1
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -249,12 +248,12 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>2</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -263,7 +262,7 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>2</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
@@ -308,23 +307,11 @@ Inicio del culto | Sal. 25:1
       </note>
     </measure>
     <measure number="2">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m3h1">
         <root>
           <root-step>B</root-step>
         </root>
         <kind use-symbols="no">minor-seventh</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>F</bass-step>
-          <bass-alter>1</bass-alter>
-        </bass>
-        <offset>2</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -333,13 +320,13 @@ Inicio del culto | Sal. 25:1
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>end</syllabic>
@@ -352,14 +339,14 @@ Inicio del culto | Sal. 25:1
           <octave>4</octave>
         </pitch>
         <duration>1</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>eighth</type>
         <stem>up</stem>
         <staff>1</staff>
         <beam number="1">begin</beam>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
@@ -390,7 +377,7 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>2</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
@@ -408,6 +395,17 @@ Inicio del culto | Sal. 25:1
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m3h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>F</bass-step>
+          <bass-alter>1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -422,7 +420,7 @@ Inicio del culto | Sal. 25:1
       </note>
     </measure>
     <measure number="3">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m4h1">
         <root>
           <root-step>E</root-step>
         </root>
@@ -452,7 +450,7 @@ Inicio del culto | Sal. 25:1
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -487,12 +485,12 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>2</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -500,7 +498,7 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>2</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
@@ -544,23 +542,11 @@ Inicio del culto | Sal. 25:1
       </note>
     </measure>
     <measure number="4">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m5h1">
         <root>
           <root-step>A</root-step>
         </root>
         <kind use-symbols="no">suspended-fourth</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-          <root-alter>1</root-alter>
-        </root>
-        <kind use-symbols="no">diminished</kind>
-        <bass>
-          <bass-step>G</bass-step>
-        </bass>
-        <offset>2</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -569,13 +555,13 @@ Inicio del culto | Sal. 25:1
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>end</syllabic>
@@ -588,14 +574,14 @@ Inicio del culto | Sal. 25:1
           <octave>4</octave>
         </pitch>
         <duration>1</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>eighth</type>
         <stem>up</stem>
         <staff>1</staff>
         <beam number="1">begin</beam>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
@@ -625,6 +611,17 @@ Inicio del culto | Sal. 25:1
         <stem>down</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m5h2">
+        <root>
+          <root-step>C</root-step>
+          <root-alter>1</root-alter>
+        </root>
+        <kind use-symbols="no">diminished</kind>
+        <bass>
+          <bass-step>G</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -677,7 +674,7 @@ Inicio del culto | Sal. 25:1
       </note>
     </measure>
     <measure number="5">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m6h1">
         <root>
           <root-step>E</root-step>
         </root>
@@ -707,7 +704,7 @@ Inicio del culto | Sal. 25:1
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -742,12 +739,12 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>2</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -755,7 +752,7 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>2</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
@@ -805,34 +802,14 @@ Inicio del culto | Sal. 25:1
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m7h1">
         <root>
           <root-step>A</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-          <root-alter>1</root-alter>
-        </root>
-        <kind use-symbols="no">diminished</kind>
-        <bass>
-          <bass-step>G</bass-step>
-        </bass>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -852,7 +829,7 @@ Inicio del culto | Sal. 25:1
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -863,6 +840,13 @@ Inicio del culto | Sal. 25:1
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m7h2">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -879,7 +863,7 @@ Inicio del culto | Sal. 25:1
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -890,6 +874,17 @@ Inicio del culto | Sal. 25:1
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m7h3">
+        <root>
+          <root-step>C</root-step>
+          <root-alter>1</root-alter>
+        </root>
+        <kind use-symbols="no">diminished</kind>
+        <bass>
+          <bass-step>G</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -907,7 +902,7 @@ Inicio del culto | Sal. 25:1
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -958,30 +953,11 @@ Inicio del culto | Sal. 25:1
       </note>
     </measure>
     <measure number="7">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m8h1">
         <root>
           <root-step>D</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>A</bass-step>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -993,7 +969,7 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -1002,7 +978,7 @@ Inicio del culto | Sal. 25:1
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -1010,12 +986,12 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -1023,7 +999,7 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
@@ -1041,6 +1017,16 @@ Inicio del culto | Sal. 25:1
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m8h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>A</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -1052,6 +1038,13 @@ Inicio del culto | Sal. 25:1
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m8h3">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -1065,7 +1058,7 @@ Inicio del culto | Sal. 25:1
       </note>
     </measure>
     <measure number="8">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m9h1">
         <root>
           <root-step>A</root-step>
         </root>
@@ -1080,23 +1073,6 @@ Inicio del culto | Sal. 25:1
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
         </degree>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-          <root-alter>1</root-alter>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1114,6 +1090,14 @@ Inicio del culto | Sal. 25:1
           <text>to.</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m9h3">
+        <root>
+          <root-step>C</root-step>
+          <root-alter>1</root-alter>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -1162,7 +1146,7 @@ Inicio del culto | Sal. 25:1
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -1173,6 +1157,13 @@ Inicio del culto | Sal. 25:1
         <stem>down</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m9h2">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -1186,7 +1177,7 @@ Inicio del culto | Sal. 25:1
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -1212,7 +1203,7 @@ Inicio del culto | Sal. 25:1
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -1224,7 +1215,7 @@ Inicio del culto | Sal. 25:1
         <staff>2</staff>
       </note>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>5</voice>
         <type>quarter</type>
@@ -1232,7 +1223,7 @@ Inicio del culto | Sal. 25:1
       </note>
     </measure>
     <measure number="9">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m10h1">
         <root>
           <root-step>D</root-step>
         </root>
@@ -1242,15 +1233,6 @@ Inicio del culto | Sal. 25:1
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
         </degree>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-          <root-alter>1</root-alter>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <offset>2</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1268,6 +1250,14 @@ Inicio del culto | Sal. 25:1
           <text>men</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m10h2">
+        <root>
+          <root-step>F</root-step>
+          <root-alter>1</root-alter>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -1276,7 +1266,7 @@ Inicio del culto | Sal. 25:1
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -1310,12 +1300,12 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>2</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -1324,7 +1314,7 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>2</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
@@ -1369,23 +1359,11 @@ Inicio del culto | Sal. 25:1
       </note>
     </measure>
     <measure number="10">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m11h1">
         <root>
           <root-step>B</root-step>
         </root>
         <kind use-symbols="no">minor-seventh</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>F</bass-step>
-          <bass-alter>1</bass-alter>
-        </bass>
-        <offset>2</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1394,13 +1372,13 @@ Inicio del culto | Sal. 25:1
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>end</syllabic>
@@ -1413,14 +1391,14 @@ Inicio del culto | Sal. 25:1
           <octave>4</octave>
         </pitch>
         <duration>1</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>eighth</type>
         <stem>up</stem>
         <staff>1</staff>
         <beam number="1">begin</beam>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
@@ -1451,7 +1429,7 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>2</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
@@ -1469,6 +1447,17 @@ Inicio del culto | Sal. 25:1
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m11h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>F</bass-step>
+          <bass-alter>1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -1483,7 +1472,7 @@ Inicio del culto | Sal. 25:1
       </note>
     </measure>
     <measure number="11">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m12h1">
         <root>
           <root-step>E</root-step>
         </root>
@@ -1513,7 +1502,7 @@ Inicio del culto | Sal. 25:1
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -1548,12 +1537,12 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>2</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -1561,7 +1550,7 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>2</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
@@ -1611,37 +1600,14 @@ Inicio del culto | Sal. 25:1
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m13h1">
         <root>
           <root-step>A</root-step>
         </root>
         <kind use-symbols="no">suspended-fourth</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-          <root-alter>1</root-alter>
-        </root>
-        <kind use-symbols="no">diminished</kind>
-        <bass>
-          <bass-step>G</bass-step>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>G</bass-step>
-        </bass>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1650,33 +1616,43 @@ Inicio del culto | Sal. 25:1
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>end</syllabic>
           <text>ñor,</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m13h3">
+        <root>
+          <root-step>E</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>G</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
           <octave>4</octave>
         </pitch>
         <duration>1</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>eighth</type>
         <stem>up</stem>
         <staff>1</staff>
         <beam number="1">begin</beam>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
@@ -1696,7 +1672,7 @@ Inicio del culto | Sal. 25:1
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -1722,6 +1698,17 @@ Inicio del culto | Sal. 25:1
         <stem>down</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m13h2">
+        <root>
+          <root-step>C</root-step>
+          <root-alter>1</root-alter>
+        </root>
+        <kind use-symbols="no">diminished</kind>
+        <bass>
+          <bass-step>G</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -1774,7 +1761,7 @@ Inicio del culto | Sal. 25:1
       </note>
     </measure>
     <measure number="13">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m14h1">
         <root>
           <root-step>E</root-step>
         </root>
@@ -1804,7 +1791,7 @@ Inicio del culto | Sal. 25:1
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -1839,12 +1826,12 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>2</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -1852,7 +1839,7 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>2</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
@@ -1896,37 +1883,11 @@ Inicio del culto | Sal. 25:1
       </note>
     </measure>
     <measure number="14">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m15h1">
         <root>
           <root-step>A</root-step>
         </root>
         <kind use-symbols="no">dominant</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">suspended-fourth</kind>
-        <degree>
-          <degree-value>7</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <degree>
-          <degree-value>9</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1946,7 +1907,7 @@ Inicio del culto | Sal. 25:1
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -1957,6 +1918,23 @@ Inicio del culto | Sal. 25:1
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m15h2">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">suspended-fourth</kind>
+        <degree>
+          <degree-value>7</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <degree>
+          <degree-value>9</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1973,7 +1951,7 @@ Inicio del culto | Sal. 25:1
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -1984,6 +1962,13 @@ Inicio del culto | Sal. 25:1
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m15h3">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -2000,7 +1985,7 @@ Inicio del culto | Sal. 25:1
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <alter>1</alter>
@@ -2023,12 +2008,12 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>3</octave>
@@ -2036,12 +2021,12 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -2049,28 +2034,17 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
     </measure>
     <measure number="15">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m16h1">
         <root>
           <root-step>D</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>A</bass-step>
-        </bass>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2080,14 +2054,14 @@ Inicio del culto | Sal. 25:1
           <octave>3</octave>
         </pitch>
         <duration>6</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>single</syllabic>
@@ -2095,37 +2069,37 @@ Inicio del culto | Sal. 25:1
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
         </pitch>
         <duration>6</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
         <duration>6</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <backup>
@@ -2142,6 +2116,16 @@ Inicio del culto | Sal. 25:1
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m16h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>A</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -2155,23 +2139,11 @@ Inicio del culto | Sal. 25:1
       </note>
     </measure>
     <measure number="16">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m17h1">
         <root>
           <root-step>D</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>F</bass-step>
-          <bass-alter>1</bass-alter>
-        </bass>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2181,45 +2153,45 @@ Inicio del culto | Sal. 25:1
           <octave>3</octave>
         </pitch>
         <duration>2</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
         </pitch>
         <duration>2</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
         <duration>2</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
@@ -2238,7 +2210,7 @@ Inicio del culto | Sal. 25:1
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -2250,7 +2222,7 @@ Inicio del culto | Sal. 25:1
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -2262,6 +2234,17 @@ Inicio del culto | Sal. 25:1
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m17h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>F</bass-step>
+          <bass-alter>1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -2278,7 +2261,7 @@ Inicio del culto | Sal. 25:1
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -2291,7 +2274,7 @@ Inicio del culto | Sal. 25:1
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -2330,30 +2313,11 @@ Inicio del culto | Sal. 25:1
       </note>
     </measure>
     <measure number="17">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m18h1">
         <root>
           <root-step>G</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>D</bass-step>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2364,7 +2328,7 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -2373,7 +2337,7 @@ Inicio del culto | Sal. 25:1
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -2381,7 +2345,7 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
@@ -2399,6 +2363,16 @@ Inicio del culto | Sal. 25:1
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m18h2">
+        <root>
+          <root-step>B</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>D</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -2410,6 +2384,13 @@ Inicio del culto | Sal. 25:1
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m18h3">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -2429,33 +2410,14 @@ Inicio del culto | Sal. 25:1
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m19h1">
         <root>
           <root-step>A</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <bass>
-          <bass-step>G</bass-step>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2475,7 +2437,7 @@ Inicio del culto | Sal. 25:1
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -2486,6 +2448,13 @@ Inicio del culto | Sal. 25:1
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m19h3">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -2502,7 +2471,7 @@ Inicio del culto | Sal. 25:1
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -2540,6 +2509,16 @@ Inicio del culto | Sal. 25:1
         <staff>2</staff>
         <beam number="1">end</beam>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m19h2">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <bass>
+          <bass-step>G</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -2553,23 +2532,11 @@ Inicio del culto | Sal. 25:1
       </note>
     </measure>
     <measure number="19">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m20h1">
         <root>
           <root-step>D</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-          <root-alter>1</root-alter>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>A</bass-step>
-        </bass>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2578,14 +2545,14 @@ Inicio del culto | Sal. 25:1
           <octave>3</octave>
         </pitch>
         <duration>6</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>end</syllabic>
@@ -2593,21 +2560,21 @@ Inicio del culto | Sal. 25:1
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
           <octave>4</octave>
         </pitch>
         <duration>6</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <backup>
@@ -2624,6 +2591,17 @@ Inicio del culto | Sal. 25:1
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m20h2">
+        <root>
+          <root-step>F</root-step>
+          <root-alter>1</root-alter>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>A</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -2637,23 +2615,11 @@ Inicio del culto | Sal. 25:1
       </note>
     </measure>
     <measure number="20">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m21h1">
         <root>
           <root-step>D</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>F</bass-step>
-          <bass-alter>1</bass-alter>
-        </bass>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2662,30 +2628,30 @@ Inicio del culto | Sal. 25:1
           <octave>3</octave>
         </pitch>
         <duration>2</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
           <octave>4</octave>
         </pitch>
         <duration>2</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
@@ -2704,7 +2670,7 @@ Inicio del culto | Sal. 25:1
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -2716,7 +2682,7 @@ Inicio del culto | Sal. 25:1
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -2728,6 +2694,17 @@ Inicio del culto | Sal. 25:1
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m21h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>F</bass-step>
+          <bass-alter>1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -2744,7 +2721,7 @@ Inicio del culto | Sal. 25:1
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -2757,7 +2734,7 @@ Inicio del culto | Sal. 25:1
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -2796,30 +2773,11 @@ Inicio del culto | Sal. 25:1
       </note>
     </measure>
     <measure number="21">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m22h1">
         <root>
           <root-step>G</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>D</bass-step>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2830,7 +2788,7 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -2839,7 +2797,7 @@ Inicio del culto | Sal. 25:1
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -2847,7 +2805,7 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
@@ -2865,6 +2823,16 @@ Inicio del culto | Sal. 25:1
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m22h2">
+        <root>
+          <root-step>B</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>D</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -2876,6 +2844,13 @@ Inicio del culto | Sal. 25:1
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m22h3">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -2889,30 +2864,11 @@ Inicio del culto | Sal. 25:1
       </note>
     </measure>
     <measure number="22">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m23h1">
         <root>
           <root-step>A</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <bass>
-          <bass-step>G</bass-step>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2932,7 +2888,7 @@ Inicio del culto | Sal. 25:1
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -2943,6 +2899,13 @@ Inicio del culto | Sal. 25:1
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m23h3">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -2959,7 +2922,7 @@ Inicio del culto | Sal. 25:1
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -2997,6 +2960,16 @@ Inicio del culto | Sal. 25:1
         <staff>2</staff>
         <beam number="1">end</beam>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m23h2">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <bass>
+          <bass-step>G</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -3010,23 +2983,11 @@ Inicio del culto | Sal. 25:1
       </note>
     </measure>
     <measure number="23">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m24h1">
         <root>
           <root-step>D</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-          <root-alter>1</root-alter>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>A</bass-step>
-        </bass>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3035,14 +2996,14 @@ Inicio del culto | Sal. 25:1
           <octave>3</octave>
         </pitch>
         <duration>6</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>single</syllabic>
@@ -3050,21 +3011,21 @@ Inicio del culto | Sal. 25:1
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
           <octave>4</octave>
         </pitch>
         <duration>6</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <backup>
@@ -3081,6 +3042,17 @@ Inicio del culto | Sal. 25:1
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m24h2">
+        <root>
+          <root-step>F</root-step>
+          <root-alter>1</root-alter>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>A</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -3094,23 +3066,11 @@ Inicio del culto | Sal. 25:1
       </note>
     </measure>
     <measure number="24">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m25h1">
         <root>
           <root-step>D</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>F</bass-step>
-          <bass-alter>1</bass-alter>
-        </bass>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3119,30 +3079,30 @@ Inicio del culto | Sal. 25:1
           <octave>3</octave>
         </pitch>
         <duration>2</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
           <octave>4</octave>
         </pitch>
         <duration>2</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
@@ -3161,7 +3121,7 @@ Inicio del culto | Sal. 25:1
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -3173,7 +3133,7 @@ Inicio del culto | Sal. 25:1
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -3185,6 +3145,17 @@ Inicio del culto | Sal. 25:1
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m25h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>F</bass-step>
+          <bass-alter>1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -3201,7 +3172,7 @@ Inicio del culto | Sal. 25:1
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -3214,7 +3185,7 @@ Inicio del culto | Sal. 25:1
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -3259,33 +3230,14 @@ Inicio del culto | Sal. 25:1
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m26h1">
         <root>
           <root-step>G</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>D</bass-step>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3296,7 +3248,7 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -3305,7 +3257,7 @@ Inicio del culto | Sal. 25:1
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -3313,7 +3265,7 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
@@ -3331,6 +3283,16 @@ Inicio del culto | Sal. 25:1
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m26h2">
+        <root>
+          <root-step>B</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>D</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -3342,6 +3304,13 @@ Inicio del culto | Sal. 25:1
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m26h3">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -3355,31 +3324,11 @@ Inicio del culto | Sal. 25:1
       </note>
     </measure>
     <measure number="26">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m27h1">
         <root>
           <root-step>A</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-          <root-alter>1</root-alter>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>E</bass-step>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3390,7 +3339,7 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -3399,7 +3348,7 @@ Inicio del culto | Sal. 25:1
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <alter>1</alter>
@@ -3408,7 +3357,7 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
@@ -3426,6 +3375,17 @@ Inicio del culto | Sal. 25:1
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m27h2">
+        <root>
+          <root-step>C</root-step>
+          <root-alter>1</root-alter>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>E</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -3437,6 +3397,13 @@ Inicio del culto | Sal. 25:1
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m27h3">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -3450,19 +3417,11 @@ Inicio del culto | Sal. 25:1
       </note>
     </measure>
     <measure number="27">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m28h1">
         <root>
           <root-step>B</root-step>
         </root>
         <kind use-symbols="no">minor</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3473,7 +3432,7 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -3493,7 +3452,7 @@ Inicio del culto | Sal. 25:1
         <duration>3</duration>
         <voice>2</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
@@ -3508,6 +3467,13 @@ Inicio del culto | Sal. 25:1
         <stem>down</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m28h2">
+        <root>
+          <root-step>B</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -3560,7 +3526,7 @@ Inicio del culto | Sal. 25:1
       </note>
     </measure>
     <measure number="28">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m29h1">
         <root>
           <root-step>G</root-step>
         </root>
@@ -3570,30 +3536,6 @@ Inicio del culto | Sal. 25:1
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
         </degree>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>B</bass-step>
-        </bass>
-        <degree>
-          <degree-value>9</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3611,6 +3553,21 @@ Inicio del culto | Sal. 25:1
           <text>te a</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m29h3">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>B</bass-step>
+        </bass>
+        <degree>
+          <degree-value>9</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -3637,12 +3594,12 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>2</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -3650,7 +3607,7 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>2</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
@@ -3681,6 +3638,13 @@ Inicio del culto | Sal. 25:1
         <staff>2</staff>
         <beam number="1">end</beam>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m29h2">
+        <root>
+          <root-step>B</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -3694,7 +3658,7 @@ Inicio del culto | Sal. 25:1
       </note>
     </measure>
     <measure number="29">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m30h1">
         <root>
           <root-step>D</root-step>
         </root>
@@ -3702,29 +3666,6 @@ Inicio del culto | Sal. 25:1
         <bass>
           <bass-step>A</bass-step>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>F</bass-step>
-          <bass-alter>1</bass-alter>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>A</bass-step>
-        </bass>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3735,7 +3676,7 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -3744,7 +3685,7 @@ Inicio del culto | Sal. 25:1
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -3753,7 +3694,7 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
@@ -3771,6 +3712,17 @@ Inicio del culto | Sal. 25:1
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m30h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>F</bass-step>
+          <bass-alter>1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -3783,6 +3735,16 @@ Inicio del culto | Sal. 25:1
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m30h3">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>A</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -3802,37 +3764,14 @@ Inicio del culto | Sal. 25:1
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m31h1">
         <root>
           <root-step>A</root-step>
         </root>
         <kind use-symbols="no">suspended-fourth</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">suspended-second</kind>
-        <bass>
-          <bass-step>E</bass-step>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-          <root-alter>1</root-alter>
-        </root>
-        <kind use-symbols="no">diminished</kind>
-        <bass>
-          <bass-step>G</bass-step>
-        </bass>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3843,7 +3782,7 @@ Inicio del culto | Sal. 25:1
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -3865,6 +3804,17 @@ Inicio del culto | Sal. 25:1
         <stem>down</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m31h3">
+        <root>
+          <root-step>C</root-step>
+          <root-alter>1</root-alter>
+        </root>
+        <kind use-symbols="no">diminished</kind>
+        <bass>
+          <bass-step>G</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -3891,6 +3841,16 @@ Inicio del culto | Sal. 25:1
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m31h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">suspended-second</kind>
+        <bass>
+          <bass-step>E</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -3915,22 +3875,11 @@ Inicio del culto | Sal. 25:1
       </note>
     </measure>
     <measure number="31">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m32h1">
         <root>
           <root-step>D</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>A</bass-step>
-        </bass>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3940,14 +3889,14 @@ Inicio del culto | Sal. 25:1
           <octave>3</octave>
         </pitch>
         <duration>6</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>end</syllabic>
@@ -3955,37 +3904,37 @@ Inicio del culto | Sal. 25:1
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
         </pitch>
         <duration>6</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
         <duration>6</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <backup>
@@ -4002,6 +3951,16 @@ Inicio del culto | Sal. 25:1
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m32h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>A</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -4015,7 +3974,7 @@ Inicio del culto | Sal. 25:1
       </note>
     </measure>
     <measure number="32">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es034m33h1">
         <root>
           <root-step>D</root-step>
         </root>
@@ -4029,45 +3988,45 @@ Inicio del culto | Sal. 25:1
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <backup>

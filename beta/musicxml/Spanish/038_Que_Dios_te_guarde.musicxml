@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='UTF-8'?>
 <score-partwise version="4.0">
   <movement-title>Que Dios te guarde</movement-title>
   <identification>
@@ -26,7 +26,7 @@ Cierre del culto | Gén. 31:49
         <bottom-margin>60</bottom-margin>
       </page-margins>
     </page-layout>
-    <lyric-font font-family="Times New Roman" font-size="10" />
+    <lyric-font font-family="Times New Roman" font-size="10"/>
   </defaults>
   <credit page="1">
     <credit-type>title</credit-type>
@@ -60,13 +60,13 @@ Cierre del culto | Gén. 31:49
   </credit>
   <part-list>
     <score-part id="P1">
-      <part-name print-object="no" />
+      <part-name print-object="no"/>
       <part-name-display print-object="no">
-        <display-text />
+        <display-text/>
       </part-name-display>
-      <part-abbreviation print-object="no" />
+      <part-abbreviation print-object="no"/>
       <part-abbreviation-display print-object="no">
-        <display-text />
+        <display-text/>
       </part-abbreviation-display>
       <score-instrument id="P1-I1">
         <instrument-name>Piano</instrument-name>
@@ -86,7 +86,7 @@ Cierre del culto | Gén. 31:49
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <top-system-distance>95</top-system-distance>
+          <top-system-distance>80</top-system-distance>
         </system-layout>
       </print>
       <attributes>
@@ -108,7 +108,7 @@ Cierre del culto | Gén. 31:49
           <line>4</line>
         </clef>
       </attributes>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m1h1">
         <root>
           <root-step>E</root-step>
           <root-alter>-1</root-alter>
@@ -137,7 +137,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -170,7 +170,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -203,7 +203,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -230,7 +230,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -254,7 +254,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -278,7 +278,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -292,7 +292,7 @@ Cierre del culto | Gén. 31:49
       </note>
     </measure>
     <measure number="2">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m2h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
@@ -307,15 +307,6 @@ Cierre del culto | Gén. 31:49
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
         </degree>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -339,7 +330,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -350,6 +341,14 @@ Cierre del culto | Gén. 31:49
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m2h2">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -371,7 +370,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -399,7 +398,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -424,7 +423,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -437,37 +436,12 @@ Cierre del culto | Gén. 31:49
       </note>
     </measure>
     <measure number="3">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m3h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>B</bass-step>
-          <bass-alter>-1</bass-alter>
-        </bass>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <bass>
-          <bass-step>B</bass-step>
-          <bass-alter>-1</bass-alter>
-        </bass>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -491,7 +465,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -523,7 +497,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -534,6 +508,18 @@ Cierre del culto | Gén. 31:49
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m3h2">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>B</bass-step>
+          <bass-alter>-1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -555,7 +541,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -567,6 +553,17 @@ Cierre del culto | Gén. 31:49
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m3h3">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <bass>
+          <bass-step>B</bass-step>
+          <bass-alter>-1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -587,7 +584,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -615,7 +612,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -639,7 +636,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -663,7 +660,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -687,7 +684,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -700,7 +697,7 @@ Cierre del culto | Gén. 31:49
       </note>
     </measure>
     <measure number="4">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m4h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
@@ -716,7 +713,7 @@ Cierre del culto | Gén. 31:49
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -729,7 +726,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -737,12 +734,12 @@ Cierre del culto | Gén. 31:49
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>quarter</type>
@@ -760,12 +757,12 @@ Cierre del culto | Gén. 31:49
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -774,12 +771,12 @@ Cierre del culto | Gén. 31:49
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>5</voice>
         <type>quarter</type>
@@ -793,44 +790,15 @@ Cierre del culto | Gén. 31:49
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m5h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <bass>
-          <bass-step>A</bass-step>
-          <bass-alter>-1</bass-alter>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -853,7 +821,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -864,6 +832,13 @@ Cierre del culto | Gén. 31:49
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m5h3">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -884,7 +859,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -895,6 +870,13 @@ Cierre del culto | Gén. 31:49
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m5h4">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -916,7 +898,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -943,9 +925,21 @@ Cierre del culto | Gén. 31:49
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="start" number="9" placement="below" />
+          <slur type="start" number="9" placement="below"/>
         </notations>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m5h2">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <bass>
+          <bass-step>A</bass-step>
+          <bass-alter>-1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -958,7 +952,7 @@ Cierre del culto | Gén. 31:49
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="stop" number="9" placement="below" />
+          <slur type="stop" number="9" placement="below"/>
         </notations>
       </note>
       <note>
@@ -973,7 +967,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -997,7 +991,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -1025,7 +1019,7 @@ Cierre del culto | Gén. 31:49
       </note>
     </measure>
     <measure number="6">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m6h1">
         <root>
           <root-step>G</root-step>
         </root>
@@ -1034,15 +1028,6 @@ Cierre del culto | Gén. 31:49
           <bass-step>B</bass-step>
           <bass-alter>-1</bass-alter>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1065,7 +1050,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -1076,6 +1061,14 @@ Cierre del culto | Gén. 31:49
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m6h2">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -1096,7 +1089,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -1123,7 +1116,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -1148,7 +1141,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -1162,46 +1155,12 @@ Cierre del culto | Gén. 31:49
       </note>
     </measure>
     <measure number="7">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m7h1">
         <root>
           <root-step>E</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>E</bass-step>
-          <bass-alter>-1</bass-alter>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major-ninth</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>E</bass-step>
-          <bass-alter>-1</bass-alter>
-        </bass>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1225,7 +1184,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -1237,6 +1196,18 @@ Cierre del culto | Gén. 31:49
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m7h2">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          <bass-alter>-1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -1257,7 +1228,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -1269,6 +1240,14 @@ Cierre del culto | Gén. 31:49
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m7h3">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major-ninth</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -1289,7 +1268,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -1300,6 +1279,17 @@ Cierre del culto | Gén. 31:49
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m7h4">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          <bass-alter>-1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -1321,7 +1311,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -1348,7 +1338,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -1372,7 +1362,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -1397,7 +1387,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -1422,7 +1412,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -1435,7 +1425,7 @@ Cierre del culto | Gén. 31:49
       </note>
     </measure>
     <measure number="8">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m8h1">
         <root>
           <root-step>E</root-step>
           <root-alter>-1</root-alter>
@@ -1452,7 +1442,7 @@ Cierre del culto | Gén. 31:49
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -1465,7 +1455,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -1473,12 +1463,12 @@ Cierre del culto | Gén. 31:49
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>quarter</type>
@@ -1496,12 +1486,12 @@ Cierre del culto | Gén. 31:49
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -1510,12 +1500,12 @@ Cierre del culto | Gén. 31:49
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>5</voice>
         <type>quarter</type>
@@ -1523,7 +1513,7 @@ Cierre del culto | Gén. 31:49
       </note>
     </measure>
     <measure number="9">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m9h1">
         <root>
           <root-step>E</root-step>
           <root-alter>-1</root-alter>
@@ -1532,14 +1522,6 @@ Cierre del culto | Gén. 31:49
         <bass>
           <bass-step>G</bass-step>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <offset>2</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1563,7 +1545,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -1575,6 +1557,13 @@ Cierre del culto | Gén. 31:49
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m9h2">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -1595,7 +1584,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -1627,7 +1616,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -1653,7 +1642,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -1677,7 +1666,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -1700,7 +1689,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -1720,25 +1709,14 @@ Cierre del culto | Gén. 31:49
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m10h1">
         <root>
           <root-step>C</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <bass>
-          <bass-step>E</bass-step>
-        </bass>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1762,7 +1740,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -1773,6 +1751,16 @@ Cierre del culto | Gén. 31:49
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m10h2">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <bass>
+          <bass-step>E</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -1793,7 +1781,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -1820,7 +1808,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -1832,7 +1820,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -1856,7 +1844,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -1869,7 +1857,7 @@ Cierre del culto | Gén. 31:49
       </note>
     </measure>
     <measure number="11">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m11h1">
         <root>
           <root-step>C</root-step>
         </root>
@@ -1882,26 +1870,6 @@ Cierre del culto | Gén. 31:49
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
         </degree>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>G</bass-step>
-        </bass>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1924,7 +1892,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -1936,6 +1904,13 @@ Cierre del culto | Gén. 31:49
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m11h2">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -1956,7 +1931,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -1988,7 +1963,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -2000,6 +1975,17 @@ Cierre del culto | Gén. 31:49
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m11h3">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>G</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -2021,7 +2007,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -2047,7 +2033,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -2070,7 +2056,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -2093,7 +2079,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -2116,7 +2102,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2130,7 +2116,7 @@ Cierre del culto | Gén. 31:49
       </note>
     </measure>
     <measure number="12">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m12h1">
         <root>
           <root-step>F</root-step>
         </root>
@@ -2149,7 +2135,7 @@ Cierre del culto | Gén. 31:49
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -2162,7 +2148,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -2170,12 +2156,12 @@ Cierre del culto | Gén. 31:49
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>quarter</type>
@@ -2193,12 +2179,12 @@ Cierre del culto | Gén. 31:49
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -2207,12 +2193,12 @@ Cierre del culto | Gén. 31:49
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>5</voice>
         <type>quarter</type>
@@ -2220,7 +2206,7 @@ Cierre del culto | Gén. 31:49
       </note>
     </measure>
     <measure number="13">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m13h1">
         <root>
           <root-step>E</root-step>
           <root-alter>-1</root-alter>
@@ -2232,82 +2218,81 @@ Cierre del culto | Gén. 31:49
         </bass>
         <staff>1</staff>
       </harmony>
-      <harmony placement="above" print-frame="no">
+      <note>
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>3</octave>
+        </pitch>
+        <duration>2</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <stem>up</stem>
+        <staff>1</staff>
+        <lyric number="1" placement="below">
+          <syllabic>single</syllabic>
+          <text>que</text>
+        </lyric>
+        <lyric number="2" placement="below">
+          <syllabic>single</syllabic>
+          <text>que</text>
+        </lyric>
+      </note>
+      <note>
+        <chord/>
+        <pitch>
+          <step>E</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>2</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <stem>up</stem>
+        <staff>1</staff>
+      </note>
+      <note>
+        <pitch>
+          <step>B</step>
+          <alter>-1</alter>
+          <octave>3</octave>
+        </pitch>
+        <duration>4</duration>
+        <voice>1</voice>
+        <type>half</type>
+        <stem>up</stem>
+        <staff>1</staff>
+        <lyric number="1" placement="below">
+          <syllabic>single</syllabic>
+          <text>Dios</text>
+        </lyric>
+        <lyric number="2" placement="below">
+          <syllabic>single</syllabic>
+          <text>Dios</text>
+        </lyric>
+      </note>
+      <note>
+        <chord/>
+        <pitch>
+          <step>E</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>4</duration>
+        <voice>1</voice>
+        <type>half</type>
+        <stem>up</stem>
+        <staff>1</staff>
+      </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m13h2">
         <root>
           <root-step>B</root-step>
         </root>
         <kind use-symbols="no">augmented</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
         <pitch>
-          <step>B</step>
-          <alter>-1</alter>
-          <octave>3</octave>
-        </pitch>
-        <duration>2</duration>
-        <voice>1</voice>
-        <type>quarter</type>
-        <stem>up</stem>
-        <staff>1</staff>
-        <lyric number="1" placement="below">
-          <syllabic>single</syllabic>
-          <text>que</text>
-        </lyric>
-        <lyric number="2" placement="below">
-          <syllabic>single</syllabic>
-          <text>que</text>
-        </lyric>
-      </note>
-      <note>
-        <chord />
-        <pitch>
-          <step>E</step>
-          <alter>-1</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>2</duration>
-        <voice>1</voice>
-        <type>quarter</type>
-        <stem>up</stem>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
-          <step>B</step>
-          <alter>-1</alter>
-          <octave>3</octave>
-        </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
-        <type>half</type>
-        <stem>up</stem>
-        <staff>1</staff>
-        <lyric number="1" placement="below">
-          <syllabic>single</syllabic>
-          <text>Dios</text>
-        </lyric>
-        <lyric number="2" placement="below">
-          <syllabic>single</syllabic>
-          <text>Dios</text>
-        </lyric>
-      </note>
-      <note>
-        <chord />
-        <pitch>
-          <step>E</step>
-          <alter>-1</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
-        <type>half</type>
-        <stem>up</stem>
-        <staff>1</staff>
-      </note>
-      <note>
-        <pitch>
           <step>E</step>
           <alter>-1</alter>
           <octave>4</octave>
@@ -2327,7 +2312,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -2354,7 +2339,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -2378,7 +2363,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -2402,7 +2387,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -2415,7 +2400,7 @@ Cierre del culto | Gén. 31:49
       </note>
     </measure>
     <measure number="14">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m14h1">
         <root>
           <root-step>G</root-step>
         </root>
@@ -2428,14 +2413,6 @@ Cierre del culto | Gén. 31:49
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
         </degree>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2458,7 +2435,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -2469,6 +2446,13 @@ Cierre del culto | Gén. 31:49
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m14h2">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -2489,7 +2473,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -2516,7 +2500,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -2539,7 +2523,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -2558,24 +2542,15 @@ Cierre del culto | Gén. 31:49
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m15h1">
         <root>
           <root-step>A</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major-seventh</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2598,7 +2573,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -2630,7 +2605,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -2642,6 +2617,14 @@ Cierre del culto | Gén. 31:49
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m15h2">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major-seventh</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -2662,7 +2645,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -2689,7 +2672,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -2714,7 +2697,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -2739,7 +2722,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -2753,7 +2736,7 @@ Cierre del culto | Gén. 31:49
       </note>
     </measure>
     <measure number="16">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m16h1">
         <root>
           <root-step>F</root-step>
         </root>
@@ -2762,15 +2745,6 @@ Cierre del culto | Gén. 31:49
           <bass-step>A</bass-step>
           <bass-alter>-1</bass-alter>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">minor-sixth</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2793,7 +2767,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -2804,6 +2778,14 @@ Cierre del culto | Gén. 31:49
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m16h2">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">minor-sixth</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -2826,7 +2808,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -2853,7 +2835,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -2865,7 +2847,7 @@ Cierre del culto | Gén. 31:49
       </note>
     </measure>
     <measure number="17">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m17h1">
         <root>
           <root-step>E</root-step>
           <root-alter>-1</root-alter>
@@ -2874,31 +2856,6 @@ Cierre del culto | Gén. 31:49
         <bass>
           <bass-step>G</bass-step>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">augmented</kind>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major-sixth</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">half-diminished</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2921,6 +2878,14 @@ Cierre del culto | Gén. 31:49
           <text>que</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m17h3">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major-sixth</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -2941,7 +2906,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -2953,6 +2918,13 @@ Cierre del culto | Gén. 31:49
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m17h4">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">half-diminished</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -2974,7 +2946,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -3000,9 +2972,16 @@ Cierre del culto | Gén. 31:49
         <stem>down</stem>
         <staff>1</staff>
         <notations>
-          <slur type="start" number="2" placement="below" />
+          <slur type="start" number="2" placement="below"/>
         </notations>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m17h2">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">augmented</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -3015,7 +2994,7 @@ Cierre del culto | Gén. 31:49
         <stem>down</stem>
         <staff>1</staff>
         <notations>
-          <slur type="stop" number="2" placement="below" />
+          <slur type="stop" number="2" placement="below"/>
         </notations>
       </note>
       <backup>
@@ -3033,7 +3012,7 @@ Cierre del culto | Gén. 31:49
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="start" number="9" placement="above" />
+          <slur type="start" number="9" placement="above"/>
         </notations>
       </note>
       <note>
@@ -3047,7 +3026,7 @@ Cierre del culto | Gén. 31:49
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="stop" number="9" placement="above" />
+          <slur type="stop" number="9" placement="above"/>
         </notations>
       </note>
       <note>
@@ -3063,7 +3042,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -3087,7 +3066,7 @@ Cierre del culto | Gén. 31:49
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -3114,7 +3093,7 @@ Cierre del culto | Gén. 31:49
       </note>
     </measure>
     <measure number="18">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m18h1">
         <root>
           <root-step>F</root-step>
         </root>
@@ -3128,15 +3107,6 @@ Cierre del culto | Gén. 31:49
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
         </degree>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3172,9 +3142,17 @@ Cierre del culto | Gén. 31:49
         <stem>down</stem>
         <staff>1</staff>
         <notations>
-          <slur type="start" number="2" placement="below" />
+          <slur type="start" number="2" placement="below"/>
         </notations>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m18h2">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -3186,7 +3164,7 @@ Cierre del culto | Gén. 31:49
         <stem>down</stem>
         <staff>1</staff>
         <notations>
-          <slur type="stop" number="2" placement="below" />
+          <slur type="stop" number="2" placement="below"/>
         </notations>
       </note>
       <backup>
@@ -3203,7 +3181,7 @@ Cierre del culto | Gén. 31:49
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="start" number="9" placement="above" />
+          <slur type="start" number="9" placement="above"/>
         </notations>
       </note>
       <note>
@@ -3218,7 +3196,7 @@ Cierre del culto | Gén. 31:49
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="stop" number="9" placement="above" />
+          <slur type="stop" number="9" placement="above"/>
         </notations>
       </note>
       <backup>
@@ -3237,21 +3215,12 @@ Cierre del culto | Gén. 31:49
       </note>
     </measure>
     <measure number="19">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m19h1">
         <root>
           <root-step>E</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">suspended-fourth</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3277,7 +3246,7 @@ Cierre del culto | Gén. 31:49
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -3303,9 +3272,17 @@ Cierre del culto | Gén. 31:49
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="start" number="9" placement="above" />
+          <slur type="start" number="9" placement="above"/>
         </notations>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es038m19h2">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -3317,7 +3294,7 @@ Cierre del culto | Gén. 31:49
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="stop" number="9" placement="above" />
+          <slur type="stop" number="9" placement="above"/>
           <fermata>normal</fermata>
         </notations>
       </note>

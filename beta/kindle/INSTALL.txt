@@ -1,4 +1,4 @@
-SDA HYMNAL — 15.0 beta 12 — KINDLE TOUCH (K5)
+SDA HYMNAL — 15.0 beta 12.1 — KINDLE TOUCH (K5)
 
 ALREADY INSTALLED: UPDATE THROUGH GITHUB
 Do not copy the installer over an existing installation to upgrade it.

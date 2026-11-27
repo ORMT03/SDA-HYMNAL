@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='UTF-8'?>
 <score-partwise version="4.0">
   <movement-title>De tal manera amó</movement-title>
   <identification>
@@ -26,7 +26,7 @@ Amor y fidelidad de Dios | Juan 3:16
         <bottom-margin>60</bottom-margin>
       </page-margins>
     </page-layout>
-    <lyric-font font-family="Times New Roman" font-size="10" />
+    <lyric-font font-family="Times New Roman" font-size="10"/>
   </defaults>
   <credit page="1">
     <credit-type>title</credit-type>
@@ -60,13 +60,13 @@ Amor y fidelidad de Dios | Juan 3:16
   </credit>
   <part-list>
     <score-part id="P1">
-      <part-name print-object="no" />
+      <part-name print-object="no"/>
       <part-name-display print-object="no">
-        <display-text />
+        <display-text/>
       </part-name-display>
-      <part-abbreviation print-object="no" />
+      <part-abbreviation print-object="no"/>
       <part-abbreviation-display print-object="no">
-        <display-text />
+        <display-text/>
       </part-abbreviation-display>
       <score-instrument id="P1-I1">
         <instrument-name>Piano</instrument-name>
@@ -86,7 +86,7 @@ Amor y fidelidad de Dios | Juan 3:16
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <top-system-distance>95</top-system-distance>
+          <top-system-distance>80</top-system-distance>
         </system-layout>
       </print>
       <attributes>
@@ -108,7 +108,7 @@ Amor y fidelidad de Dios | Juan 3:16
           <line>4</line>
         </clef>
       </attributes>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m1h1">
         <root>
           <root-step>A</root-step>
         </root>
@@ -131,7 +131,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -146,7 +146,7 @@ Amor y fidelidad de Dios | Juan 3:16
         <duration>2</duration>
       </backup>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>5</voice>
         <type>quarter</type>
@@ -154,34 +154,11 @@ Amor y fidelidad de Dios | Juan 3:16
       </note>
     </measure>
     <measure number="1">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m2h1">
         <root>
           <root-step>F</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>C</bass-step>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-          <root-alter>1</root-alter>
-        </root>
-        <kind use-symbols="no">diminished</kind>
-        <bass>
-          <bass-step>D</bass-step>
-        </bass>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -192,7 +169,7 @@ Amor y fidelidad de Dios | Juan 3:16
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -201,7 +178,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -209,7 +186,7 @@ Amor y fidelidad de Dios | Juan 3:16
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
@@ -229,7 +206,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -240,6 +217,17 @@ Amor y fidelidad de Dios | Juan 3:16
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m2h3">
+        <root>
+          <root-step>G</root-step>
+          <root-alter>1</root-alter>
+        </root>
+        <kind use-symbols="no">diminished</kind>
+        <bass>
+          <bass-step>D</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -258,7 +246,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>1</alter>
@@ -288,7 +276,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -313,6 +301,16 @@ Amor y fidelidad de Dios | Juan 3:16
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m2h2">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>C</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -350,7 +348,7 @@ Amor y fidelidad de Dios | Juan 3:16
       </note>
     </measure>
     <measure number="2">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m3h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
@@ -359,23 +357,6 @@ Amor y fidelidad de Dios | Juan 3:16
         <bass>
           <bass-step>D</bass-step>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-          <root-alter>1</root-alter>
-        </root>
-        <kind use-symbols="no">augmented</kind>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -394,7 +375,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -406,6 +387,13 @@ Amor y fidelidad de Dios | Juan 3:16
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m3h3">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -422,7 +410,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -447,6 +435,14 @@ Amor y fidelidad de Dios | Juan 3:16
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m3h2">
+        <root>
+          <root-step>F</root-step>
+          <root-alter>1</root-alter>
+        </root>
+        <kind use-symbols="no">augmented</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -473,7 +469,7 @@ Amor y fidelidad de Dios | Juan 3:16
       </note>
     </measure>
     <measure number="3">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m4h1">
         <root>
           <root-step>G</root-step>
         </root>
@@ -485,17 +481,6 @@ Amor y fidelidad de Dios | Juan 3:16
         </degree>
         <staff>1</staff>
       </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>D</bass-step>
-        </bass>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -504,7 +489,7 @@ Amor y fidelidad de Dios | Juan 3:16
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <accidental>natural</accidental>
         <stem>up</stem>
         <staff>1</staff>
@@ -514,7 +499,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -522,7 +507,7 @@ Amor y fidelidad de Dios | Juan 3:16
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
@@ -542,7 +527,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -553,6 +538,16 @@ Amor y fidelidad de Dios | Juan 3:16
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m4h2">
+        <root>
+          <root-step>B</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>D</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -570,7 +565,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -600,7 +595,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -649,22 +644,11 @@ Amor y fidelidad de Dios | Juan 3:16
       </note>
     </measure>
     <measure number="4">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m5h1">
         <root>
           <root-step>G</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-        </root>
-        <kind use-symbols="no">diminished</kind>
-        <bass>
-          <bass-step>D</bass-step>
-        </bass>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -684,7 +668,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -695,6 +679,16 @@ Amor y fidelidad de Dios | Juan 3:16
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m5h2">
+        <root>
+          <root-step>B</root-step>
+        </root>
+        <kind use-symbols="no">diminished</kind>
+        <bass>
+          <bass-step>D</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -711,7 +705,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -766,45 +760,14 @@ Amor y fidelidad de Dios | Juan 3:16
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m6h1">
         <root>
           <root-step>C</root-step>
         </root>
         <kind use-symbols="no">dominant</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-        </root>
-        <kind use-symbols="no">diminished</kind>
-        <bass>
-          <bass-step>G</bass-step>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>D</bass-step>
-        </bass>
-        <offset>5</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -816,7 +779,7 @@ Amor y fidelidad de Dios | Juan 3:16
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <accidental>flat</accidental>
         <stem>up</stem>
         <staff>1</staff>
@@ -826,7 +789,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -834,7 +797,7 @@ Amor y fidelidad de Dios | Juan 3:16
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
@@ -855,7 +818,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -866,6 +829,13 @@ Amor y fidelidad de Dios | Juan 3:16
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m6h3">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -884,7 +854,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -895,6 +865,17 @@ Amor y fidelidad de Dios | Juan 3:16
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m6h4">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>D</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -913,7 +894,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -938,6 +919,16 @@ Amor y fidelidad de Dios | Juan 3:16
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m6h2">
+        <root>
+          <root-step>E</root-step>
+        </root>
+        <kind use-symbols="no">diminished</kind>
+        <bass>
+          <bass-step>G</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -975,27 +966,11 @@ Amor y fidelidad de Dios | Juan 3:16
       </note>
     </measure>
     <measure number="6">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m7h1">
         <root>
           <root-step>E</root-step>
         </root>
         <kind use-symbols="no">diminished</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1015,7 +990,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -1026,6 +1001,13 @@ Amor y fidelidad de Dios | Juan 3:16
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m7h3">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1043,7 +1025,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -1068,6 +1050,13 @@ Amor y fidelidad de Dios | Juan 3:16
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m7h2">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -1092,38 +1081,11 @@ Amor y fidelidad de Dios | Juan 3:16
       </note>
     </measure>
     <measure number="7">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m8h1">
         <root>
           <root-step>F</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>C</bass-step>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>5</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1134,7 +1096,7 @@ Amor y fidelidad de Dios | Juan 3:16
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -1143,7 +1105,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -1151,7 +1113,7 @@ Amor y fidelidad de Dios | Juan 3:16
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
@@ -1173,7 +1135,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -1184,6 +1146,13 @@ Amor y fidelidad de Dios | Juan 3:16
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m8h3">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -1201,7 +1170,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -1212,6 +1181,13 @@ Amor y fidelidad de Dios | Juan 3:16
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m8h4">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1230,7 +1206,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -1255,6 +1231,16 @@ Amor y fidelidad de Dios | Juan 3:16
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m8h2">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>C</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -1292,30 +1278,11 @@ Amor y fidelidad de Dios | Juan 3:16
       </note>
     </measure>
     <measure number="8">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m9h1">
         <root>
           <root-step>F</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>C</bass-step>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1334,7 +1301,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -1345,6 +1312,13 @@ Amor y fidelidad de Dios | Juan 3:16
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m9h3">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -1361,7 +1335,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -1386,6 +1360,16 @@ Amor y fidelidad de Dios | Juan 3:16
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m9h2">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>C</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -1416,37 +1400,14 @@ Amor y fidelidad de Dios | Juan 3:16
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m10h1">
         <root>
           <root-step>F</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>C</bass-step>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-          <root-alter>1</root-alter>
-        </root>
-        <kind use-symbols="no">diminished</kind>
-        <bass>
-          <bass-step>D</bass-step>
-        </bass>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1457,7 +1418,7 @@ Amor y fidelidad de Dios | Juan 3:16
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -1466,7 +1427,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -1474,7 +1435,7 @@ Amor y fidelidad de Dios | Juan 3:16
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
@@ -1494,7 +1455,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -1505,6 +1466,17 @@ Amor y fidelidad de Dios | Juan 3:16
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m10h3">
+        <root>
+          <root-step>G</root-step>
+          <root-alter>1</root-alter>
+        </root>
+        <kind use-symbols="no">diminished</kind>
+        <bass>
+          <bass-step>D</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1523,7 +1495,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>1</alter>
@@ -1553,7 +1525,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -1578,6 +1550,16 @@ Amor y fidelidad de Dios | Juan 3:16
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m10h2">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>C</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -1615,7 +1597,7 @@ Amor y fidelidad de Dios | Juan 3:16
       </note>
     </measure>
     <measure number="10">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m11h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
@@ -1624,23 +1606,6 @@ Amor y fidelidad de Dios | Juan 3:16
         <bass>
           <bass-step>D</bass-step>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-          <root-alter>1</root-alter>
-        </root>
-        <kind use-symbols="no">augmented</kind>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1659,7 +1624,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -1671,6 +1636,13 @@ Amor y fidelidad de Dios | Juan 3:16
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m11h3">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -1687,7 +1659,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -1712,6 +1684,14 @@ Amor y fidelidad de Dios | Juan 3:16
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m11h2">
+        <root>
+          <root-step>F</root-step>
+          <root-alter>1</root-alter>
+        </root>
+        <kind use-symbols="no">augmented</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -1738,7 +1718,7 @@ Amor y fidelidad de Dios | Juan 3:16
       </note>
     </measure>
     <measure number="11">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m12h1">
         <root>
           <root-step>G</root-step>
         </root>
@@ -1750,17 +1730,6 @@ Amor y fidelidad de Dios | Juan 3:16
         </degree>
         <staff>1</staff>
       </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>D</bass-step>
-        </bass>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1769,7 +1738,7 @@ Amor y fidelidad de Dios | Juan 3:16
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <accidental>natural</accidental>
         <stem>up</stem>
         <staff>1</staff>
@@ -1779,7 +1748,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -1787,7 +1756,7 @@ Amor y fidelidad de Dios | Juan 3:16
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
@@ -1807,7 +1776,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -1818,6 +1787,16 @@ Amor y fidelidad de Dios | Juan 3:16
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m12h2">
+        <root>
+          <root-step>B</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>D</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1835,7 +1814,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -1865,7 +1844,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -1914,27 +1893,11 @@ Amor y fidelidad de Dios | Juan 3:16
       </note>
     </measure>
     <measure number="12">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m13h1">
         <root>
           <root-step>G</root-step>
         </root>
         <kind use-symbols="no">dominant</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-        </root>
-        <kind use-symbols="no">diminished</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1945,7 +1908,7 @@ Amor y fidelidad de Dios | Juan 3:16
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -1954,7 +1917,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -1962,7 +1925,7 @@ Amor y fidelidad de Dios | Juan 3:16
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
@@ -1980,6 +1943,13 @@ Amor y fidelidad de Dios | Juan 3:16
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m13h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -1991,6 +1961,13 @@ Amor y fidelidad de Dios | Juan 3:16
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m13h3">
+        <root>
+          <root-step>B</root-step>
+        </root>
+        <kind use-symbols="no">diminished</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -2011,36 +1988,14 @@ Amor y fidelidad de Dios | Juan 3:16
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m14h1">
         <root>
           <root-step>C</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>G</bass-step>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">suspended-second</kind>
-        <bass>
-          <bass-step>E</bass-step>
-        </bass>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2051,7 +2006,7 @@ Amor y fidelidad de Dios | Juan 3:16
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -2060,7 +2015,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -2068,7 +2023,7 @@ Amor y fidelidad de Dios | Juan 3:16
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
@@ -2090,7 +2045,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -2102,6 +2057,16 @@ Amor y fidelidad de Dios | Juan 3:16
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m14h3">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">suspended-second</kind>
+        <bass>
+          <bass-step>E</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -2120,7 +2085,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2150,7 +2115,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -2175,6 +2140,16 @@ Amor y fidelidad de Dios | Juan 3:16
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m14h2">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>G</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -2199,7 +2174,7 @@ Amor y fidelidad de Dios | Juan 3:16
       </note>
     </measure>
     <measure number="14">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m15h1">
         <root>
           <root-step>A</root-step>
         </root>
@@ -2207,22 +2182,6 @@ Amor y fidelidad de Dios | Juan 3:16
         <bass>
           <bass-step>C</bass-step>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2241,7 +2200,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -2252,6 +2211,13 @@ Amor y fidelidad de Dios | Juan 3:16
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m15h3">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -2269,7 +2235,7 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -2294,6 +2260,13 @@ Amor y fidelidad de Dios | Juan 3:16
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m15h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -2317,7 +2290,7 @@ Amor y fidelidad de Dios | Juan 3:16
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>3</octave>
@@ -2330,33 +2303,11 @@ Amor y fidelidad de Dios | Juan 3:16
       </note>
     </measure>
     <measure number="15">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m16h1">
         <root>
           <root-step>F</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>C</bass-step>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>A</bass-step>
-        </bass>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2365,14 +2316,14 @@ Amor y fidelidad de Dios | Juan 3:16
           <octave>3</octave>
         </pitch>
         <duration>6</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>end</syllabic>
@@ -2380,20 +2331,20 @@ Amor y fidelidad de Dios | Juan 3:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
         </pitch>
         <duration>6</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <backup>
@@ -2410,6 +2361,16 @@ Amor y fidelidad de Dios | Juan 3:16
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m16h2">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>C</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -2421,6 +2382,16 @@ Amor y fidelidad de Dios | Juan 3:16
         <stem>up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m16h3">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>A</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -2434,7 +2405,7 @@ Amor y fidelidad de Dios | Juan 3:16
       </note>
     </measure>
     <measure number="16">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es056m17h1">
         <root>
           <root-step>F</root-step>
         </root>
@@ -2447,29 +2418,29 @@ Amor y fidelidad de Dios | Juan 3:16
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <backup>

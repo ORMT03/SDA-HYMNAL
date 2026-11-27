@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='UTF-8'?>
 <score-partwise version="4.0.3">
   <movement-title>¡Oh, Señor! al orar</movement-title>
   <identification>
@@ -8,11 +8,11 @@ Inicio del culto | Heb. 4:16
 </rights>
     <encoding>
       <software>Audiveris 5.11.0</software>
-      <supports type="yes" element="print" attribute="new-system" value="yes" />
-      <supports type="yes" element="print" attribute="new-page" value="yes" />
-      <supports type="yes" element="accidental" />
-      <supports type="yes" element="beam" />
-      <supports type="yes" element="stem" />
+      <supports type="yes" element="print" attribute="new-system" value="yes"/>
+      <supports type="yes" element="print" attribute="new-page" value="yes"/>
+      <supports type="yes" element="accidental"/>
+      <supports type="yes" element="beam"/>
+      <supports type="yes" element="stem"/>
       <software>ProxyMusic 4.0.3</software>
       <encoding-date>2026-10-30</encoding-date>
     </encoding>
@@ -37,7 +37,7 @@ Inicio del culto | Heb. 4:16
         <bottom-margin>60</bottom-margin>
       </page-margins>
     </page-layout>
-    <lyric-font font-family="Times New Roman" font-size="10" />
+    <lyric-font font-family="Times New Roman" font-size="10"/>
   </defaults>
   <credit page="1">
     <credit-type>title</credit-type>
@@ -71,13 +71,13 @@ Inicio del culto | Heb. 4:16
   </credit>
   <part-list>
     <score-part id="P1">
-      <part-name print-object="no" />
+      <part-name print-object="no"/>
       <part-name-display print-object="no">
-        <display-text />
+        <display-text/>
       </part-name-display>
-      <part-abbreviation print-object="no" />
+      <part-abbreviation print-object="no"/>
       <part-abbreviation-display print-object="no">
-        <display-text />
+        <display-text/>
       </part-abbreviation-display>
       <score-instrument id="P1-I1">
         <instrument-name>Piano</instrument-name>
@@ -97,7 +97,7 @@ Inicio del culto | Heb. 4:16
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <top-system-distance>95</top-system-distance>
+          <top-system-distance>80</top-system-distance>
         </system-layout>
       </print>
       <attributes>
@@ -118,39 +118,14 @@ Inicio del culto | Heb. 4:16
           <sign>F</sign>
           <line>4</line>
         </clef>
-        <staff-details print-object="yes" />
+        <staff-details print-object="yes"/>
       </attributes>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m1h1">
         <root>
           <root-step>D</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <bass>
-          <bass-step>E</bass-step>
-          <bass-alter>-1</bass-alter>
-        </bass>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>F</bass-step>
-        </bass>
-        <offset>7</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -170,7 +145,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -198,7 +173,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -226,7 +201,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -237,6 +212,18 @@ Inicio del culto | Heb. 4:16
         <stem default-y="1">up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m1h2">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          <bass-alter>-1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -254,7 +241,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>-1</alter>
@@ -267,6 +254,17 @@ Inicio del culto | Heb. 4:16
         <staff>1</staff>
         <beam number="1">begin</beam>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m1h3">
+        <root>
+          <root-step>D</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>F</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -285,7 +283,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -314,7 +312,7 @@ Inicio del culto | Heb. 4:16
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -339,7 +337,7 @@ Inicio del culto | Heb. 4:16
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -364,7 +362,7 @@ Inicio del culto | Heb. 4:16
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -390,7 +388,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -416,7 +414,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -431,39 +429,12 @@ Inicio del culto | Heb. 4:16
       </note>
     </measure>
     <measure number="2">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m2h1">
         <root>
           <root-step>E</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">minor-seventh</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">suspended-fourth</kind>
-        <bass>
-          <bass-step>E</bass-step>
-          <bass-alter>-1</bass-alter>
-        </bass>
-        <degree>
-          <degree-value>7</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <offset>7</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -475,7 +446,7 @@ Inicio del culto | Heb. 4:16
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="5">up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -484,7 +455,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>-1</alter>
@@ -493,10 +464,18 @@ Inicio del culto | Heb. 4:16
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="5">up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m2h2">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -515,7 +494,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>-1</alter>
@@ -528,6 +507,23 @@ Inicio del culto | Heb. 4:16
         <staff>1</staff>
         <beam number="1">begin</beam>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m2h3">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">suspended-fourth</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          <bass-alter>-1</bass-alter>
+        </bass>
+        <degree>
+          <degree-value>7</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -546,7 +542,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -570,12 +566,12 @@ Inicio del culto | Heb. 4:16
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="-51">down</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -584,7 +580,7 @@ Inicio del culto | Heb. 4:16
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="-51">down</stem>
         <staff>2</staff>
       </note>
@@ -602,7 +598,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -629,7 +625,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -644,56 +640,12 @@ Inicio del culto | Heb. 4:16
       </note>
     </measure>
     <measure number="3">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m3h1">
         <root>
           <root-step>A</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">dominant-ninth</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">suspended-fourth</kind>
-        <degree>
-          <degree-value>7</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>A</bass-step>
-          <bass-alter>-1</bass-alter>
-        </bass>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">dominant-ninth</kind>
-        <offset>7</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -713,7 +665,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -725,6 +677,19 @@ Inicio del culto | Heb. 4:16
         <stem default-y="-5">up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m3h2">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">suspended-fourth</kind>
+        <degree>
+          <degree-value>7</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -742,7 +707,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -754,6 +719,14 @@ Inicio del culto | Heb. 4:16
         <stem default-y="-5">up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m3h3">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -770,7 +743,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -782,6 +755,17 @@ Inicio del culto | Heb. 4:16
         <stem default-y="-5">up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m3h4">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>A</bass-step>
+          <bass-alter>-1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -799,7 +783,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -811,6 +795,14 @@ Inicio del culto | Heb. 4:16
         <staff>1</staff>
         <beam number="1">begin</beam>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m3h5">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">dominant-ninth</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -828,7 +820,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>-1</alter>
@@ -857,7 +849,7 @@ Inicio del culto | Heb. 4:16
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>-1</alter>
@@ -882,7 +874,7 @@ Inicio del culto | Heb. 4:16
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>-1</alter>
@@ -907,7 +899,7 @@ Inicio del culto | Heb. 4:16
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>-1</alter>
@@ -933,7 +925,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -960,7 +952,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -975,23 +967,12 @@ Inicio del culto | Heb. 4:16
       </note>
     </measure>
     <measure number="4">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m4h1">
         <root>
           <root-step>D</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <bass>
-          <bass-step>C</bass-step>
-        </bass>
-        <offset>7</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1003,7 +984,7 @@ Inicio del culto | Heb. 4:16
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="1">up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -1012,7 +993,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -1020,7 +1001,7 @@ Inicio del culto | Heb. 4:16
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="1">up</stem>
         <staff>1</staff>
       </note>
@@ -1042,7 +1023,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -1054,6 +1035,16 @@ Inicio del culto | Heb. 4:16
         <staff>1</staff>
         <beam number="1">begin</beam>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m4h2">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <bass>
+          <bass-step>C</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -1072,7 +1063,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -1097,12 +1088,12 @@ Inicio del culto | Heb. 4:16
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="-56">down</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -1111,7 +1102,7 @@ Inicio del culto | Heb. 4:16
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="-56">down</stem>
         <staff>2</staff>
       </note>
@@ -1129,7 +1120,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -1155,7 +1146,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -1175,37 +1166,15 @@ Inicio del culto | Heb. 4:16
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m5h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">minor</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>B</bass-step>
-          <bass-alter>-1</bass-alter>
-        </bass>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>7</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1225,7 +1194,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <alter>-1</alter>
@@ -1255,7 +1224,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <alter>-1</alter>
@@ -1286,7 +1255,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <alter>-1</alter>
@@ -1316,7 +1285,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <alter>-1</alter>
@@ -1328,6 +1297,18 @@ Inicio del culto | Heb. 4:16
         <stem default-y="-9">up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m5h2">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>B</bass-step>
+          <bass-alter>-1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1346,7 +1327,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -1359,6 +1340,14 @@ Inicio del culto | Heb. 4:16
         <staff>1</staff>
         <beam number="1">begin</beam>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m5h3">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1377,7 +1366,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -1405,7 +1394,7 @@ Inicio del culto | Heb. 4:16
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -1430,7 +1419,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -1456,7 +1445,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -1481,7 +1470,7 @@ Inicio del culto | Heb. 4:16
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -1506,7 +1495,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>-1</alter>
@@ -1533,7 +1522,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -1549,32 +1538,14 @@ Inicio del culto | Heb. 4:16
     </measure>
     <measure number="6">
       <attributes>
-        <staff-details print-object="yes" />
+        <staff-details print-object="yes"/>
       </attributes>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m6h1">
         <root>
           <root-step>E</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">minor</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>7</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1586,7 +1557,7 @@ Inicio del culto | Heb. 4:16
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="-5">up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -1595,7 +1566,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -1604,10 +1575,18 @@ Inicio del culto | Heb. 4:16
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="-5">up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m6h2">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1626,7 +1605,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -1639,6 +1618,14 @@ Inicio del culto | Heb. 4:16
         <staff>1</staff>
         <beam number="1">begin</beam>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m6h3">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1657,7 +1644,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <alter>-1</alter>
@@ -1682,12 +1669,12 @@ Inicio del culto | Heb. 4:16
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="-51">down</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>-1</alter>
@@ -1696,7 +1683,7 @@ Inicio del culto | Heb. 4:16
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="-51">down</stem>
         <staff>2</staff>
       </note>
@@ -1714,7 +1701,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -1741,7 +1728,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -1755,34 +1742,12 @@ Inicio del culto | Heb. 4:16
       </note>
     </measure>
     <measure number="7">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m7h1">
         <root>
           <root-step>A</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>A</bass-step>
-          <bass-alter>-1</bass-alter>
-        </bass>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>7</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1802,7 +1767,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -1830,7 +1795,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -1858,7 +1823,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -1869,6 +1834,18 @@ Inicio del culto | Heb. 4:16
         <stem default-y="-15">up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m7h2">
+        <root>
+          <root-step>D</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>A</bass-step>
+          <bass-alter>-1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -1887,7 +1864,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <alter>-1</alter>
@@ -1900,6 +1877,14 @@ Inicio del culto | Heb. 4:16
         <staff>1</staff>
         <beam number="1">begin</beam>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m7h3">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -1918,7 +1903,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -1947,7 +1932,7 @@ Inicio del culto | Heb. 4:16
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -1972,7 +1957,7 @@ Inicio del culto | Heb. 4:16
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -1997,7 +1982,7 @@ Inicio del culto | Heb. 4:16
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -2023,7 +2008,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -2049,7 +2034,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>-1</alter>
@@ -2064,7 +2049,7 @@ Inicio del culto | Heb. 4:16
       </note>
     </measure>
     <measure number="8">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m8h1">
         <root>
           <root-step>D</root-step>
           <root-alter>-1</root-alter>
@@ -2081,7 +2066,7 @@ Inicio del culto | Heb. 4:16
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="-9">up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -2090,7 +2075,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <alter>-1</alter>
@@ -2099,7 +2084,7 @@ Inicio del culto | Heb. 4:16
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="-9">up</stem>
         <staff>1</staff>
       </note>
@@ -2121,7 +2106,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -2150,7 +2135,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -2175,12 +2160,12 @@ Inicio del culto | Heb. 4:16
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="-56">down</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -2188,7 +2173,7 @@ Inicio del culto | Heb. 4:16
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="-56">down</stem>
         <staff>2</staff>
       </note>
@@ -2206,7 +2191,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -2233,7 +2218,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <alter>-1</alter>
@@ -2254,47 +2239,15 @@ Inicio del culto | Heb. 4:16
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m9h1">
         <root>
           <root-step>G</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">half-diminished</kind>
-        <bass>
-          <bass-step>G</bass-step>
-          <bass-alter>-1</bass-alter>
-        </bass>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">diminished</kind>
-        <bass>
-          <bass-step>E</bass-step>
-          <bass-alter>-1</bass-alter>
-        </bass>
-        <offset>7</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2314,7 +2267,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2344,7 +2297,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2375,7 +2328,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2388,6 +2341,17 @@ Inicio del culto | Heb. 4:16
         <staff>1</staff>
         <beam number="1">end</beam>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m9h2">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">half-diminished</kind>
+        <bass>
+          <bass-step>G</bass-step>
+          <bass-alter>-1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -2405,7 +2369,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2417,6 +2381,13 @@ Inicio del culto | Heb. 4:16
         <stem default-y="15">up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m9h3">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -2434,7 +2405,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -2447,6 +2418,17 @@ Inicio del culto | Heb. 4:16
         <staff>1</staff>
         <beam number="1">begin</beam>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m9h4">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">diminished</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          <bass-alter>-1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -2480,7 +2462,7 @@ Inicio del culto | Heb. 4:16
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <alter>-1</alter>
@@ -2506,7 +2488,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <alter>-1</alter>
@@ -2533,7 +2515,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <alter>-1</alter>
@@ -2559,7 +2541,7 @@ Inicio del culto | Heb. 4:16
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -2583,7 +2565,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -2609,7 +2591,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -2624,38 +2606,14 @@ Inicio del culto | Heb. 4:16
     </measure>
     <measure number="10">
       <attributes>
-        <staff-details print-object="yes" />
+        <staff-details print-object="yes"/>
       </attributes>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m10h1">
         <root>
           <root-step>D</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>D</bass-step>
-          <bass-alter>-1</bass-alter>
-        </bass>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>C</bass-step>
-        </bass>
-        <offset>7</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2666,7 +2624,7 @@ Inicio del culto | Heb. 4:16
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="10">up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -2675,7 +2633,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -2684,10 +2642,22 @@ Inicio del culto | Heb. 4:16
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="10">up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m10h2">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>D</bass-step>
+          <bass-alter>-1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -2705,7 +2675,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2718,6 +2688,16 @@ Inicio del culto | Heb. 4:16
         <staff>1</staff>
         <beam number="1">begin</beam>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m10h3">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>C</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -2735,7 +2715,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -2759,12 +2739,12 @@ Inicio del culto | Heb. 4:16
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="-56">down</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <alter>-1</alter>
@@ -2773,7 +2753,7 @@ Inicio del culto | Heb. 4:16
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="-56">down</stem>
         <staff>2</staff>
       </note>
@@ -2791,7 +2771,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2817,7 +2797,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -2832,51 +2812,12 @@ Inicio del culto | Heb. 4:16
       </note>
     </measure>
     <measure number="11">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m11h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">minor</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <offset>3</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">dominant-ninth</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>E</bass-step>
-          <bass-alter>-1</bass-alter>
-        </bass>
-        <offset>7</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2895,7 +2836,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <alter>-1</alter>
@@ -2924,7 +2865,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <alter>-1</alter>
@@ -2937,6 +2878,14 @@ Inicio del culto | Heb. 4:16
         <staff>1</staff>
         <beam number="1">begin</beam>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m11h2">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -2954,7 +2903,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <alter>-1</alter>
@@ -2967,6 +2916,14 @@ Inicio del culto | Heb. 4:16
         <staff>1</staff>
         <beam number="1">end</beam>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m11h3">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">dominant-ninth</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -2983,7 +2940,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <alter>-1</alter>
@@ -2995,6 +2952,14 @@ Inicio del culto | Heb. 4:16
         <stem default-y="16">up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m11h4">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -3013,7 +2978,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -3026,6 +2991,17 @@ Inicio del culto | Heb. 4:16
         <staff>1</staff>
         <beam number="1">begin</beam>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m11h5">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          <bass-alter>-1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -3044,7 +3020,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -3072,7 +3048,7 @@ Inicio del culto | Heb. 4:16
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -3098,7 +3074,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -3125,7 +3101,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -3152,7 +3128,7 @@ Inicio del culto | Heb. 4:16
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -3178,7 +3154,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -3204,7 +3180,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -3218,24 +3194,12 @@ Inicio del culto | Heb. 4:16
       </note>
     </measure>
     <measure number="12">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m12h1">
         <root>
           <root-step>A</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <bass>
-          <bass-step>C</bass-step>
-        </bass>
-        <offset>7</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3246,7 +3210,7 @@ Inicio del culto | Heb. 4:16
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="10">up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -3255,7 +3219,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -3264,7 +3228,7 @@ Inicio del culto | Heb. 4:16
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="10">up</stem>
         <staff>1</staff>
       </note>
@@ -3285,7 +3249,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -3298,6 +3262,17 @@ Inicio del culto | Heb. 4:16
         <staff>1</staff>
         <beam number="1">begin</beam>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m12h2">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <bass>
+          <bass-step>C</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -3316,7 +3291,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>-1</alter>
@@ -3341,12 +3316,12 @@ Inicio del culto | Heb. 4:16
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="-61">down</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -3355,7 +3330,7 @@ Inicio del culto | Heb. 4:16
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="-61">down</stem>
         <staff>2</staff>
       </note>
@@ -3373,7 +3348,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -3399,7 +3374,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -3420,40 +3395,15 @@ Inicio del culto | Heb. 4:16
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m13h1">
         <root>
           <root-step>D</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <bass>
-          <bass-step>E</bass-step>
-          <bass-alter>-1</bass-alter>
-        </bass>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>F</bass-step>
-        </bass>
-        <offset>7</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3473,7 +3423,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -3501,7 +3451,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -3529,7 +3479,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -3558,7 +3508,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -3588,7 +3538,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -3600,6 +3550,18 @@ Inicio del culto | Heb. 4:16
         <staff>1</staff>
         <beam number="1">end</beam>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m13h2">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          <bass-alter>-1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -3617,7 +3579,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>-1</alter>
@@ -3630,6 +3592,17 @@ Inicio del culto | Heb. 4:16
         <staff>1</staff>
         <beam number="1">begin</beam>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m13h3">
+        <root>
+          <root-step>D</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>F</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -3648,7 +3621,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -3677,7 +3650,7 @@ Inicio del culto | Heb. 4:16
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -3702,7 +3675,7 @@ Inicio del culto | Heb. 4:16
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -3727,7 +3700,7 @@ Inicio del culto | Heb. 4:16
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -3753,7 +3726,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -3780,7 +3753,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -3807,7 +3780,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -3833,7 +3806,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -3849,41 +3822,14 @@ Inicio del culto | Heb. 4:16
     </measure>
     <measure number="14">
       <attributes>
-        <staff-details print-object="yes" />
+        <staff-details print-object="yes"/>
       </attributes>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m14h1">
         <root>
           <root-step>E</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">minor-seventh</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">suspended-fourth</kind>
-        <bass>
-          <bass-step>E</bass-step>
-          <bass-alter>-1</bass-alter>
-        </bass>
-        <degree>
-          <degree-value>7</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <offset>7</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3895,7 +3841,7 @@ Inicio del culto | Heb. 4:16
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="5">up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -3904,7 +3850,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>-1</alter>
@@ -3913,10 +3859,18 @@ Inicio del culto | Heb. 4:16
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="5">up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m14h2">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -3935,7 +3889,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>-1</alter>
@@ -3948,6 +3902,23 @@ Inicio del culto | Heb. 4:16
         <staff>1</staff>
         <beam number="1">begin</beam>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m14h3">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">suspended-fourth</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          <bass-alter>-1</bass-alter>
+        </bass>
+        <degree>
+          <degree-value>7</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -3966,7 +3937,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -3990,12 +3961,12 @@ Inicio del culto | Heb. 4:16
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="-51">down</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -4004,7 +3975,7 @@ Inicio del culto | Heb. 4:16
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="-51">down</stem>
         <staff>2</staff>
       </note>
@@ -4022,7 +3993,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -4049,7 +4020,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -4064,63 +4035,12 @@ Inicio del culto | Heb. 4:16
       </note>
     </measure>
     <measure number="15">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m15h1">
         <root>
           <root-step>A</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">dominant-ninth</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">suspended-fourth</kind>
-        <degree>
-          <degree-value>7</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">suspended-fourth</kind>
-        <degree>
-          <degree-value>7</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <degree>
-          <degree-value>9</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>7</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -4140,7 +4060,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -4152,6 +4072,19 @@ Inicio del culto | Heb. 4:16
         <stem default-y="-5">up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m15h2">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">suspended-fourth</kind>
+        <degree>
+          <degree-value>7</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -4169,7 +4102,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -4181,6 +4114,14 @@ Inicio del culto | Heb. 4:16
         <stem default-y="-5">up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m15h3">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -4198,7 +4139,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -4228,7 +4169,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -4241,6 +4182,24 @@ Inicio del culto | Heb. 4:16
         <staff>1</staff>
         <beam number="1">end</beam>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m15h4">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">suspended-fourth</kind>
+        <degree>
+          <degree-value>7</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <degree>
+          <degree-value>9</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -4259,7 +4218,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <alter>-1</alter>
@@ -4272,6 +4231,14 @@ Inicio del culto | Heb. 4:16
         <staff>1</staff>
         <beam number="1">begin</beam>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m15h5">
+        <root>
+          <root-step>A</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -4290,7 +4257,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -4318,7 +4285,7 @@ Inicio del culto | Heb. 4:16
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>-1</alter>
@@ -4343,7 +4310,7 @@ Inicio del culto | Heb. 4:16
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>-1</alter>
@@ -4369,7 +4336,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>-1</alter>
@@ -4396,7 +4363,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>-1</alter>
@@ -4423,7 +4390,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>-1</alter>
@@ -4450,7 +4417,7 @@ Inicio del culto | Heb. 4:16
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>-1</alter>
@@ -4465,7 +4432,7 @@ Inicio del culto | Heb. 4:16
       </note>
     </measure>
     <measure number="16">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es031m16h1">
         <root>
           <root-step>D</root-step>
           <root-alter>-1</root-alter>
@@ -4489,7 +4456,7 @@ Inicio del culto | Heb. 4:16
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <alter>-1</alter>
@@ -4515,7 +4482,7 @@ Inicio del culto | Heb. 4:16
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>

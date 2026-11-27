@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='UTF-8'?>
 <score-partwise version="4.0">
   <movement-title>Grande es Jehová</movement-title>
   <identification>
@@ -26,7 +26,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <bottom-margin>60</bottom-margin>
       </page-margins>
     </page-layout>
-    <lyric-font font-family="Times New Roman" font-size="10" />
+    <lyric-font font-family="Times New Roman" font-size="10"/>
   </defaults>
   <credit page="1">
     <credit-type>title</credit-type>
@@ -63,13 +63,13 @@ Majestad y poder de Dios | 1 Crón. 16:25
   </credit>
   <part-list>
     <score-part id="P1">
-      <part-name print-object="no" />
+      <part-name print-object="no"/>
       <part-name-display print-object="no">
-        <display-text />
+        <display-text/>
       </part-name-display>
-      <part-abbreviation print-object="no" />
+      <part-abbreviation print-object="no"/>
       <part-abbreviation-display print-object="no">
-        <display-text />
+        <display-text/>
       </part-abbreviation-display>
       <score-instrument id="P1-I1">
         <instrument-name>Piano</instrument-name>
@@ -89,7 +89,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <top-system-distance>95</top-system-distance>
+          <top-system-distance>80</top-system-distance>
         </system-layout>
       </print>
       <attributes>
@@ -111,7 +111,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
           <line>4</line>
         </clef>
       </attributes>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m1h1">
         <root>
           <root-step>D</root-step>
         </root>
@@ -126,14 +126,6 @@ Majestad y poder de Dios | 1 Crón. 16:25
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
         </degree>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -196,6 +188,13 @@ Majestad y poder de Dios | 1 Crón. 16:25
           <text>Jeho</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m1h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -216,7 +215,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -278,7 +277,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <duration>6</duration>
         <voice>2</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
@@ -349,7 +348,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -372,7 +371,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -394,36 +393,17 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <duration>6</duration>
         <voice>6</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>2</staff>
       </note>
     </measure>
     <measure number="2">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m2h1">
         <root>
           <root-step>G</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>B</bass-step>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -446,7 +426,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -457,6 +437,16 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m2h2">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>B</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -497,6 +487,13 @@ Majestad y poder de Dios | 1 Crón. 16:25
           <text>Se</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m2h3">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -517,7 +514,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -632,7 +629,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -655,7 +652,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -678,7 +675,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -691,30 +688,11 @@ Majestad y poder de Dios | 1 Crón. 16:25
       </note>
     </measure>
     <measure number="3">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m3h1">
         <root>
           <root-step>F</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <bass>
-          <bass-step>G</bass-step>
-        </bass>
-        <offset>10</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -777,6 +755,13 @@ Majestad y poder de Dios | 1 Crón. 16:25
           <text>ren</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m3h2">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -797,7 +782,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -808,6 +793,16 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m3h3">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <bass>
+          <bass-step>G</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -859,7 +854,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <duration>6</duration>
         <voice>2</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
@@ -893,12 +888,12 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <duration>6</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -906,7 +901,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <duration>6</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -940,22 +935,14 @@ Majestad y poder de Dios | 1 Crón. 16:25
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m4h1">
         <root>
           <root-step>F</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -964,14 +951,14 @@ Majestad y poder de Dios | 1 Crón. 16:25
           <octave>4</octave>
         </pitch>
         <duration>6</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>end</syllabic>
@@ -982,30 +969,37 @@ Majestad y poder de Dios | 1 Crón. 16:25
           <text>nor.</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m4h2">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
           <octave>4</octave>
         </pitch>
         <duration>2</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>eighth</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
         <staff>1</staff>
       </note>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
@@ -1083,7 +1077,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -1107,7 +1101,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">continue</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -1131,7 +1125,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -1154,7 +1148,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>3</octave>
@@ -1166,14 +1160,14 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>2</staff>
       </note>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>5</voice>
         <type>eighth</type>
         <staff>2</staff>
       </note>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>5</voice>
         <type>eighth</type>
@@ -1181,7 +1175,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
       </note>
     </measure>
     <measure number="5">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m5h1">
         <root>
           <root-step>D</root-step>
         </root>
@@ -1196,14 +1190,6 @@ Majestad y poder de Dios | 1 Crón. 16:25
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
         </degree>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1266,6 +1252,13 @@ Majestad y poder de Dios | 1 Crón. 16:25
           <text>Jeho</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m5h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -1286,7 +1279,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -1348,7 +1341,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <duration>6</duration>
         <voice>2</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
@@ -1419,7 +1412,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -1442,7 +1435,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -1464,36 +1457,17 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <duration>6</duration>
         <voice>6</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>2</staff>
       </note>
     </measure>
     <measure number="6">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m6h1">
         <root>
           <root-step>G</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>B</bass-step>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1516,7 +1490,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -1527,6 +1501,16 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m6h2">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>B</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -1567,6 +1551,13 @@ Majestad y poder de Dios | 1 Crón. 16:25
           <text>ce</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m6h3">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -1587,7 +1578,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -1702,7 +1693,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -1725,7 +1716,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -1748,7 +1739,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -1767,33 +1758,14 @@ Majestad y poder de Dios | 1 Crón. 16:25
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m7h1">
         <root>
           <root-step>F</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <bass>
-          <bass-step>G</bass-step>
-        </bass>
-        <offset>10</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1856,6 +1828,13 @@ Majestad y poder de Dios | 1 Crón. 16:25
           <text>nos</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m7h2">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1876,7 +1855,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -1887,6 +1866,16 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m7h3">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <bass>
+          <bass-step>G</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -1930,7 +1919,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <duration>6</duration>
         <voice>2</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
@@ -1964,12 +1953,12 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <duration>6</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -1977,7 +1966,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <duration>6</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -2005,19 +1994,11 @@ Majestad y poder de Dios | 1 Crón. 16:25
       </note>
     </measure>
     <measure number="8">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m8h1">
         <root>
           <root-step>F</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2026,14 +2007,14 @@ Majestad y poder de Dios | 1 Crón. 16:25
           <octave>4</octave>
         </pitch>
         <duration>6</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>end</syllabic>
@@ -2044,30 +2025,37 @@ Majestad y poder de Dios | 1 Crón. 16:25
           <text>mor.</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m8h2">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
           <octave>4</octave>
         </pitch>
         <duration>2</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>eighth</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
         <staff>1</staff>
       </note>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>eighth</type>
@@ -2145,7 +2133,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -2169,7 +2157,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">continue</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -2193,7 +2181,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -2216,7 +2204,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>3</octave>
@@ -2228,14 +2216,14 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>2</staff>
       </note>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>5</voice>
         <type>eighth</type>
         <staff>2</staff>
       </note>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>5</voice>
         <type>eighth</type>
@@ -2243,7 +2231,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
       </note>
     </measure>
     <measure number="9">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m9h1">
         <root>
           <root-step>C</root-step>
         </root>
@@ -2258,32 +2246,6 @@ Majestad y poder de Dios | 1 Crón. 16:25
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
         </degree>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">suspended-fourth</kind>
-        <degree>
-          <degree-value>7</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <degree>
-          <degree-value>9</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2307,7 +2269,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -2319,7 +2281,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2353,7 +2315,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -2365,7 +2327,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2377,6 +2339,13 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m9h2">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -2398,7 +2367,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -2409,6 +2378,23 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m9h3">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">suspended-fourth</kind>
+        <degree>
+          <degree-value>7</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <degree>
+          <degree-value>9</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -2429,7 +2415,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -2441,7 +2427,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2473,7 +2459,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -2485,7 +2471,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2513,7 +2499,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2539,7 +2525,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">continue</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2564,7 +2550,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -2587,7 +2573,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2611,7 +2597,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2631,41 +2617,14 @@ Majestad y poder de Dios | 1 Crón. 16:25
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m10h1">
         <root>
           <root-step>F</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>E</bass-step>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2689,7 +2648,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -2700,6 +2659,16 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m10h2">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>E</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -2721,7 +2690,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -2732,6 +2701,13 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m10h3">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -2753,7 +2729,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -2764,6 +2740,13 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m10h4">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -2784,7 +2767,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -2830,7 +2813,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -2854,7 +2837,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">continue</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -2878,7 +2861,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -2901,7 +2884,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -2924,7 +2907,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -2937,7 +2920,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
       </note>
     </measure>
     <measure number="11">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m11h1">
         <root>
           <root-step>C</root-step>
         </root>
@@ -2952,40 +2935,6 @@ Majestad y poder de Dios | 1 Crón. 16:25
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
         </degree>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">suspended-fourth</kind>
-        <degree>
-          <degree-value>7</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <degree>
-          <degree-value>9</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>10</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3009,7 +2958,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -3021,7 +2970,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -3055,7 +3004,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -3067,7 +3016,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -3079,6 +3028,13 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m11h2">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -3100,7 +3056,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -3111,6 +3067,23 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m11h3">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">suspended-fourth</kind>
+        <degree>
+          <degree-value>7</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <degree>
+          <degree-value>9</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -3131,7 +3104,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -3143,7 +3116,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -3155,6 +3128,13 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m11h4">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -3175,7 +3155,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -3202,7 +3182,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -3228,7 +3208,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">continue</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -3253,7 +3233,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -3276,7 +3256,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -3300,7 +3280,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -3313,30 +3293,11 @@ Majestad y poder de Dios | 1 Crón. 16:25
       </note>
     </measure>
     <measure number="12">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m12h1">
         <root>
           <root-step>G</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <bass>
-          <bass-step>B</bass-step>
-        </bass>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3360,7 +3321,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -3392,7 +3353,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -3404,6 +3365,16 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m12h2">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <bass>
+          <bass-step>B</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -3425,7 +3396,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -3436,6 +3407,13 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m12h3">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -3444,7 +3422,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -3457,7 +3435,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -3465,7 +3443,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
@@ -3485,7 +3463,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>3</octave>
@@ -3510,7 +3488,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">continue</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -3534,7 +3512,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -3553,12 +3531,12 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <duration>6</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -3566,7 +3544,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <duration>6</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -3578,10 +3556,10 @@ Majestad y poder de Dios | 1 Crón. 16:25
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m13h1">
         <root>
           <root-step>C</root-step>
         </root>
@@ -3596,32 +3574,6 @@ Majestad y poder de Dios | 1 Crón. 16:25
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
         </degree>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">suspended-fourth</kind>
-        <degree>
-          <degree-value>7</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <degree>
-          <degree-value>9</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3645,7 +3597,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -3657,7 +3609,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -3691,7 +3643,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -3703,7 +3655,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -3715,6 +3667,13 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m13h2">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -3736,7 +3695,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -3747,6 +3706,23 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m13h3">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">suspended-fourth</kind>
+        <degree>
+          <degree-value>7</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <degree>
+          <degree-value>9</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -3767,7 +3743,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -3779,7 +3755,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -3811,7 +3787,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -3823,7 +3799,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -3851,7 +3827,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -3877,7 +3853,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">continue</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -3902,7 +3878,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -3925,7 +3901,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -3949,7 +3925,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -3963,50 +3939,11 @@ Majestad y poder de Dios | 1 Crón. 16:25
       </note>
     </measure>
     <measure number="14">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m14h1">
         <root>
           <root-step>D</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>F</bass-step>
-          <bass-alter>1</bass-alter>
-        </bass>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <bass>
-          <bass-step>F</bass-step>
-        </bass>
-        <offset>10</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -4032,7 +3969,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -4043,6 +3980,13 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m14h2">
+        <root>
+          <root-step>E</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -4064,7 +4008,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -4075,6 +4019,17 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m14h3">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>F</bass-step>
+          <bass-alter>1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -4095,6 +4050,13 @@ Majestad y poder de Dios | 1 Crón. 16:25
           <text>ba</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m14h4">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -4115,7 +4077,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -4127,6 +4089,16 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m14h5">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <bass>
+          <bass-step>F</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -4147,7 +4119,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -4174,7 +4146,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -4198,7 +4170,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">continue</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -4224,7 +4196,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -4247,7 +4219,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -4271,7 +4243,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -4284,40 +4256,11 @@ Majestad y poder de Dios | 1 Crón. 16:25
       </note>
     </measure>
     <measure number="15">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m15h1">
         <root>
           <root-step>E</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-          <root-alter>1</root-alter>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>G</bass-step>
-          <bass-alter>1</bass-alter>
-        </bass>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -4343,7 +4286,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -4354,6 +4297,14 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m15h2">
+        <root>
+          <root-step>F</root-step>
+          <root-alter>1</root-alter>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -4375,7 +4326,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>5</octave>
@@ -4386,6 +4337,17 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m15h3">
+        <root>
+          <root-step>E</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>G</bass-step>
+          <bass-alter>1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -4406,6 +4368,13 @@ Majestad y poder de Dios | 1 Crón. 16:25
           <text>mi</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m15h4">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -4414,7 +4383,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -4427,7 +4396,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -4435,7 +4404,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
@@ -4455,7 +4424,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -4481,7 +4450,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">continue</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -4507,7 +4476,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -4526,12 +4495,12 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <duration>6</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -4539,7 +4508,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <duration>6</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -4551,10 +4520,10 @@ Majestad y poder de Dios | 1 Crón. 16:25
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m16h1">
         <root>
           <root-step>D</root-step>
         </root>
@@ -4567,14 +4536,14 @@ Majestad y poder de Dios | 1 Crón. 16:25
           <octave>4</octave>
         </pitch>
         <duration>12</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>single</syllabic>
@@ -4586,20 +4555,20 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>5</octave>
         </pitch>
         <duration>12</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <backup>
@@ -4613,33 +4582,33 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <duration>12</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="start" number="9" placement="below" />
+          <slur type="start" number="9" placement="below"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
         </pitch>
         <duration>12</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
     </measure>
     <measure number="17">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m17h1">
         <root>
           <root-step>G</root-step>
         </root>
@@ -4651,15 +4620,83 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </degree>
         <staff>1</staff>
       </harmony>
-      <harmony placement="above" print-frame="no">
+      <note>
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>6</duration>
+        <tie type="stop"/>
+        <tie type="start"/>
+        <voice>1</voice>
+        <type>quarter</type>
+        <dot/>
+        <stem>up</stem>
+        <staff>1</staff>
+        <notations>
+          <tied type="stop"/>
+          <tied type="start"/>
+        </notations>
+      </note>
+      <note>
+        <chord/>
+        <pitch>
+          <step>D</step>
+          <octave>5</octave>
+        </pitch>
+        <duration>6</duration>
+        <tie type="stop"/>
+        <tie type="start"/>
+        <voice>1</voice>
+        <type>quarter</type>
+        <dot/>
+        <stem>up</stem>
+        <staff>1</staff>
+        <notations>
+          <tied type="stop"/>
+          <tied type="start"/>
+        </notations>
+      </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m17h2">
         <root>
           <root-step>G</root-step>
         </root>
         <kind use-symbols="no">dominant</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
-      <harmony placement="above" print-frame="no">
+      <note>
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>2</duration>
+        <tie type="stop"/>
+        <voice>1</voice>
+        <type>eighth</type>
+        <stem>up</stem>
+        <staff>1</staff>
+        <beam number="1">begin</beam>
+        <notations>
+          <tied type="stop"/>
+        </notations>
+      </note>
+      <note>
+        <chord/>
+        <pitch>
+          <step>D</step>
+          <octave>5</octave>
+        </pitch>
+        <duration>2</duration>
+        <tie type="stop"/>
+        <voice>1</voice>
+        <type>eighth</type>
+        <stem>up</stem>
+        <staff>1</staff>
+        <notations>
+          <tied type="stop"/>
+        </notations>
+      </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m17h3">
         <root>
           <root-step>G</root-step>
         </root>
@@ -4674,86 +4711,8 @@ Majestad y poder de Dios | 1 Crón. 16:25
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
         </degree>
-        <offset>8</offset>
         <staff>1</staff>
       </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>10</offset>
-        <staff>1</staff>
-      </harmony>
-      <note>
-        <pitch>
-          <step>F</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>6</duration>
-        <tie type="stop" />
-        <tie type="start" />
-        <voice>1</voice>
-        <type>quarter</type>
-        <dot />
-        <stem>up</stem>
-        <staff>1</staff>
-        <notations>
-          <tied type="stop" />
-          <tied type="start" />
-        </notations>
-      </note>
-      <note>
-        <chord />
-        <pitch>
-          <step>D</step>
-          <octave>5</octave>
-        </pitch>
-        <duration>6</duration>
-        <tie type="stop" />
-        <tie type="start" />
-        <voice>1</voice>
-        <type>quarter</type>
-        <dot />
-        <stem>up</stem>
-        <staff>1</staff>
-        <notations>
-          <tied type="stop" />
-          <tied type="start" />
-        </notations>
-      </note>
-      <note>
-        <pitch>
-          <step>F</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>2</duration>
-        <tie type="stop" />
-        <voice>1</voice>
-        <type>eighth</type>
-        <stem>up</stem>
-        <staff>1</staff>
-        <beam number="1">begin</beam>
-        <notations>
-          <tied type="stop" />
-        </notations>
-      </note>
-      <note>
-        <chord />
-        <pitch>
-          <step>D</step>
-          <octave>5</octave>
-        </pitch>
-        <duration>2</duration>
-        <tie type="stop" />
-        <voice>1</voice>
-        <type>eighth</type>
-        <stem>up</stem>
-        <staff>1</staff>
-        <notations>
-          <tied type="stop" />
-        </notations>
-      </note>
       <note>
         <pitch>
           <step>F</step>
@@ -4775,7 +4734,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -4786,6 +4745,13 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m17h4">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -4807,7 +4773,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -4829,25 +4795,25 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <duration>6</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
         </pitch>
         <duration>6</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
@@ -4862,11 +4828,11 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>2</staff>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="stop" number="9" placement="below" />
+          <slur type="stop" number="9" placement="below"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>3</octave>
@@ -4890,7 +4856,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">continue</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -4914,7 +4880,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>3</octave>
@@ -4927,7 +4893,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
       </note>
     </measure>
     <measure number="18">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m18h1">
         <root>
           <root-step>A</root-step>
         </root>
@@ -4940,14 +4906,14 @@ Majestad y poder de Dios | 1 Crón. 16:25
           <octave>4</octave>
         </pitch>
         <duration>12</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>end</syllabic>
@@ -4959,37 +4925,37 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
         <duration>12</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
         </pitch>
         <duration>12</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <backup>
@@ -5003,33 +4969,33 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <duration>12</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="start" number="9" placement="below" />
+          <slur type="start" number="9" placement="below"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
         </pitch>
         <duration>12</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
     </measure>
     <measure number="19">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m19h1">
         <root>
           <root-step>A</root-step>
         </root>
@@ -5045,48 +5011,48 @@ Majestad y poder de Dios | 1 Crón. 16:25
           <octave>4</octave>
         </pitch>
         <duration>12</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
         <duration>12</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
         </pitch>
         <duration>12</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <backup>
@@ -5100,33 +5066,33 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <duration>12</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="stop" number="9" placement="below" />
+          <slur type="stop" number="9" placement="below"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
         </pitch>
         <duration>12</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
     </measure>
     <measure number="20">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m20h1">
         <root>
           <root-step>D</root-step>
         </root>
@@ -5139,14 +5105,14 @@ Majestad y poder de Dios | 1 Crón. 16:25
           <octave>4</octave>
         </pitch>
         <duration>12</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>single</syllabic>
@@ -5158,20 +5124,20 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>5</octave>
         </pitch>
         <duration>12</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <backup>
@@ -5185,33 +5151,33 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <duration>12</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="start" number="9" placement="below" />
+          <slur type="start" number="9" placement="below"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
         </pitch>
         <duration>12</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
     </measure>
     <measure number="21">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m21h1">
         <root>
           <root-step>G</root-step>
         </root>
@@ -5223,15 +5189,83 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </degree>
         <staff>1</staff>
       </harmony>
-      <harmony placement="above" print-frame="no">
+      <note>
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>6</duration>
+        <tie type="stop"/>
+        <tie type="start"/>
+        <voice>1</voice>
+        <type>quarter</type>
+        <dot/>
+        <stem>up</stem>
+        <staff>1</staff>
+        <notations>
+          <tied type="stop"/>
+          <tied type="start"/>
+        </notations>
+      </note>
+      <note>
+        <chord/>
+        <pitch>
+          <step>D</step>
+          <octave>5</octave>
+        </pitch>
+        <duration>6</duration>
+        <tie type="stop"/>
+        <tie type="start"/>
+        <voice>1</voice>
+        <type>quarter</type>
+        <dot/>
+        <stem>up</stem>
+        <staff>1</staff>
+        <notations>
+          <tied type="stop"/>
+          <tied type="start"/>
+        </notations>
+      </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m21h2">
         <root>
           <root-step>G</root-step>
         </root>
         <kind use-symbols="no">dominant</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
-      <harmony placement="above" print-frame="no">
+      <note>
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>2</duration>
+        <tie type="stop"/>
+        <voice>1</voice>
+        <type>eighth</type>
+        <stem>up</stem>
+        <staff>1</staff>
+        <beam number="1">begin</beam>
+        <notations>
+          <tied type="stop"/>
+        </notations>
+      </note>
+      <note>
+        <chord/>
+        <pitch>
+          <step>D</step>
+          <octave>5</octave>
+        </pitch>
+        <duration>2</duration>
+        <tie type="stop"/>
+        <voice>1</voice>
+        <type>eighth</type>
+        <stem>up</stem>
+        <staff>1</staff>
+        <notations>
+          <tied type="stop"/>
+        </notations>
+      </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m21h3">
         <root>
           <root-step>G</root-step>
         </root>
@@ -5246,86 +5280,8 @@ Majestad y poder de Dios | 1 Crón. 16:25
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
         </degree>
-        <offset>8</offset>
         <staff>1</staff>
       </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>10</offset>
-        <staff>1</staff>
-      </harmony>
-      <note>
-        <pitch>
-          <step>F</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>6</duration>
-        <tie type="stop" />
-        <tie type="start" />
-        <voice>1</voice>
-        <type>quarter</type>
-        <dot />
-        <stem>up</stem>
-        <staff>1</staff>
-        <notations>
-          <tied type="stop" />
-          <tied type="start" />
-        </notations>
-      </note>
-      <note>
-        <chord />
-        <pitch>
-          <step>D</step>
-          <octave>5</octave>
-        </pitch>
-        <duration>6</duration>
-        <tie type="stop" />
-        <tie type="start" />
-        <voice>1</voice>
-        <type>quarter</type>
-        <dot />
-        <stem>up</stem>
-        <staff>1</staff>
-        <notations>
-          <tied type="stop" />
-          <tied type="start" />
-        </notations>
-      </note>
-      <note>
-        <pitch>
-          <step>F</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>2</duration>
-        <tie type="stop" />
-        <voice>1</voice>
-        <type>eighth</type>
-        <stem>up</stem>
-        <staff>1</staff>
-        <beam number="1">begin</beam>
-        <notations>
-          <tied type="stop" />
-        </notations>
-      </note>
-      <note>
-        <chord />
-        <pitch>
-          <step>D</step>
-          <octave>5</octave>
-        </pitch>
-        <duration>2</duration>
-        <tie type="stop" />
-        <voice>1</voice>
-        <type>eighth</type>
-        <stem>up</stem>
-        <staff>1</staff>
-        <notations>
-          <tied type="stop" />
-        </notations>
-      </note>
       <note>
         <pitch>
           <step>F</step>
@@ -5347,7 +5303,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -5358,6 +5314,13 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m21h4">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -5379,7 +5342,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -5401,25 +5364,25 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <duration>6</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
         </pitch>
         <duration>6</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
@@ -5434,11 +5397,11 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <staff>2</staff>
         <beam number="1">begin</beam>
         <notations>
-          <slur type="stop" number="9" placement="below" />
+          <slur type="stop" number="9" placement="below"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>3</octave>
@@ -5462,7 +5425,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
         <beam number="1">continue</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -5487,7 +5450,7 @@ Majestad y poder de Dios | 1 Crón. 16:25
       </note>
     </measure>
     <measure number="22">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m22h1">
         <root>
           <root-step>C</root-step>
         </root>
@@ -5500,14 +5463,14 @@ Majestad y poder de Dios | 1 Crón. 16:25
           <octave>4</octave>
         </pitch>
         <duration>12</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>end</syllabic>
@@ -5519,20 +5482,20 @@ Majestad y poder de Dios | 1 Crón. 16:25
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
         </pitch>
         <duration>12</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <backup>
@@ -5544,36 +5507,36 @@ Majestad y poder de Dios | 1 Crón. 16:25
           <octave>3</octave>
         </pitch>
         <duration>12</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
         </pitch>
         <duration>12</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
     </measure>
     <measure number="23">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es075m23h1">
         <root>
           <root-step>C</root-step>
         </root>
@@ -5586,31 +5549,31 @@ Majestad y poder de Dios | 1 Crón. 16:25
           <octave>4</octave>
         </pitch>
         <duration>12</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
         </pitch>
         <duration>12</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <backup>
@@ -5622,31 +5585,31 @@ Majestad y poder de Dios | 1 Crón. 16:25
           <octave>3</octave>
         </pitch>
         <duration>12</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
         </pitch>
         <duration>12</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <barline location="right">

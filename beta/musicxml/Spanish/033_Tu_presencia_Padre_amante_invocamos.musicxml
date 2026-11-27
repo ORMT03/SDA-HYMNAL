@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='UTF-8'?>
 <score-partwise version="4.0">
   <movement-title>Tu presencia, Padre amante, invocamos</movement-title>
   <identification>
@@ -26,7 +26,7 @@ Inicio del culto | 2 Crón. 5:14
         <bottom-margin>60</bottom-margin>
       </page-margins>
     </page-layout>
-    <lyric-font font-family="Times New Roman" font-size="10" />
+    <lyric-font font-family="Times New Roman" font-size="10"/>
   </defaults>
   <credit page="1">
     <credit-type>title</credit-type>
@@ -60,13 +60,13 @@ Inicio del culto | 2 Crón. 5:14
   </credit>
   <part-list>
     <score-part id="P1">
-      <part-name print-object="no" />
+      <part-name print-object="no"/>
       <part-name-display print-object="no">
-        <display-text />
+        <display-text/>
       </part-name-display>
-      <part-abbreviation print-object="no" />
+      <part-abbreviation print-object="no"/>
       <part-abbreviation-display print-object="no">
-        <display-text />
+        <display-text/>
       </part-abbreviation-display>
       <score-instrument id="P1-I1">
         <instrument-name>Piano</instrument-name>
@@ -86,7 +86,7 @@ Inicio del culto | 2 Crón. 5:14
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <top-system-distance>95</top-system-distance>
+          <top-system-distance>80</top-system-distance>
         </system-layout>
       </print>
       <attributes>
@@ -108,19 +108,11 @@ Inicio del culto | 2 Crón. 5:14
           <line>4</line>
         </clef>
       </attributes>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m1h1">
         <root>
           <root-step>F</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">dominant-ninth</kind>
-        <offset>3</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -131,7 +123,7 @@ Inicio del culto | 2 Crón. 5:14
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -140,7 +132,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -148,10 +140,17 @@ Inicio del culto | 2 Crón. 5:14
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m1h2">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">dominant-ninth</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -168,7 +167,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -191,12 +190,12 @@ Inicio del culto | 2 Crón. 5:14
         <duration>3</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -204,7 +203,7 @@ Inicio del culto | 2 Crón. 5:14
         <duration>3</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -220,7 +219,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -233,7 +232,7 @@ Inicio del culto | 2 Crón. 5:14
       </note>
     </measure>
     <measure number="1">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m2h1">
         <root>
           <root-step>C</root-step>
         </root>
@@ -244,15 +243,6 @@ Inicio del culto | 2 Crón. 5:14
         </bass>
         <staff>1</staff>
       </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>3</offset>
-        <staff>1</staff>
-      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -261,11 +251,11 @@ Inicio del culto | 2 Crón. 5:14
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <slur type="start" number="2" placement="below" />
+          <slur type="start" number="2" placement="below"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>middle</syllabic>
@@ -273,7 +263,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -282,13 +272,21 @@ Inicio del culto | 2 Crón. 5:14
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <slur type="start" number="1" placement="above" />
+          <slur type="start" number="1" placement="above"/>
         </notations>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m2h2">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -301,11 +299,11 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <slur type="stop" number="2" placement="below" />
+          <slur type="stop" number="2" placement="below"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -316,7 +314,7 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <slur type="stop" number="1" placement="above" />
+          <slur type="stop" number="1" placement="above"/>
         </notations>
       </note>
       <note>
@@ -326,13 +324,13 @@ Inicio del culto | 2 Crón. 5:14
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>end</syllabic>
@@ -340,19 +338,19 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <backup>
@@ -366,11 +364,11 @@ Inicio del culto | 2 Crón. 5:14
         <duration>3</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="start" number="9" placement="above" />
+          <slur type="start" number="9" placement="above"/>
         </notations>
       </note>
       <note>
@@ -384,7 +382,7 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="stop" number="9" placement="above" />
+          <slur type="stop" number="9" placement="above"/>
         </notations>
       </note>
       <note>
@@ -394,29 +392,29 @@ Inicio del culto | 2 Crón. 5:14
           <octave>2</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <backup>
@@ -436,32 +434,12 @@ Inicio del culto | 2 Crón. 5:14
       </note>
     </measure>
     <measure number="2">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m3h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>D</bass-step>
-        </bass>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <offset>7</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -471,31 +449,42 @@ Inicio del culto | 2 Crón. 5:14
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m3h2">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>D</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -504,7 +493,7 @@ Inicio del culto | 2 Crón. 5:14
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -513,7 +502,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -522,10 +511,17 @@ Inicio del culto | 2 Crón. 5:14
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m3h3">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -542,7 +538,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -563,29 +559,29 @@ Inicio del culto | 2 Crón. 5:14
           <octave>2</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
@@ -596,12 +592,12 @@ Inicio del culto | 2 Crón. 5:14
         <duration>3</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -610,7 +606,7 @@ Inicio del culto | 2 Crón. 5:14
         <duration>3</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -626,7 +622,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -639,7 +635,7 @@ Inicio del culto | 2 Crón. 5:14
       </note>
     </measure>
     <measure number="3">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m4h1">
         <root>
           <root-step>F</root-step>
         </root>
@@ -650,15 +646,6 @@ Inicio del culto | 2 Crón. 5:14
         </bass>
         <staff>1</staff>
       </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>3</offset>
-        <staff>1</staff>
-      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -667,11 +654,11 @@ Inicio del culto | 2 Crón. 5:14
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <slur type="start" number="2" placement="below" />
+          <slur type="start" number="2" placement="below"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>middle</syllabic>
@@ -679,7 +666,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -687,13 +674,21 @@ Inicio del culto | 2 Crón. 5:14
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <slur type="start" number="1" placement="above" />
+          <slur type="start" number="1" placement="above"/>
         </notations>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m4h2">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -706,11 +701,11 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <slur type="stop" number="2" placement="below" />
+          <slur type="stop" number="2" placement="below"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -721,7 +716,7 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <slur type="stop" number="1" placement="above" />
+          <slur type="stop" number="1" placement="above"/>
         </notations>
       </note>
       <note>
@@ -736,7 +731,7 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <slur type="start" number="3" placement="below" />
+          <slur type="start" number="3" placement="below"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>end</syllabic>
@@ -744,19 +739,19 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <backup>
@@ -770,11 +765,11 @@ Inicio del culto | 2 Crón. 5:14
         <duration>3</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="start" number="9" placement="above" />
+          <slur type="start" number="9" placement="above"/>
         </notations>
       </note>
       <note>
@@ -789,7 +784,7 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="stop" number="9" placement="above" />
+          <slur type="stop" number="9" placement="above"/>
         </notations>
       </note>
       <note>
@@ -804,11 +799,11 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="start" number="12" placement="below" />
+          <slur type="start" number="12" placement="below"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -820,7 +815,7 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="start" number="11" placement="above" />
+          <slur type="start" number="11" placement="above"/>
         </notations>
       </note>
       <backup>
@@ -840,7 +835,7 @@ Inicio del culto | 2 Crón. 5:14
       </note>
     </measure>
     <measure number="4">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m5h1">
         <root>
           <root-step>G</root-step>
         </root>
@@ -850,22 +845,6 @@ Inicio del culto | 2 Crón. 5:14
         </bass>
         <staff>1</staff>
       </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>7</offset>
-        <staff>1</staff>
-      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -877,32 +856,39 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <slur type="stop" number="3" placement="below" />
+          <slur type="stop" number="3" placement="below"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
         <duration>2</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>quarter</type>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m5h2">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -911,7 +897,7 @@ Inicio del culto | 2 Crón. 5:14
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -920,7 +906,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -928,10 +914,17 @@ Inicio del culto | 2 Crón. 5:14
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m5h3">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -948,7 +941,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -973,11 +966,11 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="stop" number="12" placement="below" />
+          <slur type="stop" number="12" placement="below"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>3</octave>
@@ -989,11 +982,11 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="stop" number="11" placement="above" />
+          <slur type="stop" number="11" placement="above"/>
         </notations>
       </note>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>5</voice>
         <type>quarter</type>
@@ -1007,12 +1000,12 @@ Inicio del culto | 2 Crón. 5:14
         <duration>3</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>3</octave>
@@ -1020,7 +1013,7 @@ Inicio del culto | 2 Crón. 5:14
         <duration>3</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -1036,7 +1029,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>3</octave>
@@ -1055,10 +1048,10 @@ Inicio del culto | 2 Crón. 5:14
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m6h1">
         <root>
           <root-step>G</root-step>
         </root>
@@ -1073,14 +1066,6 @@ Inicio del culto | 2 Crón. 5:14
         </degree>
         <staff>1</staff>
       </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -1089,11 +1074,11 @@ Inicio del culto | 2 Crón. 5:14
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <slur type="start" number="2" placement="below" />
+          <slur type="start" number="2" placement="below"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>middle</syllabic>
@@ -1101,7 +1086,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -1109,11 +1094,11 @@ Inicio del culto | 2 Crón. 5:14
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <slur type="start" number="1" placement="above" />
+          <slur type="start" number="1" placement="above"/>
         </notations>
       </note>
       <note>
@@ -1127,11 +1112,11 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <slur type="stop" number="2" placement="below" />
+          <slur type="stop" number="2" placement="below"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -1143,22 +1128,29 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <slur type="stop" number="1" placement="above" />
+          <slur type="stop" number="1" placement="above"/>
         </notations>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m6h2">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>end</syllabic>
@@ -1166,20 +1158,20 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <backup>
@@ -1197,7 +1189,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -1219,28 +1211,28 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="start" number="12" placement="below" />
+          <slur type="start" number="12" placement="below"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
     </measure>
     <measure number="6">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m7h1">
         <root>
           <root-step>C</root-step>
         </root>
@@ -1251,7 +1243,69 @@ Inicio del culto | 2 Crón. 5:14
         </bass>
         <staff>1</staff>
       </harmony>
-      <harmony placement="above" print-frame="no">
+      <note>
+        <pitch>
+          <step>C</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>4</duration>
+        <tie type="stop"/>
+        <voice>1</voice>
+        <type>half</type>
+        <stem>up</stem>
+        <staff>1</staff>
+        <notations>
+          <tied type="stop"/>
+        </notations>
+      </note>
+      <note>
+        <chord/>
+        <pitch>
+          <step>E</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>4</duration>
+        <tie type="stop"/>
+        <voice>1</voice>
+        <type>half</type>
+        <stem>up</stem>
+        <staff>1</staff>
+        <notations>
+          <tied type="stop"/>
+        </notations>
+      </note>
+      <note>
+        <pitch>
+          <step>E</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>3</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <dot/>
+        <stem>up</stem>
+        <staff>1</staff>
+        <lyric number="1" placement="below">
+          <syllabic>begin</syllabic>
+          <text>re</text>
+        </lyric>
+      </note>
+      <note>
+        <chord/>
+        <pitch>
+          <step>C</step>
+          <octave>5</octave>
+        </pitch>
+        <duration>3</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <dot/>
+        <stem>up</stem>
+        <staff>1</staff>
+      </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m7h2">
         <root>
           <root-step>E</root-step>
           <root-alter>-1</root-alter>
@@ -1261,71 +1315,8 @@ Inicio del culto | 2 Crón. 5:14
           <bass-step>B</bass-step>
           <bass-alter>-1</bass-alter>
         </bass>
-        <offset>7</offset>
         <staff>1</staff>
       </harmony>
-      <note>
-        <pitch>
-          <step>C</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>4</duration>
-        <tie type="stop" />
-        <voice>1</voice>
-        <type>half</type>
-        <stem>up</stem>
-        <staff>1</staff>
-        <notations>
-          <tied type="stop" />
-        </notations>
-      </note>
-      <note>
-        <chord />
-        <pitch>
-          <step>E</step>
-          <alter>-1</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>4</duration>
-        <tie type="stop" />
-        <voice>1</voice>
-        <type>half</type>
-        <stem>up</stem>
-        <staff>1</staff>
-        <notations>
-          <tied type="stop" />
-        </notations>
-      </note>
-      <note>
-        <pitch>
-          <step>E</step>
-          <alter>-1</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>3</duration>
-        <voice>1</voice>
-        <type>quarter</type>
-        <dot />
-        <stem>up</stem>
-        <staff>1</staff>
-        <lyric number="1" placement="below">
-          <syllabic>begin</syllabic>
-          <text>re</text>
-        </lyric>
-      </note>
-      <note>
-        <chord />
-        <pitch>
-          <step>C</step>
-          <octave>5</octave>
-        </pitch>
-        <duration>3</duration>
-        <voice>1</voice>
-        <type>quarter</type>
-        <dot />
-        <stem>up</stem>
-        <staff>1</staff>
-      </note>
       <note>
         <pitch>
           <step>E</step>
@@ -1343,7 +1334,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -1370,23 +1361,23 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="stop" number="12" placement="below" />
+          <slur type="stop" number="12" placement="below"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
@@ -1398,12 +1389,12 @@ Inicio del culto | 2 Crón. 5:14
         <duration>3</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -1411,7 +1402,7 @@ Inicio del culto | 2 Crón. 5:14
         <duration>3</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -1428,7 +1419,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -1441,7 +1432,7 @@ Inicio del culto | 2 Crón. 5:14
       </note>
     </measure>
     <measure number="7">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m8h1">
         <root>
           <root-step>F</root-step>
         </root>
@@ -1458,14 +1449,6 @@ Inicio del culto | 2 Crón. 5:14
         </degree>
         <staff>1</staff>
       </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1475,11 +1458,11 @@ Inicio del culto | 2 Crón. 5:14
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <slur type="start" number="1" placement="above" />
+          <slur type="start" number="1" placement="above"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>middle</syllabic>
@@ -1497,9 +1480,16 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <slur type="stop" number="1" placement="above" />
+          <slur type="stop" number="1" placement="above"/>
         </notations>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m8h2">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -1507,13 +1497,13 @@ Inicio del culto | 2 Crón. 5:14
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>end</syllabic>
@@ -1521,19 +1511,19 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <backup>
@@ -1562,11 +1552,11 @@ Inicio del culto | 2 Crón. 5:14
         <duration>3</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="start" number="9" placement="above" />
+          <slur type="start" number="9" placement="above"/>
         </notations>
       </note>
       <note>
@@ -1580,7 +1570,7 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="stop" number="9" placement="above" />
+          <slur type="stop" number="9" placement="above"/>
         </notations>
       </note>
       <note>
@@ -1589,13 +1579,13 @@ Inicio del culto | 2 Crón. 5:14
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <backup>
@@ -1614,14 +1604,53 @@ Inicio del culto | 2 Crón. 5:14
       </note>
     </measure>
     <measure number="8">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m9h1">
         <root>
           <root-step>F</root-step>
         </root>
         <kind use-symbols="no">dominant</kind>
         <staff>1</staff>
       </harmony>
-      <harmony placement="above" print-frame="no">
+      <note>
+        <pitch>
+          <step>E</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>2</duration>
+        <tie type="stop"/>
+        <voice>1</voice>
+        <type>quarter</type>
+        <stem>up</stem>
+        <staff>1</staff>
+        <notations>
+          <tied type="stop"/>
+        </notations>
+      </note>
+      <note>
+        <chord/>
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>2</duration>
+        <tie type="stop"/>
+        <voice>1</voice>
+        <type>quarter</type>
+        <stem>up</stem>
+        <staff>1</staff>
+        <notations>
+          <tied type="stop"/>
+        </notations>
+      </note>
+      <note>
+        <rest/>
+        <duration>2</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <staff>1</staff>
+      </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m9h2">
         <root>
           <root-step>F</root-step>
         </root>
@@ -1636,56 +1665,8 @@ Inicio del culto | 2 Crón. 5:14
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
         </degree>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
-      <note>
-        <pitch>
-          <step>E</step>
-          <alter>-1</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>2</duration>
-        <tie type="stop" />
-        <voice>1</voice>
-        <type>quarter</type>
-        <stem>up</stem>
-        <staff>1</staff>
-        <notations>
-          <tied type="stop" />
-        </notations>
-      </note>
-      <note>
-        <chord />
-        <pitch>
-          <step>A</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>2</duration>
-        <tie type="stop" />
-        <voice>1</voice>
-        <type>quarter</type>
-        <stem>up</stem>
-        <staff>1</staff>
-        <notations>
-          <tied type="stop" />
-        </notations>
-      </note>
-      <note>
-        <rest />
-        <duration>2</duration>
-        <voice>1</voice>
-        <type>quarter</type>
-        <staff>1</staff>
-      </note>
       <note>
         <pitch>
           <step>E</step>
@@ -1703,7 +1684,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -1714,6 +1695,13 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m9h3">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -1731,7 +1719,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -1751,17 +1739,17 @@ Inicio del culto | 2 Crón. 5:14
           <octave>3</octave>
         </pitch>
         <duration>2</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>5</voice>
         <type>quarter</type>
@@ -1779,7 +1767,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -1803,7 +1791,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -1816,7 +1804,7 @@ Inicio del culto | 2 Crón. 5:14
       </note>
     </measure>
     <measure number="9">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m10h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
@@ -1840,7 +1828,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -1868,7 +1856,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -1896,7 +1884,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -1924,7 +1912,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -1948,7 +1936,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -1972,7 +1960,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -1991,10 +1979,10 @@ Inicio del culto | 2 Crón. 5:14
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m11h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
@@ -2018,7 +2006,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2031,7 +2019,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>1</staff>
       </note>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>quarter</type>
@@ -2053,7 +2041,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2081,7 +2069,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2109,7 +2097,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -2123,7 +2111,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>5</voice>
         <type>quarter</type>
@@ -2142,7 +2130,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -2167,7 +2155,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -2181,30 +2169,12 @@ Inicio del culto | 2 Crón. 5:14
       </note>
     </measure>
     <measure number="11">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m12h1">
         <root>
           <root-step>E</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">diminished</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2224,7 +2194,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2236,6 +2206,14 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m12h2">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">diminished</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -2253,7 +2231,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -2264,6 +2242,14 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m12h3">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -2281,7 +2267,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2309,7 +2295,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -2333,7 +2319,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -2359,7 +2345,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -2372,7 +2358,7 @@ Inicio del culto | 2 Crón. 5:14
       </note>
     </measure>
     <measure number="12">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m13h1">
         <root>
           <root-step>C</root-step>
         </root>
@@ -2380,30 +2366,6 @@ Inicio del culto | 2 Crón. 5:14
         <bass>
           <bass-step>E</bass-step>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-        </root>
-        <kind use-symbols="no">half-diminished</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>E</bass-step>
-        </bass>
-        <degree>
-          <degree-value>9</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2422,7 +2384,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -2433,6 +2395,13 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m13h2">
+        <root>
+          <root-step>E</root-step>
+        </root>
+        <kind use-symbols="no">half-diminished</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -2449,7 +2418,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2461,6 +2430,21 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m13h3">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>E</bass-step>
+        </bass>
+        <degree>
+          <degree-value>9</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -2477,7 +2461,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -2504,7 +2488,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2528,7 +2512,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -2551,7 +2535,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -2564,7 +2548,7 @@ Inicio del culto | 2 Crón. 5:14
       </note>
     </measure>
     <measure number="13">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m14h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
@@ -2583,11 +2567,11 @@ Inicio del culto | 2 Crón. 5:14
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <slur type="start" number="1" placement="above" />
+          <slur type="start" number="1" placement="above"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>begin</syllabic>
@@ -2605,7 +2589,7 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <slur type="stop" number="1" placement="above" />
+          <slur type="stop" number="1" placement="above"/>
         </notations>
       </note>
       <note>
@@ -2624,7 +2608,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2662,11 +2646,11 @@ Inicio del culto | 2 Crón. 5:14
         <duration>3</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="start" number="9" placement="above" />
+          <slur type="start" number="9" placement="above"/>
         </notations>
       </note>
       <note>
@@ -2680,7 +2664,7 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="stop" number="9" placement="above" />
+          <slur type="stop" number="9" placement="above"/>
         </notations>
       </note>
       <note>
@@ -2695,7 +2679,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -2722,51 +2706,29 @@ Inicio del culto | 2 Crón. 5:14
       </note>
     </measure>
     <measure number="14">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m15h1">
         <root>
           <root-step>F</root-step>
           <root-alter>1</root-alter>
         </root>
         <kind use-symbols="no">diminished-seventh</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-          <root-alter>1</root-alter>
-        </root>
-        <kind use-symbols="no">diminished-seventh</kind>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">suspended-fourth</kind>
-        <degree>
-          <degree-value>7</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>quarter</type>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m15h2">
+        <root>
+          <root-step>F</root-step>
+          <root-alter>1</root-alter>
+        </root>
+        <kind use-symbols="no">diminished-seventh</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -2784,7 +2746,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -2795,6 +2757,18 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m15h3">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">suspended-fourth</kind>
+        <degree>
+          <degree-value>7</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -2812,7 +2786,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2824,6 +2798,13 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m15h4">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -2841,7 +2822,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -2856,7 +2837,7 @@ Inicio del culto | 2 Crón. 5:14
         <duration>8</duration>
       </backup>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>5</voice>
         <type>quarter</type>
@@ -2876,7 +2857,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -2899,7 +2880,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2923,7 +2904,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -2958,10 +2939,10 @@ Inicio del culto | 2 Crón. 5:14
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m16h1">
         <root>
           <root-step>C</root-step>
         </root>
@@ -2978,12 +2959,12 @@ Inicio del culto | 2 Crón. 5:14
           <octave>4</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>whole</type>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>end</syllabic>
@@ -2991,18 +2972,18 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>whole</type>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <backup>
@@ -3019,24 +3000,24 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
           <octave>3</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>whole</type>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
     </measure>
     <measure number="16">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m17h1">
         <root>
           <root-step>C</root-step>
         </root>
@@ -3047,7 +3028,46 @@ Inicio del culto | 2 Crón. 5:14
         </bass>
         <staff>1</staff>
       </harmony>
-      <harmony placement="above" print-frame="no">
+      <note>
+        <pitch>
+          <step>E</step>
+          <alter>-1</alter>
+          <octave>4</octave>
+        </pitch>
+        <duration>2</duration>
+        <tie type="stop"/>
+        <voice>1</voice>
+        <type>quarter</type>
+        <stem>up</stem>
+        <staff>1</staff>
+        <notations>
+          <tied type="stop"/>
+        </notations>
+      </note>
+      <note>
+        <chord/>
+        <pitch>
+          <step>C</step>
+          <octave>5</octave>
+        </pitch>
+        <duration>2</duration>
+        <tie type="stop"/>
+        <voice>1</voice>
+        <type>quarter</type>
+        <stem>up</stem>
+        <staff>1</staff>
+        <notations>
+          <tied type="stop"/>
+        </notations>
+      </note>
+      <note>
+        <rest/>
+        <duration>2</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <staff>1</staff>
+      </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m17h2">
         <root>
           <root-step>E</root-step>
           <root-alter>-1</root-alter>
@@ -3056,59 +3076,8 @@ Inicio del culto | 2 Crón. 5:14
         <bass>
           <bass-step>G</bass-step>
         </bass>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>G</bass-step>
-        </bass>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
-      <note>
-        <pitch>
-          <step>E</step>
-          <alter>-1</alter>
-          <octave>4</octave>
-        </pitch>
-        <duration>2</duration>
-        <tie type="stop" />
-        <voice>1</voice>
-        <type>quarter</type>
-        <stem>up</stem>
-        <staff>1</staff>
-        <notations>
-          <tied type="stop" />
-        </notations>
-      </note>
-      <note>
-        <chord />
-        <pitch>
-          <step>C</step>
-          <octave>5</octave>
-        </pitch>
-        <duration>2</duration>
-        <tie type="stop" />
-        <voice>1</voice>
-        <type>quarter</type>
-        <stem>up</stem>
-        <staff>1</staff>
-        <notations>
-          <tied type="stop" />
-        </notations>
-      </note>
-      <note>
-        <rest />
-        <duration>2</duration>
-        <voice>1</voice>
-        <type>quarter</type>
-        <staff>1</staff>
-      </note>
       <note>
         <pitch>
           <step>E</step>
@@ -3126,7 +3095,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -3138,6 +3107,16 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m17h3">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>G</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -3155,7 +3134,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -3183,24 +3162,24 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
           <octave>3</octave>
         </pitch>
         <duration>2</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>5</voice>
         <type>quarter</type>
@@ -3218,7 +3197,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -3241,7 +3220,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -3254,7 +3233,7 @@ Inicio del culto | 2 Crón. 5:14
       </note>
     </measure>
     <measure number="17">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m18h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
@@ -3273,11 +3252,11 @@ Inicio del culto | 2 Crón. 5:14
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <slur type="start" number="1" placement="above" />
+          <slur type="start" number="1" placement="above"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>middle</syllabic>
@@ -3295,7 +3274,7 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <slur type="stop" number="1" placement="above" />
+          <slur type="stop" number="1" placement="above"/>
         </notations>
       </note>
       <note>
@@ -3314,7 +3293,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -3352,11 +3331,11 @@ Inicio del culto | 2 Crón. 5:14
         <duration>3</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="start" number="9" placement="above" />
+          <slur type="start" number="9" placement="above"/>
         </notations>
       </note>
       <note>
@@ -3370,7 +3349,7 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="stop" number="9" placement="above" />
+          <slur type="stop" number="9" placement="above"/>
         </notations>
       </note>
       <note>
@@ -3385,7 +3364,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -3412,7 +3391,7 @@ Inicio del culto | 2 Crón. 5:14
       </note>
     </measure>
     <measure number="18">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m19h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
@@ -3423,47 +3402,20 @@ Inicio del culto | 2 Crón. 5:14
         </bass>
         <staff>1</staff>
       </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">dominant-ninth</kind>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">suspended-fourth</kind>
-        <degree>
-          <degree-value>7</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <degree>
-          <degree-value>9</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>quarter</type>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m19h2">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">dominant-ninth</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -3481,7 +3433,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -3492,6 +3444,23 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m19h3">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">suspended-fourth</kind>
+        <degree>
+          <degree-value>7</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <degree>
+          <degree-value>9</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -3509,7 +3478,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -3521,6 +3490,13 @@ Inicio del culto | 2 Crón. 5:14
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m19h4">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -3538,7 +3514,7 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -3553,7 +3529,7 @@ Inicio del culto | 2 Crón. 5:14
         <duration>8</duration>
       </backup>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>5</voice>
         <type>quarter</type>
@@ -3571,7 +3547,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -3594,7 +3570,7 @@ Inicio del culto | 2 Crón. 5:14
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -3632,7 +3608,7 @@ Inicio del culto | 2 Crón. 5:14
       </note>
     </measure>
     <measure number="19">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m20h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
@@ -3646,12 +3622,12 @@ Inicio del culto | 2 Crón. 5:14
           <octave>4</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>whole</type>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>end</syllabic>
@@ -3659,19 +3635,19 @@ Inicio del culto | 2 Crón. 5:14
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
           <octave>4</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>whole</type>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <backup>
@@ -3684,32 +3660,32 @@ Inicio del culto | 2 Crón. 5:14
           <octave>2</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>whole</type>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>whole</type>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
     </measure>
     <measure number="20">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es033m21h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
@@ -3723,30 +3699,30 @@ Inicio del culto | 2 Crón. 5:14
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <backup>
@@ -3759,29 +3735,29 @@ Inicio del culto | 2 Crón. 5:14
           <octave>2</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <barline location="right">

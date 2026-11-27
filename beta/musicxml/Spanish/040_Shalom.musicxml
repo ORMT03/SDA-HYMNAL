@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='UTF-8'?>
 <score-partwise version="4.0.3">
   <movement-title>Shalom</movement-title>
   <identification>
@@ -9,11 +9,11 @@ Cierre del culto | Núm. 6:24-26
 </rights>
     <encoding>
       <software>Audiveris 5.11.0</software>
-      <supports type="yes" element="print" attribute="new-system" value="yes" />
-      <supports type="yes" element="print" attribute="new-page" value="yes" />
-      <supports type="yes" element="accidental" />
-      <supports type="yes" element="beam" />
-      <supports type="yes" element="stem" />
+      <supports type="yes" element="print" attribute="new-system" value="yes"/>
+      <supports type="yes" element="print" attribute="new-page" value="yes"/>
+      <supports type="yes" element="accidental"/>
+      <supports type="yes" element="beam"/>
+      <supports type="yes" element="stem"/>
       <software>ProxyMusic 4.0.3</software>
       <encoding-date>2026-10-30</encoding-date>
     </encoding>
@@ -38,7 +38,7 @@ Cierre del culto | Núm. 6:24-26
         <bottom-margin>60</bottom-margin>
       </page-margins>
     </page-layout>
-    <lyric-font font-family="Times New Roman" font-size="10" />
+    <lyric-font font-family="Times New Roman" font-size="10"/>
   </defaults>
   <credit page="1">
     <credit-type>title</credit-type>
@@ -73,13 +73,13 @@ Cierre del culto | Núm. 6:24-26
   </credit>
   <part-list>
     <score-part id="P1">
-      <part-name print-object="no" />
+      <part-name print-object="no"/>
       <part-name-display print-object="no">
-        <display-text />
+        <display-text/>
       </part-name-display>
-      <part-abbreviation print-object="no" />
+      <part-abbreviation print-object="no"/>
       <part-abbreviation-display print-object="no">
-        <display-text />
+        <display-text/>
       </part-abbreviation-display>
       <score-instrument id="P1-I1">
         <instrument-name>Piano</instrument-name>
@@ -99,7 +99,7 @@ Cierre del culto | Núm. 6:24-26
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <top-system-distance>95</top-system-distance>
+          <top-system-distance>80</top-system-distance>
         </system-layout>
       </print>
       <attributes>
@@ -120,9 +120,9 @@ Cierre del culto | Núm. 6:24-26
           <sign>F</sign>
           <line>4</line>
         </clef>
-        <staff-details print-object="yes" />
+        <staff-details print-object="yes"/>
       </attributes>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es040m1h1">
         <root>
           <root-step>D</root-step>
         </root>
@@ -170,7 +170,7 @@ Cierre del culto | Núm. 6:24-26
       </note>
     </measure>
     <measure number="1">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es040m2h1">
         <root>
           <root-step>D</root-step>
         </root>
@@ -287,7 +287,7 @@ Cierre del culto | Núm. 6:24-26
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -326,7 +326,7 @@ Cierre del culto | Núm. 6:24-26
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -338,22 +338,11 @@ Cierre del culto | Núm. 6:24-26
       </note>
     </measure>
     <measure number="2">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es040m3h1">
         <root>
           <root-step>D</root-step>
         </root>
         <kind use-symbols="no">minor</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>F</bass-step>
-        </bass>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -380,7 +369,7 @@ Cierre del culto | Núm. 6:24-26
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -416,7 +405,7 @@ Cierre del culto | Núm. 6:24-26
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -445,7 +434,7 @@ Cierre del culto | Núm. 6:24-26
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -481,7 +470,7 @@ Cierre del culto | Núm. 6:24-26
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -492,6 +481,16 @@ Cierre del culto | Núm. 6:24-26
         <stem default-y="10">up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es040m3h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>F</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -516,7 +515,7 @@ Cierre del culto | Núm. 6:24-26
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -538,12 +537,12 @@ Cierre del culto | Núm. 6:24-26
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="-56">down</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -551,7 +550,7 @@ Cierre del culto | Núm. 6:24-26
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="-56">down</stem>
         <staff>2</staff>
       </note>
@@ -568,19 +567,11 @@ Cierre del culto | Núm. 6:24-26
       </note>
     </measure>
     <measure number="3">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es040m4h1">
         <root>
           <root-step>D</root-step>
         </root>
         <kind use-symbols="no">minor</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -607,7 +598,7 @@ Cierre del culto | Núm. 6:24-26
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -618,6 +609,13 @@ Cierre del culto | Núm. 6:24-26
         <stem default-y="15">up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es040m4h2">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -642,7 +640,7 @@ Cierre del culto | Núm. 6:24-26
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -668,7 +666,7 @@ Cierre del culto | Núm. 6:24-26
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -691,7 +689,7 @@ Cierre del culto | Núm. 6:24-26
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -704,19 +702,11 @@ Cierre del culto | Núm. 6:24-26
       </note>
     </measure>
     <measure number="4">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es040m5h1">
         <root>
           <root-step>D</root-step>
         </root>
         <kind use-symbols="no">minor</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -727,7 +717,7 @@ Cierre del culto | Núm. 6:24-26
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="10">up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -780,6 +770,13 @@ Cierre del culto | Núm. 6:24-26
         <stem default-y="-71">down</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es040m5h2">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -806,7 +803,7 @@ Cierre del culto | Núm. 6:24-26
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -829,7 +826,7 @@ Cierre del culto | Núm. 6:24-26
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -848,36 +845,17 @@ Cierre del culto | Núm. 6:24-26
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
       <attributes>
-        <staff-details print-object="yes" />
+        <staff-details print-object="yes"/>
       </attributes>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es040m6h1">
         <root>
           <root-step>D</root-step>
         </root>
         <kind use-symbols="no">minor</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>A</bass-step>
-        </bass>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -943,6 +921,16 @@ Cierre del culto | Núm. 6:24-26
           <text>en</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es040m6h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>A</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -967,7 +955,7 @@ Cierre del culto | Núm. 6:24-26
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -978,6 +966,13 @@ Cierre del culto | Núm. 6:24-26
         <stem default-y="1">up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es040m6h3">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -1002,7 +997,7 @@ Cierre del culto | Núm. 6:24-26
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -1042,19 +1037,19 @@ Cierre del culto | Núm. 6:24-26
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>half</type>
         <stem default-y="-56">down</stem>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <note>
@@ -1069,47 +1064,28 @@ Cierre del culto | Núm. 6:24-26
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>half</type>
         <stem default-y="-61">down</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
     </measure>
     <measure number="6">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es040m7h1">
         <root>
           <root-step>D</root-step>
         </root>
         <kind use-symbols="no">minor</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>A</bass-step>
-        </bass>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1136,7 +1112,7 @@ Cierre del culto | Núm. 6:24-26
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -1187,6 +1163,16 @@ Cierre del culto | Núm. 6:24-26
           <text>a</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es040m7h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>A</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -1210,6 +1196,13 @@ Cierre del culto | Núm. 6:24-26
           <text>mor,</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es040m7h3">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -1248,7 +1241,7 @@ Cierre del culto | Núm. 6:24-26
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -1302,7 +1295,7 @@ Cierre del culto | Núm. 6:24-26
       </note>
     </measure>
     <measure number="7">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es040m8h1">
         <root>
           <root-step>D</root-step>
         </root>
@@ -1310,25 +1303,6 @@ Cierre del culto | Núm. 6:24-26
         <bass>
           <bass-step>F</bass-step>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>A</bass-step>
-        </bass>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1339,7 +1313,7 @@ Cierre del culto | Núm. 6:24-26
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="-9">up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -1356,7 +1330,7 @@ Cierre del culto | Núm. 6:24-26
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -1364,10 +1338,17 @@ Cierre del culto | Núm. 6:24-26
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="-9">up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es040m8h3">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -1440,7 +1421,7 @@ Cierre del culto | Núm. 6:24-26
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>3</octave>
@@ -1451,6 +1432,16 @@ Cierre del culto | Núm. 6:24-26
         <stem default-y="15">up</stem>
         <staff>2</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es040m8h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>A</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -1494,24 +1485,11 @@ Cierre del culto | Núm. 6:24-26
       </note>
     </measure>
     <measure number="8">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es040m9h1">
         <root>
           <root-step>D</root-step>
         </root>
         <kind use-symbols="no">minor</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">suspended-fourth</kind>
-        <degree>
-          <degree-value>7</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1520,12 +1498,12 @@ Cierre del culto | Núm. 6:24-26
           <octave>4</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>whole</type>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>end</syllabic>
@@ -1554,9 +1532,21 @@ Cierre del culto | Núm. 6:24-26
         <stem default-y="-87">down</stem>
         <staff>1</staff>
         <notations>
-          <slur type="start" number="1" placement="below" />
+          <slur type="start" number="1" placement="below"/>
         </notations>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es040m9h2">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">suspended-fourth</kind>
+        <degree>
+          <degree-value>7</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -1568,7 +1558,7 @@ Cierre del culto | Núm. 6:24-26
         <stem default-y="-91">down</stem>
         <staff>1</staff>
         <notations>
-          <slur type="stop" number="1" placement="below" />
+          <slur type="stop" number="1" placement="below"/>
         </notations>
       </note>
       <backup>
@@ -1586,7 +1576,7 @@ Cierre del culto | Núm. 6:24-26
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -1609,7 +1599,7 @@ Cierre del culto | Núm. 6:24-26
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>3</octave>
@@ -1622,7 +1612,7 @@ Cierre del culto | Núm. 6:24-26
       </note>
     </measure>
     <measure number="9">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es040m10h1">
         <root>
           <root-step>D</root-step>
         </root>
@@ -1635,14 +1625,14 @@ Cierre del culto | Núm. 6:24-26
           <octave>4</octave>
         </pitch>
         <duration>6</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="-9">up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <backup>
@@ -1656,7 +1646,7 @@ Cierre del culto | Núm. 6:24-26
         <duration>6</duration>
         <voice>2</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="-86">down</stem>
         <staff>1</staff>
       </note>
@@ -1671,12 +1661,12 @@ Cierre del culto | Núm. 6:24-26
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="-56">down</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -1684,7 +1674,7 @@ Cierre del culto | Núm. 6:24-26
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem default-y="-56">down</stem>
         <staff>2</staff>
       </note>

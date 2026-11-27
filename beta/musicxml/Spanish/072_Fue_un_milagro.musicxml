@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='UTF-8'?>
 <score-partwise version="4.0">
   <movement-title>Fue un milagro</movement-title>
   <identification>
@@ -27,7 +27,7 @@ Majestad y poder de Dios | Sal. 106:8
         <bottom-margin>60</bottom-margin>
       </page-margins>
     </page-layout>
-    <lyric-font font-family="Times New Roman" font-size="10" />
+    <lyric-font font-family="Times New Roman" font-size="10"/>
   </defaults>
   <credit page="1">
     <credit-type>title</credit-type>
@@ -62,13 +62,13 @@ Majestad y poder de Dios | Sal. 106:8
   </credit>
   <part-list>
     <score-part id="P1">
-      <part-name print-object="no" />
+      <part-name print-object="no"/>
       <part-name-display print-object="no">
-        <display-text />
+        <display-text/>
       </part-name-display>
-      <part-abbreviation print-object="no" />
+      <part-abbreviation print-object="no"/>
       <part-abbreviation-display print-object="no">
-        <display-text />
+        <display-text/>
       </part-abbreviation-display>
       <score-instrument id="P1-I1">
         <instrument-name>Piano</instrument-name>
@@ -88,7 +88,7 @@ Majestad y poder de Dios | Sal. 106:8
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <top-system-distance>95</top-system-distance>
+          <top-system-distance>80</top-system-distance>
         </system-layout>
       </print>
       <attributes>
@@ -110,7 +110,7 @@ Majestad y poder de Dios | Sal. 106:8
           <line>4</line>
         </clef>
       </attributes>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m1h1">
         <root>
           <root-step>G</root-step>
         </root>
@@ -141,7 +141,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -167,7 +167,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -180,38 +180,11 @@ Majestad y poder de Dios | Sal. 106:8
       </note>
     </measure>
     <measure number="1">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m2h1">
         <root>
           <root-step>G</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>G</bass-step>
-        </bass>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">major-seventh</kind>
-        <offset>8</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>12</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -238,7 +211,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -249,6 +222,16 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m2h2">
+        <root>
+          <root-step>E</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>G</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -273,7 +256,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -284,6 +267,13 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m2h3">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">major-seventh</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -308,7 +298,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -320,6 +310,13 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m2h4">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -344,7 +341,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -370,7 +367,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -393,7 +390,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -416,7 +413,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>3</octave>
@@ -439,7 +436,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>3</octave>
@@ -452,7 +449,7 @@ Majestad y poder de Dios | Sal. 106:8
       </note>
     </measure>
     <measure number="2">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m3h1">
         <root>
           <root-step>D</root-step>
         </root>
@@ -467,25 +464,6 @@ Majestad y poder de Dios | Sal. 106:8
         </degree>
         <staff>1</staff>
       </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <bass>
-          <bass-step>A</bass-step>
-        </bass>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <offset>12</offset>
-        <staff>1</staff>
-      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -494,7 +472,7 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>3</duration>
         <voice>1</voice>
         <type>eighth</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <beam number="1">begin</beam>
@@ -512,7 +490,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -520,7 +498,7 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>3</duration>
         <voice>1</voice>
         <type>eighth</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
@@ -549,7 +527,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -561,6 +539,16 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m3h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <bass>
+          <bass-step>A</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -585,7 +573,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -597,6 +585,13 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m3h3">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -621,7 +616,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -643,13 +638,13 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>3</duration>
         <voice>5</voice>
         <type>eighth</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>3</octave>
@@ -657,7 +652,7 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>3</duration>
         <voice>5</voice>
         <type>eighth</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -674,7 +669,7 @@ Majestad y poder de Dios | Sal. 106:8
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>3</octave>
@@ -697,7 +692,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>3</octave>
@@ -720,7 +715,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>3</octave>
@@ -733,44 +728,11 @@ Majestad y poder de Dios | Sal. 106:8
       </note>
     </measure>
     <measure number="3">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m4h1">
         <root>
           <root-step>D</root-step>
         </root>
         <kind use-symbols="no">dominant</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">diminished-seventh</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>8</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-          <root-alter>1</root-alter>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <bass>
-          <bass-step>D</bass-step>
-        </bass>
-        <degree>
-          <degree-value>5</degree-value>
-          <degree-alter>1</degree-alter>
-          <degree-type>alter</degree-type>
-        </degree>
-        <offset>12</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -797,7 +759,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -808,6 +770,13 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m4h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">diminished-seventh</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -832,7 +801,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>1</alter>
@@ -845,6 +814,13 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m4h3">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -869,7 +845,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -880,6 +856,22 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m4h4">
+        <root>
+          <root-step>F</root-step>
+          <root-alter>1</root-alter>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <bass>
+          <bass-step>D</bass-step>
+        </bass>
+        <degree>
+          <degree-value>5</degree-value>
+          <degree-alter>1</degree-alter>
+          <degree-type>alter</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -904,7 +896,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>1</alter>
@@ -932,7 +924,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -956,7 +948,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>1</alter>
@@ -981,7 +973,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -1005,7 +997,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -1019,22 +1011,11 @@ Majestad y poder de Dios | Sal. 106:8
       </note>
     </measure>
     <measure number="4">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m5h1">
         <root>
           <root-step>G</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-        </root>
-        <kind use-symbols="no">half-diminished</kind>
-        <bass>
-          <bass-step>F</bass-step>
-        </bass>
-        <offset>12</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1045,7 +1026,7 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>12</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -1062,7 +1043,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -1070,10 +1051,20 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>12</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m5h2">
+        <root>
+          <root-step>B</root-step>
+        </root>
+        <kind use-symbols="no">half-diminished</kind>
+        <bass>
+          <bass-step>F</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -1098,7 +1089,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -1120,7 +1111,7 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>12</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -1137,7 +1128,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -1156,30 +1147,14 @@ Majestad y poder de Dios | Sal. 106:8
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m6h1">
         <root>
           <root-step>E</root-step>
         </root>
         <kind use-symbols="no">dominant</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-        </root>
-        <kind use-symbols="no">augmented</kind>
-        <offset>8</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>12</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1206,7 +1181,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -1241,7 +1216,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -1252,6 +1227,13 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m6h2">
+        <root>
+          <root-step>E</root-step>
+        </root>
+        <kind use-symbols="no">augmented</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -1276,7 +1258,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -1287,6 +1269,13 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m6h3">
+        <root>
+          <root-step>E</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -1311,7 +1300,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -1337,7 +1326,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>1</alter>
@@ -1362,7 +1351,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>1</alter>
@@ -1386,7 +1375,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>1</alter>
@@ -1410,7 +1399,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>1</alter>
@@ -1424,19 +1413,11 @@ Majestad y poder de Dios | Sal. 106:8
       </note>
     </measure>
     <measure number="6">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m7h1">
         <root>
           <root-step>A</root-step>
         </root>
         <kind use-symbols="no">dominant-ninth</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1448,7 +1429,7 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>3</duration>
         <voice>1</voice>
         <type>eighth</type>
-        <dot />
+        <dot/>
         <accidental>sharp</accidental>
         <stem>up</stem>
         <staff>1</staff>
@@ -1467,7 +1448,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -1475,7 +1456,7 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>3</duration>
         <voice>1</voice>
         <type>eighth</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
@@ -1505,7 +1486,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -1516,6 +1497,13 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m7h2">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -1541,7 +1529,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -1577,7 +1565,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -1599,13 +1587,13 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>3</duration>
         <voice>5</voice>
         <type>eighth</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -1613,7 +1601,7 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>3</duration>
         <voice>5</voice>
         <type>eighth</type>
-        <dot />
+        <dot/>
         <accidental>natural</accidental>
         <stem>up</stem>
         <staff>2</staff>
@@ -1631,7 +1619,7 @@ Majestad y poder de Dios | Sal. 106:8
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -1654,7 +1642,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -1677,7 +1665,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -1690,7 +1678,7 @@ Majestad y poder de Dios | Sal. 106:8
       </note>
     </measure>
     <measure number="7">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m8h1">
         <root>
           <root-step>A</root-step>
         </root>
@@ -1705,44 +1693,6 @@ Majestad y poder de Dios | Sal. 106:8
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
         </degree>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-          <root-alter>1</root-alter>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>A</bass-step>
-        </bass>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>8</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">suspended-fourth</kind>
-        <degree>
-          <degree-value>7</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <degree>
-          <degree-value>9</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <offset>12</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1769,7 +1719,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -1780,6 +1730,17 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m8h2">
+        <root>
+          <root-step>F</root-step>
+          <root-alter>1</root-alter>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>A</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -1805,7 +1766,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -1816,6 +1777,13 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m8h3">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -1841,7 +1809,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -1852,6 +1820,23 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m8h4">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">suspended-fourth</kind>
+        <degree>
+          <degree-value>7</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <degree>
+          <degree-value>9</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -1876,7 +1861,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -1902,7 +1887,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -1925,7 +1910,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -1949,7 +1934,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>3</octave>
@@ -1972,7 +1957,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -1985,7 +1970,7 @@ Majestad y poder de Dios | Sal. 106:8
       </note>
     </measure>
     <measure number="8">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m9h1">
         <root>
           <root-step>D</root-step>
         </root>
@@ -1998,13 +1983,13 @@ Majestad y poder de Dios | Sal. 106:8
           <octave>4</octave>
         </pitch>
         <duration>16</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>whole</type>
         <accidental>natural</accidental>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>single</syllabic>
@@ -2020,18 +2005,18 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
         <duration>16</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>whole</type>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <backup>
@@ -2043,33 +2028,33 @@ Majestad y poder de Dios | Sal. 106:8
           <octave>3</octave>
         </pitch>
         <duration>16</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>whole</type>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
           <octave>3</octave>
         </pitch>
         <duration>16</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>whole</type>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
     </measure>
     <measure number="9" implicit="yes">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m10h1">
         <root>
           <root-step>D</root-step>
         </root>
@@ -2082,29 +2067,29 @@ Majestad y poder de Dios | Sal. 106:8
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <backup>
@@ -2116,30 +2101,30 @@ Majestad y poder de Dios | Sal. 106:8
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
     </measure>
@@ -2150,7 +2135,7 @@ Majestad y poder de Dios | Sal. 106:8
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
       <direction placement="above">
@@ -2158,7 +2143,7 @@ Majestad y poder de Dios | Sal. 106:8
           <words font-style="italic">Coro</words>
         </direction-type>
       </direction>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m11h1">
         <root>
           <root-step>B</root-step>
         </root>
@@ -2166,14 +2151,6 @@ Majestad y poder de Dios | Sal. 106:8
         <bass>
           <bass-step>D</bass-step>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>8</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2192,7 +2169,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -2219,7 +2196,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -2230,6 +2207,13 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m11h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -2246,7 +2230,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -2272,7 +2256,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -2296,7 +2280,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -2320,7 +2304,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -2334,7 +2318,7 @@ Majestad y poder de Dios | Sal. 106:8
       </note>
     </measure>
     <measure number="11">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m12h1">
         <root>
           <root-step>A</root-step>
         </root>
@@ -2342,14 +2326,6 @@ Majestad y poder de Dios | Sal. 106:8
         <bass>
           <bass-step>G</bass-step>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2360,7 +2336,7 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -2369,7 +2345,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -2377,10 +2353,17 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m12h2">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -2397,7 +2380,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -2414,13 +2397,13 @@ Majestad y poder de Dios | Sal. 106:8
           <octave>3</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>single</syllabic>
@@ -2428,19 +2411,19 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <backup>
@@ -2454,12 +2437,12 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>6</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>3</octave>
@@ -2467,7 +2450,7 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>6</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -2483,7 +2466,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>3</octave>
@@ -2500,77 +2483,38 @@ Majestad y poder de Dios | Sal. 106:8
           <octave>2</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>3</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
     </measure>
     <measure number="12">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m13h1">
         <root>
           <root-step>G</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <bass>
-          <bass-step>A</bass-step>
-        </bass>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>B</bass-step>
-        </bass>
-        <offset>8</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <bass>
-          <bass-step>B</bass-step>
-          <bass-alter>-1</bass-alter>
-        </bass>
-        <degree>
-          <degree-value>9</degree-value>
-          <degree-alter>-1</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <offset>12</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2579,31 +2523,41 @@ Majestad y poder de Dios | Sal. 106:8
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m13h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <bass>
+          <bass-step>A</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -2620,7 +2574,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -2632,6 +2586,16 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m13h3">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>B</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -2648,7 +2612,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -2659,6 +2623,22 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m13h4">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <bass>
+          <bass-step>B</bass-step>
+          <bass-alter>-1</bass-alter>
+        </bass>
+        <degree>
+          <degree-value>9</degree-value>
+          <degree-alter>-1</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -2677,7 +2657,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -2697,29 +2677,29 @@ Majestad y poder de Dios | Sal. 106:8
           <octave>2</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
@@ -2734,7 +2714,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>3</octave>
@@ -2757,7 +2737,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -2782,7 +2762,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -2795,19 +2775,11 @@ Majestad y poder de Dios | Sal. 106:8
       </note>
     </measure>
     <measure number="13">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m14h1">
         <root>
           <root-step>A</root-step>
         </root>
         <kind use-symbols="no">minor-seventh</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2818,7 +2790,7 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -2827,7 +2799,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -2835,10 +2807,17 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m14h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -2855,7 +2834,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -2873,13 +2852,13 @@ Majestad y poder de Dios | Sal. 106:8
           <octave>4</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>end</syllabic>
@@ -2887,20 +2866,20 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
           <octave>4</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <backup>
@@ -2914,12 +2893,12 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>6</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>3</octave>
@@ -2927,7 +2906,7 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>6</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -2948,56 +2927,22 @@ Majestad y poder de Dios | Sal. 106:8
           <octave>3</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
     </measure>
     <measure number="14">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m15h1">
         <root>
           <root-step>D</root-step>
         </root>
         <kind use-symbols="no">dominant</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">dominant-ninth</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <offset>8</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">suspended-fourth</kind>
-        <degree>
-          <degree-value>7</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <degree>
-          <degree-value>9</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <offset>12</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3006,32 +2951,39 @@ Majestad y poder de Dios | Sal. 106:8
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m15h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">dominant-ninth</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -3048,7 +3000,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -3059,6 +3011,13 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m15h3">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -3075,7 +3034,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -3086,6 +3045,23 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m15h4">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">suspended-fourth</kind>
+        <degree>
+          <degree-value>7</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <degree>
+          <degree-value>9</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -3102,7 +3078,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -3122,13 +3098,13 @@ Majestad y poder de Dios | Sal. 106:8
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
@@ -3143,7 +3119,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -3167,7 +3143,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -3190,7 +3166,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -3209,10 +3185,10 @@ Majestad y poder de Dios | Sal. 106:8
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m16h1">
         <root>
           <root-step>B</root-step>
         </root>
@@ -3220,14 +3196,6 @@ Majestad y poder de Dios | Sal. 106:8
         <bass>
           <bass-step>D</bass-step>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3238,7 +3206,7 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -3247,7 +3215,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -3255,10 +3223,17 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m16h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -3275,7 +3250,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -3292,29 +3267,29 @@ Majestad y poder de Dios | Sal. 106:8
           <octave>4</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <backup>
@@ -3328,12 +3303,12 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>6</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -3342,7 +3317,7 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>6</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -3358,7 +3333,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -3376,66 +3351,39 @@ Majestad y poder de Dios | Sal. 106:8
           <octave>3</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
           <octave>3</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
     </measure>
     <measure number="16">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m17h1">
         <root>
           <root-step>D</root-step>
         </root>
         <kind use-symbols="no">dominant</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">diminished-seventh</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>8</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>D</bass-step>
-        </bass>
-        <offset>12</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3444,31 +3392,38 @@ Majestad y poder de Dios | Sal. 106:8
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m17h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">diminished-seventh</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -3485,7 +3440,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>1</alter>
@@ -3498,6 +3453,13 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m17h3">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -3514,7 +3476,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -3525,6 +3487,16 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m17h4">
+        <root>
+          <root-step>B</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>D</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -3541,7 +3513,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -3561,30 +3533,30 @@ Majestad y poder de Dios | Sal. 106:8
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
@@ -3599,7 +3571,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>1</alter>
@@ -3624,7 +3596,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -3648,7 +3620,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -3662,7 +3634,7 @@ Majestad y poder de Dios | Sal. 106:8
       </note>
     </measure>
     <measure number="17">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m18h1">
         <root>
           <root-step>A</root-step>
         </root>
@@ -3670,14 +3642,6 @@ Majestad y poder de Dios | Sal. 106:8
         <bass>
           <bass-step>G</bass-step>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3688,7 +3652,7 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -3697,7 +3661,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -3705,10 +3669,17 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m18h2">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -3725,7 +3696,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -3742,13 +3713,13 @@ Majestad y poder de Dios | Sal. 106:8
           <octave>3</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>end</syllabic>
@@ -3756,19 +3727,19 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <backup>
@@ -3782,12 +3753,12 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>6</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>3</octave>
@@ -3795,7 +3766,7 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>6</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -3811,7 +3782,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>3</octave>
@@ -3828,60 +3799,38 @@ Majestad y poder de Dios | Sal. 106:8
           <octave>2</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>3</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
     </measure>
     <measure number="18">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m19h1">
         <root>
           <root-step>G</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <bass>
-          <bass-step>G</bass-step>
-        </bass>
-        <offset>8</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-        </root>
-        <kind use-symbols="no">half-diminished</kind>
-        <bass>
-          <bass-step>F</bass-step>
-        </bass>
-        <offset>12</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3890,29 +3839,29 @@ Majestad y poder de Dios | Sal. 106:8
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
@@ -3931,7 +3880,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -3942,6 +3891,16 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m19h2">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <bass>
+          <bass-step>G</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -3958,7 +3917,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -3969,6 +3928,16 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m19h3">
+        <root>
+          <root-step>B</root-step>
+        </root>
+        <kind use-symbols="no">half-diminished</kind>
+        <bass>
+          <bass-step>F</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -3985,7 +3954,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -4005,29 +3974,29 @@ Majestad y poder de Dios | Sal. 106:8
           <octave>2</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
@@ -4065,7 +4034,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -4078,19 +4047,11 @@ Majestad y poder de Dios | Sal. 106:8
       </note>
     </measure>
     <measure number="19">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m20h1">
         <root>
           <root-step>E</root-step>
         </root>
         <kind use-symbols="no">augmented</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>8</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -4109,7 +4070,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -4120,6 +4081,13 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m20h2">
+        <root>
+          <root-step>E</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -4136,7 +4104,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -4162,7 +4130,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>1</alter>
@@ -4187,7 +4155,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>1</alter>
@@ -4201,27 +4169,11 @@ Majestad y poder de Dios | Sal. 106:8
       </note>
     </measure>
     <measure number="20">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m21h1">
         <root>
           <root-step>A</root-step>
         </root>
         <kind use-symbols="no">minor</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <offset>8</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">augmented</kind>
-        <offset>12</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -4240,7 +4192,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -4251,6 +4203,13 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m21h2">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -4267,7 +4226,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -4278,6 +4237,13 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m21h3">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">augmented</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -4296,7 +4262,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <alter>1</alter>
@@ -4324,7 +4290,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>3</octave>
@@ -4347,7 +4313,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -4370,7 +4336,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <alter>1</alter>
@@ -4391,25 +4357,14 @@ Majestad y poder de Dios | Sal. 106:8
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m22h1">
         <root>
           <root-step>D</root-step>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>D</bass-step>
-        </bass>
-        <offset>8</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -4429,7 +4384,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -4440,6 +4395,16 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m22h2">
+        <root>
+          <root-step>B</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>D</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -4457,7 +4422,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -4483,7 +4448,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -4506,7 +4471,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>3</octave>
@@ -4519,35 +4484,11 @@ Majestad y poder de Dios | Sal. 106:8
       </note>
     </measure>
     <measure number="22">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m23h1">
         <root>
           <root-step>E</root-step>
         </root>
         <kind use-symbols="no">minor</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-        </root>
-        <kind use-symbols="no">suspended-fourth</kind>
-        <bass>
-          <bass-step>E</bass-step>
-        </bass>
-        <degree>
-          <degree-value>7</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <offset>8</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <offset>12</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -4566,7 +4507,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -4596,7 +4537,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <octave>4</octave>
@@ -4607,6 +4548,21 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m23h2">
+        <root>
+          <root-step>B</root-step>
+        </root>
+        <kind use-symbols="no">suspended-fourth</kind>
+        <bass>
+          <bass-step>E</bass-step>
+        </bass>
+        <degree>
+          <degree-value>7</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -4623,7 +4579,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -4635,6 +4591,13 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m23h3">
+        <root>
+          <root-step>E</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -4651,7 +4614,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -4677,7 +4640,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>3</octave>
@@ -4703,7 +4666,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -4726,7 +4689,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -4749,7 +4712,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>3</octave>
@@ -4762,35 +4725,11 @@ Majestad y poder de Dios | Sal. 106:8
       </note>
     </measure>
     <measure number="23">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m24h1">
         <root>
           <root-step>A</root-step>
         </root>
         <kind use-symbols="no">dominant</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">dominant-ninth</kind>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>8</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>A</root-step>
-        </root>
-        <kind use-symbols="no">dominant-ninth</kind>
-        <offset>12</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -4802,7 +4741,7 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <accidental>sharp</accidental>
         <stem>up</stem>
         <staff>1</staff>
@@ -4812,7 +4751,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -4820,10 +4759,17 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>6</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m24h2">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">dominant-ninth</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -4841,7 +4787,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -4852,6 +4798,13 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m24h3">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -4869,7 +4822,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -4880,6 +4833,13 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m24h4">
+        <root>
+          <root-step>A</root-step>
+        </root>
+        <kind use-symbols="no">dominant-ninth</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>C</step>
@@ -4897,7 +4857,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -4919,12 +4879,12 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>6</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -4932,7 +4892,7 @@ Majestad y poder de Dios | Sal. 106:8
         <duration>6</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -4948,7 +4908,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -4971,7 +4931,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -4994,7 +4954,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -5007,7 +4967,7 @@ Majestad y poder de Dios | Sal. 106:8
       </note>
     </measure>
     <measure number="24">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m25h1">
         <root>
           <root-step>D</root-step>
         </root>
@@ -5022,17 +4982,6 @@ Majestad y poder de Dios | Sal. 106:8
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
         </degree>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>D</bass-step>
-        </bass>
-        <offset>8</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -5051,7 +5000,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -5062,6 +5011,16 @@ Majestad y poder de Dios | Sal. 106:8
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m25h2">
+        <root>
+          <root-step>B</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>D</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -5078,7 +5037,7 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <octave>4</octave>
@@ -5104,7 +5063,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -5127,7 +5086,7 @@ Majestad y poder de Dios | Sal. 106:8
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <alter>1</alter>
@@ -5141,7 +5100,7 @@ Majestad y poder de Dios | Sal. 106:8
       </note>
     </measure>
     <measure number="25">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m26h1">
         <root>
           <root-step>G</root-step>
         </root>
@@ -5154,12 +5113,12 @@ Majestad y poder de Dios | Sal. 106:8
           <octave>3</octave>
         </pitch>
         <duration>16</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>whole</type>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>end</syllabic>
@@ -5167,18 +5126,18 @@ Majestad y poder de Dios | Sal. 106:8
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
         <duration>16</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>whole</type>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <backup>
@@ -5190,32 +5149,32 @@ Majestad y poder de Dios | Sal. 106:8
           <octave>2</octave>
         </pitch>
         <duration>16</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>whole</type>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>3</octave>
         </pitch>
         <duration>16</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>whole</type>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
     </measure>
     <measure number="26" implicit="yes">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es072m27h1">
         <root>
           <root-step>G</root-step>
         </root>
@@ -5228,33 +5187,33 @@ Majestad y poder de Dios | Sal. 106:8
           <octave>3</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <rest />
+        <rest/>
         <duration>4</duration>
         <voice>1</voice>
         <type>quarter</type>
@@ -5269,33 +5228,33 @@ Majestad y poder de Dios | Sal. 106:8
           <octave>2</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>3</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <rest />
+        <rest/>
         <duration>4</duration>
         <voice>5</voice>
         <type>quarter</type>

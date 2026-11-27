@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='UTF-8'?>
 <score-partwise version="4.0">
   <movement-title>¡Nuestro Dios reina!</movement-title>
   <identification>
@@ -26,7 +26,7 @@ Majestad y poder de Dios | Isa. 52:7
         <bottom-margin>60</bottom-margin>
       </page-margins>
     </page-layout>
-    <lyric-font font-family="Times New Roman" font-size="10" />
+    <lyric-font font-family="Times New Roman" font-size="10"/>
   </defaults>
   <credit page="1">
     <credit-type>title</credit-type>
@@ -60,13 +60,13 @@ Majestad y poder de Dios | Isa. 52:7
   </credit>
   <part-list>
     <score-part id="P1">
-      <part-name print-object="no" />
+      <part-name print-object="no"/>
       <part-name-display print-object="no">
-        <display-text />
+        <display-text/>
       </part-name-display>
-      <part-abbreviation print-object="no" />
+      <part-abbreviation print-object="no"/>
       <part-abbreviation-display print-object="no">
-        <display-text />
+        <display-text/>
       </part-abbreviation-display>
       <score-instrument id="P1-I1">
         <instrument-name>Piano</instrument-name>
@@ -86,7 +86,7 @@ Majestad y poder de Dios | Isa. 52:7
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <top-system-distance>95</top-system-distance>
+          <top-system-distance>80</top-system-distance>
         </system-layout>
       </print>
       <attributes>
@@ -108,50 +108,21 @@ Majestad y poder de Dios | Isa. 52:7
           <line>4</line>
         </clef>
       </attributes>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">suspended-fourth</kind>
-        <bass>
-          <bass-step>C</bass-step>
-        </bass>
-        <degree>
-          <degree-value>7</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>D</bass-step>
-        </bass>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>quarter</type>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m1h1">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -169,7 +140,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -180,6 +151,21 @@ Majestad y poder de Dios | Isa. 52:7
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m1h2">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">suspended-fourth</kind>
+        <bass>
+          <bass-step>C</bass-step>
+        </bass>
+        <degree>
+          <degree-value>7</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -197,7 +183,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -209,6 +195,17 @@ Majestad y poder de Dios | Isa. 52:7
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m1h3">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>D</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -228,7 +225,7 @@ Majestad y poder de Dios | Isa. 52:7
         <duration>8</duration>
       </backup>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>5</voice>
         <type>quarter</type>
@@ -247,7 +244,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -270,7 +267,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -293,7 +290,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -307,7 +304,7 @@ Majestad y poder de Dios | Isa. 52:7
       </note>
     </measure>
     <measure number="2">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m2h1">
         <root>
           <root-step>E</root-step>
           <root-alter>-1</root-alter>
@@ -324,7 +321,7 @@ Majestad y poder de Dios | Isa. 52:7
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -333,7 +330,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -341,7 +338,7 @@ Majestad y poder de Dios | Isa. 52:7
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
@@ -361,7 +358,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -385,12 +382,12 @@ Majestad y poder de Dios | Isa. 52:7
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -399,7 +396,7 @@ Majestad y poder de Dios | Isa. 52:7
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -416,7 +413,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -430,14 +427,43 @@ Majestad y poder de Dios | Isa. 52:7
       </note>
     </measure>
     <measure number="3">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m3h1">
         <root>
           <root-step>F</root-step>
         </root>
         <kind use-symbols="no">major</kind>
         <staff>1</staff>
       </harmony>
-      <harmony placement="above" print-frame="no">
+      <note>
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>3</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <dot/>
+        <stem>up</stem>
+        <staff>1</staff>
+        <lyric number="1" placement="below">
+          <syllabic>single</syllabic>
+          <text>pies</text>
+        </lyric>
+      </note>
+      <note>
+        <chord/>
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>3</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <dot/>
+        <stem>up</stem>
+        <staff>1</staff>
+      </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m3h2">
         <root>
           <root-step>C</root-step>
         </root>
@@ -450,54 +476,8 @@ Majestad y poder de Dios | Isa. 52:7
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
         </degree>
-        <offset>3</offset>
         <staff>1</staff>
       </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">dominant-ninth</kind>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
-      <note>
-        <pitch>
-          <step>F</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>3</duration>
-        <voice>1</voice>
-        <type>quarter</type>
-        <dot />
-        <stem>up</stem>
-        <staff>1</staff>
-        <lyric number="1" placement="below">
-          <syllabic>single</syllabic>
-          <text>pies</text>
-        </lyric>
-      </note>
-      <note>
-        <chord />
-        <pitch>
-          <step>A</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>3</duration>
-        <voice>1</voice>
-        <type>quarter</type>
-        <dot />
-        <stem>up</stem>
-        <staff>1</staff>
-      </note>
       <note>
         <pitch>
           <step>G</step>
@@ -514,7 +494,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -526,6 +506,13 @@ Majestad y poder de Dios | Isa. 52:7
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m3h3">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -542,7 +529,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -553,6 +540,13 @@ Majestad y poder de Dios | Isa. 52:7
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m3h4">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">dominant-ninth</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -570,7 +564,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -592,12 +586,12 @@ Majestad y poder de Dios | Isa. 52:7
         <duration>3</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -605,7 +599,7 @@ Majestad y poder de Dios | Isa. 52:7
         <duration>3</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -621,7 +615,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -644,7 +638,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -667,7 +661,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -680,7 +674,7 @@ Majestad y poder de Dios | Isa. 52:7
       </note>
     </measure>
     <measure number="4">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m4h1">
         <root>
           <root-step>E</root-step>
           <root-alter>-1</root-alter>
@@ -690,15 +684,6 @@ Majestad y poder de Dios | Isa. 52:7
           <bass-step>B</bass-step>
           <bass-alter>-1</bass-alter>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -718,7 +703,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -729,6 +714,14 @@ Majestad y poder de Dios | Isa. 52:7
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m4h2">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -745,7 +738,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -772,7 +765,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -797,7 +790,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -811,44 +804,21 @@ Majestad y poder de Dios | Isa. 52:7
       </note>
     </measure>
     <measure number="5">
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>B</bass-step>
-          <bass-alter>-1</bass-alter>
-        </bass>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>quarter</type>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m5h1">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -866,7 +836,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -877,6 +847,18 @@ Majestad y poder de Dios | Isa. 52:7
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m5h2">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>B</bass-step>
+          <bass-alter>-1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -894,7 +876,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -906,6 +888,14 @@ Majestad y poder de Dios | Isa. 52:7
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m5h3">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -923,7 +913,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -938,7 +928,7 @@ Majestad y poder de Dios | Isa. 52:7
         <duration>8</duration>
       </backup>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>5</voice>
         <type>quarter</type>
@@ -957,7 +947,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -981,7 +971,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -1005,7 +995,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -1024,10 +1014,10 @@ Majestad y poder de Dios | Isa. 52:7
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m6h1">
         <root>
           <root-step>F</root-step>
         </root>
@@ -1040,12 +1030,12 @@ Majestad y poder de Dios | Isa. 52:7
           <octave>3</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>whole</type>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>single</syllabic>
@@ -1053,18 +1043,18 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>whole</type>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <backup>
@@ -1076,48 +1066,37 @@ Majestad y poder de Dios | Isa. 52:7
           <octave>2</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>whole</type>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
           <octave>3</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>whole</type>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
     </measure>
     <measure number="7">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m7h1">
         <root>
           <root-step>F</root-step>
         </root>
         <kind use-symbols="no">dominant</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>F</bass-step>
-        </bass>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1126,31 +1105,41 @@ Majestad y poder de Dios | Isa. 52:7
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m7h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>F</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -1209,30 +1198,30 @@ Majestad y poder de Dios | Isa. 52:7
           <octave>2</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
@@ -1247,7 +1236,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -1260,7 +1249,7 @@ Majestad y poder de Dios | Isa. 52:7
       </note>
     </measure>
     <measure number="8">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m8h1">
         <root>
           <root-step>F</root-step>
         </root>
@@ -1282,7 +1271,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -1306,7 +1295,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -1319,50 +1308,21 @@ Majestad y poder de Dios | Isa. 52:7
       </note>
     </measure>
     <measure number="9">
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">suspended-fourth</kind>
-        <bass>
-          <bass-step>C</bass-step>
-        </bass>
-        <degree>
-          <degree-value>7</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>D</bass-step>
-        </bass>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>quarter</type>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m9h1">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1380,7 +1340,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -1391,6 +1351,21 @@ Majestad y poder de Dios | Isa. 52:7
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m9h2">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">suspended-fourth</kind>
+        <bass>
+          <bass-step>C</bass-step>
+        </bass>
+        <degree>
+          <degree-value>7</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1408,7 +1383,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -1420,6 +1395,17 @@ Majestad y poder de Dios | Isa. 52:7
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m9h3">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>D</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -1439,7 +1425,7 @@ Majestad y poder de Dios | Isa. 52:7
         <duration>8</duration>
       </backup>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>5</voice>
         <type>quarter</type>
@@ -1458,7 +1444,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -1481,7 +1467,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -1504,7 +1490,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -1518,7 +1504,7 @@ Majestad y poder de Dios | Isa. 52:7
       </note>
     </measure>
     <measure number="10">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m10h1">
         <root>
           <root-step>E</root-step>
           <root-alter>-1</root-alter>
@@ -1535,7 +1521,7 @@ Majestad y poder de Dios | Isa. 52:7
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -1544,7 +1530,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -1552,7 +1538,7 @@ Majestad y poder de Dios | Isa. 52:7
         <duration>6</duration>
         <voice>1</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
@@ -1572,7 +1558,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -1596,12 +1582,12 @@ Majestad y poder de Dios | Isa. 52:7
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -1610,7 +1596,7 @@ Majestad y poder de Dios | Isa. 52:7
         <duration>6</duration>
         <voice>5</voice>
         <type>half</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -1627,7 +1613,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -1641,14 +1627,43 @@ Majestad y poder de Dios | Isa. 52:7
       </note>
     </measure>
     <measure number="11">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m11h1">
         <root>
           <root-step>F</root-step>
         </root>
         <kind use-symbols="no">major</kind>
         <staff>1</staff>
       </harmony>
-      <harmony placement="above" print-frame="no">
+      <note>
+        <pitch>
+          <step>F</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>3</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <dot/>
+        <stem>up</stem>
+        <staff>1</staff>
+        <lyric number="1" placement="below">
+          <syllabic>single</syllabic>
+          <text>un</text>
+        </lyric>
+      </note>
+      <note>
+        <chord/>
+        <pitch>
+          <step>A</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>3</duration>
+        <voice>1</voice>
+        <type>quarter</type>
+        <dot/>
+        <stem>up</stem>
+        <staff>1</staff>
+      </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m11h2">
         <root>
           <root-step>C</root-step>
         </root>
@@ -1661,54 +1676,8 @@ Majestad y poder de Dios | Isa. 52:7
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
         </degree>
-        <offset>3</offset>
         <staff>1</staff>
       </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">dominant-ninth</kind>
-        <offset>6</offset>
-        <staff>1</staff>
-      </harmony>
-      <note>
-        <pitch>
-          <step>F</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>3</duration>
-        <voice>1</voice>
-        <type>quarter</type>
-        <dot />
-        <stem>up</stem>
-        <staff>1</staff>
-        <lyric number="1" placement="below">
-          <syllabic>single</syllabic>
-          <text>un</text>
-        </lyric>
-      </note>
-      <note>
-        <chord />
-        <pitch>
-          <step>A</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>3</duration>
-        <voice>1</voice>
-        <type>quarter</type>
-        <dot />
-        <stem>up</stem>
-        <staff>1</staff>
-      </note>
       <note>
         <pitch>
           <step>G</step>
@@ -1725,7 +1694,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -1737,6 +1706,13 @@ Majestad y poder de Dios | Isa. 52:7
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m11h3">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -1753,7 +1729,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>4</octave>
@@ -1764,6 +1740,13 @@ Majestad y poder de Dios | Isa. 52:7
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m11h4">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">dominant-ninth</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -1781,7 +1764,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -1803,12 +1786,12 @@ Majestad y poder de Dios | Isa. 52:7
         <duration>3</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -1816,7 +1799,7 @@ Majestad y poder de Dios | Isa. 52:7
         <duration>3</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -1832,7 +1815,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -1855,7 +1838,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
@@ -1878,7 +1861,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -1897,10 +1880,10 @@ Majestad y poder de Dios | Isa. 52:7
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m12h1">
         <root>
           <root-step>E</root-step>
           <root-alter>-1</root-alter>
@@ -1912,15 +1895,6 @@ Majestad y poder de Dios | Isa. 52:7
         </bass>
         <staff>1</staff>
       </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>3</offset>
-        <staff>1</staff>
-      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -1930,7 +1904,7 @@ Majestad y poder de Dios | Isa. 52:7
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -1939,7 +1913,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -1947,10 +1921,18 @@ Majestad y poder de Dios | Isa. 52:7
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m12h2">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -1967,7 +1949,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -1984,13 +1966,13 @@ Majestad y poder de Dios | Isa. 52:7
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>end</syllabic>
@@ -1998,19 +1980,19 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <backup>
@@ -2025,12 +2007,12 @@ Majestad y poder de Dios | Isa. 52:7
         <duration>3</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2039,7 +2021,7 @@ Majestad y poder de Dios | Isa. 52:7
         <duration>3</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -2056,7 +2038,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2075,56 +2057,40 @@ Majestad y poder de Dios | Isa. 52:7
           <octave>2</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
     </measure>
     <measure number="13">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m13h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">augmented</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2133,31 +2099,38 @@ Majestad y poder de Dios | Isa. 52:7
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m13h2">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">augmented</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -2175,7 +2148,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -2187,6 +2160,13 @@ Majestad y poder de Dios | Isa. 52:7
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m13h3">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -2203,7 +2183,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -2224,30 +2204,30 @@ Majestad y poder de Dios | Isa. 52:7
           <octave>2</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
@@ -2262,7 +2242,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -2285,7 +2265,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -2298,19 +2278,11 @@ Majestad y poder de Dios | Isa. 52:7
       </note>
     </measure>
     <measure number="14">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m14h1">
         <root>
           <root-step>C</root-step>
         </root>
         <kind use-symbols="no">minor</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2319,21 +2291,28 @@ Majestad y poder de Dios | Isa. 52:7
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="start" />
-        <tie type="start" />
+        <tie type="start"/>
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
-          <tied type="start" />
+          <tied type="start"/>
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>single</syllabic>
           <text>Dios</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m14h2">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -2346,23 +2325,23 @@ Majestad y poder de Dios | Isa. 52:7
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <slur type="start" number="1" placement="below" />
+          <slur type="start" number="1" placement="below"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <backup>
@@ -2378,35 +2357,65 @@ Majestad y poder de Dios | Isa. 52:7
         <type>whole</type>
         <staff>2</staff>
         <notations>
-          <slur type="start" number="10" placement="below" />
+          <slur type="start" number="10" placement="below"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
           <octave>3</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>whole</type>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
     </measure>
     <measure number="15">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m15h1">
         <root>
           <root-step>F</root-step>
         </root>
         <kind use-symbols="no">dominant</kind>
         <staff>1</staff>
       </harmony>
-      <harmony placement="above" print-frame="no">
+      <note>
+        <pitch>
+          <step>A</step>
+          <octave>3</octave>
+        </pitch>
+        <duration>4</duration>
+        <voice>1</voice>
+        <type>half</type>
+        <stem>up</stem>
+        <staff>1</staff>
+        <notations>
+          <slur type="stop" number="1" placement="below"/>
+        </notations>
+      </note>
+      <note>
+        <chord/>
+        <pitch>
+          <step>C</step>
+          <octave>4</octave>
+        </pitch>
+        <duration>4</duration>
+        <tie type="stop"/>
+        <voice>1</voice>
+        <type>half</type>
+        <stem>up</stem>
+        <staff>1</staff>
+        <notations>
+          <tied type="stop"/>
+        </notations>
+      </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m15h2">
         <root>
           <root-step>F</root-step>
         </root>
@@ -2421,39 +2430,8 @@ Majestad y poder de Dios | Isa. 52:7
           <degree-alter>0</degree-alter>
           <degree-type>add</degree-type>
         </degree>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
-      <note>
-        <pitch>
-          <step>A</step>
-          <octave>3</octave>
-        </pitch>
-        <duration>4</duration>
-        <voice>1</voice>
-        <type>half</type>
-        <stem>up</stem>
-        <staff>1</staff>
-        <notations>
-          <slur type="stop" number="1" placement="below" />
-        </notations>
-      </note>
-      <note>
-        <chord />
-        <pitch>
-          <step>C</step>
-          <octave>4</octave>
-        </pitch>
-        <duration>4</duration>
-        <tie type="stop" />
-        <voice>1</voice>
-        <type>half</type>
-        <stem>up</stem>
-        <staff>1</staff>
-        <notations>
-          <tied type="stop" />
-        </notations>
-      </note>
       <note>
         <pitch>
           <step>E</step>
@@ -2471,7 +2449,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -2499,7 +2477,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2525,24 +2503,24 @@ Majestad y poder de Dios | Isa. 52:7
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="stop" number="10" placement="below" />
+          <slur type="stop" number="10" placement="below"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
@@ -2557,7 +2535,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2581,7 +2559,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -2594,7 +2572,7 @@ Majestad y poder de Dios | Isa. 52:7
       </note>
     </measure>
     <measure number="16">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m16h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
@@ -2608,12 +2586,12 @@ Majestad y poder de Dios | Isa. 52:7
           <octave>4</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>whole</type>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>single</syllabic>
@@ -2621,19 +2599,19 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
           <octave>4</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>whole</type>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <backup>
@@ -2646,45 +2624,37 @@ Majestad y poder de Dios | Isa. 52:7
           <octave>2</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>whole</type>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>whole</type>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
     </measure>
     <measure number="17">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m17h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">half-diminished</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2693,34 +2663,34 @@ Majestad y poder de Dios | Isa. 52:7
           <octave>4</octave>
         </pitch>
         <duration>2</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
           <octave>4</octave>
         </pitch>
         <duration>2</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>quarter</type>
@@ -2742,7 +2712,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -2753,6 +2723,13 @@ Majestad y poder de Dios | Isa. 52:7
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m17h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">half-diminished</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -2769,7 +2746,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -2790,33 +2767,33 @@ Majestad y poder de Dios | Isa. 52:7
           <octave>2</octave>
         </pitch>
         <duration>2</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
         </pitch>
         <duration>2</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>5</voice>
         <type>quarter</type>
@@ -2835,7 +2812,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -2859,7 +2836,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -2880,10 +2857,10 @@ Majestad y poder de Dios | Isa. 52:7
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m18h1">
         <root>
           <root-step>E</root-step>
           <root-alter>-1</root-alter>
@@ -2898,12 +2875,12 @@ Majestad y poder de Dios | Isa. 52:7
           <octave>4</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>whole</type>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>single</syllabic>
@@ -2911,19 +2888,19 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
           <octave>4</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>whole</type>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <backup>
@@ -2936,58 +2913,37 @@ Majestad y poder de Dios | Isa. 52:7
           <octave>3</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>whole</type>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>whole</type>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
       </note>
     </measure>
     <measure number="19">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m19h1">
         <root>
           <root-step>E</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>E</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major-ninth</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">minor</kind>
-        <bass>
-          <bass-step>E</bass-step>
-          <bass-alter>-1</bass-alter>
-        </bass>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -2997,32 +2953,40 @@ Majestad y poder de Dios | Isa. 52:7
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m19h2">
+        <root>
+          <root-step>E</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major-ninth</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -3039,7 +3003,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -3050,6 +3014,17 @@ Majestad y poder de Dios | Isa. 52:7
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m19h3">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">minor</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          <bass-alter>-1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -3067,7 +3042,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -3088,29 +3063,29 @@ Majestad y poder de Dios | Isa. 52:7
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
@@ -3126,7 +3101,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -3150,7 +3125,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -3163,24 +3138,12 @@ Majestad y poder de Dios | Isa. 52:7
       </note>
     </measure>
     <measure number="20">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m20h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <bass>
-          <bass-step>B</bass-step>
-          <bass-alter>-1</bass-alter>
-        </bass>
-        <offset>7</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3190,12 +3153,12 @@ Majestad y poder de Dios | Isa. 52:7
           <octave>4</octave>
         </pitch>
         <duration>8</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>whole</type>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
+          <tied type="start"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>single</syllabic>
@@ -3213,15 +3176,15 @@ Majestad y poder de Dios | Isa. 52:7
         <duration>3</duration>
         <voice>2</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
         <notations>
-          <slur type="start" number="1" placement="below" />
+          <slur type="start" number="1" placement="below"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -3229,7 +3192,7 @@ Majestad y poder de Dios | Isa. 52:7
         <duration>3</duration>
         <voice>2</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
@@ -3246,7 +3209,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -3265,12 +3228,12 @@ Majestad y poder de Dios | Isa. 52:7
         <duration>3</duration>
         <voice>2</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -3278,10 +3241,21 @@ Majestad y poder de Dios | Isa. 52:7
         <duration>3</duration>
         <voice>2</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>down</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m20h2">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <bass>
+          <bass-step>B</bass-step>
+          <bass-alter>-1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -3295,7 +3269,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>1</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -3317,11 +3291,11 @@ Majestad y poder de Dios | Isa. 52:7
         <duration>3</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="start" number="9" placement="above" />
+          <slur type="start" number="9" placement="above"/>
         </notations>
       </note>
       <note>
@@ -3344,7 +3318,7 @@ Majestad y poder de Dios | Isa. 52:7
         <duration>3</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem>up</stem>
         <staff>2</staff>
       </note>
@@ -3373,25 +3347,17 @@ Majestad y poder de Dios | Isa. 52:7
         <type>whole</type>
         <staff>2</staff>
         <notations>
-          <slur type="start" number="10" placement="below" />
+          <slur type="start" number="10" placement="below"/>
         </notations>
       </note>
     </measure>
     <measure number="21">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m21h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>D</root-step>
-        </root>
-        <kind use-symbols="no">half-diminished</kind>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3405,28 +3371,28 @@ Majestad y poder de Dios | Isa. 52:7
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <slur type="stop" number="1" placement="below" />
+          <slur type="stop" number="1" placement="below"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
           <octave>4</octave>
         </pitch>
         <duration>2</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>quarter</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>quarter</type>
@@ -3448,7 +3414,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -3459,6 +3425,13 @@ Majestad y poder de Dios | Isa. 52:7
         <stem>up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m21h2">
+        <root>
+          <root-step>D</root-step>
+        </root>
+        <kind use-symbols="no">half-diminished</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -3475,7 +3448,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -3501,12 +3474,12 @@ Majestad y poder de Dios | Isa. 52:7
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="stop" number="9" placement="above" />
-          <slur type="stop" number="10" placement="below" />
+          <slur type="stop" number="9" placement="above"/>
+          <slur type="stop" number="10" placement="below"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -3518,7 +3491,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>5</voice>
         <type>quarter</type>
@@ -3537,7 +3510,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -3561,7 +3534,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <alter>-1</alter>
@@ -3576,20 +3549,12 @@ Majestad y poder de Dios | Isa. 52:7
       </note>
     </measure>
     <measure number="22">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m22h1">
         <root>
           <root-step>E</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>C</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3599,20 +3564,27 @@ Majestad y poder de Dios | Isa. 52:7
           <octave>4</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>1</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <tied type="start" />
-          <slur type="start" number="1" placement="above" />
+          <tied type="start"/>
+          <slur type="start" number="1" placement="above"/>
         </notations>
         <lyric number="1" placement="below">
           <syllabic>single</syllabic>
           <text>Dios</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m22h2">
+        <root>
+          <root-step>C</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -3620,14 +3592,14 @@ Majestad y poder de Dios | Isa. 52:7
           <octave>4</octave>
         </pitch>
         <duration>1</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>1</voice>
         <type>eighth</type>
         <stem>up</stem>
         <staff>1</staff>
         <beam number="1">begin</beam>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
@@ -3668,7 +3640,7 @@ Majestad y poder de Dios | Isa. 52:7
         <type>whole</type>
         <staff>1</staff>
         <notations>
-          <slur type="start" number="2" placement="below" />
+          <slur type="start" number="2" placement="below"/>
         </notations>
       </note>
       <backup>
@@ -3680,14 +3652,14 @@ Majestad y poder de Dios | Isa. 52:7
           <octave>3</octave>
         </pitch>
         <duration>4</duration>
-        <tie type="start" />
+        <tie type="start"/>
         <voice>5</voice>
         <type>half</type>
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <tied type="start" />
-          <slur type="start" number="9" placement="above" />
+          <tied type="start"/>
+          <slur type="start" number="9" placement="above"/>
         </notations>
       </note>
       <note>
@@ -3696,14 +3668,14 @@ Majestad y poder de Dios | Isa. 52:7
           <octave>3</octave>
         </pitch>
         <duration>1</duration>
-        <tie type="stop" />
+        <tie type="stop"/>
         <voice>5</voice>
         <type>eighth</type>
         <stem>up</stem>
         <staff>2</staff>
         <beam number="1">begin</beam>
         <notations>
-          <tied type="stop" />
+          <tied type="stop"/>
         </notations>
       </note>
       <note>
@@ -3745,7 +3717,7 @@ Majestad y poder de Dios | Isa. 52:7
         <stem>down</stem>
         <staff>2</staff>
         <notations>
-          <slur type="start" number="10" placement="below" />
+          <slur type="start" number="10" placement="below"/>
         </notations>
       </note>
       <note>
@@ -3761,29 +3733,11 @@ Majestad y poder de Dios | Isa. 52:7
       </note>
     </measure>
     <measure number="23">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m23h1">
         <root>
           <root-step>F</root-step>
         </root>
         <kind use-symbols="no">dominant</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">suspended-fourth</kind>
-        <degree>
-          <degree-value>7</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <degree>
-          <degree-value>9</degree-value>
-          <degree-alter>0</degree-alter>
-          <degree-type>add</degree-type>
-        </degree>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -3798,12 +3752,12 @@ Majestad y poder de Dios | Isa. 52:7
         <stem>up</stem>
         <staff>1</staff>
         <notations>
-          <slur type="stop" number="1" placement="above" />
-          <slur type="stop" number="2" placement="below" />
+          <slur type="stop" number="1" placement="above"/>
+          <slur type="stop" number="2" placement="below"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>C</step>
           <octave>5</octave>
@@ -3815,12 +3769,29 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>1</staff>
       </note>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>1</voice>
         <type>quarter</type>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m23h2">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">suspended-fourth</kind>
+        <degree>
+          <degree-value>7</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <degree>
+          <degree-value>9</degree-value>
+          <degree-alter>0</degree-alter>
+          <degree-type>add</degree-type>
+        </degree>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -3838,7 +3809,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -3866,7 +3837,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -3892,12 +3863,12 @@ Majestad y poder de Dios | Isa. 52:7
         <stem>up</stem>
         <staff>2</staff>
         <notations>
-          <slur type="stop" number="9" placement="above" />
-          <slur type="stop" number="10" placement="below" />
+          <slur type="stop" number="9" placement="above"/>
+          <slur type="stop" number="10" placement="below"/>
         </notations>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>A</step>
           <octave>3</octave>
@@ -3909,7 +3880,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <rest />
+        <rest/>
         <duration>2</duration>
         <voice>5</voice>
         <type>quarter</type>
@@ -3927,7 +3898,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -3951,7 +3922,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>3</octave>
@@ -3964,7 +3935,7 @@ Majestad y poder de Dios | Isa. 52:7
       </note>
     </measure>
     <measure number="24">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es070m24h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
@@ -3987,7 +3958,7 @@ Majestad y poder de Dios | Isa. 52:7
         </lyric>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -4013,7 +3984,7 @@ Majestad y poder de Dios | Isa. 52:7
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>

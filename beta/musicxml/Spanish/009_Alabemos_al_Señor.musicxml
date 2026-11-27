@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version='1.0' encoding='UTF-8'?>
 <score-partwise version="4.0.3">
   <movement-title>Alabemos al Señor</movement-title>
   <identification>
@@ -7,11 +7,11 @@ Adoración y alabanza | Sal. 106:48
 </rights>
     <encoding>
       <software>Audiveris 5.11.0</software>
-      <supports type="yes" element="print" attribute="new-system" value="yes" />
-      <supports type="yes" element="print" attribute="new-page" value="yes" />
-      <supports type="yes" element="accidental" />
-      <supports type="yes" element="beam" />
-      <supports type="yes" element="stem" />
+      <supports type="yes" element="print" attribute="new-system" value="yes"/>
+      <supports type="yes" element="print" attribute="new-page" value="yes"/>
+      <supports type="yes" element="accidental"/>
+      <supports type="yes" element="beam"/>
+      <supports type="yes" element="stem"/>
       <software>ProxyMusic 4.0.3</software>
       <encoding-date>2026-10-30</encoding-date>
     </encoding>
@@ -36,7 +36,7 @@ Adoración y alabanza | Sal. 106:48
         <bottom-margin>60</bottom-margin>
       </page-margins>
     </page-layout>
-    <lyric-font font-family="Times New Roman" font-size="10" />
+    <lyric-font font-family="Times New Roman" font-size="10"/>
   </defaults>
   <credit page="1">
     <credit-type>title</credit-type>
@@ -70,13 +70,13 @@ Adoración y alabanza | Sal. 106:48
   </credit>
   <part-list>
     <score-part id="P1">
-      <part-name print-object="no" />
+      <part-name print-object="no"/>
       <part-name-display print-object="no">
-        <display-text />
+        <display-text/>
       </part-name-display>
-      <part-abbreviation print-object="no" />
+      <part-abbreviation print-object="no"/>
       <part-abbreviation-display print-object="no">
-        <display-text />
+        <display-text/>
       </part-abbreviation-display>
       <score-instrument id="P1-I1">
         <instrument-name>Piano</instrument-name>
@@ -96,7 +96,7 @@ Adoración y alabanza | Sal. 106:48
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <top-system-distance>95</top-system-distance>
+          <top-system-distance>80</top-system-distance>
         </system-layout>
       </print>
       <direction placement="above">
@@ -128,9 +128,9 @@ Adoración y alabanza | Sal. 106:48
           <sign>F</sign>
           <line>4</line>
         </clef>
-        <staff-details print-object="yes" />
+        <staff-details print-object="yes"/>
       </attributes>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es009m1h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
@@ -147,7 +147,7 @@ Adoración y alabanza | Sal. 106:48
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem default-y="-19">up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -228,7 +228,7 @@ Adoración y alabanza | Sal. 106:48
         <duration>3</duration>
         <voice>5</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem default-y="-19">up</stem>
         <staff>2</staff>
       </note>
@@ -276,7 +276,7 @@ Adoración y alabanza | Sal. 106:48
         <duration>3</duration>
         <voice>9</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem default-y="15">up</stem>
         <staff>3</staff>
       </note>
@@ -329,7 +329,7 @@ Adoración y alabanza | Sal. 106:48
       </note>
     </measure>
     <measure number="2">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es009m2h1">
         <root>
           <root-step>G</root-step>
         </root>
@@ -338,24 +338,6 @@ Adoración y alabanza | Sal. 106:48
           <bass-step>B</bass-step>
           <bass-alter>-1</bass-alter>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major-seventh</kind>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -378,6 +360,14 @@ Adoración y alabanza | Sal. 106:48
           <text>de</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es009m2h2">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major-seventh</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>A</step>
@@ -410,6 +400,14 @@ Adoración y alabanza | Sal. 106:48
         <staff>1</staff>
         <beam number="1">end</beam>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es009m2h3">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -551,7 +549,7 @@ Adoración y alabanza | Sal. 106:48
         </direction-type>
         <staff>1</staff>
       </direction>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es009m3h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
@@ -567,7 +565,7 @@ Adoración y alabanza | Sal. 106:48
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem default-y="-9">up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -651,7 +649,7 @@ Adoración y alabanza | Sal. 106:48
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>5</octave>
@@ -674,7 +672,7 @@ Adoración y alabanza | Sal. 106:48
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -698,7 +696,7 @@ Adoración y alabanza | Sal. 106:48
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -723,7 +721,7 @@ Adoración y alabanza | Sal. 106:48
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -798,33 +796,12 @@ Adoración y alabanza | Sal. 106:48
       </note>
     </measure>
     <measure number="4">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es009m4h1">
         <root>
           <root-step>E</root-step>
           <root-alter>-1</root-alter>
         </root>
         <kind use-symbols="no">major</kind>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>F</root-step>
-        </root>
-        <kind use-symbols="no">dominant</kind>
-        <bass>
-          <bass-step>E</bass-step>
-          <bass-alter>-1</bass-alter>
-        </bass>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -846,6 +823,17 @@ Adoración y alabanza | Sal. 106:48
           <text>su</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es009m4h2">
+        <root>
+          <root-step>F</root-step>
+        </root>
+        <kind use-symbols="no">dominant</kind>
+        <bass>
+          <bass-step>E</bass-step>
+          <bass-alter>-1</bass-alter>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>F</step>
@@ -879,6 +867,14 @@ Adoración y alabanza | Sal. 106:48
         <staff>1</staff>
         <beam number="1">end</beam>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es009m4h3">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -914,7 +910,7 @@ Adoración y alabanza | Sal. 106:48
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>G</step>
           <octave>4</octave>
@@ -938,7 +934,7 @@ Adoración y alabanza | Sal. 106:48
         <beam number="1">begin</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>4</octave>
@@ -963,7 +959,7 @@ Adoración y alabanza | Sal. 106:48
         <beam number="1">end</beam>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -988,7 +984,7 @@ Adoración y alabanza | Sal. 106:48
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -1015,7 +1011,7 @@ Adoración y alabanza | Sal. 106:48
         <staff>3</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -1040,7 +1036,7 @@ Adoración y alabanza | Sal. 106:48
         <staff>3</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>3</octave>
@@ -1059,7 +1055,7 @@ Adoración y alabanza | Sal. 106:48
             <left-margin>0</left-margin>
             <right-margin>0</right-margin>
           </system-margins>
-          <system-distance>120</system-distance>
+          <system-distance>100</system-distance>
         </system-layout>
       </print>
       <direction placement="above">
@@ -1069,9 +1065,9 @@ Adoración y alabanza | Sal. 106:48
         <staff>1</staff>
       </direction>
       <attributes>
-        <staff-details print-object="yes" />
+        <staff-details print-object="yes"/>
       </attributes>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es009m5h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
@@ -1080,38 +1076,6 @@ Adoración y alabanza | Sal. 106:48
         <bass>
           <bass-step>F</bass-step>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>2</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>F</bass-step>
-        </bass>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>G</root-step>
-        </root>
-        <kind use-symbols="no">minor-seventh</kind>
-        <bass>
-          <bass-step>F</bass-step>
-        </bass>
-        <offset>6</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1133,6 +1097,14 @@ Adoración y alabanza | Sal. 106:48
           <text>A</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es009m5h2">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1153,6 +1125,17 @@ Adoración y alabanza | Sal. 106:48
           <text>le</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es009m5h3">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>F</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1186,6 +1169,16 @@ Adoración y alabanza | Sal. 106:48
         <staff>1</staff>
         <beam number="1">end</beam>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es009m5h4">
+        <root>
+          <root-step>G</root-step>
+        </root>
+        <kind use-symbols="no">minor-seventh</kind>
+        <bass>
+          <bass-step>F</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>G</step>
@@ -1233,7 +1226,7 @@ Adoración y alabanza | Sal. 106:48
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>6</octave>
@@ -1256,7 +1249,7 @@ Adoración y alabanza | Sal. 106:48
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -1298,7 +1291,7 @@ Adoración y alabanza | Sal. 106:48
         <duration>8</duration>
       </backup>
       <note print-object="no">
-        <rest />
+        <rest/>
         <duration>8</duration>
         <voice>9</voice>
         <type>whole</type>
@@ -1306,7 +1299,7 @@ Adoración y alabanza | Sal. 106:48
       </note>
     </measure>
     <measure number="6">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es009m6h1">
         <root>
           <root-step>E</root-step>
           <root-alter>-1</root-alter>
@@ -1318,15 +1311,6 @@ Adoración y alabanza | Sal. 106:48
         </bass>
         <staff>1</staff>
       </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>4</offset>
-        <staff>1</staff>
-      </harmony>
       <note>
         <pitch>
           <step>E</step>
@@ -1336,7 +1320,7 @@ Adoración y alabanza | Sal. 106:48
         <duration>3</duration>
         <voice>1</voice>
         <type>quarter</type>
-        <dot />
+        <dot/>
         <stem default-y="-5">up</stem>
         <staff>1</staff>
         <lyric number="1" placement="below">
@@ -1359,6 +1343,14 @@ Adoración y alabanza | Sal. 106:48
         <stem default-y="7">up</stem>
         <staff>1</staff>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es009m6h2">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1394,7 +1386,7 @@ Adoración y alabanza | Sal. 106:48
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -1407,7 +1399,7 @@ Adoración y alabanza | Sal. 106:48
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>E</step>
           <alter>-1</alter>
@@ -1431,7 +1423,7 @@ Adoración y alabanza | Sal. 106:48
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -1444,7 +1436,7 @@ Adoración y alabanza | Sal. 106:48
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>D</step>
           <octave>4</octave>
@@ -1490,7 +1482,7 @@ Adoración y alabanza | Sal. 106:48
         </direction-type>
         <staff>1</staff>
       </direction>
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es009m7h1">
         <root>
           <root-step>B</root-step>
           <root-alter>-1</root-alter>
@@ -1499,18 +1491,6 @@ Adoración y alabanza | Sal. 106:48
         <bass>
           <bass-step>D</bass-step>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <bass>
-          <bass-step>F</bass-step>
-        </bass>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1552,6 +1532,17 @@ Adoración y alabanza | Sal. 106:48
           <text>le</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es009m7h2">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <bass>
+          <bass-step>F</bass-step>
+        </bass>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>D</step>
@@ -1633,7 +1624,7 @@ Adoración y alabanza | Sal. 106:48
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>F</step>
           <octave>5</octave>
@@ -1656,7 +1647,7 @@ Adoración y alabanza | Sal. 106:48
         <staff>2</staff>
       </note>
       <note>
-        <chord />
+        <chord/>
         <pitch>
           <step>B</step>
           <alter>-1</alter>
@@ -1695,7 +1686,7 @@ Adoración y alabanza | Sal. 106:48
       </note>
     </measure>
     <measure number="8">
-      <harmony placement="above" print-frame="no">
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es009m8h1">
         <root>
           <root-step>E</root-step>
           <root-alter>-1</root-alter>
@@ -1705,15 +1696,6 @@ Adoración y alabanza | Sal. 106:48
           <bass-step>B</bass-step>
           <bass-alter>-1</bass-alter>
         </bass>
-        <staff>1</staff>
-      </harmony>
-      <harmony placement="above" print-frame="no">
-        <root>
-          <root-step>B</root-step>
-          <root-alter>-1</root-alter>
-        </root>
-        <kind use-symbols="no">major</kind>
-        <offset>4</offset>
         <staff>1</staff>
       </harmony>
       <note>
@@ -1736,6 +1718,14 @@ Adoración y alabanza | Sal. 106:48
           <text>a</text>
         </lyric>
       </note>
+      <harmony placement="above" print-frame="no" default-y="25" font-size="9.5" id="es009m8h2">
+        <root>
+          <root-step>B</root-step>
+          <root-alter>-1</root-alter>
+        </root>
+        <kind use-symbols="no">major</kind>
+        <staff>1</staff>
+      </harmony>
       <note>
         <pitch>
           <step>B</step>
@@ -1837,7 +1827,7 @@ Adoración y alabanza | Sal. 106:48
       </note>
       <barline location="right">
         <bar-style>light-heavy</bar-style>
-        <repeat direction="backward" />
+        <repeat direction="backward"/>
       </barline>
     </measure>
   </part>

@@ -2,8 +2,8 @@
   "schema": 1,
   "platform": "kindle-touch-k5",
   "app": {
-    "id": "kindle-15.0-beta-13-34074c5e3aa51949",
-    "version": "15.0 beta 13",
+    "id": "kindle-15.0-beta-14-0ec9124b6b6494ad",
+    "version": "15.0 beta 14",
     "files": [
       {
         "path": "HymnPiano.wav",
@@ -13,9 +13,9 @@
       },
       {
         "path": "README.txt",
-        "sha256": "b6adb44af524e23455df950d121fd6100fc56a48c8653316ac89ea5caea4e6a8",
+        "sha256": "0cac110fb0343fec1f8add98ca28f6a64fa61364f5aae7c577b042287ffc36c8",
         "bytes": 7190,
-        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/b6adb44af524e23455df950d121fd6100fc56a48c8653316ac89ea5caea4e6a8"
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/0cac110fb0343fec1f8add98ca28f6a64fa61364f5aae7c577b042287ffc36c8"
       },
       {
         "path": "audio_timeline.py",
@@ -31,9 +31,9 @@
       },
       {
         "path": "backend.py",
-        "sha256": "9d110bffd538d1060855f005803b7f11ae675dc6047c835ebf63fa9c09baa485",
+        "sha256": "ee3fa04a8aa8a46bf5c0c9a01142b8bc961b2d3f4c9e7af7fb6d70eb931f51d9",
         "bytes": 57523,
-        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/9d110bffd538d1060855f005803b7f11ae675dc6047c835ebf63fa9c09baa485"
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/ee3fa04a8aa8a46bf5c0c9a01142b8bc961b2d3f4c9e7af7fb6d70eb931f51d9"
       },
       {
         "path": "bin/hymnal",
@@ -61,8 +61,8 @@
       },
       {
         "path": "catalogs/collections.json",
-        "sha256": "50f664baf1ca88210e26747126519edd78909772f247ef187e5b085170adaa1f",
-        "bytes": 204491,
+        "sha256": "fd81a93ddf0252b2b9425da205e809bf11f6dc588e1e1191bfe305c44d3afef3",
+        "bytes": 204492,
         "url": "https://ormt03.github.io/SDA-HYMNAL/beta/collections.json",
         "kind": "shared_catalog",
         "website_path": "collections.json",
@@ -171,9 +171,9 @@
       },
       {
         "path": "source/hymnal.c",
-        "sha256": "264bbb87075f4d9517e132c7b3e7db1dbe6615efbfe6c554b0bba3e6d8ec301b",
+        "sha256": "77225261bc809b0fc7fb407df7ce9a3683cc00c75eb27810bda7971f9a40ab62",
         "bytes": 91142,
-        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/264bbb87075f4d9517e132c7b3e7db1dbe6615efbfe6c554b0bba3e6d8ec301b"
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/kindle/objects/77225261bc809b0fc7fb407df7ce9a3683cc00c75eb27810bda7971f9a40ab62"
       },
       {
         "path": "source/image_geometry.h",
@@ -470,8 +470,8 @@
     ]
   },
   "data": {
-    "id": "15.0-beta-13-48271f712b9e3c14",
-    "version": "15.0 beta 13",
+    "id": "15.0-beta-14-216aaa8f63fba442",
+    "version": "15.0 beta 14",
     "files": [
       {
         "kind": "catalog",
@@ -489,8 +489,8 @@
         "collection": "sda",
         "website_path": "../songs_es.json",
         "path": "catalogs/songs_es.json",
-        "sha256": "9185884cecdab3aec058d3caff7b10a1ddcdd021687498f905ccd9cb7e817bd8",
-        "bytes": 446901,
+        "sha256": "8349e2e48c9bc046f5b239652af04871c60c1048bcb95dc05108c79394f4f929",
+        "bytes": 452194,
         "url": "https://ormt03.github.io/SDA-HYMNAL/songs_es.json"
       },
       {
@@ -503,15 +503,15 @@
       {
         "website_path": "scores.json",
         "path": "catalogs/scores.json",
-        "sha256": "d0da7526c2d2b9da604da93db3aeb355b1d3a6ada4f1a9bdc06cd8cbebf32e8d",
-        "bytes": 66739,
+        "sha256": "8c5078273896faf795a42a39754d00a234bb40150f89d0b2c4f108c3233d359e",
+        "bytes": 68525,
         "url": "https://ormt03.github.io/SDA-HYMNAL/beta/scores.json"
       },
       {
         "website_path": "collections.json",
         "path": "musicxml/English/_collections/collections.json",
-        "sha256": "50f664baf1ca88210e26747126519edd78909772f247ef187e5b085170adaa1f",
-        "bytes": 204491,
+        "sha256": "fd81a93ddf0252b2b9425da205e809bf11f6dc588e1e1191bfe305c44d3afef3",
+        "bytes": 204492,
         "url": "https://ormt03.github.io/SDA-HYMNAL/beta/collections.json"
       },
       {
@@ -8736,6 +8736,236 @@
       },
       {
         "kind": "score",
+        "language": "spanish",
+        "collection": "sda",
+        "website_path": "musicxml/Spanish/125_Infinito_amor_de_Cristo.musicxml",
+        "path": "musicxml/Spanish/125_Infinito_amor_de_Cristo.musicxml",
+        "sha256": "ba2690494f986642a501c013e652dd56945db5e8fb60efd26755a62231a3ac63",
+        "bytes": 64778,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Spanish/125_Infinito_amor_de_Cristo.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "spanish",
+        "collection": "sda",
+        "website_path": "musicxml/Spanish/126_Abrigadas_y_salvas_en_el_redil.musicxml",
+        "path": "musicxml/Spanish/126_Abrigadas_y_salvas_en_el_redil.musicxml",
+        "sha256": "7ea98fbdc9f08a93fa63c40249a522ed32edf007419d99b7cc8f00c42065d777",
+        "bytes": 127355,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Spanish/126_Abrigadas_y_salvas_en_el_redil.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "spanish",
+        "collection": "sda",
+        "website_path": "musicxml/Spanish/127_Cristo_nombre_dulce.musicxml",
+        "path": "musicxml/Spanish/127_Cristo_nombre_dulce.musicxml",
+        "sha256": "fbb2cf55244008a3aa5387632965bf1010b5cbb5449cea24516ea0776f56841a",
+        "bytes": 51858,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Spanish/127_Cristo_nombre_dulce.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "spanish",
+        "collection": "sda",
+        "website_path": "musicxml/Spanish/128_¡Tu_nombre_es_dulce_buen_Jesús!.musicxml",
+        "path": "musicxml/Spanish/128_¡Tu_nombre_es_dulce_buen_Jesús!.musicxml",
+        "sha256": "d648bd2a40ac7e78357bd5bdc733151eff0da7bce1ed8084b2652f6170fd225c",
+        "bytes": 108756,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Spanish/128_%C2%A1Tu_nombre_es_dulce_buen_Jes%C3%BAs%21.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "spanish",
+        "collection": "sda",
+        "website_path": "musicxml/Spanish/129_Cual_Jesús_no_hay_otro_nombre.musicxml",
+        "path": "musicxml/Spanish/129_Cual_Jesús_no_hay_otro_nombre.musicxml",
+        "sha256": "c4405910910365e6eb67c491847c0123e023104ae18874ded291eee9e9362ddd",
+        "bytes": 102135,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Spanish/129_Cual_Jes%C3%BAs_no_hay_otro_nombre.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "spanish",
+        "collection": "sda",
+        "website_path": "musicxml/Spanish/130_Cristo_Cristo_Cristo.musicxml",
+        "path": "musicxml/Spanish/130_Cristo_Cristo_Cristo.musicxml",
+        "sha256": "b8227fc1e2847f690c4ab6c2921d8a91a10b23b34a6d8045baecf5d054fdbc7f",
+        "bytes": 110466,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Spanish/130_Cristo_Cristo_Cristo.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "spanish",
+        "collection": "sda",
+        "website_path": "musicxml/Spanish/131_Bendito_es_el_nombre_de_Jesús.musicxml",
+        "path": "musicxml/Spanish/131_Bendito_es_el_nombre_de_Jesús.musicxml",
+        "sha256": "a0ecf550ddf05e8041d1c0132921a1c94293d43a4acd272a027423f3aa1aecc7",
+        "bytes": 103272,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Spanish/131_Bendito_es_el_nombre_de_Jes%C3%BAs.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "spanish",
+        "collection": "sda",
+        "website_path": "musicxml/Spanish/132_Dulce_hermoso_nombre_es_Jesús.musicxml",
+        "path": "musicxml/Spanish/132_Dulce_hermoso_nombre_es_Jesús.musicxml",
+        "sha256": "7e8c4e918f7be67c12647bab442ab7cdafee30cd915afe104a11e5007fcbcd69",
+        "bytes": 139083,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Spanish/132_Dulce_hermoso_nombre_es_Jes%C3%BAs.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "spanish",
+        "collection": "sda",
+        "website_path": "musicxml/Spanish/133_Venid_con_cánticos_venid.musicxml",
+        "path": "musicxml/Spanish/133_Venid_con_cánticos_venid.musicxml",
+        "sha256": "341d45d10e03c99f5fd5bf892d5dee98da998d571c2934108869c4542bc1b586",
+        "bytes": 78717,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Spanish/133_Venid_con_c%C3%A1nticos_venid.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "spanish",
+        "collection": "sda",
+        "website_path": "musicxml/Spanish/134_Cual_mirra_fragante.musicxml",
+        "path": "musicxml/Spanish/134_Cual_mirra_fragante.musicxml",
+        "sha256": "e6a2802156f4f4b924d41433c409e4307201d91a2a07b3b3144dd89f5bb242db",
+        "bytes": 121359,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Spanish/134_Cual_mirra_fragante.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "spanish",
+        "collection": "sda",
+        "website_path": "musicxml/Spanish/135_Cristo_nombre_sublime.musicxml",
+        "path": "musicxml/Spanish/135_Cristo_nombre_sublime.musicxml",
+        "sha256": "e0e03a9a8a35d81598c2beb14b8d59fd068f669020abfdcd578b1d30dbe19c3f",
+        "bytes": 55260,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Spanish/135_Cristo_nombre_sublime.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "spanish",
+        "collection": "sda",
+        "website_path": "musicxml/Spanish/136_¡Oh_cuánto_amo_a_Cristo!.musicxml",
+        "path": "musicxml/Spanish/136_¡Oh_cuánto_amo_a_Cristo!.musicxml",
+        "sha256": "37547307f67ea0ba6363995099f07381e292939955f3e7600c7769e11bca8222",
+        "bytes": 103880,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Spanish/136_%C2%A1Oh_cu%C3%A1nto_amo_a_Cristo%21.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "spanish",
+        "collection": "sda",
+        "website_path": "musicxml/Spanish/137_De_Jesús_el_nombre_invoca.musicxml",
+        "path": "musicxml/Spanish/137_De_Jesús_el_nombre_invoca.musicxml",
+        "sha256": "d81184ee214a606686134e3737a842d251f3ce491162afdb43bf1e20ee8db510",
+        "bytes": 98432,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Spanish/137_De_Jes%C3%BAs_el_nombre_invoca.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "spanish",
+        "collection": "sda",
+        "website_path": "musicxml/Spanish/138_De_mi_amante_Salvador.musicxml",
+        "path": "musicxml/Spanish/138_De_mi_amante_Salvador.musicxml",
+        "sha256": "6f791f7b0b1f8fc1b494058623d3d0d3083d21bf4a21691f3d88ebf210c3c253",
+        "bytes": 155285,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Spanish/138_De_mi_amante_Salvador.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "spanish",
+        "collection": "sda",
+        "website_path": "musicxml/Spanish/139_La_tierna_voz_del_Salvador.musicxml",
+        "path": "musicxml/Spanish/139_La_tierna_voz_del_Salvador.musicxml",
+        "sha256": "6b727d85ca103426c0fcc8d90a0953d1eb9f971033d38351f5a86d482c487d4e",
+        "bytes": 103040,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Spanish/139_La_tierna_voz_del_Salvador.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "spanish",
+        "collection": "sda",
+        "website_path": "musicxml/Spanish/140_Te_quiero_te_quiero.musicxml",
+        "path": "musicxml/Spanish/140_Te_quiero_te_quiero.musicxml",
+        "sha256": "da82f3ee0fc4f531c565091bf2c087eda39f7e69a03e2dbdc9beeffadf50a9e0",
+        "bytes": 88745,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Spanish/140_Te_quiero_te_quiero.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "spanish",
+        "collection": "sda",
+        "website_path": "musicxml/Spanish/141_¡Alabadle!.musicxml",
+        "path": "musicxml/Spanish/141_¡Alabadle!.musicxml",
+        "sha256": "38bdb68af7a28112362e634fad43680c132229ffc8ddce0933de93c46615e824",
+        "bytes": 158189,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Spanish/141_%C2%A1Alabadle%21.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "spanish",
+        "collection": "sda",
+        "website_path": "musicxml/Spanish/142_Venid_cantad_de_gozo_en_plenitud.musicxml",
+        "path": "musicxml/Spanish/142_Venid_cantad_de_gozo_en_plenitud.musicxml",
+        "sha256": "837e6c2912193acefe7bfd97cecd3d2f1948718aa5eae33b6bc8741f0842dc97",
+        "bytes": 164945,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Spanish/142_Venid_cantad_de_gozo_en_plenitud.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "spanish",
+        "collection": "sda",
+        "website_path": "musicxml/Spanish/143_Digno_eres_tú.musicxml",
+        "path": "musicxml/Spanish/143_Digno_eres_tú.musicxml",
+        "sha256": "3ebe14241ec320652308e682b90d6f931aef2e6d2374b64c7d5467f9f50d82f8",
+        "bytes": 99805,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Spanish/143_Digno_eres_t%C3%BA.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "spanish",
+        "collection": "sda",
+        "website_path": "musicxml/Spanish/144_Mi_Salvador.musicxml",
+        "path": "musicxml/Spanish/144_Mi_Salvador.musicxml",
+        "sha256": "37e2285dc0edf0f0cd4851159ce4bebbb3e602d8ff69f62d512c43a02ebc4cf4",
+        "bytes": 103424,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Spanish/144_Mi_Salvador.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "spanish",
+        "collection": "sda",
+        "website_path": "musicxml/Spanish/145_Con_acentos_de_alegría.musicxml",
+        "path": "musicxml/Spanish/145_Con_acentos_de_alegría.musicxml",
+        "sha256": "14bfce50a23836e032384819db5405712fab0838929933398ff21295f4ec10b9",
+        "bytes": 143628,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Spanish/145_Con_acentos_de_alegr%C3%ADa.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "spanish",
+        "collection": "sda",
+        "website_path": "musicxml/Spanish/146_Ni_en_la_tierra.musicxml",
+        "path": "musicxml/Spanish/146_Ni_en_la_tierra.musicxml",
+        "sha256": "32bef9093402aa6b94d6136b7a719b49553189dd13311e67799f935e820df98d",
+        "bytes": 64894,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Spanish/146_Ni_en_la_tierra.musicxml"
+      },
+      {
+        "kind": "score",
+        "language": "spanish",
+        "collection": "sda",
+        "website_path": "musicxml/Spanish/147_A_Dios_sea_gloria.musicxml",
+        "path": "musicxml/Spanish/147_A_Dios_sea_gloria.musicxml",
+        "sha256": "c58cce6b927d16fe2c6096dfd8d65c580c407e6d5ce3c2b8793b245b04df9cc2",
+        "bytes": 146123,
+        "url": "https://ormt03.github.io/SDA-HYMNAL/beta/musicxml/Spanish/147_A_Dios_sea_gloria.musicxml"
+      },
+      {
+        "kind": "score",
         "language": "english",
         "collection": "gyc-theme-songs",
         "website_path": "musicxml/GYC/Before_the_Throne.musicxml",
@@ -8966,9 +9196,9 @@
       }
     ],
     "archive": {
-      "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-13-48271f712b9e3c14-full.zip",
-      "sha256": "f0040acfa0a7400092058626d2897d7c18ecc94a3fb1975073237dac4f35dc58",
-      "bytes": 5487587
+      "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-14-216aaa8f63fba442-full.zip",
+      "sha256": "0380139f664bb825e54c7dbfbaebd40e486ea9a6fff40dc4939e772d52e6f017",
+      "bytes": 5592669
     },
     "collections": [
       {
@@ -8977,9 +9207,9 @@
           "scores": false
         },
         "full": {
-          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-13-48271f712b9e3c14-both-lyrics-full.zip",
-          "sha256": "be0ed53568b8b176f042c3b952bfefe0dd04b141ef1afbd208571f50fa71b98c",
-          "bytes": 1760208
+          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-14-216aaa8f63fba442-both-lyrics-full.zip",
+          "sha256": "82a96462c84c166f3b3f8f2143d04cbf0d275b25f8b99c725f0f226669b623a9",
+          "bytes": 1761371
         }
       },
       {
@@ -8988,9 +9218,9 @@
           "scores": true
         },
         "full": {
-          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-13-48271f712b9e3c14-english-scores-full.zip",
-          "sha256": "a2f8ceef9ea69dcce1d33e731071296add3c92fb74ac5e825e5e104abc83bf39",
-          "bytes": 4814536
+          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-14-216aaa8f63fba442-english-scores-full.zip",
+          "sha256": "04718a5bd26e7108cb17a14f740789709b0fe6aeb2b8dc85ed3b453c20fc4b34",
+          "bytes": 4814903
         }
       },
       {
@@ -8999,9 +9229,9 @@
           "scores": false
         },
         "full": {
-          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-13-48271f712b9e3c14-english-lyrics-full.zip",
-          "sha256": "38b923b8ec801c212740374b8277934a15503cb3b8bd14c033ef5f2e396999c8",
-          "bytes": 1631291
+          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-14-216aaa8f63fba442-english-lyrics-full.zip",
+          "sha256": "aae860e75540f0282211d28c6bff5bffa1285d611a0d9e8a752617179fb4cc46",
+          "bytes": 1631658
         }
       },
       {
@@ -9010,9 +9240,9 @@
           "scores": true
         },
         "full": {
-          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-13-48271f712b9e3c14-spanish-scores-full.zip",
-          "sha256": "6454e0915020b1dcdc8c2f2d1a5bb9b59c31bd656b680c63b6ccb5d3b9bf24ef",
-          "bytes": 2116092
+          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-14-216aaa8f63fba442-spanish-scores-full.zip",
+          "sha256": "d9d8354bc3e78115ae5759b2a46da333180459d42320eb19981b94637a82a795",
+          "bytes": 2221174
         }
       },
       {
@@ -9021,9 +9251,9 @@
           "scores": false
         },
         "full": {
-          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-13-48271f712b9e3c14-spanish-lyrics-full.zip",
-          "sha256": "95fe589a3f00cfebeb309ba576a168847b17975d66d627a0b22a5254e35f1e78",
-          "bytes": 1571958
+          "url": "https://ormt03.github.io/SDA-HYMNAL/beta/releases/15.0-beta-14-216aaa8f63fba442-spanish-lyrics-full.zip",
+          "sha256": "27af60f2163dda8fb853b13923dc7686dbd2adc6d1e21faff3abebb7a205cd8d",
+          "bytes": 1573121
         }
       }
     ]
